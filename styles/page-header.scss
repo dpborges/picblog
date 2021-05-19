@@ -1,0 +1,80 @@
+@import  './settings.scss';
+
+// *****************************************************************
+// Note: these class belong to burger menu. I separated the classes 
+// between global and CSS Module. With CSS Module you cannot have
+// classes with hyphens, hence I left these in global
+// *****************************************************************
+
+// *****************************************************************
+// Header Sticky Behavior
+// *****************************************************************
+
+// Fixes header on top of view port
+.sticky-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  animation: smoothScroll .25s forwards;
+}
+
+// Provided a bounce to header on scroll using animation above.
+@keyframes smoothScroll {
+  0% {
+    transform: translateY(-142px);
+  }
+ 
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+// *****************************************************************
+// Header expand and contract height; fired onClick of BurgerMenu
+// *****************************************************************
+
+.ss-header-expand-exit {
+  @media only screen and (min-width: $mobile-min) and (max-width: 990px) {
+    height:7.5rem;
+    transition: height 250ms ease-in;
+  }
+}
+
+.ss-header-expand-exit-active {
+  @media only screen and (min-width: $mobile-min) and (max-width: 990px) {
+    height: 7.5rem;
+  }
+}
+
+.ss-header-expand-exit-done {
+  @media only screen and (min-width: $mobile-min) and (max-width: 990px) {
+    height: 7.5rem;
+  }
+}
+
+.ss-header-expand-enter {
+  @media only screen and (min-width: $mobile-min) and (max-width: 990px) {
+    height: 7.5rem;
+    transition: height 250ms ease-in;
+  }
+}
+
+.ss-header-expand-enter-active {
+  @media only screen and (min-width: $mobile-min) and (max-width: 990px) {
+    height: 14.5rem;
+  }
+  @media only screen and (min-width: $ipad-min) and (max-width: $ipad-max) {
+    height: 11.5rem;
+  }
+}
+
+.ss-header-expand-enter-done {
+  @media only screen and (min-width: $mobile-min) and (max-width: 990px) {
+    height: 14.5rem;
+  }
+  @media only screen and (min-width: $ipad-min) and (max-width: $ipad-max) {
+    height: 11.5rem;
+  }
+}
+
+

@@ -1,0 +1,32 @@
+* { 
+  box-sizing: border-box; 
+}
+
+html {
+  font-size: 62.5%;   /* default browser font size is 16px.  62.5% of 16px is 10px. 1rem is equal to 10px */
+
+  @media (max-width: $mobilephone-breakpoint) {
+      overflow-x: hidden;
+  }
+}
+
+body {
+  // color: $dark-grey;
+  color: red;
+  background-color: white;
+  font-family: 'Lato', 'Arial', 'sans-serif', 'Roboto';
+  font-size: $m-size;
+  line-height: 1.6;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.is-active {
+  font-weight: bold;
+}

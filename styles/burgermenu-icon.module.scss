@@ -1,0 +1,42 @@
+@import './settings.scss';
+
+.burgermenuIconContainer {
+    background-color: $white;
+    border: 1px solid $white;
+    height: 2.2rem;
+    margin-right: 0rem ;
+    // margin-top: -1rem;
+    border-radius: 50%;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .4s ease;
+
+    &:hover {
+        background-color:  $greyshade0;
+        border: 1px solid $greyshade0;    
+        /* disable the background circle on hover for mobile devices */
+        @media only screen and (max-width: 768px) {
+        // @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+          background-color:  $white;
+          border: 1px solid $white;   
+          margin-right: 40%;
+      }    
+    }
+}
+
+.burgermenuIcon {
+    color: $greyshade4 !important;
+    font-size: $font-size-large;
+    font-weight: 900;
+
+    // @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    @media only screen and (max-width: 768px) {
+        font-size: 2rem;
+        vertical-align: middle;
+        width: 3rem;
+        
+    }
+}
+

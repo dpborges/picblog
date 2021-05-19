@@ -1,0 +1,82 @@
+    // Standard Colors
+    $black:         #3f3838;
+    $blue:          #2980B7;
+    $darkblue:      #2471a2; 
+    $green1:        #388e3c;
+    $green2:        #2e7d32;
+    $blueGreen:     #22A6B3;
+    $greyghost:     #E8E8E8; 
+    $greyshade0:    #F2F4F4;
+    $greyshade1:    #dcdde1;
+    $greyshade2:    #BDC3C7;
+    $greyshade3:    #95A5A6;
+    $greyshade4:    #7F8C8D;
+    $greyshade5:    #666;
+    $lightblue0:    #e1e9f0;
+    $lightblue1:    #c1def1;
+    $lightblue:     #6BB9F0;
+    $orange:        #CC6600;
+    $orange2:       #ad4b0a;
+    $orange5:       #e67e22;
+    $white:         #ffffff;
+    $red:           #C0392B;
+   
+    // not in use
+    $blueGreen2:    #19b5bc;
+    $greyshade6:    #333333;
+    $lightblue2:    #acd3ec;
+    $orange3:       #e67e22;
+    $orange4:       #863804;
+    
+    // these were used for udemy course
+    $dark-grey: #424242;
+    $sky-blue: #2980B7;
+    $dark-blue:  #2980B7;
+    $off-white:  #ECF0F1;
+    $grey:    #95A5A6;
+
+// Note: All sizes below are based on fact that 1rem is equal to 16px
+
+// Standard Font sizes
+    $font-size-xxsmall:1.1rem;    
+    $font-size-xsmall:1.2rem;
+    $font-size-small: 1.4rem;
+    $font-size-medium: 1.6rem;
+    $font-size-large: 1.8rem;
+    $font-size-xlarge: 2.0rem;
+    $font-size-xxlarge: 2.60rem;
+    $font-size-xxxlarge: 3rem;
+
+// Spacing
+    $xs-size: .25rem;
+    $s-size: 1.2rem;
+    $m-size: 1.6rem;
+    $l-size: 3.2rem;
+    $xl-size: 4.8rem;
+    $desktop-breakpoint: 45rem;
+
+// Break points for media queries 
+    // NOTE: the two variables mobile-min and max are using pixels instead of rem's as it was only way
+    //       I could get media queries to work with iphone. Also with pixels syntax "media only screen"
+    //       was used
+    $mobile-min:      280px;      // 18.75rem = 300px
+    $mobile-max:      600px;         // 46rem    = 736px
+
+    // Reponsive behavior should be tested with ipad the smaller of the 2 ipad types
+    $ipad-min:      601px;      //  ipad min was set to 1px more than mobile-max
+    $ipad-max:      1024px;     //  1024 is ipad-max largest width size of the ipad and ipad-pro 
+
+    $ipad-pro-min:  1024px;      //  ipad min was set to 1px more than mobile-max
+    $ipad-pro-max:  1366px;     //  1024 is ipad-max largest width size of the ipad and ipad-pro 
+
+    // $mobile-max:      736px;         // 46rem    = 736px
+    $mobilephone-breakpoint: 30rem;  // 30 = equals 480px added .1 to make sure media query is applied by 480.
+    // $mobilephone-presize-breakpoint: 37.5rem; // 37.5rem = 600 Certain parts of pages needed to get reduce earlier to
+                                              // with the other parts of the page.
+    $tablet-breakpoint: 48rem;       // equals 768px
+    $desktop-breakpoint: 60rem;       // equals 960px
+    $desktop-breakpoint-lg: 76.5rem;    // equals 1224px
+
+
+
+

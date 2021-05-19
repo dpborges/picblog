@@ -1,0 +1,79 @@
+@import './settings.scss';
+
+.rosy-footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $orange;
+    height: 8rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+}
+
+.rosy-footer-content-container {
+    margin: 0 8%;
+    
+    
+}   
+
+.rosy-footer-text {
+    color: $white;
+    font-size: $font-size-xsmall;
+    margin-left: 8%;
+    padding-right: 1rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: .4rem;
+        font-size: $font-size-xxsmall;
+    }
+}
+
+
+.rosy-footer-icon {
+    color: $blue;
+    font-size: $font-size-medium;
+    // margin-right: 1rem;
+}
+
+.rosy-footer-icon-list {
+    display: flex;
+    width: 19rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin: 0;
+        padding-bottom: .5rem;
+    }
+}
+
+// .rosy-footer-social-icons ul li a {
+.rosy-footer-social-icons ul li a {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin-right: .3rem;
+    background-color: $greyshade2;
+    color: #9a9a9a;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 27px;
+    transition: .4s;
+    -webkit-transition: .4s;
+    z-index: 10;
+}
+.rosysocial-icons ul li a:hover {
+    color: #fff;
+}
+
+.rosy-footer-social-icons.bottom ul li a {
+    width: 35px;
+    height: 35px;
+    color: #eee;
+    line-height: 38px;
+    font-size: 18px;
+}
+.rosy-footer-social-icons.bottom ul li a:hover {
+    background-color: #fff;
+}

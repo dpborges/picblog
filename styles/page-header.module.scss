@@ -1,0 +1,209 @@
+@import  './settings.scss';
+
+// *****************************************************************
+// Class to hide menu if toggle value is true in the desktop view
+// *****************************************************************
+.pageHeaderMobileNavHide {
+  display: block;
+
+  @media only screen and (min-width: 769px) {
+    display: none;
+  }  
+}
+
+// *****************************************************************
+// Header Outline
+// *****************************************************************
+.pageHeaderOutline {
+  background-color: white !important;
+  box-shadow: 0 8px 6px -6px rgb(0 0 0 / 40%);
+  min-height: 5rem;
+  top: 0;
+  // width: 100vw;
+  z-index: 10;
+}
+
+// *****************************************************************
+// Header container classes for header components
+// *****************************************************************
+.pageHeaderContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10%;
+  // transition: all ease-in 1000ms;
+  z-index: 10;
+  
+
+  @media only screen and  (max-width: 768px) {
+    margin: 0 0;
+   }  
+
+}
+
+.topNavLinks {
+  display: flex;
+  align-items: center;
+  margin-top: -.7rem;
+  min-height: 55px;
+
+  @media only screen and (max-width: 768px) {
+    margin-right: 5%;
+    margin-left: -65%;
+    flex-direction: column !important;
+  }  
+}
+
+
+// Individual <li> elements
+.topNavLink {
+  margin-right: 3rem;
+  list-style-type: none;
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 1rem;
+    text-align: left;
+    width: 55px;
+  }  
+
+}
+
+.topNavLinkAlt {
+  @extend .topNavLink;
+  margin-left: -1rem;
+  margin-right: 1rem;
+  margin-top: .25rem;
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 1rem;
+    margin-left: -3.5rem;
+  }  
+  @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    margin-left: -2.2rem;
+  }  
+}
+
+.linktextSize {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  // margin-left: -2rem;
+
+  @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      margin-top: -1.9rem;
+      margin-right: -3rem;
+  }  
+}
+
+
+.ss-page-header-logo-block {
+  text-decoration: none;
+}
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    width: 55px;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        height: 55px;
+        width: 55px;
+        margin-left: 0rem;
+    }  
+  }
+
+  .logoAndTextWrapper {
+    align-items: center;
+    display: flex;
+    width: 30rem;
+    height: 55px;
+      
+
+    // /* reduce size of logo and margin to right tos it is closer app name*/ 
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      width: 15rem;
+    }
+  }
+
+  .logoTextContainer {
+    margin-top: -.2rem;
+    vertical-align: middle;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      margin-top: .3rem;
+    }
+
+  }
+  
+
+.pageHeaderLogo {
+  height: 4.5rem;
+  margin-top: 3rem;
+  width:  4.5rem;
+}
+
+
+.pageHeaderTitle {
+  color: $blue;
+  font-weight: 900;
+  font-family: "Lato", "Roboto", sans-serif;
+  font-size: $font-size-small;
+  height: 55px;
+
+  @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    font-size: $font-size-xsmall;
+  }
+}
+
+.pageHeaderTitlePart2 {
+    @extend .pageHeaderTitle;
+    color: $greyshade3;
+
+}
+
+
+.dropdownContainer {
+  margin-top: -.8rem;
+  width: 8rem;
+}
+
+
+.pageHeaderNavlink {
+  color: $black;
+  display: inline-block;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.pageHeaderNavlink::after {
+    border-bottom: 2px solid transparent;
+    content: '';
+    display: block;
+    width: 0;
+    // height: 2px;
+    // background: $black;
+    transition: width .3s;
+}
+
+/* places underline below navlink on hover */
+.pageHeaderNavlink:hover::after {
+    border-bottom: 2px solid $blue;
+    color: $blue;
+    width: 100%;
+    // text-decoration: none;
+    //transition: width .3s;
+}
+
+.pageHeaderNavlink:hover {
+    color: $blue;
+}
+
+/* Added this class to be able to show  drop down list on top nav as a column on mobile device */
+.ddFlexContainer {
+    display: flex;
+
+    @media (max-width: $mobilephone-breakpoint) {
+        flex-direction: column;
+    }
+}
+

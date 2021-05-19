@@ -1,0 +1,20 @@
+//*********************************************************************
+// Used to Toggle between Burger Icon and Nav links based on whether
+// displayed on Mobile device or on Desktop, using breakpoint of 768px.
+//*********************************************************************
+
+.showOnMobile {
+  display: none;
+
+ @media only screen and (max-width: 768px) {
+   display: block;
+ }
+}
+
+.showOnDesktop {
+ display: none;
+
+ @media only screen and (min-width: 769px)  {
+   display: block;
+ }
+}

@@ -1,0 +1,152 @@
+@import  './settings.scss';
+
+
+/* Sets width 100% and centers underlying blogContainer */
+.topLevelContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 3rem;
+  // display: flex; 
+  // justify-content: center; 
+  // flex-direction: column;
+}
+
+/* second level container: contains the contentContainer and the rightSideAds */
+.blogContainer {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+
+  @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    width: 100vw;
+  } 
+  // display: flex; 
+  // justify-content: center; 
+  // flex-direction: column;
+}
+
+// .postContentContainer {
+  // display: flex;
+  // flex-direction: column;
+  // padding: 0 10%;
+
+  // @media only screen and  (max-width: 768px) {
+  //   padding: 0 0 0 0;
+  // } 
+// }
+
+// Indent unorder list 
+.indentList {
+  margin-left: 4rem; 
+}
+
+
+
+/* used to specifiy viewport width for blog-details on mobile devices */ 
+.blogDetailViewportWidth {
+  @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    width: 94vw;
+  } 
+}
+
+.ulSpacing {
+  margin: 2rem 4rem 0 4rem;
+}
+
+// list item bullet style
+ul > li.squareBullet {
+    list-style-type: square;
+}
+
+.blue-anchor-text {
+    text-decoration: none;
+    color: $blue;
+
+    &:hover {
+        color: $lightblue !important;
+        text-decoration: none;
+    }
+}
+
+
+.blueAnchor {
+  text-decoration: none;
+  color: $blue;
+
+  &:hover {
+      color: $lightblue !important;
+      text-decoration: none;
+  }
+}
+
+.h2tag {
+    color: $greyshade5;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 2.5rem 0 -.5rem 0;
+    padding: 0 4% 0;    /* same padding s/d be used in .content */
+    
+}
+
+.h3tag {
+    color: $greyshade5;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.content {
+  color: $greyshade5;
+  display: inline-block;
+  text-align: justify;
+  font-size: 1.2rem;
+  padding: 0 4% 0;  /* same padding s/d be used in h2tag and h3Tag */
+
+}
+
+.blog-list-item {
+    list-style-type: none;
+    list-style-position: outside;
+    
+}
+.blog-list-item-with-circle {
+    list-style-type: circle;
+    margin-left: 1rem;
+}
+
+/* This class was add to reduce size of font for title on media devices */
+.blog-list-title {
+    padding-top: 22px;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      font-size: $font-size-small;
+      padding: 0 3px;
+    } 
+}
+
+.blogDetailTitle {
+    color: $greyshade5;
+    font-size: $font-size-large + .2rem;
+    margin-top: 0;
+    padding-top: 1rem;
+    font-weight: 400;
+    line-height: 2.2rem;
+    
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      font-size: $font-size-medium;
+    } 
+}
+
+
+/* Used to completely remove the right side ads, as they were still taking up padding 
+   space to right side of content when scaling down to mobile devices */
+.rightSideAds {
+  // @media only screen and (max-width: 1200px) {
+    @media only screen and (min-width: $mobile-min) and (max-width: 1024px) {
+      display: none;
+    } 
+}
+

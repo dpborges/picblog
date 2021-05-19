@@ -1,0 +1,526 @@
+@import   './settings.scss';
+// *************************************************************************
+// Note these utility classes can be used statically (add style to component)
+// or can be added dynamically using the  addConditionalClassIf function.
+// function.
+// *************************************************************************
+
+
+//  !!!!! I M P O R T A N T   !!!!!
+//  BECAUSE THERE CAN BE A NUMBER OF VARIATIONS OF SPACERS I  STARTED TO USE MIXINS. 
+//  INSTEAD OF CALLING THEM SPACERS, I STARTED CALLING THEM WHAT THEY ARE (eg. margin-top)
+//  DO NOT USE - the classes called horiz or vert spaces. Use classes with actual name.
+//  I should clean up the space classes when I have time.
+//  *******  Start doing same for other classes ******
+
+// =========================================================================
+/* Borders used for testing */
+// =========================================================================
+
+.border-blue   {  border: blue   solid 2px; }
+.border-black  {  border: black  solid 2px; }
+.border-red    {  border: red    solid 2px; }
+.border-yellow {  border: yellow solid 2px; }
+.border-green  {  border: green  solid 2px; }
+
+// =========================================================================
+/* Link (react-router-link) or anchor tag classes */
+// =========================================================================
+
+/* Use this with react-router <Link> tag */
+.rc-link-nodecoration-white {
+    text-decoration: none;
+    color: white;
+}
+
+.rc-link-nodecoration-light-grey {
+    text-decoration: none;
+    color: $greyshade1;
+}
+
+.rc-link-nodecoration-light-blue {
+    text-decoration: none;
+    color: $blue;
+}
+
+// =========================================================================
+/* Containers */
+// =========================================================================
+
+/* This is flex container that defaults to flex direction row for desktop and 
+   pivots flex-direction to column for mobile device  r2c */
+.rc-flex-container-center-r2c {
+    display: flex;
+    justify-content: center;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        flex-direction: column;
+    }
+}
+
+/* This is flex container that defaults to flex direction column for desktop and 
+   pivots flex-direction to row for mobile device  c2r */
+.rc-flex-container-center-c2r {
+    display: flex;
+    justify-content: center;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        flex-direction: column;
+    }
+}
+
+/* This is flex container that defaults to flex direction row */
+.rc-flex-container {
+    display: flex;
+}
+
+/* This is flex container that defaults to flex direction row with no pivot */
+.rc-flex-container-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* Align content in the center both horizontally and vertically */
+.rc-flex-container-center-hv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* This is flex container with flex direction col with no pivot */
+.rc-flex-container-center-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+// =========================================================================
+// Margin Modifiers / ( See not on top) Suspend using the spacer classes
+// (eg. tiny, small, medium, large). Use margin classes instead
+// =========================================================================
+
+/* Margin top class */
+
+.rc-mt-pt5 {
+    margin-top: .5rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: .2.5rem;
+    }
+}
+
+.rc-mt-1 {
+    margin-top: 1rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: .70rem;
+    }
+}
+
+.rc-mt-1pt5 {
+    margin-top: 1.5rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: .70rem;
+    }
+}
+
+.rc-mt-2 {
+    margin-top: 2rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: 1.2rem;
+    }
+}
+
+.rc-mt-3 {
+    margin-top: 3rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: 1.7rem;
+    }
+}
+
+.rc-mt-4 {
+    margin-top: 4rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: 2.8rem;
+    }
+}
+.rc-mt-5 {
+    margin-top: 5rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: 3rem;
+    }
+}
+
+.rc-mt-6 {
+    margin-top: 6rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: 4rem;
+    }
+}
+
+
+/* Margin bottom classes */
+.rc-mb-minus-1 {
+    margin-bottom: -1rem;
+}
+
+/* specialty class when using flex box row for desktip and and column for mobile
+   this allows you to go from zero margin bottom on desktop to adding separation on mobile */
+.rc-mb-0-to-1 {
+  margin-bottom: 0rem;
+
+  @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      margin-bottom: 1rem;
+  }
+}
+
+
+.rc-mb-1 {
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-bottom: .70rem;
+    }
+}
+
+
+.rc-mb-2 {
+    margin-bottom: 2rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.rc-mb-3 {
+    margin-bottom: 3rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-bottom: 2rem;
+    }
+}
+
+.rc-mb-4 {
+    margin-bottom: 4rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-bottom: 3rem;
+    }
+}
+
+.rc-mb-5 {
+    margin-bottom: 5rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-bottom: 3.7rem;
+    }
+}
+
+// Left Margin Modifiers
+.rc-ml-2 {
+    margin-left: 2rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-left: 1rem;
+    }
+}
+
+.rc-ml-3 {
+    margin-left: 3rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-left: 2rem;
+    }
+
+}
+
+// Left Margin Modifiers
+.rc-ml-5 {
+    margin-left: 5rem;
+}
+
+
+// =========================================================================
+// Utility Class
+// =========================================================================
+.rc-block-center {
+    display: block;
+    margin: 0 auto 0 auto;
+}
+
+
+//==================================================
+// COLORS
+//==================================================
+
+// white
+.color-w {
+    color:  $white;
+}
+
+// orange
+.color-o {
+    color:  $orange;
+}
+
+// greyshade 4
+.color-gs4 {
+   color:  $greyshade4;
+   font-family: inherit;
+}
+
+
+// =========================================================================
+// Font styles 
+// =========================================================================
+
+.rc-text-green {
+    color: $green1;
+    display: inline-block;
+}
+
+.rc-text-blue {
+    color: $blue;
+    display: inline-block;
+    font-style: italic;
+}
+
+
+// =========================================================================
+// Header classes  (Next project consider using the tag itself H1, H2, etc)
+// =========================================================================
+
+/*
+.rc-text-class {
+    color,       
+    display,     
+    fontFamily,  
+    fontSize,    
+    fontWeight,  
+    margin,      
+    padding,     
+    textAlign
+}
+*/
+
+// -------------------------------
+
+.rc-text-h1-primary {
+    font-size: $font-size-xxlarge - .2rem;
+    color: $greyshade5;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-medium;
+    }
+}
+
+
+.rc-text-h1-white {
+    font-size: $font-size-xxxlarge;
+    color: white;
+}
+
+// -------------------------------
+
+.rc-text-h2-primary {
+    font-size: $font-size-large;  /* primary uses the default color */
+    color: $greyshade5;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-small;
+    }
+}
+
+.rc-text-h2 {
+    font-size: $font-size-xxlarge;
+    // color: white;
+}
+
+.rc-text-h2-white {
+    font-size: $font-size-xxlarge;
+    color: white;
+}
+
+
+// =========================================================================
+/* Paragraph classes */
+// =========================================================================
+.rc-p-xlarge {
+    font-size: $font-size-xlarge;
+}
+
+
+.rc-p-xxlarge {
+    font-size: $font-size-xxlarge;
+}
+
+
+// =========================================================================
+/* Text Alignment options */
+// =========================================================================
+.rc-text-align-center {
+    text-align: center;
+}
+
+.rc-text-align-center-hv {
+    text-align: center;
+    vertical-align: center;
+}
+
+.rc-text-align-left {
+    text-align: left;
+}
+
+//  !!!!! I M P O R T A N T   !!!!!
+//  BECAUSE THERE CAN BE A NUMBER OF VARIATIONS OF SPACERS I  STARTED TO USE MIXINS. 
+//  INSTEAD OF CALLING THEM SPACERS, I STARTED CALLING WHAT THEY ARE (eg. margin-top)
+//  DO NOT USE - the classes called horiz or vert spaces. Use classes with actual name.
+//  I should clean up the space classes when I have time.
+//  *******  Start doing same for other classes ******
+
+// =========================================================================
+/* Margin top Spacers */
+// =========================================================================
+
+/* horizontal spacers these have ratio  100%/60%  */
+
+// This mixin services as a top margin top spacer  template for the various sizes
+@mixin rc-margin-top($mobile, $desktop) {
+    margin-top: $desktop;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: $mobile;
+    }
+}
+
+.rc-margin-top-medium {
+    @include rc-margin-top(4rem, 2.4rem)
+}
+
+
+.rc-horiz-spacer-tiny-minus {
+    margin-top: .6rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: .4rem;
+    }
+}
+
+.rc-horiz-spacer-tiny {
+    margin-top: 1.2rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: .8rem;
+    }
+}
+
+.rc-horiz-spacer-tiny {
+    margin-top: 1.2rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: .8rem;
+    }
+}
+
+// =========================================================================
+/* Margin bottom spacers */
+// =========================================================================
+
+.rc-horiz-spacer-tiny {
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-bottom: .6rem;
+    }
+}
+
+.rc-horiz-spacer-small {
+    margin-bottom: 2rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-bottom: 1.2rem;
+    }
+}
+
+.rc-horiz-spacer-medium {
+    margin-bottom: 3.5rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-bottom: 2.1rem;
+    }
+}
+
+.rc-horiz-spacer-large {
+    margin-bottom: 5rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-bottom: 3rem;
+    }
+}
+
+/* This has an xlarge mobile gutter and negligible (very small)desktop gutter */
+.rc-xlarge-mobile-gutter {
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-bottom: 7rem;
+    }
+}
+
+// =========================================================================
+// Width Modifiers 
+// =========================================================================
+
+.rc-width-80pct {
+    width: 80%;
+}
+
+.rc-width-20rem {
+    width: 20rem;
+}
+
+
+// =========================================================================
+// Device based display classes use displayAd component
+// =========================================================================
+
+/* These classes were created to use specifically with the GoogleAd component. 
+   You would have to evaluate if they can be used for other use cases, especially
+   since desktop deviate from standard size, as noted below    */
+
+
+.display-on-mobile {
+    display: none;
+
+    // @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    @media only screen and (max-width: 768px) {
+        display: block;
+    } 
+}
+
+/* tablet only accounts for the ipad and ipad prod */
+.display-on-tablet {
+    display: none;
+
+    // @media only screen and (min-width: $ipad-min) and (max-width: $ipad-max) {
+    @media only screen and (min-width: 769px) and (max-width: 1200px) {
+        display: block;
+    } 
+}
+
+/* note: for desktop min-width s/d be set to 1024 but between 1024 and 1200 Skyscraper Ads 
+   on right were showing up on bottom of page, so I changed min-width to 1200px */
+.display-on-desktop {
+    display: none;
+
+    @media only screen and (min-width: 1201px)  {
+        display: block;
+    } 
+}

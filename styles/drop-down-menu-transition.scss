@@ -1,0 +1,31 @@
+@import   './settings.scss';
+
+// ***********************************************************************************
+// Note the dropdown menu classes are located in drop-down-menu-transition.css file.
+// There are a set of classes required for CSStransitionGroup that have hyphens.
+// I had to move the classes here so I can include them as  global styles because 
+// the hyphens cannot be used in *.module.sccs file.
+// ***********************************************************************************
+
+
+// **********************************************************
+// CSS transition classes for drop down menu
+// **********************************************************
+.ddmenu-enter {
+    opacity: 0;
+    // transform: scale(0.9);
+}
+
+.ddmenu-enter-active {
+    opacity: 1;
+    // transform: translateX(0);
+    transition: opacity 600ms, transform 600ms;
+}
+.ddmenu-exit {
+    opacity: 1;
+}
+.ddmenu-exit-active {
+    opacity: 0;
+    // transform: scale(0.9);
+    transition: opacity 900ms, transform 900ms;
+}
