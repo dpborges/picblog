@@ -11,6 +11,7 @@ export default function index(props) {
           layout="fill"
           alt={"stacked hands for unity"}
           style ={{ objectFit: 'cover'}}
+          priority='true'
       />
 
       <div className={styles.bannerTextContainer}>

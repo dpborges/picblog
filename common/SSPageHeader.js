@@ -86,19 +86,6 @@ class SSPageHeader extends Component {
       this.setState({ showBurgerMenu: !this.state.showBurgerMenu })
     }
 
-    // Handlers 
-    // closeNavbar() {
-    //     if (window.matchMedia("screen and (max-width: 991px)").matches) {
-    //         document.getElementById("collaspe-btn").click();
-    //     }
-    // }
-
-    // logout = (e) => {
-    //     console.log("INSIDE LOGOUT HANDLER")
-    //     // e.preventDefault();
-    //     this.props.startLogout();  // dispatch logout action
-    // }
-
     render() {
 
         // let { isAuthenticated } = this.props.auth;
@@ -141,37 +128,34 @@ class SSPageHeader extends Component {
                   expand="lg"
                   className="navbar navbar-expand-lg navbar-lightXX bg-lightXX"
                   collapseOnSelect={true}
-                  style={{backgroundColor: 'white !important'}}
+                  style={{backgroundColor: 'white !important', width: '100%'}}
               >
                   <Container style={{backgroundColor: 'white !important'}}>
-                    <div className={styles.pageHeaderContainer}>
-                      <a href={`${siteUrl}`}>
-                          {/*
-                          <img className="ss-page-header__logo" src="/images/pitch-in-club-logo.jpg" alt="Pitch In Club Logo" /> 
-                            <ImgWithFallback className={styles.pageHeaderLogo} src="/images/pitch-in-club-logo.webp" 
-                              fallback="/images/pitch-in-club-logo.jpg" alt="Pitch In Club Logo" >
-                            </ImgWithFallback>
-                          */}
-                          <div className={styles.logoAndTextWrapper}>
-                            <div className={styles.logoContainer}>
-                              <Image src="/images/pitch-in-club-logo.jpg" alt="Pitch In Club Logo" width={65} height={65} />
+                    <div className={styles.pageHeaderContainerWidth}>
+                      <div className={styles.pageHeaderContainer}>
+                        <a href={`${siteUrl}`}>
+                            <div className={styles.logoAndTextWrapper}>
+                              <div className={styles.logoContainer}>
+                                <Image src="/images/pitch-in-club-logo.jpg" alt="Pitch In Club Logo" width={65} height={65} />
+                              </div>
+                              <div className={styles.logoTextContainer}>
+                                <p className={styles.pageHeaderTitle}>PITCH IN <span className={styles.pageHeaderTitlePart2}>CLUB</span> </p>
+                              </div>
                             </div>
-                            <div className={styles.logoTextContainer}>
-                              <p className={styles.pageHeaderTitle}>PITCH IN <span className={styles.pageHeaderTitlePart2}>CLUB</span> </p>
-                            </div>
-                          </div>
-                      </a>
+                        </a>
 
-                      <NavToggle 
-                        component1={BurgerMenuWithCb}
-                        component2={NavLinks}
-                      />
-                    </div>
+                        <NavToggle 
+                          component1={BurgerMenuWithCb}
+                          component2={NavLinks}
+                        />
+                      </div>
+
                       {this.state.showBurgerMenu && (
                         <div className={styles.pageHeaderMobileNavHide} >
                             <NavLinks />
                         </div>
                       )}
+                    </div>
                   </Container>
               </Navbar>
               </div>
