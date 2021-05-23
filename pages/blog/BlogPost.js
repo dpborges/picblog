@@ -11,18 +11,9 @@ import styles from '../../styles/blogdetail.module.scss';
 import getContentMetaData from '../api/contentmgr/getContentMetadata';
 
 const BlogPost = (props) => { 
-   
-  const metadata = {
-    "id": "1234",
-    "title": "Party Planning 101: Calculating Food Serving Sizes for Your Guests",
-    "slug": "calculating-food-serving-sizes-for-your-guests",
-    "cid": "6782",
-    "createDate": "2021-05-21",
-    "updateDate": "2021-05-21",
-    "images": [{"src": "/images/portioned-food-on-table.jpg", "alt": "portioned food on table"}]
-  }
 
-    const { slug } = props;
+  const { slug, metadata, mdxSource } = props;
+  
     const showAd =  getAppConfigParm("showAd");
     const siteUrl = getAppConfigParm("siteUrl");
     const blogUrl = getAppConfigParm("blogUrl");
@@ -50,7 +41,9 @@ const BlogPost = (props) => {
           <div className={styles.topLevelContainer} >
             <div className={styles.blogContainer} >
               <div style={{display: 'flex', flexDirection: 'column', width: '100%'}}>
-                <BlogContent metadata={metadata} showAd={showAd} siteUrl={siteUrl} blogUrl={blogUrl}  />
+                <BlogContent metadata={metadata} mdxSource={mdxSource} 
+                      showAd={showAd} siteUrl={siteUrl} blogUrl={blogUrl}  
+                />
               </div>
               <RightSideAds showAd={showAd} 
                 adList={["medium", "small", "single-medium-rectangle", "single-medium-rectangle"]}

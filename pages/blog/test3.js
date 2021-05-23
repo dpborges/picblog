@@ -3,7 +3,7 @@ import React from 'react';
 import {MDXProvider} from '@mdx-js/react';
 import getContentMetadata from '../api/contentmgr/getContentMetadata';
 import { shortMonthName, dayOfMonth } from '../../utils/date';
-import Content from '../../markdown/test.mdx';
+import Content from '../../markdown/post-calc-food.mdx';
 
 import styles from '../../styles/blogdetail.module.scss';
 

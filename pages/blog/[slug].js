@@ -6,6 +6,7 @@ import SSPageHeader from '../../common/SSPageHeader';
 import BlogPost from "./BlogPost";                                /* #nbchange */
 import Footer from "../../common/RosyFooter";
 import getContentMetaData from '../api/contentmgr/getContentMetadata';
+import getContent from '../api/contentmgr/getContent';
 
 //************************************************************************************ 
 // Renders blog post using NextJs SSG 
@@ -31,10 +32,7 @@ class BlogPage extends Component {
 
   
     render() {
-      console.log(`>> Inside [slug].js`);
-
-      const { slug, metadata } = this.props;
-      // console.log(metadata)
+      const { slug, metadata, mdxSource } = this.props;
 
       /* used when setting getStaticPaths fallback to true. This check is not needed if fallback 
         is set to 'blocking'. */
@@ -48,7 +46,7 @@ class BlogPage extends Component {
           <React.Fragment>
               <SSPageHeader />
               
-              <BlogPost slug={slug} metadata={this.props.metadata} />                                     
+              <BlogPost slug={slug} metadata={this.props.metadata} mdxSource={mdxSource} />                                     
               
               <Footer />  
           </React.Fragment>
@@ -66,30 +64,29 @@ export async function getStaticProps(context) {
   const { slug } = context.params;
   console.log(`slug : ${slug}`)
 
-  // const filePath = path.join(process.cwd(), 'data', 'readme.txt')  /* cwd returns project folder */
-  // const filedata = await fs.readFile(filePath, "utf-8");
-  // console.log("This is readme file contents: ", filedata)
-
-  // const { title } =  getContentMetadata("","calculating-food-serving-sizes-for-your-guests");
-  const metadata = await getContentMetaData(slug);
+  const metadata  = await getContentMetaData(slug);
+  const mdxSource = await getContent(metadata.cid);
+  // const rawMdx = await getContent(metadata.cid);
+  // console.log("this is raw mdx")
+  // console.log(rawMdx)
+  // const mdxSource = '# Some ** mdx** text, with a component';
+  // const mdxSource = await serialize(source)
   
-  //Boilerplate code for returning a 404 or redirecting user to another page
-  // If problem fetching data, you can return a 404 instead
-  // let hadProblem1 = false; 
-  // if (hadProblem1) {
-  //   return { notFound: true };
-  // }
+  /* return 404 if  no metadata found for slug */
+  if (!metadata) {
+    return { notFound: true };
+  }
 
-  // If had some other problem, you redirect user to another page
-  // let hadProblem2 = false; 
-  // if (hadProblem2) {
+  /* used to redirect */
+  // if (haveProblem) {
   //   return { redirect: '/some/path' };
   // }
   
   // Render your page
   return { 
     props: {
-      metadata
+      metadata,
+      mdxSource
     }, 
     revalidate: 900
   };
@@ -102,44 +99,30 @@ export async function getStaticProps(context) {
 // property) that contains the dynamic segment id name (eg. slug) and their value. Use
 // this list for prominents posts. For other post you can set fallback to true which 
 // will render pages, not on the list, in just-in-time fashion (at time of request).
-// If fallback is set to true, next may take some to time to load data. It is highly
+// If fallback is set to true, nextjs may take some to time to load data. It is highly
 // recommended you show "Loading..." text or spinner until data is available. The
 // alternative is to set fallback: 'blocking', where nextjs will wait for data before
 // showing page and the check to show Loading is not needed.
 //************************************************************************************ 
 export async function getStaticPaths() {
-  // const metadata = await getContentMetaData()
+  console.log(">> Inside getStaticPaths");
+
+  const metadataArray = await getContentMetaData();
+
+  // generate paths; paths is an array of ojects structured as follows:
+  // { params: {<your dynamic segment id: "dynamic segment id value"} }
+  const generatedPaths =  metadataArray.map((metadata) => {
+    return {params: {slug: metadata.slug}}
+  });
+
+  console.log("Generated paths");
+  console.log(JSON.stringify(generatedPaths,null,2));
 
   return {
-    paths: [
-      { params: {slug: "calculating-food-serving-sizes-for-your-guests"} }
-      // { params: {slug: "second-example} }
-    ],
+    paths: generatedPaths,
     fallback: true
   }
 
 }
-
-
-// async function getContentMetaData() {
-//   // const getContentMetadata = (slug="") => {
-  
-//     // const filePath = path.join(process.cwd(), 'data', 'contentmetadata.json')  /* cwd returns project folder */
-//     // const filedata = await fs.readFile(filePath, "utf-8");
-//     // console.log("This is readme file contents: ", filedata)
-  
-//     return {
-//       id: '1234',
-//       title: 'Party Planning 101: Calculating Food Serving Sizes for Your Guests',
-//       slug: "calculating-food-serving-sizes-for-your-guests",
-//       cid: '6782',
-//       createDate: "2021-05-21",
-//       updateDate: "2021-05-21",
-//       images: [{src: "/images/portioned-food-on-table.jpg", alt: "portioned food on table"}]
-//     }
-  
-// }
-  
-
 
 export default BlogPage;                                              

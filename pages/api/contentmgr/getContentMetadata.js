@@ -2,11 +2,9 @@
 import fs from 'fs';
 import path from 'path';
 
-// function used to ultimately use graphql to query the conent metadata, 
-// get content id (cid) and return the markdown. Until I 
+// Function returns the metadata for a given slug (aka blogpost)
+// If no parameter is provided, it returns all metadata, as array.
 export default async function getContentMetaData(slug) {
-   console.log(">> Inside getContentMetadata")
-   console.log("   slug outside promise: ", slug);
 
   return new Promise (
     function resolver(resolve, reject) {
@@ -18,12 +16,13 @@ export default async function getContentMetaData(slug) {
            reject(err)
            return;
           }
-         console.log('File data')
-         console.log(data);
-         let metadataObj = JSON.parse(data); /* convert to javascript object */
-         let slugMetadata = metadataObj.find((contentmetada) => contentmetada.slug === slug);
-         console.log("This is slug's md ", slugMetadata);
-         resolve(slugMetadata);
+          
+         let metadataArray = JSON.parse(data); /* convert to javascript object */
+         let blogMetadata = !slug 
+                ? metadataArray 
+                : metadataArray.find((contentmetada) => contentmetada.slug === slug);
+                
+         resolve(blogMetadata);
       });
     }
   )
