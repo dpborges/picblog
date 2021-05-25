@@ -36,7 +36,6 @@
 }
 
 
-
 /* used to specifiy viewport width for blog-details on mobile devices */ 
 .blogDetailViewportWidth {
   @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
@@ -62,7 +61,6 @@ ul > li.squareBullet {
         text-decoration: none;
     }
 }
-
 
 .blueAnchor {
   text-decoration: none;
@@ -100,37 +98,63 @@ ul > li.squareBullet {
   padding: 0 4% 0;  /* same padding s/d be used in h2tag and h3Tag */
 }
 
-.blog-list-item {
-    list-style-type: none;
-    list-style-position: outside;
-    
+.blogListItemsContainer {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
 }
+
+.blogListItem {
+  list-style-type: none;
+  list-style-position: outside;
+}
+
 .blog-list-item-with-circle {
-    list-style-type: circle;
-    margin-left: 1rem;
+  list-style-type: circle;
+  margin-left: 1rem;
 }
 
 /* This class was add to reduce size of font for title on media devices */
-.blog-list-title {
-    padding-top: 22px;
+.blogListTitle {
+  font-size: 24px;
+  padding-top: 22px;
+  color: #626262;
+  font-weight: 400;
 
-    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
-      font-size: $font-size-small;
-      padding: 0 3px;
-    } 
+  &:hover {
+    color: $orange;
+  }
+
+  @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    font-size: $font-size-small;
+    padding: 0 3px;
+  } 
+}
+
+.blogListImageStyle {
+  max-width: 555px;
+  // width: 100%;
+  max-height: 292px;
+  transition: transform 1s;
+  margin: 0 auto;
+  transform: scale(1.1);
+
+  &:hover {
+    transform: scale(1);
+  }
 }
 
 .blogDetailTitle {
-    color: $greyshade5;
-    font-size: $font-size-large + .2rem;
-    margin-top: 0;
-    padding-top: 1rem;
-    font-weight: 400;
-    line-height: 2.2rem;
-    
-    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
-      font-size: $font-size-medium;
-    } 
+  color: $greyshade5;
+  font-size: $font-size-large + .2rem;
+  margin-top: 0;
+  padding-top: 1rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  
+  @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    font-size: $font-size-medium;
+  } 
 }
 
 
@@ -138,8 +162,8 @@ ul > li.squareBullet {
    space to right side of content when scaling down to mobile devices */
 .rightSideAds {
   // @media only screen and (max-width: 1200px) {
-    @media only screen and (min-width: $mobile-min) and (max-width: 1024px) {
-      display: none;
-    } 
+  @media only screen and (min-width: $mobile-min) and (max-width: 1024px) {
+    display: none;
+  } 
 }
 

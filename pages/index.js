@@ -7,6 +7,7 @@ export default function Home() {
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
+        <script type="text/javascript" src="/static/bundle-v132.js"></script>
       </Head>
 
       <main className={styles.main}>

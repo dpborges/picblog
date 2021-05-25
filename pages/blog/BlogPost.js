@@ -6,9 +6,9 @@ import PageBanner from './subcomponents/PageBanner';
 import MobileAd from './subcomponents/MobileAd';
 import BlogContent from './subcomponents/BlogContent';
 import RightSideAds from './subcomponents/RightSideAds';
+import getContentMetaData from '../api/contentmgr/getContentMetadata';
 
 import styles from '../../styles/blogdetail.module.scss';
-import getContentMetaData from '../api/contentmgr/getContentMetadata';
 
 const BlogPost = (props) => { 
 

@@ -38,7 +38,7 @@ const components = {
 export default (props) => {
   // console.log(`>> Inside BlogContent.js`);
   // console.log(`props.metadata ${JSON.stringify(props.metadata)}`)
-  let { title, createDate, images  } =  props.metadata;
+  let { title, createDate, images, excerpt  } =  props.metadata;
   let { mdxSource, showAd  } = props;
 
   let month = shortMonthName(new Date(createDate));
@@ -49,7 +49,7 @@ export default (props) => {
   let otherComponents = {
     MobileAd:  () => <MobileAd showAd={showAd} adStyle={adStyle} />,
     BlogImage: () => <BlogImage src={images[0].src} alt={images[0].alt} />,
-    BlogInfo: () => <BlogInfo title={title} month={month} day={day} />
+    BlogInfo: () => <BlogInfo title={title} month={month} day={day}  />
   }
 
   return (

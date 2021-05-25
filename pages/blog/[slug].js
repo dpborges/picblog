@@ -36,8 +36,7 @@ class BlogPage extends Component {
 
       /* used when setting getStaticPaths fallback to true. This check is not needed if fallback 
         is set to 'blocking'. */
-      let serverSideDataAvailable = true;
-      if (!serverSideDataAvailable) {
+      if (!metadata) {
         return <div>Loading...</div>
       }
 
@@ -45,9 +44,9 @@ class BlogPage extends Component {
         <div>
           <React.Fragment>
               <SSPageHeader />
-              
-              <BlogPost slug={slug} metadata={this.props.metadata} mdxSource={mdxSource} />                                     
-              
+
+              <BlogPost slug={slug} metadata={metadata} mdxSource={mdxSource} />                                                   
+
               <Footer />  
           </React.Fragment>
         </div>
@@ -65,17 +64,14 @@ export async function getStaticProps(context) {
   console.log(`slug : ${slug}`)
 
   const metadata  = await getContentMetaData(slug);
-  const mdxSource = await getContent(metadata.cid);
-  // const rawMdx = await getContent(metadata.cid);
-  // console.log("this is raw mdx")
-  // console.log(rawMdx)
-  // const mdxSource = '# Some ** mdx** text, with a component';
-  // const mdxSource = await serialize(source)
+  console.log("metadata: ", JSON.stringify(metadata));
   
   /* return 404 if  no metadata found for slug */
   if (!metadata) {
     return { notFound: true };
   }
+  /* get mdxSource only if metadata exists for given content (eg.slug) */
+  const mdxSource = await getContent(metadata.cid);
 
   /* used to redirect */
   // if (haveProblem) {
@@ -88,7 +84,7 @@ export async function getStaticProps(context) {
       metadata,
       mdxSource
     }, 
-    revalidate: 900
+    revalidate: 900,
   };
 
 }
@@ -107,9 +103,9 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   console.log(">> Inside getStaticPaths");
 
-  const metadataArray = await getContentMetaData();
+  const metadataArray = await getContentMetaData();  /* retruns all metadata objects */
 
-  // generate paths; paths is an array of ojects structured as follows:
+  // generatedPaths returns an array of ojects structured as follows:
   // { params: {<your dynamic segment id: "dynamic segment id value"} }
   const generatedPaths =  metadataArray.map((metadata) => {
     return {params: {slug: metadata.slug}}

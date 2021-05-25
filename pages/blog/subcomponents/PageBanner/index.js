@@ -8,10 +8,11 @@ export default function index(props) {
     <div className={styles.bannerContainer}>
       
       <Image src={"/images/stacked-hands-for-unity.jpg"} 
-          layout="fill"
           alt={"stacked hands for unity"}
+          layout="fill"
           style ={{ objectFit: 'cover'}}
           priority='true'
+          quality='90'
       />
 
       <div className={styles.bannerTextContainer}>
