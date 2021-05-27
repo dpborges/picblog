@@ -1,8 +1,9 @@
 [
   {
-    "id": "1234",
+    "id": "0001",
     "title": "Party Planning 101: Calculating Food Serving Sizes for Your Guests",
     "slug": "calculating-food-serving-sizes-for-your-guests",
+    "path": "/blog/calculating-food-serving-sizes-for-your-guests",
     "cid": "post-calc-food",
     "createDate": "2021-05-21",
     "updateDate": "2021-05-21",
@@ -10,9 +11,10 @@
     "images": [{"src": "/images/portioned-food-on-table.jpg", "alt": "portioned food on table"}]
   },
   {
-    "id": "2334",
+    "id": "0002",
     "title": "How to Make Post-Party Cleanup a Snip: 5 Useful Tips",
     "slug": "how-to-make-post-party-cleanup-a-snip",
+    "path": "/blog/how-to-make-post-party-cleanup-a-snip",
     "cid": "post-party-cleanup-tips",
     "createDate": "2021-01-26",
     "updateDate": "2021-01-26",
@@ -20,9 +22,10 @@
     "images": [{"src": "/images/people-toasting-at-table-with-food.jpg", "alt": "people toasting at table with food"}]
   },
   {
-    "id": "2335",
+    "id": "0003",
     "title": "5 Expert Tips for Delegating Tasks",
     "slug": "tips-for-delegating-tasks",
+    "path": "/blog/5-expert-tips-for-delegating-tasks",
     "cid": "tips-for-delegating-tasks",
     "createDate": "2020-12-28",
     "updateDate": "2020-12-28",
@@ -30,9 +33,10 @@
     "images": [{"src": "/images/event-meeting-around-calender.jpg", "alt": "event meeting around calender"}]
   },
   {
-    "id": "2336",
+    "id": "0004",
     "title": "Outdoor Events: Everything You Need to Consider",
     "slug": "outdoor-events-everything-you-need-to-consider",
+    "path": "/blog/outdoor-events-everything-you-need-to-consider",
     "cid": "outdoor-event-considerations",
     "createDate": "2020-08-25",
     "updateDate": "2020-08-25",
@@ -40,9 +44,10 @@
     "images": [{"src": "/images/table-setting-for-outdoor-event.jpg", "alt": "table setting for outdoor event"}]
   },
   {
-    "id": "2337",
+    "id": "0005",
     "title": "How to Throw a Housewarming Party",
     "slug": "how-to-throw-a-housewarming-party",
+    "path": "/blog/how-to-throw-a-housewarming-party",
     "cid": "house-warming-party",
     "createDate": "2020-08-18",
     "updateDate": "2020-08-18",
@@ -50,9 +55,10 @@
     "images": [{"src": "/images/excited-woman-with-wine-bottle.jpg", "alt": "excited woman with wine bottle"}]
   },
   {
-    "id": "2338",
+    "id": "0006",
     "title": "Group Event Planning For Beginners",
     "slug": "group-event-planning-for-beginners",
+    "path": "/blog/group-event-planning-for-beginners",
     "cid": "group-event-planning",
     "createDate": "2020-08-08",
     "updateDate": "2020-08-08",

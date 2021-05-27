@@ -16,14 +16,14 @@ export default async function getContentMetaData(slug) {
             reject(err)
             return;
           }
-          console.log("This is data from file ", data)       
+          // console.log("This is data from file ", fileContents)       
           let metadataArray = JSON.parse(fileContents); /* convert to javascript object */
           let blogMetadata = !slug 
                   ? metadataArray 
                   : metadataArray.find((contentmetada) => contentmetada.slug === slug);
             
-          console.log("This is metadata array returned from getContentMetadata")       
-          console.log(blogMetadata);
+          // console.log("This is metadata array returned from getContentMetadata")       
+          // console.log(blogMetadata);
           if (!blogMetadata)  {console.log("metadata is undefined")}      
           resolve(blogMetadata);
       });

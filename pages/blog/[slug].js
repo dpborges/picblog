@@ -8,6 +8,7 @@ import Footer from "../../common/RosyFooter";
 import getContentMetaData from '../api/contentmgr/getContentMetadata';
 import getContent from '../api/contentmgr/getContent';
 
+
 //************************************************************************************ 
 // Renders blog post using NextJs SSG 
 // input:  slug prop , passed in as the dynamic segment id
@@ -103,11 +104,13 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   console.log(">> Inside getStaticPaths");
 
-  const metadataArray = await getContentMetaData();  /* retruns all metadata objects */
+  const metadataArray = await getContentMetaData();  /* returns all metadata objects */
+  console.log("   this is metadataArray: ", metadataArray)
 
   // generatedPaths returns an array of ojects structured as follows:
   // { params: {<your dynamic segment id: "dynamic segment id value"} }
   const generatedPaths =  metadataArray.map((metadata) => {
+    console.log("   slug inside getStaticPaths: ", metadata.slug)
     return {params: {slug: metadata.slug}}
   });
 

@@ -51,6 +51,7 @@ const BlogPost = (props) => {
               />
             </div>
           </div>
+          
       </React.Fragment>
     </div>
     )
