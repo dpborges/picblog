@@ -2,6 +2,7 @@ import React from 'react';
 import { chunk } from 'lodash';
 import { getMetadataList, sortyByStringProp, getItemsForPage, buildHrefsForPages, getPageLinks} from '../utils/pagination';
 import { getDbCount } from '../utils/db';
+import { wordCount } from '../utils/content';
 
 export default function Pagination(props) {
   let { hrefList, pageItems } = props;
@@ -41,6 +42,7 @@ export async function getStaticProps(context) {
     props: {
       hrefList,
       pageItems
+
     } 
   };
 

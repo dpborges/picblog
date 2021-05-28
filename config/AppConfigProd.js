@@ -14,7 +14,7 @@ const siteUrl = "https://pitchinclub.com";
 // const siteUrl = "https://lb-prod.pitchinclub.com"; 
       
 // url for blog landing page 
-const blogUrl = "https://pitchinclub.com/blog"
+const blogUrl = "https://pitchinclub.com/blog/list/1"
 // const blogUrl = "https://lb-prod.pitchinclub.com/blog"
 
 // Invitation URL for subdomain that hosts invite; 

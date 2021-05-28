@@ -8,7 +8,8 @@
     "createDate": "2021-05-21",
     "updateDate": "2021-05-21",
     "excerpt":  "If you're planning a party, you might not be sure how much food to buy and prepare. Here's how to calculate food serving sizes and get the right amount.",
-    "images": [{"src": "/images/portioned-food-on-table.jpg", "alt": "portioned food on table"}]
+    "images": [{"src": "/images/portioned-food-on-table.jpg", "alt": "portioned food on table"}],
+    "wordCount": 894
   },
   {
     "id": "0002",
@@ -19,18 +20,20 @@
     "createDate": "2021-01-26",
     "updateDate": "2021-01-26",
     "excerpt":  "If you've just had an amazing party, the idea of post-party cleanup might seem daunting. Here's how you can make it a lot easier!",
-    "images": [{"src": "/images/people-toasting-at-table-with-food.jpg", "alt": "people toasting at table with food"}]
+    "images": [{"src": "/images/people-toasting-at-table-with-food.jpg", "alt": "people toasting at table with food"}],
+    "wordCount": 1151
   },
   {
     "id": "0003",
     "title": "5 Expert Tips for Delegating Tasks",
-    "slug": "tips-for-delegating-tasks",
+    "slug": "5-expert-tips-for-delegating-tasks",
     "path": "/blog/5-expert-tips-for-delegating-tasks",
-    "cid": "tips-for-delegating-tasks",
+    "cid": "5-tips-for-delegating",
     "createDate": "2020-12-28",
     "updateDate": "2020-12-28",
-    "excerpt":  "If you've just had an amazing party, the idea of post-party cleanup might seem daunting. Here's how you can make it a lot easier!",
-    "images": [{"src": "/images/event-meeting-around-calender.jpg", "alt": "event meeting around calender"}]
+    "excerpt":  "Learn 5 expert tips for delegating tasks effectively to reach a team goal and build  better relationships.",
+    "images": [{"src": "/images/event-meeting-around-calender.jpg", "alt": "event meeting around calender"}],
+    "wordCount": 552
   },
   {
     "id": "0004",
@@ -41,7 +44,8 @@
     "createDate": "2020-08-25",
     "updateDate": "2020-08-25",
     "excerpt":  "When it comes to outdoor events there are a lot of things that you need to consider. The weather will no doubt be a huge factor. Find out more here.",
-    "images": [{"src": "/images/table-setting-for-outdoor-event.jpg", "alt": "table setting for outdoor event"}]
+    "images": [{"src": "/images/table-setting-for-outdoor-event.jpg", "alt": "table setting for outdoor event"}],
+    "wordCount": 1036
   },
   {
     "id": "0005",
@@ -52,7 +56,8 @@
     "createDate": "2020-08-18",
     "updateDate": "2020-08-18",
     "excerpt":  "When you move into your new home you're going to want to show it off. A house warming party is the perfect way. Here's how to host the perfect party.",
-    "images": [{"src": "/images/excited-woman-with-wine-bottle.jpg", "alt": "excited woman with wine bottle"}]
+    "images": [{"src": "/images/excited-woman-with-wine-bottle.jpg", "alt": "excited woman with wine bottle"}],
+    "wordCount": 1040
   },
   {
     "id": "0006",
@@ -63,7 +68,91 @@
     "createDate": "2020-08-08",
     "updateDate": "2020-08-08",
     "excerpt":  "Planning a group event such as a camping trip takes a lot of organization. What exactly do you need to consider and plan for?",
-    "images": [{"src": "/images/three-woman-planning-trip.jpg", "alt": "three woman planning trip"}]
+    "images": [{"src": "/images/three-woman-planning-trip.jpg", "alt": "three woman planning trip"}],
+    "wordCount": 634
+  },
+  {
+    "id": "0007",
+    "title": "The Basics of Volunteer Event Planning",
+    "slug": "the-basics-of-volunteer-event-planning",
+    "path": "/blog/the-basics-of-volunteer-event-planning",
+    "cid": "the-basics-of-volunteer",
+    "createDate": "2020-08-03",
+    "updateDate": "2020-08-03",
+    "excerpt":  "Managing a team of volunteers can be a challenge, and volunteer event planning even more so. Here's everything you need to know before planning your event.",
+    "images": [{"src": "/images/four-volunteers-standing-together.jpg", "alt": "four volunteers standing together"}],
+    "wordCount": 493
+  },
+  {
+    "id": "0008",
+    "title": "How to Plan a Watch Party",
+    "slug": "how-to-plan-a-watch-party",
+    "path": "/blog/blog/how-to-plan-a-watch-party",
+    "cid": "how-to-plan-watch-party",
+    "createDate": "2020-07-28",
+    "updateDate": "2020-07-28",
+    "excerpt":  "Are you looking to host the perfect watch party? Getting everything perfect will mean that you and the other guests will have the best time.",
+    "images": [{"src": "/images/adults-watching-television.jpg", "alt": "adults watching television"}],
+    "wordCount": 540
+  },
+  {
+    "id": "0009",
+    "title": "How to Plan the Perfect Church Events",
+    "slug": "how-to-plan-the-perfect-church-events",
+    "path": "/blog/how-to-plan-the-perfect-church-events",
+    "cid": "post0009",
+    "createDate": "2020-07-21",
+    "updateDate": "2020-07-21",
+    "excerpt":  "Planning church events takes careful planning and consideration. You may need the support of others in your community too.",
+    "images": [{"src": "/images/man-daughter-fashioning-kilt.jpg", "alt": "man and daughter fashioning kilt"}],
+    "wordCount": 540
+  },
+  {
+    "id": "0010",
+    "title": "Party Planning 101: Everything You Need to Know",
+    "slug": "party-planning-101-everything-you-need-to-know",
+    "path": "/blog/party-planning-101-everything-you-need-to-know",
+    "cid": "post0010",
+    "createDate": "2020-07-18",
+    "updateDate": "2020-07-18",
+    "excerpt":  "Party planning takes the right level of planning and organization. But what exactly do you need to know before planning the perfect party?",
+    "images": [{"src": "/images/dance-party.jpg", "alt": "group of friends dancing"}],
+    "wordCount": 520
+  },
+  {
+    "id": "0011",
+    "title": "Getting Help with your Farewell Party Preparation",
+    "slug": "getting-help-with-your-farewell-party-preparation",
+    "path": "/blog/getting-help-with-your-farewell-party-preparation",
+    "cid": "post0011",
+    "createDate": "2020-07-14",
+    "updateDate": "2020-07-14",
+    "excerpt":  "Throwing a farewell party is the perfect way to commemorate a retirement, celebrate a once-in-a-lifetime vacation, or say goodbye. Here is how to get some help.",
+    "images": [{"src": "/images/group-of-friends-toasting.jpg", "alt": "group of friends toasting"}],
+    "wordCount": 520
+  },
+  {
+    "id": "0012",
+    "title": "8 Tips for Planning a Music Event for Beginners",
+    "slug": "8-tips-for-planning-music-event-for-beginners",
+    "path": "/blog/8-tips-for-planning-music-event-for-beginners",
+    "cid": "post0012",
+    "createDate": "2020-07-06",
+    "updateDate": "2020-07-06",
+    "excerpt":  "If you have an idea for a music-focused event, you need a guide on how to make it a reality. Here are tips for planning a music event for beginners.",
+    "images": [{"src": "/images/band-instruments-on-stage.jpg", "alt": "band-instruments-on-stage"}],
+    "wordCount": 1015
+  },
+  {
+    "id": "0013",
+    "title": "7 Tips For Saving Money when Throwing a Sports Party",
+    "slug": "7-tips-for-saving-money-when-throwing-a-sports-party",
+    "path": "/blog/7-tips-for-saving-money-when-throwing-a-sports-party",
+    "cid": "post0013",
+    "createDate": "2020-07-02",
+    "updateDate": "2020-07-02",
+    "excerpt":  "If you want to host a party for a sporting event, certain decisions can help you meet a budget. Here are tips for saving money when throwing a sports party.",
+    "images": [{"src": "/images/beer-and-snacks-on-wooden-table.jpg", "alt": "beer and snacks on wooden table"}],
+    "wordCount": 896
   }
-
 ]

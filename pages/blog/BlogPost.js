@@ -7,19 +7,20 @@ import MobileAd from './subcomponents/MobileAd';
 import BlogContent from './subcomponents/BlogContent';
 import RightSideAds from './subcomponents/RightSideAds';
 import getContentMetaData from '../api/contentmgr/getContentMetadata';
+import getRightSizeAdSize from './helpers/getRightSideAdSize';
 
 import styles from '../../styles/blogdetail.module.scss';
 
 const BlogPost = (props) => { 
 
-  const { slug, metadata, mdxSource } = props;
-  
+    const { slug, metadata, mdxSource } = props;
+
     const showAd =  getAppConfigParm("showAd");
     const siteUrl = getAppConfigParm("siteUrl");
     const blogUrl = getAppConfigParm("blogUrl");
-    // const metadata = getContentMetaData();
-    console.log(`>>Inside Blog Post`)
-    // console.log(`   metadata: ${metadata}`)
+
+    const wordCount = metadata.wordCount;
+    let adListSize  = getRightSizeAdSize(wordCount);
 
     return (
     <div>
@@ -46,7 +47,7 @@ const BlogPost = (props) => {
                 />
               </div>
               <RightSideAds showAd={showAd} 
-                adList={["medium", "small", "single-medium-rectangle", "single-medium-rectangle"]}
+                adList={adListSize}
                 style={{width: '300px'}} 
               />
             </div>

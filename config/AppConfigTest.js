@@ -11,7 +11,7 @@ const picUrl  = "https://test-appapi.pitchinclub.com";
 const siteUrl = "https://test.pitchinclub.com"; 
 
 // url for blog landing page 
-const blogUrl = "https://test.pitchinclub.com/blog"
+const blogUrl = "https://test.pitchinclub.com/blog/list/1"
 
 // Function to get parm values
 export default (parmName, token) => {

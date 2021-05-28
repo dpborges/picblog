@@ -8,7 +8,6 @@ import Footer from "../../common/RosyFooter";
 import getContentMetaData from '../api/contentmgr/getContentMetadata';
 import getContent from '../api/contentmgr/getContent';
 
-
 //************************************************************************************ 
 // Renders blog post using NextJs SSG 
 // input:  slug prop , passed in as the dynamic segment id
@@ -73,6 +72,11 @@ export async function getStaticProps(context) {
   }
   /* get mdxSource only if metadata exists for given content (eg.slug) */
   const mdxSource = await getContent(metadata.cid);
+  let textArray = mdxSource.split(' ');
+  let wordCount = textArray.length;
+  console.log("== w == w == w == w == w == w == w == w")
+  console.log(`Wordcount: "${slug}" =>  ${wordCount}`)
+  console.log("== w == w == w == w == w == w == w == w")
 
   /* used to redirect */
   // if (haveProblem) {
@@ -83,7 +87,7 @@ export async function getStaticProps(context) {
   return { 
     props: {
       metadata,
-      mdxSource
+      mdxSource,
     }, 
     revalidate: 900,
   };
