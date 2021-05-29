@@ -20,7 +20,7 @@ const RosyFooter = (props) => {
                     <ul className="rosy-footer-icon-list">
                         <li className="rosy-footer-text">Follow Us On:</li>
                         <li>
-                          <a href="https://www.facebook.com/pitchinclub"  style={{}}>
+                          <a href="https://www.facebook.com/pitchinclub" >
                           <FontAwesomeIcon icon={["fab", "facebook-f"]}  className={styles.facebookIcon}  />
                           </a>
                         </li>

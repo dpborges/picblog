@@ -41,8 +41,8 @@ export default (props) => {
   let { title, createDate, images, excerpt  } =  props.metadata;
   let { mdxSource, showAd  } = props;
 
-  let month = shortMonthName(new Date(createDate));
-  let day   = dayOfMonth(new Date(createDate));
+  let month = shortMonthName(new Date(createDate + "T09:00:00Z"));
+  let day   = dayOfMonth(new Date(createDate + "T09:00:00Z"));
 
   const adStyle = {forTablet: {marginTop: '3rem'}, forMobile: {marginTop: '3rem'}};
 
