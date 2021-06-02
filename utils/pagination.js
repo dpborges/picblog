@@ -2,15 +2,14 @@ import getContentMetaData from '../pages/api/contentmgr/getContentMetadata';
 
 // **************************************************************************
 // I have outlined a functional approach to doing pagination in a google 
-// spreadsheet.... starting out with defining functions needed and later 
-// I would be looking to  wrap these up in R.compose 			
+// spreadsheet (in google docs). Started out by defining functions needed for 
+// current implementation. I would be looking to wrap these up in R.compose in future 			
 // **************************************************************************
 
 let PAGE_LIMIT = 2;
 
-
 // **************************************************************************
-// IMPORTANT: Below are the functional components. Go to end to see main 
+// IMPORTANT: Below are the functional components. At end of file see main 
 // function called getPaginationHrefList.
 // **************************************************************************
 
@@ -103,14 +102,18 @@ export async function getPageLinks(idList) {
 
   let totalItems = localIdList.length;
 
+  /* create a paginated list of items */ 
   let numPages =  Math.ceil(totalItems / PAGE_LIMIT);
   console.log('   numPages: ', numPages);
   let paginatedList = chunk(idList, PAGE_LIMIT)
   
+  /* initialize page no */
   let pageno = 1;
 
+  /* get the items for given pageno */
   let singlePage = getItemsForPage(paginatedList, pageno)
  
+  /* build a list of hrefs for the paginated list, using "/blog" as base href url */
   let hrefList = buildHrefsForPages("/blog", paginatedList);
   console.log("    hrefList ", hrefList);
 }

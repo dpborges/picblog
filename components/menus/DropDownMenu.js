@@ -207,7 +207,7 @@ export class DropDownMenu extends React.Component {
         <div className={styles.dropDownContainer}>
             <div className={headerClass} onClick={() => this.toggleList()}  onMouseOver = {()=>{} /*this.showDropDown*/}  >
                 {displayCount === "no" &&  <div className={`${styles.dropDownTitle} ${styles.ddPageHeaderNavlink}`}>{title}</div>}
-                {displayCount === "selected" && <div className={`${styles.dropDownTitle} ${styles.ddPageHeaderNavlink}`}>{title}&nbsp;{numSelected === 0 ? '' : `(${numSelected})`}</div>}
+                {displayCount === "selected" && <div className={`${styles.dropDownTitle} ddPageHeaderNavlink}`}>{title}&nbsp;{numSelected === 0 ? '' : `(${numSelected})`}</div>}
                 {displayCount === "all" &&  <div className={`${styles.dropDownTitle} ${styles.ddPageHeaderNavlink}`}>{title}&nbsp;{list.length === 0 ? '' : `(${list.length})`}</div>}
                 <div>{this.showUpDownArrow(upDownArrow)}</div>
             </div>

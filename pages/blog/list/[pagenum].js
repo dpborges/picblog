@@ -125,14 +125,15 @@ const BlogListPage =  (props) =>  {
 }
 
 // *********************************************************************************
-// getStatic props returns an a array of links used for building navigation component
-// and an array of metadata objects needed to render the page items.
+// getStatic props returns an a array of links (hrefs) used for rendering navigation 
+// component and an array of metadata objects needed to render the page items for the 
+// given page number passed in as pagenum.
 // *********************************************************************************
 export async function getStaticProps(context) {
   console.log('>> Inside getStaticProps')
 
   const { id } = context.params;
-  let PAGE_NUM   = id;  /* use id as page num */
+  let PAGE_NUM   = pagenum;  /* use id as page num */
 
   /* set page limit (aka items per page) */
   let PAGE_LIMIT = 2;
@@ -144,8 +145,8 @@ export async function getStaticProps(context) {
   /* sort metadata array by given property and specified order */
   sortyByStringProp(metadataList, 'createDate', 'desc'); /* modifies original array */
 
-  let numPages =  Math.ceil(totalItems / PAGE_LIMIT); /* Calculate number of pages*/
-  let paginatedList = chunk(metadataList, PAGE_LIMIT);  /* create a paginated list based on PAGE_LIMIT */
+  let numPages =  Math.ceil(totalItems / PAGE_LIMIT);    /* Calculate number of pages*/
+  let paginatedList = chunk(metadataList, PAGE_LIMIT);   /* create a paginated list based on PAGE_LIMIT */
     
   let blogItems = getItemsForPage(paginatedList, PAGE_NUM); /* get item for a single page */
  
@@ -181,6 +182,10 @@ export async function getStaticPaths() {
     { params: {id: "1"} },
     { params: {id: "2"} },
     { params: {id: "3"} },
+    { params: {id: "4"} },
+    { params: {id: "5"} },
+    { params: {id: "6"} },
+    { params: {id: "7"} }
     // { params: {id: "4"} },
     // { params: {id: "5"} }
   ];

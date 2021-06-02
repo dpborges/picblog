@@ -1,0 +1,39 @@
+@import '../../styles/settings.scss';
+
+/* This is style is common to all link elements */
+.forLink {
+  background-color: $greyshade0;
+  border: 1px solid $greyshade1;
+  color: $greyshade5;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 .25rem;
+
+  &:hover {
+    color: $blue;
+    font-weight: 600;
+  }
+}
+
+.activeLink {
+  color: $blue;
+  font-weight: 600;
+}
+
+/* Sizes are different for page items and for for bookends (Prev and Next) */
+
+/* size for individual items */
+.itemSize {
+  height: 2.2rem;       /* height and line-height must be same to have number centered */
+  line-height: 2.2rem;  /* see comment on height */
+  width:  2.2rem;
+}
+
+/* size for Prev and Next Link */
+.bookendSize {
+  height: 2.2rem;       /* height and line-height must be same to have number centered */
+  line-height: 2.2rem;  /* see comment on height */
+  width:  3.2rem;
+}
+
+
