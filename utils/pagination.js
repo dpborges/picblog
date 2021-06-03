@@ -1,9 +1,51 @@
 import getContentMetaData from '../pages/api/contentmgr/getContentMetadata';
 
 // **************************************************************************
-// I have outlined a functional approach to doing pagination in a google 
-// spreadsheet (in google docs). Started out by defining functions needed for 
-// current implementation. I would be looking to wrap these up in R.compose in future 			
+// To see initial analysis of the functional approach used here, refer to the 
+// pagination google spreadsheet. The functions used here are vanilla..in other words, there is no 
+// currying or composition involved. I would be looking to wrap these up in R.compose 
+// in the future. The primary interface for this utility is called getPageLinks(idList). 
+// It can be found at the bottom of the file.
+//
+// The utility can be described as follows:
+//
+// Input: 
+//    idList - this is an array of objects containing the ids of the items you are 
+//             paginating, along with any other properties you may need to show on a page.
+//             
+// Process:    for getPageLinks(idList)
+//    > Make a local copy of the idList passed in using array spread operator.
+//    > Call sortyByStringProp() to sort localIdList by a string property of choice,
+//         ..in this case, createDate.
+//    > Determine total number of items
+//    > Split array into chunks, which are subarrays, containing the number of items you 
+//        want on each page (PAGE_LIMIT)
+//    > Call buildHrefsForPages() to build a list of hrefs (urls) for each
+//      page. Each url in the list maps to a page that has multiple items.
+//      The number of items on each page is defined by the PAGE_LIMIT
+//
+// Output:
+//    hrefList  - an array of urls associated to each page , for example
+//                ["/blog/list/1", "/blog/list/2", "/blog/list/3", ....]
+//                The array index corresponds to each of the page's url...
+//                idList[0] maps to page 1, idList[1] maps to page 2, etc.
+//
+// Note: the object array, that is passed as input to getPageLinks(), needs to be constructed 
+// from your datasource (eg.database, api, filesystem, etc) first. This maintains
+// a separation from your referentially transparent code from the impure functions (eg. db calls).
+// When you pass array into getPageLinks(idList), it will be split into page chunks. The getPageLinks()
+// function will then return an array of hrefs (aka urls) based on total number of pages.
+// One url for each page.
+// 
+// Future implementation - current implementation constructs the hrefList via one
+// database call. This is fine if you're paginating 10's or couple of 100's of items,
+// but when you need to paginate an entire database it will require a lazu evaluation process
+// where you get first 100 items, build the hrefList, then when user clicks item 101, 
+// you get next 100 items, build the hrefList, and so on. With this approach it would
+// behoove you to push down the sorting and filtering to the database to ensure you're 
+// iterating through the same result, in subsequent iterations, that you used during 
+// the first iteration.
+// 
 // **************************************************************************
 
 let PAGE_LIMIT = 2;
@@ -108,30 +150,30 @@ export async function getPageLinks(idList) {
   let paginatedList = chunk(idList, PAGE_LIMIT)
   
   /* initialize page no */
-  let pageno = 1;
+  // let pageno = 1;
 
   /* get the items for given pageno */
-  let singlePage = getItemsForPage(paginatedList, pageno)
+  // let singlePage = getItemsForPage(paginatedList, pageno)
  
   /* build a list of hrefs for the paginated list, using "/blog" as base href url */
   let hrefList = buildHrefsForPages("/blog", paginatedList);
   console.log("    hrefList ", hrefList);
 }
 
-export async function getPageItems(pageno) {
+// export async function getPageItems(pageno) {
 
-  let PAGE_LIMIT = 2;
+//   let PAGE_LIMIT = 2;
 
-  let idList     = await getMetadataList();
-  let totalItems = await getDbCount(idList);
+//   let idList     = await getMetadataList();
+//   let totalItems = await getDbCount(idList);
 
-  sortyByStringProp(idList, 'createDate', 'desc'); /* modifies original array */
+//   sortyByStringProp(idList, 'createDate', 'desc'); /* modifies original array */
 
 
-  let numPages =  Math.ceil(totalItems / PAGE_LIMIT);
-  let paginatedList = chunk(idList, PAGE_LIMIT)
+//   let numPages =  Math.ceil(totalItems / PAGE_LIMIT);
+//   let paginatedList = chunk(idList, PAGE_LIMIT)
   
-  let singlePage = getItemsForPage(paginatedList, pageno)
+//   let singlePage = getItemsForPage(paginatedList, pageno)
  
-  return singlePage;
-}
+//   return singlePage;
+// }

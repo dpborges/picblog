@@ -100,8 +100,14 @@ ul > li.squareBullet {
 
 .blogListItemsContainer {
   display: flex;
-  flex-direction: column;  
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 10%;
+
+  @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    margin: 0 2%;
+  } 
 }
 
 .blogListItem {

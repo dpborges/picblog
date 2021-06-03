@@ -9,6 +9,7 @@ import BlogImage from '../subcomponents/BlogImage';
 import SSPageHeader from '../../../common/SSPageHeader';
 import PageBanner from '../subcomponents/PageBanner';
 import Footer from "../../../common/RosyFooter";
+import Paginator from "../../Paginator";
 import { faBalanceScale } from '@fortawesome/pro-light-svg-icons';
 import { getMetadataList, sortyByStringProp, getItemsForPage, buildHrefsForPages} from '../../../utils/pagination';
 import { dayOfMonth, shortMonthName } from '../../../utils/date';
@@ -26,10 +27,12 @@ const active = {
 
 // const  Blog = > {
 const BlogListPage =  (props) =>  {
-
-    const { hrefList, blogItems } = props;
-    console.log('hrefList ', JSON.stringify(hrefList,null,2))
-    console.log('blogItems ', JSON.stringify(blogItems,null,2))
+    console.log(">> Inside BlogListPage");
+    
+    const { hrefList, blogItems, curPage } = props;
+    console.log("   curPage in BlogListPage ", curPage);
+    // console.log('hrefList ', JSON.stringify(hrefList,null,2))
+    // console.log('blogItems ', JSON.stringify(blogItems,null,2))
 
     // const { isSticky, elementRef } = useSticky();
 
@@ -45,13 +48,15 @@ const BlogListPage =  (props) =>  {
     }, []);
 
 
-    const blogdata = blogItems.map(( blog, index) => {
+    /* Map over blogItems and create array for each blog item and its associated data */
+    const blogdata = blogItems.map(( blog, index ) => {
 
      let theDay = dayOfMonth(new Date(blog.createDate + "T10:30:00Z"));
      let theMonth = shortMonthName(new Date(blog.createDate + "T10:30:00Z"));
-
+    
      return (
-            <div className="col-md-6 col-lg-6" key={index}>
+          // <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>
+          // {/* <div className="col-md-6 col-lg-6" key={index}> */}
             <div className={styles.blogListItem} style={{maxWidth: '555px', padding: '0 20px 4rem'}}>
                 <Link href={blog.path} className="blog-imgxx" >
                   <a>
@@ -74,11 +79,13 @@ const BlogListPage =  (props) =>  {
                     <p style={{color: '#7F8C8D'}}>{blog.excerpt}</p>
                 </div>
             </div>
-        </div>
+          // </div>
       )
     });
+
+
        
-    //BlogOne loop END
+    // Construct jsx for entirety of the page with Header, page banner, blog items and footer.
     let jsx = (
       <React.Fragment>
         <Head>
@@ -95,32 +102,19 @@ const BlogListPage =  (props) =>  {
           subtitle="Great ideas for making it easier, more enjoyable, and less stressful to organize that special event or function you have in mind." 
         />
 
-        <section id="blog" className="our-blogx main-blog">
-            <div className={styles.blogListItemsContainer} >
-              <div>
-                  <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}} >
-                    { blogdata }
-                  </div>
-                  <div className="pagination-area text-center" style={{display: 'flex', justifyContent: 'center' }}>
-                      <ul className="pagination">
-                          <li><Link href="/blog">{/* <Icofont icon="icofont-simple-left" />*/} Prev</Link></li>
-                          <li><Link href="/blog" style={active}>1</Link></li>
-                          <li><Link href="/blog/2">2</Link></li>
-                          <li><Link href="/blog/3">3</Link></li>
-                          <li><Link href="/blog/4">4</Link></li>
-                          <li><Link href="/blog/5">5</Link></li>
-                            {/* <li><Link href="/#0">3</Link></li>  */}
-                          <li><Link href="/blog/2">Next {/* <Icofont icon="icofont-simple-right" />*/}</Link></li>
-                      </ul>
-                  </div>
-              </div>  
-            </div>
-        </section>
+        <div className={styles.blogListItemsContainer} >
+          { blogdata } 
+        </div>
+
+        <div style={{marginBottom: '6rem'}} >
+          <Paginator displaySize={5} hrefList={hrefList} curPage={curPage}  />
+        </div>
 
         <Footer />
       </React.Fragment>
     );
 
+    /* Return the page's jsx */
     return jsx;    
 }
 
@@ -132,11 +126,8 @@ const BlogListPage =  (props) =>  {
 export async function getStaticProps(context) {
   console.log('>> Inside getStaticProps')
 
-  const { id } = context.params;
+  const pagenum = context.params.id;
   let PAGE_NUM   = pagenum;  /* use id as page num */
-
-  /* set page limit (aka items per page) */
-  let PAGE_LIMIT = 2;
 
   /* Create metadata array of items and obtain count */
   let metadataList     = await getMetadataList();
@@ -151,44 +142,21 @@ export async function getStaticProps(context) {
   let blogItems = getItemsForPage(paginatedList, PAGE_NUM); /* get item for a single page */
  
   let hrefList = buildHrefsForPages("/blog/list", paginatedList);
-  console.log("    hrefList ", hrefList);
+  // console.log("    hrefList ", hrefList);
 
   return { 
     props: {
       hrefList,
-      blogItems
-    } 
-  };
-
+      blogItems,
+      curPage: PAGE_NUM
+    }
+  }
 }
 
+/* getStaticProps will generate a list of ids, 1 thru n, that correspond to the number of pages in our blog */ 
 export async function getStaticPaths() {
-  // console.log(">> Inside getStaticPaths");
 
-  // const metadataArray = await getContentMetaData();  /* returns all metadata objects */
-  // console.log("   this is metadataArray: ", metadataArray)
-
-  // generatedPaths returns an array of ojects structured as follows:
-  // { params: {<your dynamic segment id: "dynamic segment id value"} }
-  // const generatedPaths =  metadataArray.map((metadata) => {
-  //   console.log("   slug inside getStaticPaths: ", metadata.slug)
-  //   return {params: {slug: metadata.slug}}
-  // });
-
-  // console.log("Generated paths");
-  // console.log(JSON.stringify(generatedPaths,null,2));
-
-  let generatedPaths = [
-    { params: {id: "1"} },
-    { params: {id: "2"} },
-    { params: {id: "3"} },
-    { params: {id: "4"} },
-    { params: {id: "5"} },
-    { params: {id: "6"} },
-    { params: {id: "7"} }
-    // { params: {id: "4"} },
-    // { params: {id: "5"} }
-  ];
+  let generatedPaths = await getPageIdPaths();
 
   return {
     paths: generatedPaths,
@@ -198,3 +166,23 @@ export async function getStaticPaths() {
 }
 
 export default BlogListPage;
+
+// *********************************************************************************
+// getStaticProps paths and getStaticPaths helper functions.
+// *********************************************************************************
+
+/* set number of items per page */
+let PAGE_LIMIT = 6;
+
+async function getPageIdPaths() {
+  let metadataList     = await getMetadataList();
+  let totalItems = metadataList.length;
+  let numPages =  Math.ceil(totalItems / PAGE_LIMIT);    /* Calculate number of pages*/
+  let pageIdPaths = [];
+  let pageId = 0;
+  for (let i = 0; i < numPages; i++) {
+    pageId = i + 1; /* add 1 to account for zero base array */
+    pageIdPaths.push({ params: {id: pageId.toString()} })
+  }
+  return pageIdPaths;
+}

@@ -18,7 +18,7 @@ const hrefList =  [
   "/blog/list/13"
 ];
 
-const curPage = 10;
+const curPage = 8;
 
 
 const renderPageItems = (pageItems) => {
