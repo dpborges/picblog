@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import Head from 'next/head';
 import getAppConfigParm  from '../../config/AppConfig';
 import PageBanner from './subcomponents/PageBanner';
-import MobileAd from './subcomponents/MobileAd';
+// import MobileAd from './subcomponents/MobileAd';
 import BlogContent from './subcomponents/BlogContent';
-import RightSideAds from './subcomponents/RightSideAds';
+// import RightSideAds from './subcomponents/RightSideAds';
 import getContentMetaData from '../api/contentmgr/getContentMetadata';
 import getRightSizeAdSize from './helpers/getRightSideAdSize';
 
@@ -37,19 +37,19 @@ const BlogPost = (props) => {
             subtitle="Great ideas for making it easier, more enjoyable, and less stressful to organize that special event or function you have in mind." 
           />
 
-          <MobileAd showAd={showAd} />
+          {/* <MobileAd showAd={showAd} /> */}
           
           <div className={styles.topLevelContainer} >
             <div className={styles.blogContainer} >
-              <div style={{display: 'flex', flexDirection: 'column', width: '100%'}}>
-                <BlogContent metadata={metadata} mdxSource={mdxSource} 
+                <div style={{display: 'flex', flexDirection: 'column', width: '100%'}}>
+                  <BlogContent metadata={metadata} mdxSource={mdxSource} 
                       showAd={showAd} siteUrl={siteUrl} blogUrl={blogUrl}  
-                />
-              </div>
-              <RightSideAds showAd={showAd} 
-                adList={adListSize}
-                style={{width: '300px'}} 
-              />
+                  />
+                </div>
+                {/* <RightSideAds showAd={showAd} 
+                  adList={adListSize}
+                  style={{width: '300px'}} 
+                /> */}
             </div>
           </div>
           

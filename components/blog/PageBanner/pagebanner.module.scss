@@ -1,0 +1,83 @@
+@import '../../../styles/settings.scss';
+
+.bannerContainer {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 5rem;
+
+  @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    height: 225px;
+    margin-bottom: 3.5rem;
+  }
+}
+
+.bannerTextContainer {
+  position: absolute;
+  left: 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  // top: 40%;
+  top: 0;
+  bottom: 0;
+  vertical-align: center;
+
+  // @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+  //   left: 7%;
+  // }
+
+  @media only screen and (min-width: 280px) and (max-width: 1000px) {
+    left: 7%;
+  }
+}
+
+.mainTitle {
+  // position: absolute;
+  color: $orange; 
+  font-weight: bold;
+  font-size: $font-size-xxlarge + 1rem;
+  font-family:   'sans-serif', 'Roboto', 'Lato', 'Arial',;
+  letter-spacing: 2px;
+  
+
+  @media only screen and (min-width: 280px) and (max-width: $mobile-max) {
+    font-size: 2rem;
+  }
+
+  @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    font-size: $font-size-xlarge ;
+    max-width: 50%;
+    line-height: 26px;
+  }
+  @media only screen and (min-width: $mobile-max) and (max-width: 1000px) {
+    font-size: $font-size-xxlarge ;
+    max-width: 50%;
+    line-height: 22px;
+  }
+
+}
+
+.subtitle {
+  color: $white;
+  font-size: $font-size-xsmall;
+  max-width: 40%;
+  padding-top: 2rem;
+
+  @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    font-size: $font-size-xxsmall - .3rem;
+    max-width: 50%;
+    line-height: 14px;
+    padding-top: 1rem;
+  }
+
+  @media only screen and (min-width: $mobile-max) and (max-width: 1000px) {
+    font-size: $font-size-xsmall - .3rem;
+    max-width: 50%;
+    line-height: 14px;
+    padding-top: 1rem;
+  }
+
+}
+

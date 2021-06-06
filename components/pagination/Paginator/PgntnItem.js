@@ -24,7 +24,7 @@ export default function PgntnItem(props) {
 }
 
 PgntnItem.propTypes = {
-  urlStr:   PropTypes.array.isRequired,
+  urlStr:   PropTypes.string.isRequired,
   pageNum:  PropTypes.number.isRequired
 }
 

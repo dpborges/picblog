@@ -14,7 +14,7 @@ const siteUrl   = "http://localhost:8080";
 const blogUrl = "http://localhost:8080/blog/list/1"
 
 // Function to get parm values
-export default (parmName, token) => {
+const getAppConfigParm = (parmName, token) => {
     if (parmName === "env")     return env;
     if (parmName === "authUrl")  return authUrl;
     if (parmName === "picUrl")   return picUrl;
@@ -35,7 +35,7 @@ export default (parmName, token) => {
      if (parmName === "showAd") return true;
 }
 
-
+export default getAppConfigParm;
 
 
 

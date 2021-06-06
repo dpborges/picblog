@@ -22,7 +22,7 @@ export default function PrevLink(props) {
 }
 
 PrevLink.propTypes = {
-  urlStr:   PropTypes.array.isRequired,
+  urlStr:   PropTypes.string.isRequired,
   pageNum:  PropTypes.string.isRequired
 }
 

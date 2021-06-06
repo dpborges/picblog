@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import getAppConfigParm  from '../../config/AppConfig';
 import getContentMetadata from '../api/contentmgr/getContentMetadata';
 import SSPageHeader from '../../common/SSPageHeader';
-import BlogPost from "./BlogPost";                                /* #nbchange */
+import BlogPost from "../../components/blog/BlogPost";                            
 import Footer from "../../common/RosyFooter";
 import getContentMetaData from '../api/contentmgr/getContentMetadata';
 import getContent from '../api/contentmgr/getContent';
@@ -61,7 +61,7 @@ class BlogPage extends Component {
 export async function getStaticProps(context) {
 
   const { slug } = context.params;
-  console.log(`slug : ${slug}`)
+  console.log(`Building page for slug : ${slug}`)
 
   const metadata  = await getContentMetaData(slug);
   console.log("metadata: ", JSON.stringify(metadata));
@@ -78,7 +78,7 @@ export async function getStaticProps(context) {
   console.log(`Wordcount: "${slug}" =>  ${wordCount}`)
   console.log("== w == w == w == w == w == w == w == w")
 
-  /* used to redirect */
+  /* boilerplate used to redirect */
   // if (haveProblem) {
   //   return { redirect: '/some/path' };
   // }
@@ -87,7 +87,7 @@ export async function getStaticProps(context) {
   return { 
     props: {
       metadata,
-      mdxSource,
+      mdxSource
     }, 
     revalidate: 900,
   };
@@ -106,19 +106,18 @@ export async function getStaticProps(context) {
 // showing page and the check to show Loading is not needed.
 //************************************************************************************ 
 export async function getStaticPaths() {
-  console.log(">> Inside getStaticPaths");
+  console.log(">> getStaticPaths function");
 
   const metadataArray = await getContentMetaData();  /* returns all metadata objects */
-  console.log("   this is metadataArray: ", metadataArray)
+  // console.log("   getStaticPaths metadataArray: ", metadataArray)
 
   // generatedPaths returns an array of ojects structured as follows:
   // { params: {<your dynamic segment id: "dynamic segment id value"} }
   const generatedPaths =  metadataArray.map((metadata) => {
-    console.log("   slug inside getStaticPaths: ", metadata.slug)
     return {params: {slug: metadata.slug}}
   });
 
-  console.log("Generated paths");
+  console.log("getStaticPaths generatedPaths");
   console.log(JSON.stringify(generatedPaths,null,2));
 
   return {

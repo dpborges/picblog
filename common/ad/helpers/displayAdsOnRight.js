@@ -1,5 +1,4 @@
 import React from 'react'
-import { v4 as uuidv4 } from 'uuid';
 import { displayAd } from './displayAd';
 
 // import "../../../styles/reusable-classes.scss";
@@ -15,36 +14,36 @@ let advertStyle    = { marginBottom: '3rem' }                       // Style for
 let smallAdvert = (
     <div style={containerStyle}>
         <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+        <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
     </div>
 )
 let mediumAdvert = (
     <div style={containerStyle}>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
+        <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+        <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+        <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
         <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
     </div>
 )
 let largeAdvert = (
     <div style={containerStyle}>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
+        <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+        <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+        <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+        <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+        <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
     </div>
 )
 
 let xlargeAdvert = (
     <div style={containerStyle}>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+        <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+        <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+        <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+        <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+        <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+        <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+        <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
     </div>
 )
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import GoogleAd from '../GoogleAd';
+import { v4 as uuidv4 } from 'uuid';
 
 // import "../../../styles/reusable-classes.scss";
 
@@ -74,7 +75,7 @@ export function displayAd (type, device, style) {
 
     // console.log(`This adStyle used for device ${device} and adtype ${adType} is ${JSON.stringify(adStyle,null,2)}`)
     return (
-        <div className={`display-on-${deviceType}`}>
+        <div className={`display-on-${deviceType}`} key={uuidv4()}>
             <GoogleAd type={adType} adStyle={adStyle} />
         </div>
     )

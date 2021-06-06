@@ -1,7 +1,7 @@
 import React from 'react';
-import VisibilityWrapper from '../../../common/VisibilityWrapper';
-import { displayAd } from '../../../common/ad/helpers/displayAd';
-import { faTableTennis } from '@fortawesome/free-solid-svg-icons';
+import VisibilityWrapper from '../../common/VisibilityWrapper';
+import { displayAd } from '../../common/ad/helpers/displayAd';
+// import { faTableTennis } from '@fortawesome/free-solid-svg-icons';
 
 
 /* The showAd is a boolean which allows you to enable or disable ads */

@@ -2,8 +2,7 @@ import react from 'react';
 import React from 'react';
 import {MDXProvider} from '@mdx-js/react';
 import MDX from '@mdx-js/runtime';
-// import styles from '../styles/blogdetail.module.scss';
-import MobileAd from './MobileAd';
+// import MobileAd from './MobileAd';
 import BlogImage from './BlogImage';
 import BlogInfo  from './BlogInfo';
 import getContentMetadata from '../../api/contentmgr/getContentMetadata';
@@ -47,7 +46,7 @@ export default (props) => {
   const adStyle = {forTablet: {marginTop: '3rem'}, forMobile: {marginTop: '3rem'}};
 
   let otherComponents = {
-    MobileAd:  () => <MobileAd showAd={showAd} adStyle={adStyle} />,
+    // MobileAd:  () => <MobileAd showAd={showAd} adStyle={adStyle} />,
     BlogImage: () => <BlogImage src={images[0].src} alt={images[0].alt} />,
     BlogInfo: () => <BlogInfo title={title} month={month} day={day}  />
   }

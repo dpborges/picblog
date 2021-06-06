@@ -1,29 +1,33 @@
 import React, { useEffect } from 'react';
+import memoize from 'lodash/memoize';
 // import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
 import getAppConfigParm  from '../../../config/AppConfig';
 import PropTypes from "prop-types";
 import { chunk } from 'lodash';
 import Link from 'next/link';
 import Head from 'next/head';
-import BlogImage from '../subcomponents/BlogImage';
+import BlogImage from '../../../components/blog/BlogImage';
 import SSPageHeader from '../../../common/SSPageHeader';
-import PageBanner from '../subcomponents/PageBanner';
+import PageBanner from '../../../components/blog/PageBanner';
 import Footer from "../../../common/RosyFooter";
-import Paginator from "../../Paginator";
+import Paginator from "../../../components/pagination/Paginator";
 import { faBalanceScale } from '@fortawesome/pro-light-svg-icons';
 import { getMetadataList, sortyByStringProp, getItemsForPage, buildHrefsForPages} from '../../../utils/pagination';
 import { dayOfMonth, shortMonthName } from '../../../utils/date';
-import useSticky from '../helpers/useSticky';
+
+// import useSticky from '../helpers/useSticky';
 
 // import '../../styles/rosystyle.scss';   /* template style */
 
 // import styles from '../../../styles/blogdetail.module.scss';
 import styles from '../../../styles/blogdetail.module.scss';
 
-const active = {
-    color: '#2980B7',
-    fontSize: '1.1rem'
-}
+const TRACE = true;
+
+// const active = {
+//     color: '#2980B7',
+//     fontSize: '1.1rem'
+// }
 
 // const  Blog = > {
 const BlogListPage =  (props) =>  {
@@ -31,6 +35,7 @@ const BlogListPage =  (props) =>  {
     
     const { hrefList, blogItems, curPage } = props;
     console.log("   curPage in BlogListPage ", curPage);
+    console.log("   type of curPage  ", typeof(curPage));
     // console.log('hrefList ', JSON.stringify(hrefList,null,2))
     // console.log('blogItems ', JSON.stringify(blogItems,null,2))
 
@@ -57,6 +62,7 @@ const BlogListPage =  (props) =>  {
      return (
           // <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>
           // {/* <div className="col-md-6 col-lg-6" key={index}> */}
+          <div key={index}>
             <div className={styles.blogListItem} style={{maxWidth: '555px', padding: '0 20px 4rem'}}>
                 <Link href={blog.path} className="blog-imgxx" >
                   <a>
@@ -79,11 +85,9 @@ const BlogListPage =  (props) =>  {
                     <p style={{color: '#7F8C8D'}}>{blog.excerpt}</p>
                 </div>
             </div>
-          // </div>
+          </div>
       )
     });
-
-
        
     // Construct jsx for entirety of the page with Header, page banner, blog items and footer.
     let jsx = (
@@ -124,13 +128,19 @@ const BlogListPage =  (props) =>  {
 // given page number passed in as pagenum.
 // *********************************************************************************
 export async function getStaticProps(context) {
-  console.log('>> Inside getStaticProps')
+  console.log('>> Inside getStaticProps for BlogListPage')
 
-  const pagenum = context.params.id;
-  let PAGE_NUM   = pagenum;  /* use id as page num */
+  const pagenum = context.params.id;      /* id string is the pagenum passed with /blog/list/n  */
+  let PAGE_NUM  = parseInt(pagenum, 10);  /* convert string pagenum to number  */
+
+  console.log('>> getStaticProps');
+  const pagenumtype = typeof(PAGE_NUM);
+  console.log(`    pagenum, ${pagenum} is of ${pagenumtype}`);
+
+  // let m_getMetadataList
 
   /* Create metadata array of items and obtain count */
-  let metadataList     = await getMetadataList();
+  let metadataList  = await getMetadataList("memoize-parm-key");
   let totalItems = metadataList.length;
 
   /* sort metadata array by given property and specified order */
@@ -142,7 +152,8 @@ export async function getStaticProps(context) {
   let blogItems = getItemsForPage(paginatedList, PAGE_NUM); /* get item for a single page */
  
   let hrefList = buildHrefsForPages("/blog/list", paginatedList);
-  // console.log("    hrefList ", hrefList);
+  console.log('>> getStaticProps hrefList');
+  console.log("    ", hrefList);
 
   return { 
     props: {
@@ -155,8 +166,17 @@ export async function getStaticProps(context) {
 
 /* getStaticProps will generate a list of ids, 1 thru n, that correspond to the number of pages in our blog */ 
 export async function getStaticPaths() {
+  if (TRACE ) {
+  console.log('=====================  (01)  =============================')
+  console.log('>> Inside getStaticPaths for BlogListPage')
+  }
 
   let generatedPaths = await getPageIdPaths();
+  
+  if (TRACE ) {
+    console.log("    generated paths");
+    console.log(`    ${JSON.stringify(generatedPaths)} `);
+  }
 
   return {
     paths: generatedPaths,

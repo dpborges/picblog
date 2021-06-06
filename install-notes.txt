@@ -1,0 +1,15 @@
+=======================================================================================
+Install Jest on NextJs Project
+Followed instructions in following at following link: https://dev.to/ericdouglas/how-to-configure-jest-on-a-next-js-project-2ic6#:~:text=%20How%20to%20configure%20Jest%20on%20a%20Next.js,that%27s%20it%21%20If%20you%20need%20configure...%20More%20
+
+Step1:   npm i -D babel-jest jest
+
+Step2:   update packages.json scripts with "test": "jest"
+
+Step3:   create .babelrc
+          {
+            "presets": ["next/babel"]
+          }
+
+=======================================================================================
+

@@ -3,18 +3,10 @@
 export default function getRightSideAdSize(wordCount) {
 
 // Initial adlist sizing 
-const smallAdList  = ["small", "single-medium-rectangle" ]; /* 250 and 449 */ 
-const mediumAdList = ["medium", "single-medium-rectangle", "single-medium-rectangle"]; /* 500 and 889 */ 
-const largeAdList  = ["large", "small", "single-medium-rectangle"]; /* 890 and 1150 */
-const xlargeAdList = ["large", "single-medium-rectangle", "small", "single-medium-rectangle"  ]; /* 890 and 1150 */
-
 let adjustedWordCount = wordCount + 175; /* add 170 wowrds for space taken by image and title */
+
 // Estimate size 
 let adListSize = ["small", "small"];  
-// if ( wordCount >= 250 && wordCount <= 449 )  {adListSize = smallAdList}
-// if ( wordCount >= 500 && wordCount <= 889 )  {adListSize = mediumAdList}
-// if ( wordCount >= 890 && wordCount <= 1160 ) {adListSize = largeAdList}
-// if ( wordCount >= 1161 )                     {adListSize = xlargeAdList}
 
 if (adjustedWordCount < 375) adListSize = 
     ["small", "single-medium-rectangle", "single-medium-rectangle"];
@@ -46,8 +38,6 @@ if (adjustedWordCount >= 1451 && adjustedWordCount <= 1550) adListSize =
 if (adjustedWordCount > 1550 ) adListSize = 
     ["large", "large",  "single-medium-rectangle"];
 
-console.log("adjustedWordCount ", adjustedWordCount);
-console.log("adListSize ", adListSize);
 
 return adListSize;
 
