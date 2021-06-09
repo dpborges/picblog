@@ -6,7 +6,7 @@ import PageBanner from './PageBanner';
 import MobileAd from './MobileAd';
 import { BlogContent } from './BlogContent';
 import RightSideAds from './RightSideAds';
-import getContentMetaData from '../../pages/api/contentmgr/getContentMetadata';
+// import getContentMetaData from '../../pages/api/contentmgr/getContentMetadata';
 import getRightSizeAdSize from './helpers/getRightSideAdSize';
 
 import styles from '../../styles/blogdetail.module.scss';

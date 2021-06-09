@@ -11,5 +11,21 @@ Step3:   create .babelrc
             "presets": ["next/babel"]
           }
 
+Step4:    If you want jest to use different transports while testing, 
 =======================================================================================
+Install Winston logging framework.
+
+Step 1) npm i -D winston
+
+Step 2) configure and export winston logger from your utils directory
+        See example in utils/logging.js 
+
+IMPORTANT: be aware that when using winston logging framework, that if you 
+       set up file transports, they will not work on client side. You will See 
+       the following error: 
+
+            "TypeError: fs.existsSync is not a function"
+
+       see link below for more info  
+       https://github.com/winstonjs/winston/issues/1631
 

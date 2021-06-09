@@ -17,7 +17,7 @@ import getContentMetaData from '../pages/api/contentmgr/getContentMetadata';
 //             
 // Process:    for getPageLinks(idList)
 //    > Make a local copy of the idList passed in using array spread operator.
-//    > Call sortyByStringProp() to sort localIdList by a string property of choice,
+//    > Call sortByStringProp() to sort localIdList by a string property of choice,
 //         ..in this case, I sort by createDate string.
 //    > Determine total number of items
 //    > Split array into chunks, which are subarrays, containing the number of items you 
@@ -72,8 +72,8 @@ export async function getMetadataList(dbquery) {  /* in future use dbquery to pa
             - the property name you want to sort by, 
             - and order = 'asc' || 'desc 
    Output:  objectArray in sorted order by property name   */
-export async function sortyByStringProp(objectArray, propertyname, order = 'asc' ) {
-  console.log('>> Inside sortyByStringProp');
+export async function sortByStringProp(objectArray, propertyname, order = 'asc' ) {
+  console.log('>> Inside sortByStringProp');
   console.log(`   order: ${order}`);
   
   function compareStrings(s1, s2) {  /* declare compare function */
@@ -114,7 +114,7 @@ export function getItemsForPage(paginatedList, pageno) {
 }
 
 
-/* Builds an array of hrefs for all the pages in the paginatedLIst */
+/* Builds an array of hrefs for all the pages (subarrays) in the paginatedLIst */
 export function buildHrefsForPages(baseurl, paginatedList) {
   console.log(">> Inside buildHrefsForPages");
 
@@ -134,8 +134,8 @@ export function buildHrefsForPages(baseurl, paginatedList) {
 // ***************************************************************************
 // THE IS MAIN PAGINATION INTERFACE; This interface serves as model implementation.
 // Actual implementation can be found BlogListPage getStaticProps(). In the 
-// Future I would like to wrap the process implemented in getStaticProps in an 
-// R.compose and make one call and get back the hrefList.
+// Future I would like to wrap the process in R.compose and make one call and 
+// get back the hrefList.
 // ***************************************************************************
 export async function getPageLinks(idList) {
 
@@ -143,7 +143,7 @@ export async function getPageLinks(idList) {
 
   let localIdList = [...idList]; /* create local copy of idList */
 
-  sortyByStringProp(localIdList, 'createDate', 'desc'); /* modifies original array */
+  sortByStringProp(localIdList, 'createDate', 'desc'); /* modifies original array */
   // let sortedIdList = [...idList];  /* clone sortedIdList */
   // console.log("     sortedIdList");
   // console.log(JSON.stringify(sortedIdList, null, 2));

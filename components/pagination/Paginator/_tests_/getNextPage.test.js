@@ -16,12 +16,12 @@ describe("Test Paginator getNextPage Function", () => {
     const numPages  = 3;
     expect(getNextPage(curPage, numPages)).toEqual(3);
   }),
-  test("should return next page of 1 with Error Message", () => {
+  test("should return next page of 1 with Error Message, becuase numPages is 0", () => {
     const curPage   = 2; 
     const numPages  = 0;
     expect(getNextPage(curPage, numPages)).toEqual(1);
   }),
-  test("should return next page of 1 with Error Message, missing arguement", () => {
+  test("should return next page of 1 with Error Message, missing argument", () => {
     const numPages  = 1;
     expect(getNextPage( numPages)).toEqual(1);
   })

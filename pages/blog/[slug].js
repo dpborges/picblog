@@ -5,7 +5,7 @@ import getContentMetadata from '../api/contentmgr/getContentMetadata';
 import SSPageHeader from '../../common/SSPageHeader';
 import BlogPost from "../../components/blog/BlogPost";                            
 import Footer from "../../common/RosyFooter";
-import getContentMetaData from '../api/contentmgr/getContentMetadata';
+// import getContentMetaData from '../api/contentmgr/getContentMetadata';
 import getContent from '../api/contentmgr/getContent';
 
 //************************************************************************************ 

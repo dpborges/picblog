@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import memoize from 'lodash/memoize';
+// import memoize from 'lodash/memoize';
 // import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
 import getAppConfigParm  from '../../../config/AppConfig';
 import PropTypes from "prop-types";
@@ -11,8 +11,8 @@ import SSPageHeader from '../../../common/SSPageHeader';
 import PageBanner from '../../../components/blog/PageBanner';
 import Footer from "../../../common/RosyFooter";
 import Paginator from "../../../components/pagination/Paginator";
-import { faBalanceScale } from '@fortawesome/pro-light-svg-icons';
-import { getMetadataList, sortyByStringProp, getItemsForPage, buildHrefsForPages} from '../../../utils/pagination';
+// import { faBalanceScale } from '@fortawesome/pro-light-svg-icons';
+import { getMetadataList, sortByStringProp, getItemsForPage, buildHrefsForPages} from '../../../utils/pagination';
 import { dayOfMonth, shortMonthName } from '../../../utils/date';
 
 // import useSticky from '../helpers/useSticky';
@@ -22,7 +22,7 @@ import { dayOfMonth, shortMonthName } from '../../../utils/date';
 // import styles from '../../../styles/blogdetail.module.scss';
 import styles from '../../../styles/blogdetail.module.scss';
 
-const TRACE = true;
+const TRACE = false;
 
 // const active = {
 //     color: '#2980B7',
@@ -132,25 +132,34 @@ export async function getStaticProps(context) {
 
   const pagenum = context.params.id;      /* id string is the pagenum passed with /blog/list/n  */
   let PAGE_NUM  = parseInt(pagenum, 10);  /* convert string pagenum to number  */
+  // let PAGE_NUM  = pagenum;  /* convert string pagenum to number  */
 
   console.log('>> getStaticProps');
   const pagenumtype = typeof(PAGE_NUM);
-  console.log(`    pagenum, ${pagenum} is of ${pagenumtype}`);
+  console.log(`    pagenum, ${pagenum} is of type ${pagenumtype}`);
 
   // let m_getMetadataList
 
   /* Create metadata array of items and obtain count */
-  let metadataList  = await getMetadataList("memoize-parm-key");
+  let metadataList  = await getMetadataList();
   let totalItems = metadataList.length;
+  console.log(`    totalItems in metadataList, ${totalItems} `);
 
   /* sort metadata array by given property and specified order */
-  sortyByStringProp(metadataList, 'createDate', 'desc'); /* modifies original array */
+  sortByStringProp(metadataList, 'createDate', 'desc'); /* modifies original array */
 
   let numPages =  Math.ceil(totalItems / PAGE_LIMIT);    /* Calculate number of pages*/
   let paginatedList = chunk(metadataList, PAGE_LIMIT);   /* create a paginated list based on PAGE_LIMIT */
-    
-  let blogItems = getItemsForPage(paginatedList, PAGE_NUM); /* get item for a single page */
+  
+  // console.log(`    paginatedList, ${JSON.stringify(paginatedList,null,2)} `);
+  console.log(`    PAGE_NUM, ${PAGE_NUM} `);
+  // console.log(`    PAGE_LIMIT, ${JSON.stringify(PAGE_LIMIT)} `);
  
+  console.log(`    getting items for page:  ${PAGE_NUM} `);
+  let blogItems = getItemsForPage(paginatedList, PAGE_NUM); /* get blog items for page PAGE_NUM */
+  // console.log(`    items for page ${PAGE_NUM}  :  ${JSON.stringify(blogItems,null,2)} `);
+ 
+  /* maps a url to each page (sub-array) in the paginated list */
   let hrefList = buildHrefsForPages("/blog/list", paginatedList);
   console.log('>> getStaticProps hrefList');
   console.log("    ", hrefList);
@@ -188,7 +197,7 @@ export async function getStaticPaths() {
 export default BlogListPage;
 
 // *********************************************************************************
-// getStaticProps paths and getStaticPaths helper functions.
+// helper function for getStaticPaths 
 // *********************************************************************************
 
 /* set number of items per page */
