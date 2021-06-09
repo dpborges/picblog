@@ -1,9 +1,0 @@
-2021-06-09T02:41:26.509Z [Picblog] error: Function getNextPage missing argument or has a value of 0: curPage:2 numPages:0
-2021-06-09T02:41:26.509Z [Picblog] error: getGroupEndPage - one of the arguments were missing; fix bug asap
-2021-06-09T02:41:26.510Z [Picblog] error: Function getNextPage missing argument or has a value of 0: curPage:1 numPages:undefined
-2021-06-09T02:41:26.519Z [Picblog] error: getGroupStartPage groupNum is out range. Defaulting groupNum to 1 to fail gracefully; fix issue
-2021-06-09T17:22:36.546Z [Picblog] error: buildDisplayGroupForCurPage - displaySize cannot be greater than hrefList size. fix error
-2021-06-09T17:22:36.738Z [Picblog] error: getGroupStartPage groupNum is out range. Defaulting groupNum to 1 to fail gracefully; fix issue
-2021-06-09T17:22:36.911Z [Picblog] error: getGroupEndPage - one of the arguments were missing; fix bug asap
-2021-06-09T17:22:37.158Z [Picblog] error: Function getNextPage missing argument or has a value of 0: curPage:2 numPages:0
-2021-06-09T17:22:37.158Z [Picblog] error: Function getNextPage missing argument or has a value of 0: curPage:1 numPages:undefined

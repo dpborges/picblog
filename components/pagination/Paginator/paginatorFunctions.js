@@ -142,6 +142,7 @@ export function buildDisplayGroupForCurPage(curPage, hrefList, displaySize) {
       break;
     } 
   }
+  
   logger.error(`buildDisplayGroupForCurPage - 1 or more args may be out of range; critical Error, Fix ASAP`);
   return defaultDisplayGroupObject;
 }

@@ -5,28 +5,27 @@ import Link   from 'next/link';
 import styles from './styles.module.scss';
 
 // *********************************************************
-// A pagination item is simply a styled link 
-// Input:  url string (eg. "/blog/pg1") 
-//         page number to display with component
-//         active prop with no value; just the presence of prop is enuf to indicate its active
-// Output: a styled Pagination Item.
+// Next simply renders a link to next page
+// Input:  urlStr -  string (eg. "/blog/<pagenum>") representing the url to next page
+//         prevIndicator - string with text or LT symbol
+// Output: a styled PrevLink  component.
 // *********************************************************
 export default function PrevLink(props) {
-  const { urlStr, pageNum } = props;
+  const { urlStr, prevIndicator } = props;
 
   return (
     <Link href={urlStr} passHref >
-      <a className={`${styles.forLink} ${styles.bookendSize}`}>{pageNum}</a>
+      <a className={`${styles.forLink} ${styles.bookendSize}`}>{prevIndicator}</a>
     </Link>
   )
 }
 
 PrevLink.propTypes = {
   urlStr:   PropTypes.string.isRequired,
-  pageNum:  PropTypes.string.isRequired
+  prevIndicator:  PropTypes.string.isRequired
 }
 
 PrevLink.defaultProps = {
   urlStr:   "/",
-  pageNum:  "Prev"
+  prevIndicator:  "Prev"
 }

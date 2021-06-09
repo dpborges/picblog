@@ -29,10 +29,11 @@ export default function Paginator({hrefList, displaySize, curPage}) {
 
   /* calc prev and next page no's based on curPage; subtract 1 to align with zero based array */
   console.log(`curPage is type of ${typeof curPage}`)
-  const prevPageno = getPrevPage(curPage) ;     
-  const nextPageno = getNextPage(curPage, hrefList.length);
+  const prevPageno = getPrevPage(curPage) -1;     /* subtract 1 if indexing the zero based hrefList array  */
+  const nextPageno = getNextPage(curPage, hrefList.length) - 1 ; /* same commment as above */
   console.log("    Paginator prevPageno ", prevPageno);
   console.log("    Paginator nextPageno ", nextPageno);
+  console.log("    hrefList[prevPageno] ", hrefList[prevPageno]);
 
   return (
     <div className={styles.blogListItemsContainer} >
@@ -87,47 +88,24 @@ const renderPgntnItems = (hrefList, displaySize, curPage) => {
 }
 
 
-/* helper to calculate previous page number based on curPage  */ 
-// const getPrevPage = (curPageString) => {
-//   let curPage = parseInt(curPageString, 10);
-//   return curPage > 1 ? curPage - 1 : 1; 
-// }
-
-/* helper to calculate next page number based on curPage  */ 
-// const getNextPage = (curPage, numPages) => {
-//   let nextPage = curPage === numPages ? curPage : curPage + 1; 
-//   return nextPage;
-// }
-
-// const getGroupStart = (groupNum, hrefList, displaySize) => {
-//   return ((groupNum * displaySize) - displaySize) + 1;
-// }
 
 /* calculates number of display groups, their start and end, then determines what group curPage is in */
 const findDisplayGroupForCurPage = (curPage, hrefList, displaySize) => {
-  console.log(`>> Inside findDisplayGroupForCurPage`);
-  console.log(`          findDisplayGroupForCurPage curPage: ${curPage}`);
-  console.log(`          findDisplayGroupForCurPage displaySize: ${displaySize}`);
-  console.log(`          findDisplayGroupForCurPage hrefList: ${hrefList}`);
+
   curPage = parseInt(curPage, 10);
   /* if display size is greater than number of items in hreflist, make display size same as hrefList size */
   displaySize = displaySize > hrefList.length ? hrefList.length : displaySize;
-  console.log(`    displaySize ${displaySize}`);
 
   const numDisplayGroups = Math.ceil(hrefList.length / displaySize );  /* get number of display groups */
-  console.log(`    numDisplayGroups ${numDisplayGroups}`);
   
   /* loop through each display group, calculate start and end and see if curPage is in that group's range */
   for (let groupNum = 1; groupNum <= numDisplayGroups; groupNum++) {
-    console.log(`    for loop interation groupNum => ${groupNum}`);
-    break;
     let groupStartPage = getGroupStartPage(groupNum, hrefList, displaySize, groupNum);
     let groupEnd       = getGroupEndPage(groupStartPage, hrefList, displaySize);
-    console.log(`    groupStart ${groupStart}`);
+
     if (groupEnd > hrefList.length) { groupEnd = hrefList.length}; /* if  displaySize exceeds size of hrefList, then reset it to hrefList size as this is the last group */
-    console.log(`    groupEnd ${groupEnd}`);
+    
     if (curPage >= groupStart && curPage <= groupEnd) {
-      console.log(`    return object {groupEnd: ${groupEnd}, groupStart:${groupStart}}`);
       return { groupNum, groupStart, groupEnd }
     } 
   }
