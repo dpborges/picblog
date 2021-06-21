@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 // import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
 import getAppConfigParm  from '../../config/AppConfig';
-import getContentMetadata from '../api/contentmgr/getContentMetadata';
 import SSPageHeader from '../../common/SSPageHeader';
 import BlogPost from "../../components/blog/BlogPost";                            
 import Footer from "../../common/RosyFooter";
-// import getContentMetaData from '../api/contentmgr/getContentMetadata';
+import getContentMetadata from '../api/contentmgr/getContentMetadata';
 import getContent from '../api/contentmgr/getContent';
 
 //************************************************************************************ 
@@ -63,7 +62,7 @@ export async function getStaticProps(context) {
   const { slug } = context.params;
   console.log(`Building page for slug : ${slug}`)
 
-  const metadata  = await getContentMetaData(slug);
+  const metadata  = await getContentMetadata(slug);
   console.log("metadata: ", JSON.stringify(metadata));
   
   /* return 404 if  no metadata found for slug */
@@ -76,7 +75,7 @@ export async function getStaticProps(context) {
   let wordCount = textArray.length;
   console.log("== w == w == w == w == w == w == w == w")
   console.log(`Wordcount: "${slug}" =>  ${wordCount}`)
-  console.log("== w == w == w == w == w == w == w == w")
+  console.log("=======================================")
 
   /* boilerplate used to redirect */
   // if (haveProblem) {
@@ -108,7 +107,7 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   console.log(">> getStaticPaths function");
 
-  const metadataArray = await getContentMetaData();  /* returns all metadata objects */
+  const metadataArray = await getContentMetadata();  /* returns all metadata objects */
   // console.log("   getStaticPaths metadataArray: ", metadataArray)
 
   // generatedPaths returns an array of ojects structured as follows:

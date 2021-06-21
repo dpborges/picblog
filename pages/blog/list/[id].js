@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-// import memoize from 'lodash/memoize';
+import memoize from 'lodash/memoize';
 // import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
 import getAppConfigParm  from '../../../config/AppConfig';
 import PropTypes from "prop-types";
@@ -21,6 +21,9 @@ import { dayOfMonth, shortMonthName } from '../../../utils/date';
 
 // import styles from '../../../styles/blogdetail.module.scss';
 import styles from '../../../styles/blogdetail.module.scss';
+
+/* memoize (cache results) of getMetadataList */
+const m_getMetadataList = memoize(getMetadataList);
 
 const TRACE = false;
 
@@ -138,10 +141,11 @@ export async function getStaticProps(context) {
   const pagenumtype = typeof(PAGE_NUM);
   console.log(`    pagenum, ${pagenum} is of type ${pagenumtype}`);
 
-  // let m_getMetadataList
 
   /* Create metadata array of items and obtain count */
-  let metadataList  = await getMetadataList();
+  console.time("PERF >> getMetadataList");
+  let metadataList  = await m_getMetadataList();
+  console.timeEnd("PERF >> getMetadataList");
   let totalItems = metadataList.length;
   console.log(`    totalItems in metadataList, ${totalItems} `);
 
@@ -175,9 +179,10 @@ export async function getStaticProps(context) {
 
 /* getStaticProps will generate a list of ids, 1 thru n, that correspond to the number of pages in our blog */ 
 export async function getStaticPaths() {
+
   if (TRACE ) {
-  console.log('=====================  (01)  =============================')
-  console.log('>> Inside getStaticPaths for BlogListPage')
+    console.log('=====================  (01)  =============================')
+    console.log('>> Inside getStaticPaths for BlogListPage')
   }
 
   let generatedPaths = await getPageIdPaths();
@@ -204,7 +209,7 @@ export default BlogListPage;
 let PAGE_LIMIT = 6;
 
 async function getPageIdPaths() {
-  let metadataList     = await getMetadataList();
+  let metadataList     = await m_getMetadataList();
   let totalItems = metadataList.length;
   let numPages =  Math.ceil(totalItems / PAGE_LIMIT);    /* Calculate number of pages*/
   let pageIdPaths = [];

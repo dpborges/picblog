@@ -58,7 +58,7 @@ import getContentMetaData from '../pages/api/contentmgr/getContentMetadata';
 
 /* returns resultSet as an array of ids. Normally this would come from a database.
    In future release, should be implemented as an IO Monad */
-export async function getMetadataList(dbquery) {  /* in future use dbquery to pass to database function */
+export async function getMetadataList(dbquery) {  /* in future, use dbquery to pass to database function */
 
   const resultSet = await getContentMetaData();
 
