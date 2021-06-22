@@ -9,7 +9,7 @@ import styles from '../../../styles/blogdetail.module.scss';
 // ****************************************************************************************
 // Paginator component displays a pagination component based on 3 props: hrefList, displaySize,
 // and current page. 
-// hrefList  is an array of urls (eg [ "/blog/list/1", "/blog/list/2", ... ] built with
+// hrefList  is an array of urls (eg [ "/blog/page/1", "/blog/page/2", ... ] built with
 //           the help of a pagination utility (refer to pagination.js).
 // displaySize is the number of items you want to display between the Prev and Next links
 // curPage   is current page number for content currently displayed above Paginator. 

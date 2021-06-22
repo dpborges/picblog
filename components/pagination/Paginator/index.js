@@ -8,32 +8,34 @@ import { getPrevPage, getNextPage,
          getGroupStartPage, getNumDisplayGroups}  from './paginatorFunctions';
 
 import styles from '../../../styles/blogdetail.module.scss';
+import { appTrace, fileTrace } from '../../../utils/logging';
+
+const trace = appTrace;
 
 // ****************************************************************************************
 // Paginator component displays a pagination component based on 3 props: hrefList, displaySize,
 // and current page. 
-// hrefList  is an array of urls (eg [ "/blog/list/1", "/blog/list/2", ... ] built with
+// hrefList  is an array of urls (eg [ "/blog/page/1", "/blog/page/2", ... ] built with
 //           the help of a pagination utility (refer to /utils/pagination.js).
 // displaySize is the number of items you want to display between the Prev and Next links
 // curPage   is current page number for content currently displayed above Paginator. 
 //           (See renderPgntnItems() function below).        
 // ****************************************************************************************
 export default function Paginator({hrefList, displaySize, curPage}) {
-  console.log(">>> Paginator function");
-  console.log("    Paginator hrefList ", hrefList);
-  console.log("    Paginator displaySize ", displaySize);
-  console.log("    Paginator curPage ", curPage);
+  trace("> Paginator function");
+  trace(`    Paginator hrefList:  ${hrefList}`);
+  trace(`    Paginator displaySize: ${displaySize}`);
+  trace(`    Paginator curPage: ${curPage}`);
 
   /* convert curPage String to number */
   curPage = parseInt(curPage, 10);
 
   /* calc prev and next page no's based on curPage; subtract 1 to align with zero based array */
-  console.log(`curPage is type of ${typeof curPage}`)
-  const prevPageno = getPrevPage(curPage) -1;     /* subtract 1 if indexing the zero based hrefList array  */
+  const prevPageno = getPrevPage(curPage) - 1;     /* subtract 1 if indexing the zero based hrefList array  */
   const nextPageno = getNextPage(curPage, hrefList.length) - 1 ; /* same commment as above */
-  console.log("    Paginator prevPageno ", prevPageno);
-  console.log("    Paginator nextPageno ", nextPageno);
-  console.log("    hrefList[prevPageno] ", hrefList[prevPageno]);
+  trace(`    Paginator prevPageno:  ${prevPageno}`);
+  trace(`    Paginator nextPageno:  ${nextPageno}`);
+  trace(`    hrefList[prevPageno]:  ${hrefList[prevPageno]}`);
 
   return (
     <div className={styles.blogListItemsContainer} >
@@ -55,26 +57,25 @@ export default function Paginator({hrefList, displaySize, curPage}) {
 /* heler function used to render pagination items between the Prev and Next links. The current page
    is set to active */
 const renderPgntnItems = (hrefList, displaySize, curPage) => {
-  console.log(">>> renderPgntnItems function");
-  console.log("    renderPgntnItems hrefList ", hrefList);
-  console.log("    renderPgntnItems displaySize ", displaySize);
-  console.log("    renderPgntnItems curPage ", curPage);
+  trace("> renderPgntnItems function");
+  trace(`    renderPgntnItems hrefList: ${hrefList}`);
+  trace(`    renderPgntnItems displaySize: ${displaySize}`);
+  trace(`    renderPgntnItems curPage: ${curPage}`);
   
-  console.log(`curPage ${curPage} is of TYPE  ${typeof curPage} <<<<<<`)
   /* returns the displayGroup the curPage  is in. It returns in the form of an object 
   groupNum, groupStart and groupEnd range */
   const displayGroup = buildDisplayGroupForCurPage(curPage, hrefList, displaySize);
-  // console.log(`display group for page no ${curPage} is ${JSON.stringify(displayGroup)}`)
+  // trace(`display group for page no ${curPage} is ${JSON.stringify(displayGroup)}`)
 
   let pageStart = displayGroup.groupStart - 1 ; /* subtract 1 to align with zero based hrefList array */
   // let pageStart = displayGroup.groupStart; /* subtract 1 to align with zero based hrefList array */
   let pageEnd   = displayGroup.groupEnd;
-  console.log(`     pageStart ${pageStart}`);
-  console.log(`     pageEnd  ${pageEnd}`);
+  trace(`     pageStart ${pageStart}`);
+  trace(`     pageEnd  ${pageEnd}`);
   const pgntnItems = [];
-  console.log(`     entering for loop`);
+  // trace(`     entering for loop`);
   for (; pageStart < pageEnd; pageStart++) {
-      console.log(`     ${pageStart} <=  ${pageEnd}`);
+      // trace(`     ${pageStart} <=  ${pageEnd}`);
       let hrefListIdx = pageStart + 1; /* add 1 to zero based array index to align with page numbers */
       // let hrefListIdx = pageStart; /* add 1 to zero based array index to align with page numbers */
       let isCurPage = parseInt(curPage, 10) === parseInt(hrefListIdx,10) ? true  : false;
@@ -83,7 +84,7 @@ const renderPgntnItems = (hrefList, displaySize, curPage) => {
       : <PgntnItem urlStr={hrefList[pageStart]} pageNum={pageStart + 1} key={pageStart + 1} />;
       pgntnItems.push(jsx);
   }
-  // console.log(`     pgntnItems  ${JSON.stringify(pgntnItems,null,2)}`);
+  // trace(`     pgntnItems  ${JSON.stringify(pgntnItems,null,2)}`);
   return pgntnItems;
 }
 

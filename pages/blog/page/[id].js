@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import memoize from 'lodash/memoize';
 // import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
+import * as R from 'ramda';
 import getAppConfigParm  from '../../../config/AppConfig';
 import PropTypes from "prop-types";
 import { chunk } from 'lodash';
@@ -14,6 +15,7 @@ import Paginator from "../../../components/pagination/Paginator";
 // import { faBalanceScale } from '@fortawesome/pro-light-svg-icons';
 import { getMetadataList, sortByStringProp, getItemsForPage, buildHrefsForPages} from '../../../utils/pagination';
 import { dayOfMonth, shortMonthName } from '../../../utils/date';
+import { logger, appTrace, fileTrace } from '../../../utils/logging';
 
 // import useSticky from '../helpers/useSticky';
 
@@ -22,10 +24,11 @@ import { dayOfMonth, shortMonthName } from '../../../utils/date';
 // import styles from '../../../styles/blogdetail.module.scss';
 import styles from '../../../styles/blogdetail.module.scss';
 
+const trace = appTrace;  /* asign fileTrace instead, for file level trace */
+
 /* memoize (cache results) of getMetadataList */
 const m_getMetadataList = memoize(getMetadataList);
 
-const TRACE = false;
 
 // const active = {
 //     color: '#2980B7',
@@ -34,11 +37,11 @@ const TRACE = false;
 
 // const  Blog = > {
 const BlogListPage =  (props) =>  {
-    console.log(">> Inside BlogListPage");
+    trace("> Inside BlogListPage");
     
     const { hrefList, blogItems, curPage } = props;
-    console.log("   curPage in BlogListPage ", curPage);
-    console.log("   type of curPage  ", typeof(curPage));
+
+    trace(`    curPage: ${curPage}`);
     // console.log('hrefList ', JSON.stringify(hrefList,null,2))
     // console.log('blogItems ', JSON.stringify(blogItems,null,2))
 
@@ -131,23 +134,17 @@ const BlogListPage =  (props) =>  {
 // given page number passed in as pagenum.
 // *********************************************************************************
 export async function getStaticProps(context) {
-  console.log('>> Inside getStaticProps for BlogListPage')
+  trace('> Inside getStaticProps for BlogListPage')
 
-  const pagenum = context.params.id;      /* id string is the pagenum passed with /blog/list/n  */
+  const pagenum = context.params.id;      /* id string is the pagenum passed with /blog/page/n  */
   let PAGE_NUM  = parseInt(pagenum, 10);  /* convert string pagenum to number  */
-  // let PAGE_NUM  = pagenum;  /* convert string pagenum to number  */
 
-  console.log('>> getStaticProps');
-  const pagenumtype = typeof(PAGE_NUM);
-  console.log(`    pagenum, ${pagenum} is of type ${pagenumtype}`);
-
+  trace(`    PAGE_NUM: ${PAGE_NUM}`)
 
   /* Create metadata array of items and obtain count */
-  console.time("PERF >> getMetadataList");
   let metadataList  = await m_getMetadataList();
-  console.timeEnd("PERF >> getMetadataList");
   let totalItems = metadataList.length;
-  console.log(`    totalItems in metadataList, ${totalItems} `);
+  trace(`    totalItems in metadataList, ${totalItems} `);
 
   /* sort metadata array by given property and specified order */
   sortByStringProp(metadataList, 'createDate', 'desc'); /* modifies original array */
@@ -155,18 +152,13 @@ export async function getStaticProps(context) {
   let numPages =  Math.ceil(totalItems / PAGE_LIMIT);    /* Calculate number of pages*/
   let paginatedList = chunk(metadataList, PAGE_LIMIT);   /* create a paginated list based on PAGE_LIMIT */
   
-  // console.log(`    paginatedList, ${JSON.stringify(paginatedList,null,2)} `);
-  console.log(`    PAGE_NUM, ${PAGE_NUM} `);
-  // console.log(`    PAGE_LIMIT, ${JSON.stringify(PAGE_LIMIT)} `);
+  // trace(`    paginatedList, ${JSON.stringify(paginatedList,null,2)} `);
  
-  console.log(`    getting items for page:  ${PAGE_NUM} `);
   let blogItems = getItemsForPage(paginatedList, PAGE_NUM); /* get blog items for page PAGE_NUM */
-  // console.log(`    items for page ${PAGE_NUM}  :  ${JSON.stringify(blogItems,null,2)} `);
  
   /* maps a url to each page (sub-array) in the paginated list */
-  let hrefList = buildHrefsForPages("/blog/list", paginatedList);
-  console.log('>> getStaticProps hrefList');
-  console.log("    ", hrefList);
+  let hrefList = buildHrefsForPages("/blog/page", paginatedList);
+  trace(`    hrefList: ${hrefList}`);
 
   return { 
     props: {
@@ -179,18 +171,12 @@ export async function getStaticProps(context) {
 
 /* getStaticProps will generate a list of ids, 1 thru n, that correspond to the number of pages in our blog */ 
 export async function getStaticPaths() {
-
-  if (TRACE ) {
-    console.log('=====================  (01)  =============================')
-    console.log('>> Inside getStaticPaths for BlogListPage')
-  }
+  trace('> Inside getStaticPaths for BlogListPage')
 
   let generatedPaths = await getPageIdPaths();
   
-  if (TRACE ) {
-    console.log("    generated paths");
-    console.log(`    ${JSON.stringify(generatedPaths)} `);
-  }
+  trace("    generated paths", );
+  trace(`      ${JSON.stringify(generatedPaths)} `);
 
   return {
     paths: generatedPaths,

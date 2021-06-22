@@ -1,4 +1,5 @@
 import getContentMetaData from '../pages/api/contentmgr/getContentMetadata';
+import { appTrace, fileTrace } from '../utils/logging';
 
 // **************************************************************************
 // To see initial analysis of the functional approach used here, refer to the 
@@ -28,7 +29,7 @@ import getContentMetaData from '../pages/api/contentmgr/getContentMetadata';
 //
 // Output:
 //    hrefList  - an array of urls associated to each page , for example
-//                ["/blog/list/1", "/blog/list/2", "/blog/list/3", ....]
+//                ["/blog/page/1", "/blog/page/2", "/blog/page/3", ....]
 //                The array index corresponds to each of the page's url...
 //                idList[0] maps to page 1 url, idList[1] maps to page 2 url, etc.
 //
@@ -49,6 +50,8 @@ import getContentMetaData from '../pages/api/contentmgr/getContentMetadata';
 // the first iteration.
 // 
 // **************************************************************************
+
+const trace = appTrace;
 
 // **************************************************************************
 // IMPORTANT: Below are the functional components. At end of file see main 
@@ -73,8 +76,8 @@ export async function getMetadataList(dbquery) {  /* in future, use dbquery to p
             - and order = 'asc' || 'desc 
    Output:  objectArray in sorted order by property name   */
 export async function sortByStringProp(objectArray, propertyname, order = 'asc' ) {
-  console.log('>> Inside sortByStringProp');
-  console.log(`   order: ${order}`);
+  trace('> Inside sortByStringProp');
+  trace(`   order: ${order}`);
   
   function compareStrings(s1, s2) {  /* declare compare function */
       let s1Lower = s1.[propertyname].toLowerCase();
@@ -116,11 +119,12 @@ export function getItemsForPage(paginatedList, pageno) {
 
 /* Builds an array of hrefs for all the pages (subarrays) in the paginatedLIst */
 export function buildHrefsForPages(baseurl, paginatedList) {
-  console.log(">> Inside buildHrefsForPages");
+  trace("> Inside buildHrefsForPages");
 
   let hrefList = [];
   
-  let pageCount = paginatedList.length; 
+  let pageCount = paginatedList.length;
+  trace(`    pageCount: ${pageCount}`); 
 
   for (let i = 0; i < pageCount; i++ ) {
     let pageNo = i + 1;  /* add 1 to account for 0 base */
@@ -138,6 +142,7 @@ export function buildHrefsForPages(baseurl, paginatedList) {
 // get back the hrefList.
 // ***************************************************************************
 export async function getPageLinks(idList) {
+  trace("> Inside getPageLinks");
 
   let PAGE_LIMIT = 2;
 
@@ -152,7 +157,6 @@ export async function getPageLinks(idList) {
 
   /* create a paginated list of items */ 
   let numPages =  Math.ceil(totalItems / PAGE_LIMIT);
-  console.log('   numPages: ', numPages);
   let paginatedList = chunk(idList, PAGE_LIMIT)
   
   /* initialize page no */
@@ -163,5 +167,4 @@ export async function getPageLinks(idList) {
  
   /* build a list of hrefs for the paginated list, using "/blog" as base href url */
   let hrefList = buildHrefsForPages("/blog", paginatedList);
-  console.log("    hrefList ", hrefList);
 }

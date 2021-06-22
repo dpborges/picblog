@@ -11,6 +11,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTwitter, faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 library.add(faTwitter, faFacebookF, faLinkedinIn);
 
+console.log("NODE_ENV ", process.env.NODE_ENV);
 
 function MyApp({ Component, pageProps }) {
 

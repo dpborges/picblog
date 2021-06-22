@@ -6,6 +6,7 @@ import BlogPost from "../../components/blog/BlogPost";
 import Footer from "../../common/RosyFooter";
 import getContentMetadata from '../api/contentmgr/getContentMetadata';
 import getContent from '../api/contentmgr/getContent';
+import { logger } from '../../utils/logging';
 
 //************************************************************************************ 
 // Renders blog post using NextJs SSG 
@@ -58,9 +59,10 @@ class BlogPage extends Component {
 // If set to 900 secs, NextJs will revalidate (or regenerate the page) after 15 minutes.
 //************************************************************************************ 
 export async function getStaticProps(context) {
+  logger.debug(">>> getStaticProps")
 
   const { slug } = context.params;
-  console.log(`Building page for slug : ${slug}`)
+  logger.debug(`    slug: ${slug}`)
 
   const metadata  = await getContentMetadata(slug);
   console.log("metadata: ", JSON.stringify(metadata));

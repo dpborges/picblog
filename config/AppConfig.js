@@ -11,7 +11,7 @@ const picUrl  = "http://localhost:4000";  // This is url used for PitchInClub (p
 const siteUrl   = "http://localhost:8080";
 
 // url for blog landing page 
-const blogUrl = "http://localhost:8080/blog/list/1"
+const blogUrl = "http://localhost:8080/blog/page/1"
 
 // Function to get parm values
 const getAppConfigParm = (parmName, token) => {
