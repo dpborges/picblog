@@ -9,6 +9,8 @@
     "updateDate": "2021-05-21",
     "excerpt":  "If you're planning a party, you might not be sure how much food to buy and prepare. Here's how to calculate food serving sizes and get the right amount.",
     "images": [{"src": "/images/portioned-food-on-table.jpg", "alt": "portioned food on table"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 894
   },
   {
@@ -21,6 +23,8 @@
     "updateDate": "2021-01-26",
     "excerpt":  "If you've just had an amazing party, the idea of post-party cleanup might seem daunting. Here's how you can make it a lot easier!",
     "images": [{"src": "/images/people-toasting-at-table-with-food.jpg", "alt": "people toasting at table with food"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 1151
   },
   {
@@ -33,6 +37,8 @@
     "updateDate": "2020-12-28",
     "excerpt":  "Learn 5 expert tips for delegating tasks effectively to reach a team goal and build  better relationships.",
     "images": [{"src": "/images/event-meeting-around-calender.jpg", "alt": "event meeting around calender"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 552
   },
   {
@@ -45,6 +51,8 @@
     "updateDate": "2020-08-25",
     "excerpt":  "When it comes to outdoor events there are a lot of things that you need to consider. The weather will no doubt be a huge factor. Find out more here.",
     "images": [{"src": "/images/table-setting-for-outdoor-event.jpg", "alt": "table setting for outdoor event"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 1036
   }, 
   {
@@ -57,6 +65,8 @@
     "updateDate": "2020-08-18",
     "excerpt":  "When you move into your new home you're going to want to show it off. A house warming party is the perfect way. Here's how to host the perfect party.",
     "images": [{"src": "/images/excited-woman-with-wine-bottle.jpg", "alt": "excited woman with wine bottle"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 1040
   },
   {
@@ -69,6 +79,8 @@
     "updateDate": "2020-08-08",
     "excerpt":  "Planning a group event such as a camping trip takes a lot of organization. What exactly do you need to consider and plan for?",
     "images": [{"src": "/images/three-woman-planning-trip.jpg", "alt": "three woman planning trip"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 634
   },
   {
@@ -81,6 +93,8 @@
     "updateDate": "2020-08-03",
     "excerpt":  "Managing a team of volunteers can be a challenge, and volunteer event planning even more so. Here's everything you need to know before planning your event.",
     "images": [{"src": "/images/four-volunteers-standing-together.jpg", "alt": "four volunteers standing together"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 493
   },
   {
@@ -93,6 +107,8 @@
     "updateDate": "2020-07-28",
     "excerpt":  "Are you looking to host the perfect watch party? Getting everything perfect will mean that you and the other guests will have the best time.",
     "images": [{"src": "/images/adults-watching-television.jpg", "alt": "adults watching television"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 540
   },
   {
@@ -105,6 +121,8 @@
     "updateDate": "2020-07-21",
     "excerpt":  "Planning church events takes careful planning and consideration. You may need the support of others in your community too.",
     "images": [{"src": "/images/man-daughter-fashioning-kilt.jpg", "alt": "man and daughter fashioning kilt"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 540
   },
   {
@@ -117,6 +135,8 @@
     "updateDate": "2020-07-18",
     "excerpt":  "Party planning takes the right level of planning and organization. But what exactly do you need to know before planning the perfect party?",
     "images": [{"src": "/images/dance-party.jpg", "alt": "group of friends dancing"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 520
   },
   {
@@ -129,6 +149,8 @@
     "updateDate": "2020-07-14",
     "excerpt":  "Throwing a farewell party is the perfect way to commemorate a retirement, celebrate a once-in-a-lifetime vacation, or say goodbye. Here is how to get some help.",
     "images": [{"src": "/images/group-of-friends-toasting.jpg", "alt": "group of friends toasting"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 520
   },
   {
@@ -141,6 +163,8 @@
     "updateDate": "2020-07-06",
     "excerpt":  "If you have an idea for a music-focused event, you need a guide on how to make it a reality. Here are tips for planning a music event for beginners.",
     "images": [{"src": "/images/band-instruments-on-stage.jpg", "alt": "band-instruments-on-stage"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 1015
   },
   {
@@ -153,6 +177,8 @@
     "updateDate": "2020-07-02",
     "excerpt":  "If you want to host a party for a sporting event, certain decisions can help you meet a budget. Here are tips for saving money when throwing a sports party.",
     "images": [{"src": "/images/beer-and-snacks-on-wooden-table.jpg", "alt": "beer and snacks on wooden table"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 896
   },
   {
@@ -165,6 +191,8 @@
     "updateDate": "2020-06-26",
     "excerpt":  "Hosting a potluck should be easy, but it still takes some planning to get it right. Here is the main ingredient for making your event fun for everyone.",
     "images": [{"src": "/images/potluck-food-spread.jpg", "alt": "potluck food spread"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 594
   },
   {
@@ -177,6 +205,8 @@
     "updateDate": "2020-06-12",
     "excerpt":  "It's party time! But you don't have to do it all on your own. Here's how to get help when throwing a neighborhood block party",
     "images": [{"src": "/images/block-party.jpg", "alt": "people around table at block party"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 1000
   },
   {
@@ -189,6 +219,8 @@
     "updateDate": "2020-05-26",
     "excerpt":  "You're tasked with planning a nonprofit picnic, but how can you stay organized and under-budget? Use these volunteer tracking tools and tips to help.",
     "images": [{"src": "/images/volunteer-tracking.jpg", "alt": "volunteers bagging food"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 980
   },
   {
@@ -201,6 +233,8 @@
     "updateDate": "2020-05-05",
     "excerpt":  "Planning a football party can be fun but stressful. But this app can get more people involved and make it fun for everyone",
     "images": [{"src": "/images/football-watch-party.jpg", "alt": "fans yelling at home football watch party"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 500
   },
   {
@@ -213,6 +247,8 @@
     "updateDate": "2020-04-14",
     "excerpt":  "Learn how to complete an event planning checklist the right way. Use these 6 sign up tips for a 'Pitch In' style event.",
     "images": [{"src": "/images/event-planning-checklist.jpg", "alt": "event planning notebook with a pen laying on top"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 900
   },
   {
@@ -225,6 +261,8 @@
     "updateDate": "2020-04-23",
     "excerpt":  "Discover the method for managing all of your online event planning which have a predetermined theme as a concept.",
     "images": [{"src": "/images/themed-event.jpg", "alt": "people at table holding up glasses to toast"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 900
   },
   {
@@ -237,6 +275,8 @@
     "updateDate": "2020-03-09",
     "excerpt":  "We all need help from time to time, but what’s the best way to reach out to others, especially if we’re not in physical proximity?",
     "images": [{"src": "/images/woman-using-mobile-phone-with-diary.jpg", "alt": "woman using mobile phone with diary"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 469
   },
   {
@@ -249,6 +289,8 @@
     "updateDate": "2020-03-02",
     "excerpt":  "One of the things people say they love about living in small towns is how neighbors are able to easily reach out and help each other. Of course, many of these people will also confess that a little neighborliness can go a long way",
     "images": [{"src": "/images/diverse-people-with-teamwork-concept.jpg", "alt": "diverse-people-with-teamwork-concept"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 469
   },
   {
@@ -261,6 +303,8 @@
     "updateDate": "2020-02-25",
     "excerpt":  "A celebration, whether big or small, is about taking a moment to acknowledge the good things in life. In a world where things often feel chaotic and overwhelming, it’s important to set aside time to celebrate..",
     "images": [{"src": "/images/diy-party-planning.jpg", "alt": "woman hanging party decorations"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 915
   },
   {
@@ -273,6 +317,8 @@
     "updateDate": "2020-02-12",
     "excerpt":  "Everyone loves a party, but not everyone likes to help make one happen ― or break it down afterward. Unfortunately, someone has to put in the effort at both ends",
     "images": [{"src": "/images/diy-party-planning.jpg", "alt": "after party mess"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 750
   },
   {
@@ -285,6 +331,8 @@
     "updateDate": "2020-01-29",
     "excerpt":  "Party-planning stress is an unfortunate reality in today’s world, and many hosts are able to conceal their anxieties so well, that guests automatically assume..",
     "images": [{"src": "/images/party-hosting-anxiety.jpg", "alt": "preparing decorations for party"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 800
   },
   {
@@ -297,6 +345,8 @@
     "updateDate": "2020-01-15",
     "excerpt":  "Let's face it: Hosting a party is a blast, but getting to that point can be a real pain! It's easy to get excited thinking about all the fun you will have..",
     "images": [{"src": "/images/easy-party-planning.jpg", "alt": "man planning surprise party"}],
+    "lang": "en",
+    "type": "post",
     "wordCount": 500
   }
 ]

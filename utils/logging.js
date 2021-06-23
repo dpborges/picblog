@@ -5,7 +5,9 @@ const { combine, timestamp, label, printf } = format;
 
 // *******************************************************************************
 // winston logging configuration
-// IMPORTANT NOTE: file transports cannot be turned 
+// IMPORTANT NOTE: file transports cannot be turned on as fs libary is not available
+// on browser. The only environment logging to file is "test", all others write to 
+// console.
 // *******************************************************************************
 
 const myFormat = printf(({ level, message, label, timestamp }) => {
@@ -46,10 +48,12 @@ if (process.env.NODE_ENV === "development") {
 
 
 // *******************************************************************************
-// This is my custom trace function; it is not part of winston. By default all 
-// files s/d use the app trace and only turn on file trace when needed within the 
-// file itself. AppTrace is only enabled for "development" environment. If using 
-// fileTrace on 1 specific file, turn off app level tracing here. 
+// This is my custom trace function; it is not part of winston. Implemented until 
+// I find a way to implement debug or trace level with winston both on application 
+// level or file level. For now, all files s/d use the appTrace and only turn on 
+// fileTrace when needed within the file itself. AppTrace is only enabled for 
+// "development" environment. If using fileTrace on 1 or more specific files, 
+// turn off app level tracing below. 
 // *******************************************************************************
 const app_trace_enabled = process.env.NODE_ENV === "development" ? true : false;
 
