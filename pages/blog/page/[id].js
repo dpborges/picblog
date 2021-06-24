@@ -146,6 +146,8 @@ export async function getStaticProps(context) {
   let totalItems = metadataList.length;
   trace(`    totalItems in metadataList, ${totalItems} `);
 
+  
+
   /* sort metadata array by given property and specified order */
   sortByStringProp(metadataList, 'createDate', 'desc'); /* modifies original array */
 

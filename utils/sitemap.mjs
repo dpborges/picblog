@@ -1,21 +1,31 @@
 import fs from 'fs-extra';
 import path from 'path';
-// import readFromFile from './filesystem.mjs';
-// import toPairs from 'lodash';
 import intersectionWith from 'lodash';
-// import * as R from 'ramda';
-// const { includes } = R;
-// import includes from 'ramda/src/includes'
 import { filterObjArrayBy } from './object.mjs';
+
+// IMPORTANT NOTE: Because the __dirname node js global does not working in
+// this environment, which provides flexibility to run from any directory. 
+// Since __dirname is not working, I put an if stmnt that enables me to run
+// it from utils when testing and then from project directory from package.json
+// or root directory.
 
 // **********************************************************************
 // Define main function to generate sitemap, and call it immediatedly after.
 // **********************************************************************
 
+let runFrom = "project-folder";  /* set to utils-folder or project-folder */
 /* Set the source data file */
-const fileName = 'contentmetadata.json';
-const filePath = path.join(process.cwd(), '../', 'data', fileName )  /* cwd returns project folder */
-const outputFile = path.join(process.cwd(), '../', 'public', 'generatedSitemap.xml' )  /* cwd returns project folder */
+const fileName   = 'contentmetadata.json';
+let filePath   = "";
+let outputFile = "";
+if (runFrom === "utils-folder") {
+  filePath   = path.join(process.cwd(), '../', 'data', fileName );         /* cwd returns project folder */
+  outputFile = path.join(process.cwd(), '../', 'public', 'sitemap.xml' );  
+}
+if (runFrom === "project-folder") {
+  filePath   = path.join(process.cwd(), 'data', fileName )         /* cwd returns project folder */
+  outputFile = path.join(process.cwd(), 'public', 'sitemap.xml' )  
+}
 
 /* Define main function to generate sitemap from data file provided  */
 async function genSiteMap(filePath) {
@@ -34,6 +44,7 @@ async function genSiteMap(filePath) {
 
 /* Call the generate site map function  */
 genSiteMap(filePath);
+
 
 // **********************************************************************
 // SiteMap Class allows you to instantiate a sitemap, add the relevant xml

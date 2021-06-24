@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 // Function returns the metadata for a given slug (aka blogpost)
-// If no parameter is provided, it returns all metadata, as an array.
+// If no parameter is provided, it returns metadata for all blogs posts, as an array.
 export default async function getContentMetaData(slug) {
   // console.log(`>> Inside getContentMetaData(slug)`)
 
@@ -19,12 +19,12 @@ export default async function getContentMetaData(slug) {
           // console.log("This is data from file ", fileContents)       
           let metadataArray = JSON.parse(fileContents); /* convert to javascript object */
           let blogMetadata = !slug 
-                  ? metadataArray 
+                  ? metadataArray.filter((mdObject) => mdObject.type === "post") 
                   : metadataArray.find((contentmetada) => contentmetada.slug === slug);
             
           // console.log("This is metadata array returned from getContentMetadata")       
           // console.log(blogMetadata);
-          if (!blogMetadata)  {console.log("metadata is undefined")}      
+          if (!blogMetadata)  {console.log("getContentMetaData resulted in No Blog metadata")}      
           resolve(blogMetadata);
       });
     }

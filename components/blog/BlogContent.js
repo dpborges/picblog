@@ -5,7 +5,7 @@ import MDX from '@mdx-js/runtime';
 import MobileAd  from './MobileAd';
 import BlogImage from './BlogImage';
 import BlogInfo  from './BlogInfo';
-import getContentMetadata from '../../pages/api/contentmgr/getContentMetadata';
+// import getContentMetadata from '../../pages/api/contentmgr/getContentMetadata';
 import { shortMonthName, dayOfMonth } from '../../utils/date';
 
 import styles from '../../styles/blogdetail.module.scss';

@@ -65,6 +65,7 @@ export async function getStaticProps(context) {
   logger.debug(`    slug: ${slug}`)
 
   const metadata  = await getContentMetadata(slug);
+  // filterObjArrayBy(mdObjectArray, { type: "post" })
   console.log("metadata: ", JSON.stringify(metadata));
   
   /* return 404 if  no metadata found for slug */
