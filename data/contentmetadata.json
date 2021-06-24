@@ -348,5 +348,25 @@
     "lang": "en",
     "type": "post",
     "wordCount": 500
+  },
+  {
+    "id": "0026",
+    "title": "",
+    "slug": "",
+    "path": "",
+    "cid": "page0026",
+    "createDate": "2017-12-01",
+    "updateDate": "2017-12-01",
+    "excerpt":  "",
+    "images": [
+      {"src": "/images/pitch-in-club-logo.jpg", "alt": "pitch-in-club-logo"},
+      {"src": "/images/group-accomplishment.jpg", "alt": "group accomplishment"},
+      {"src": "/images/outdoor-bbq-small.jpg", "alt": "outdoor bbq"},
+      {"src": "/images/young-volunteers-sm.jpg", "alt": "young volunteers"},
+      {"src": "/images/potluck-event.jpg", "alt": "potluck event"}
+    ],
+    "lang": "en",
+    "type": "landingPage",
+    "wordCount": 0
   }
 ]
