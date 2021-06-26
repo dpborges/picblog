@@ -10,6 +10,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+        <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css"></link>
+        </Head>
         <body>
           <Main />
           <NextScript />

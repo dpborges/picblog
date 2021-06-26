@@ -1,0 +1,160 @@
+@import './settings.scss';
+@import './reusable-classes.scss';
+
+// ******************************************************
+// Classes used in Header section
+// ******************************************************
+
+/* existing container used on the page is from Axolot template . Added this class as a modifier. */
+.aboutContainerMod {
+    margin-top: 4rem;
+    width:  65%;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        width:  80%;
+    }
+}
+
+.aboutHeadingTitle {
+    color: $greyshade5;
+    font-weight: 700;
+    text-align: center;
+    font-size: $font-size-large;
+    padding-bottom: 2rem;
+}
+
+/* used for the h1 element */
+.aboutH1 {
+    @extend .rc-flex-container-center; 
+    @extend .rc-text-h2-primary; 
+    @extend .rc-mb-1;
+    color: $greyshade6;
+    font-size: $font-size-xxlarge - .2rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-large;
+    }
+}
+
+
+/* used for my h2 elements */
+.aboutH2 {
+  @extend .rc-text-h2-primary ;
+  @extend .rc-mb-2;
+  color: $greyshade6;
+  text-align: center;
+}
+
+
+// .about-heading-container {
+//     background-color: $lightblue;
+//     width: 100%;
+// }
+
+// .about-heading-container {
+//     @extend .rc-text-align-center-hv;
+//     color: $greyshade4;
+//     font-family: inherit;
+//     font-size: $font-size-large;
+//     font-weight: 900;
+//     margin-top: 0;
+//     padding-bottom: 3rem;
+
+//     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         font-size: $font-size-medium;
+//     }
+// }
+
+// .second-heading-title {
+//     @extend .about-heading-title;
+//     margin-top: 0;
+//     padding-bottom: 0;
+
+//     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         // font-size: $font-size-xlarge;
+//     }
+// }
+
+// .about-what-is-section {
+//     @extend .rc-flex-container-center-col;
+//     background-color: $greyshade1;
+//     text-align: center;
+//     padding: 0 1.5rem 0 1.5rem;
+// }
+
+// .about-what-is-question {
+//     @extend .rc-text-h1-primary;
+
+//     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         font-size: $font-size-xlarge;
+//     }
+// }
+
+// .about-what-is-text {
+//     @extend .rc-text-h1-primary;
+//     font-weight: 400;
+//     padding: 0 2rem  3rem 2rem;
+
+//     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         font-size: $font-size-xlarge;
+//     }
+// }
+
+// ******************************************************
+// Classes used in Body Section
+// ******************************************************
+
+.aboutBodySection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -5rem;
+    padding-top: 5rem;
+    width: 100%;
+}
+
+// .about-how-started-title {
+//     @extend .rc-text-h1-primary;
+//     text-align: center;
+
+//     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         flex-direction: column;
+//         font-size: $font-size-xlarge;
+//     }
+// }
+
+.aboutBodyPara {
+    color: $greyshade5;
+    font-size: $font-size-small;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+    padding: 0 0;
+    text-align: justify;
+    width: 55%;
+    z-index: 1;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        flex-direction: column;
+        font-size: $font-size-xsmall;
+        text-align: left;
+        width: 75%;
+    }
+}
+
+// .about-linkedin-anchor {
+//     text-decoration: none;
+//     color: $lightblue;
+// }
+
+// .about-feedback-link {
+//     text-decoration: none;
+//     color: $lightblue;
+// }
+
+// .about-zindex1 {
+//     z-index: 1;
+// }
+
+// .about-zindex0 {
+//     z-index: 0;
+// }

@@ -1,0 +1,246 @@
+import React, { Component } from "react";
+import Link from 'next/link';
+import PropTypes from "prop-types";
+import LinkButton1 from '../components/buttons/LinkButton1.js';
+import CaretRightIcon from "../components/icons/CaretRightIcon.js";
+import EnvelopeSquareIcon from "../components/icons/EnvelopeSquareIcon.js";
+import getAppConfig from '../config/AppConfig';
+
+class Footer extends Component {
+    render() {
+
+        const siteUrl = getAppConfig("siteUrl");
+
+        //Support loop start
+        const supportLinks = this.props.supportsLinks.map((support, index) => (
+            <li key={index}>
+                <a href={support.Link}>
+                    <i className="icofont-double-right" />
+                    {support.Name}
+                </a>
+            </li>
+        ));
+        //Support loop END
+
+        return (
+            <React.Fragment>
+                <footer className="footer-area ptb-100 footer-area-positioning" > 
+                    <div className="footer-sections-container" >
+                      
+                        <div className="row"  style={{display: 'flex', flexWrap: 'wrap'}}>
+                            <div className="col-lg-3 col-md-6" style={{width: '20rem'}}>
+                                <div className="single-footer" >
+                                  <h4 className="logo">
+                                      <a href="#home">
+                                          Pitch In<span>&nbsp;Club</span>
+                                      </a>
+                                  </h4>
+                                  <p style={{marginBottom: '2rem'}}>{this.props.siteDescription}</p>
+                                  {/* <a href={this.props.btnLink} className="btn btn-primary">
+                                    {this.props.btnText}
+                                  </a> */}
+                                  <LinkButton1 link="#" linkText="read more" />
+                                </div>
+                            </div>
+                            {/* This is First List of Resources */}
+                            <div className="col-lg-3 col-md-6"  style={{width: '18rem'}}>
+                                <div className="single-footer footer-navbar-nav">
+                                  <h3>{this.props.usefullLinksTitle1}</h3>
+                                  <ul>
+                                      <li>
+                                          {footerLink(`${siteUrl}/resources/features`, "Features")}
+                                      </li>
+                                      <li>
+                                          {footerLink(`${siteUrl}/resources/type-of-events`, "Type of Events")}
+                                      </li>
+                                      <li>
+                                          {footerLink(`${siteUrl}/resources/helping-hands`, "Helping Hands List")}
+                                      </li>
+                                      <li>
+                                          {footerLink(`${siteUrl}/resources/contribution-list`, "Contributions List")}
+                                      </li>
+                                      <li>
+                                          {footerLink(`${siteUrl}/resources/faq`, "FAQ")}
+                                      </li>
+                                  </ul>
+                                </div>
+                            </div>
+
+                            {/* Second List of Resources */}
+                            <div className="col-lg-3 col-md-6" style={{width: '18rem'}} >
+                              <div className="single-footer footer-navbar-nav">
+                                  <h3 style={{color: '#95A5A6'}}>{this.props.usefullLinksTitle2}</h3>
+                                  <ul>
+                                      <li>
+                                          {footerLink(`${siteUrl}/resources/how-to-create-event`, "How to Create Event")}
+                                      </li>
+                                      <li>
+                                          {footerLink(`${siteUrl}/resources/how-to-pitch-in`, "How to Pitch In")}
+                                      </li>
+                                      <li>
+                                          {footerLink(`${siteUrl}/resources/event-planning-tools`, "Event Planning Tools")}
+                                      </li>
+                                      <li>
+                                          {footerLink(`${siteUrl}/resources/about-us`, "About Us")}
+                                      </li>
+                                  </ul>
+                              </div>
+                            </div>
+                       
+                            <div className="col-lg-3 col-md-6" style={{width: '15rem'}}>
+                                <div className="single-footer">
+                                    <h3>{this.props.contactInfoTitle}</h3>
+                                    <p>{this.props.contactInfoText}</p>
+                                    <ul className="contact-info">
+                                        <li>
+                                            <a href="/contact-form" >
+                                              <div style={{display: 'flex', marginLeft: '-1.7rem'}}>
+                                              <EnvelopeSquareIcon /> &nbsp;  Contact Form
+                                              </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+                <div className="copyright-area copyright-container-heightxxx" style={{height: '10rem'}}>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-6 col-md-7">
+                                <p>{this.props.copyRightText}</p>
+                            </div>
+                            <div className="col-lg-5 col-md-5">
+                                <ul>
+                                    {this.props.fbLink && (
+                                      <li><a className="icofont-facebook" href={this.props.fbLink}></a></li>
+                                    )}
+
+                                    {this.props.linkedinlLink && (
+                                      <li><a className="icofont-linkedin" href={this.props.linkedinlLink}></a></li>
+                                    )}
+                                    {this.props.twitterlLink && (
+                                      <li><a className="icofont-twitter" href={this.props.twitterlLink} /></li>
+                                    )}
+                                    {/*
+                                    {this.props.instagramlLink && (
+                                        <li>
+                                            <Link
+                                                to={
+                                                    this.props.instagramlLink
+                                                }
+                                                className="icofont-instagram"
+                                            />
+                                        </li>
+                                    )}
+                                    {this.props.vimeolLink && (
+                                        <li>
+                                            <Link
+                                                to={this.props.vimeolLink}
+                                                className="icofont-vimeo"
+                                            />
+                                        </li>
+                                    )}
+                                    */}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </React.Fragment>
+        );
+    }
+}
+
+
+//Props Types
+Footer.propTypes = {
+    siteDescription: PropTypes.string,
+    btnText: PropTypes.string,
+    btnLink: PropTypes.string,
+
+    usefullLinksTitle: PropTypes.string,
+
+    supportTitle: PropTypes.string,
+    supportsLinks: PropTypes.array,
+
+    contactInfoTitle: PropTypes.string,
+    contactInfoText: PropTypes.string,
+    address: PropTypes.string,
+    phone: PropTypes.string,
+    email: PropTypes.string,
+
+    fbLink: PropTypes.string,
+    twitterlLink: PropTypes.string,
+    instagramlLink: PropTypes.string,
+    linkedinlLink: PropTypes.string,
+    vimeolLink: PropTypes.string
+};
+
+//Default Props
+Footer.defaultProps = {
+    siteDescription:
+        "The Simple Event Planning / Tracking Tool that helps with Organizing events and Encourages people to Pitch In",
+    btnText: "Read More",
+    btnLink: "/resources/about-us",
+
+    usefullLinksTitle1:  "Useful Links",
+    usefullLinksTitle2:  "________________",
+
+    
+    supportTitle: "Support",   /*  Hide by changing color to white */
+    supportsLinks: [
+        // {
+        //     Name: "Career",
+        //     Link: "#"
+        // },
+        // {
+        //     Name: "Support",
+        //     Link: "#"
+        // },
+        // {
+        //     Name: "Resource",
+        //     Link: "#"
+        // },
+        // {
+        //     Name: "Strategy",
+        //     Link: "#"
+        // },
+        // {
+        //     Name: "FAQ",
+        //     Link: "#"
+        // },
+        // {
+        //     Name: "Contact",
+        //     Link: "#"
+        // }
+    ],
+
+    contactInfoTitle: "Contact Info",
+    contactInfoText: "Drop us a note below.",
+    address: " ",
+    phone: " ",
+    email: " ",
+    copyRightText: "Copyright \u00a9 2020 All Rights Reserved.",
+    fbLink: "https://www.facebook.com/pitchinclub",
+    twitterlLink: "https://twitter.com/pitchinclub",
+    instagramlLink: "#",
+    linkedinlLink: "https://www.linkedin.com/company/pitch-in-club/",
+    vimeolLink: "#"
+};
+
+/* Small functional componennt used to render links in the footer  */
+const footerLink = (linkAddr, linkText) => {
+  console.log("This is linkText, ", linkText);
+  return (
+    <a href={linkAddr} >
+      <div style={{display: 'flex'}}>
+        <CaretRightIcon /> &nbsp;  {linkText}
+      </div>
+    </a>
+  )
+}
+
+export default Footer;

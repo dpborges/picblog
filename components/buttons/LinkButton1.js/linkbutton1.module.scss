@@ -1,0 +1,48 @@
+/* create container  */
+.forLinkButton1Container {
+  overflow: hidden; 
+  position: relative;
+}
+
+/* Define basic button shape, color and its behavior on hover */
+.forLinkButton1 {
+  border-radius: 8px;
+  color: white;
+  background-color: #2980B7;
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  // border: 1px solid #2980B7;
+  padding: 10px 30px;
+  position: absolute;
+  text-transform: capitalize;
+  overflow: hidden;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #2471a2;
+    // border: 1px solid #2471a2;
+  }
+}
+
+/* create initial state (a white bar) as the before pseudo element when component is initially rendered */
+.forLinkButton1::before {
+  content: '';  /* not inserting any text content */
+  position: absolute;
+  background-color: white; 
+  /* start out by constructing white bar across top of button */
+  top: 0;          
+  left: 0;
+  width: 100%;
+  height: 70px;
+  /* initially position white bar to the left of the button and rotate it 45 degrees */
+  transform: translateX(-100%) translateY(0%) rotate(45deg); 
+  transition: all 0.5s;
+  
+}
+
+/* Have white bar that was initially renderd, move (transform) from left to right, on hover */
+.forLinkButton1:hover::before  { 
+  transform: translateX(100%) rotate(60deg);
+  opacity: 0.3;
+}
