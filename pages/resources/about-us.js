@@ -50,7 +50,7 @@ class Faq extends React.Component {
               <div className={styles.aboutBodySection} >
                 {/* <a className={styles2.withButtonEffect1}  href="#">Read More</a> */}
                   <p className={styles.aboutHeadingTitle}>About Us</p>
-                  <h1 className={styles.aboutH1} style={{textAlign: 'center'}}>
+                  <h1 className={styles.aboutH1} style={{textAlign: 'center', padding: '0 2%'}}>
                     The Pitch In Club's App Makes Event Management Easy
                   </h1>
                   <p className={`${styles.aboutBodyPara} ${styles.aboutContainerMod}`} style={{textAlign: 'center'}} >
@@ -106,7 +106,7 @@ class Faq extends React.Component {
                       The tracking software will take care of the rest, automatically sending reminders to all participants before the event.
                   </p>
                   <p className={styles.aboutBodyPara}>You can sit back, relax, and actually enjoy the event that you are hosting.</p>
-                  <h2 className={styles.aboutH2}>
+                  <h2 className={styles.aboutH2} style={{padding: '0 2%'}}>
                     Never Be Stressed About Organizing an Event Again
                   </h2>
                   <p className={styles.aboutBodyPara} style={{textAlign: 'center'}}><a className="blue-anchor-text" href={`${siteUrl}`} >Sign up</a> free now</p>

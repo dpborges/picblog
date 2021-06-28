@@ -1,0 +1,59 @@
+@import './settings.scss';
+
+.footerSectionsContainer {
+  width: 75%;
+  display: flex; 
+  justify-content: center;
+}
+
+.footerAreaPositioning {
+  display: flex;
+  justify-content: center;
+}
+
+/* ***************************************************************** */
+/* Footer sections  */
+/* ***************************************************************** */
+.footerSection1 {        /* Read More section */
+  width: 16rem;
+  margin-right: 2rem;
+
+  @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    margin-bottom: 3.5rem;
+    height: 14rem;
+  } 
+}
+
+.footerSection2 {       /*  Useful Links section */
+  width: 20rem;
+}
+
+.footerSection3 {       /*  Useful Links section cont... */
+  width: 18rem;
+}
+
+.footerSection4 {      /*  Contact Info  section */
+  width: 18rem;
+
+  @media only screen and (min-width: $mobile-min) and (max-width: $ipad-max) {
+    margin-top:  1rem;
+  } 
+}
+
+
+/* ***************************************************************** */
+/* Copyright section  */
+/* ***************************************************************** */
+
+.copyrightItemsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 65%;  
+  flex-wrap: wrap;
+
+  @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    justify-content: center;
+    width: 75%;  
+  } 
+}

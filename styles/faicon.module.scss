@@ -1,6 +1,6 @@
 @import './settings.scss';
 
-// Fontawesome custom styles
+// Fontawesome custom styles with no hover effect
 
 .facebookIcon {
   height: 19px;
@@ -21,4 +21,14 @@
   width: 22px;
   color:$blue;
   margin: 5px;
+}
+
+
+// Container used postion and apply hover effect */
+
+.iconContainer {
+
+  &:hover {
+    color: white;
+  }
 }

@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import Link from 'next/link';
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import LinkButton1 from '../components/buttons/LinkButton1.js';
 import CaretRightIcon from "../components/icons/CaretRightIcon.js";
 import EnvelopeSquareIcon from "../components/icons/EnvelopeSquareIcon.js";
 import getAppConfig from '../config/AppConfig';
+
+import styles1 from '../styles/faicon.module.scss';
+import styles2 from '../styles/footer-axolot.module.scss';
 
 class Footer extends Component {
     render() {
@@ -24,26 +28,23 @@ class Footer extends Component {
 
         return (
             <React.Fragment>
-                <footer className="footer-area ptb-100 footer-area-positioning" > 
-                    <div className="footer-sections-container" >
+                <footer className={`footer-area ptb-100 ${styles2.footerAreaPositioning}`} > 
+                    <div className={styles2.footerSectionsContainer} >
                       
                         <div className="row"  style={{display: 'flex', flexWrap: 'wrap'}}>
-                            <div className="col-lg-3 col-md-6" style={{width: '20rem'}}>
+                            <div className={styles2.footerSection1} >
                                 <div className="single-footer" >
                                   <h4 className="logo">
-                                      <a href="#home">
-                                          Pitch In<span>&nbsp;Club</span>
-                                      </a>
+                                    <a href="#home">
+                                      Pitch In<span>&nbsp;Club</span>
+                                    </a>
                                   </h4>
-                                  <p style={{marginBottom: '2rem'}}>{this.props.siteDescription}</p>
-                                  {/* <a href={this.props.btnLink} className="btn btn-primary">
-                                    {this.props.btnText}
-                                  </a> */}
+                                  <p style={{marginBottom: '1rem'}}>{this.props.siteDescription}</p>
                                   <LinkButton1 link="#" linkText="read more" />
                                 </div>
                             </div>
                             {/* This is First List of Resources */}
-                            <div className="col-lg-3 col-md-6"  style={{width: '18rem'}}>
+                            <div className={styles2.footerSection2}  >
                                 <div className="single-footer footer-navbar-nav">
                                   <h3>{this.props.usefullLinksTitle1}</h3>
                                   <ul>
@@ -67,7 +68,7 @@ class Footer extends Component {
                             </div>
 
                             {/* Second List of Resources */}
-                            <div className="col-lg-3 col-md-6" style={{width: '18rem'}} >
+                            <div className={styles2.footerSection3} >
                               <div className="single-footer footer-navbar-nav">
                                   <h3 style={{color: '#95A5A6'}}>{this.props.usefullLinksTitle2}</h3>
                                   <ul>
@@ -86,18 +87,18 @@ class Footer extends Component {
                                   </ul>
                               </div>
                             </div>
-                       
-                            <div className="col-lg-3 col-md-6" style={{width: '15rem'}}>
-                                <div className="single-footer">
+
+                            <div className={styles2.footerSection4} >
+                                <div className={`single-footer`}>
                                     <h3>{this.props.contactInfoTitle}</h3>
                                     <p>{this.props.contactInfoText}</p>
                                     <ul className="contact-info">
                                         <li>
-                                            <a href="/contact-form" >
-                                              <div style={{display: 'flex', marginLeft: '-1.7rem'}}>
+                                          <a href="/contact-form" >
+                                            <div style={{display: 'flex', marginLeft: '-1.7rem'}}>
                                               <EnvelopeSquareIcon /> &nbsp;  Contact Form
-                                              </div>
-                                            </a>
+                                            </div>
+                                          </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -106,44 +107,35 @@ class Footer extends Component {
                     </div>
                 </footer>
 
-                <div className="copyright-area copyright-container-heightxxx" style={{height: '10rem'}}>
-                    <div className="container">
-                        <div className="row">
+                <div className="copyright-area" style={{height: '10rem'}}>
+                    <div className="containerx" style={{display: 'flex', justifyContent: 'center'}}>
+                        <div className={styles2.copyrightItemsContainer} >
                             <div className="col-lg-6 col-md-7">
                                 <p>{this.props.copyRightText}</p>
                             </div>
-                            <div className="col-lg-5 col-md-5">
+                            <div className="col-lg-5X col-md-5X" style={{display: 'flex', alignItems: 'center'}} >
                                 <ul>
-                                    {this.props.fbLink && (
-                                      <li><a className="icofont-facebook" href={this.props.fbLink}></a></li>
-                                    )}
-
-                                    {this.props.linkedinlLink && (
-                                      <li><a className="icofont-linkedin" href={this.props.linkedinlLink}></a></li>
-                                    )}
-                                    {this.props.twitterlLink && (
-                                      <li><a className="icofont-twitter" href={this.props.twitterlLink} /></li>
-                                    )}
-                                    {/*
-                                    {this.props.instagramlLink && (
-                                        <li>
-                                            <Link
-                                                to={
-                                                    this.props.instagramlLink
-                                                }
-                                                className="icofont-instagram"
-                                            />
-                                        </li>
-                                    )}
-                                    {this.props.vimeolLink && (
-                                        <li>
-                                            <Link
-                                                to={this.props.vimeolLink}
-                                                className="icofont-vimeo"
-                                            />
-                                        </li>
-                                    )}
-                                    */}
+                                    <li>
+                                      <div className={styles1.iconContainer}>
+                                        <a className="icofont-facebook" href="https://www.facebook.com/pitchinclub">
+                                          <FontAwesomeIcon icon={["fab", "facebook-f"]}  />
+                                        </a>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div className={styles1.iconContainer}>
+                                        <a className="icofont-linkedin" href="https://www.linkedin.com/company/pitch-in-club/"  >
+                                          <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
+                                        </a>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div className={styles1.iconContainer}>
+                                        <a className="icofont-twitter" href="https://twitter.com/pitchinclub"  >
+                                          <FontAwesomeIcon icon={["fab", "twitter"]}  />
+                                        </a>
+                                      </div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -191,32 +183,7 @@ Footer.defaultProps = {
 
     
     supportTitle: "Support",   /*  Hide by changing color to white */
-    supportsLinks: [
-        // {
-        //     Name: "Career",
-        //     Link: "#"
-        // },
-        // {
-        //     Name: "Support",
-        //     Link: "#"
-        // },
-        // {
-        //     Name: "Resource",
-        //     Link: "#"
-        // },
-        // {
-        //     Name: "Strategy",
-        //     Link: "#"
-        // },
-        // {
-        //     Name: "FAQ",
-        //     Link: "#"
-        // },
-        // {
-        //     Name: "Contact",
-        //     Link: "#"
-        // }
-    ],
+    supportsLinks: [ ],
 
     contactInfoTitle: "Contact Info",
     contactInfoText: "Drop us a note below.",
@@ -224,14 +191,14 @@ Footer.defaultProps = {
     phone: " ",
     email: " ",
     copyRightText: "Copyright \u00a9 2020 All Rights Reserved.",
-    fbLink: "https://www.facebook.com/pitchinclub",
-    twitterlLink: "https://twitter.com/pitchinclub",
+    fbLink: "",
+    twitterlLink: "",
     instagramlLink: "#",
-    linkedinlLink: "https://www.linkedin.com/company/pitch-in-club/",
+    linkedinlLink: "",
     vimeolLink: "#"
 };
 
-/* Small functional componennt used to render links in the footer  */
+/* Small functional componennt used to render Useful links in the footer  */
 const footerLink = (linkAddr, linkText) => {
   console.log("This is linkText, ", linkText);
   return (
