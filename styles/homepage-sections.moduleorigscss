@@ -1,0 +1,223 @@
+@import './settings.scss';
+
+// ========================================================
+// Section On Top of Home Page beneath Header
+// ========================================================
+
+.home-slide-subtitle {
+    color: $white;
+    font-size: 1.3rem;  /* primary uses the default color */
+    margin-top: -1.5rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-small;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}
+
+
+// ========================================================
+// Section 2  - You Quickly and Easily Organize
+// ========================================================
+
+// Section 2 - Types of events you can organize
+.homepage-s2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+// Section 2 - Event list container
+.event-list {
+    display: flex;
+    // align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    margin-top: 1.75rem;
+ }
+
+ .event-list__group {
+    color: $greyshade4;
+    font-size: $font-size-large;
+    font-weight: 600;
+    width: 25rem;
+    margin: $s-size auto;
+ }
+
+ // horizontal rule (line separator)
+.hr-medium {
+    width:  150px;
+    height: 3px;
+    background: $orange;
+    border: $orange;
+    margin: $m-size;
+}
+
+
+// This is title that shows before eventlist
+.event-list-para-title {
+    color: $greyshade5;
+    font-size: $font-size-xlarge;
+    margin-top: 5rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-large;
+        margin-top:  4rem;
+    }
+}
+
+// this is the sentence on bottom finishing 
+.event-list-para {
+    color: $greyshade5;
+    width:  50rem;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        width:  28rem;
+        margin-bottom: 5rem;
+    }
+
+}
+
+// ========================================================
+// Section 3 - How It Works
+// ========================================================
+
+// Section 3 Main container - How it Works
+.homepage-s3 {
+    background-color: $greyshade0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+// Section 3 - Heading
+.homepage-s3__heading {
+    color: $orange;
+    font-weight: 700;
+    margin-top: $xl-size + $s-size;
+ }
+
+ // Section 3 - Container for process boxes
+ .processBoxContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    align-items: center;
+    justify-content: center;
+    margin: $s-size auto;
+ }
+
+// Styling for the process box itself
+.process-box {
+    background-color: $white;    
+    text-align: center;
+    height: 200px;
+    margin: $s-size;
+    width: 195px;
+}
+
+// Styling for the process box elements
+.processBoxIcon {
+    color: $orange3;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-top: $s-size;
+}
+
+.processBoxHeading {
+    color: $greyshade5;
+    font-size: $font-size-small;
+    font-weight: 600;
+    margin-top: $xs-size;
+}
+
+.process-box__victory-heading {
+    @extend .processBoxHeading;
+    margin: .0rem 1.2rem -.2rem 1.2rem;
+}
+
+.process-box__victory-text {
+    color: $greyshade4;
+    font-size: $font-size-xxsmall;
+    width: 80%;
+    margin: $xs-size auto;
+    font-weight: 600;
+}
+
+.process-box__victory-icon { 
+    // color: $orange3;
+    color: red;
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-top: .7rem;
+}
+
+.processBoxText {
+    color: $greyshade4;
+    font-size: $font-size-xxsmall;
+    width: 80%;
+    margin: $xs-size auto;
+    font-weight: 600;
+    // margin-top: $s-size;
+}
+
+/* This is the Call To Action (cta) text found at bottom of this section*/
+.cta-text-s3 {
+    color: $greyshade5;
+    font-size: $font-size-large;
+    
+    @media (max-width: $mobilephone-breakpoint) {
+        font-size: $font-size-medium;
+    }
+}
+
+// ======================================================================
+// Section 4  - This is the Feedback Form "We're Happy to Hear From You"
+// ======================================================================
+
+// Section 4 - container
+/* used for ssr */
+.homepage-s4 {
+    background-color: $greyshade0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* used for ssr */
+.homepage-s4__heading {
+    color: $greyshade3;
+    font-size: $font-size-xlarge;
+    margin-top: $xl-size;
+    
+    /* decrease font size */
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size:  $font-size-small - .1rem;
+        margin-top: $m-size;
+    }
+}
+
+// Custom horizontal rule (line separator) to apply style for mobile
+.hr-medium-section4 {
+    @extend .hr-medium;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-bottom: -.9rem;
+    }
+}
+
+
+// Section 2 - Event list container
+// .event-list {
+//     color: $greyshade4;
+//     font-size: $font-size-large;
+//     font-weight: 600;
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: wrap;    
+//  }
+

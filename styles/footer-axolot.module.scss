@@ -1,9 +1,18 @@
 @import './settings.scss';
 
 .footerSectionsContainer {
-  width: 75%;
+  width: 80%;
+  // margin: 0 auto;
+  padding: 0 2%;
   display: flex; 
   justify-content: center;
+
+  @media only screen and (min-width: $mobile-min) and (max-width: 1024px) {
+    margin-top:  2rem;
+    padding-left: 5%;
+    width: 60rem;
+  } 
+
 }
 
 .footerAreaPositioning {
@@ -36,7 +45,7 @@
   width: 18rem;
 
   @media only screen and (min-width: $mobile-min) and (max-width: $ipad-max) {
-    margin-top:  1rem;
+    margin-top:  2rem;
   } 
 }
 
@@ -57,3 +66,8 @@
     width: 75%;  
   } 
 }
+
+// .socialMediaIconsContainer {
+
+
+// }

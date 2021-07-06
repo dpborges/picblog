@@ -112,7 +112,6 @@ class Faq extends React.Component {
                   <p className={styles.aboutBodyPara} style={{textAlign: 'center'}}><a className="blue-anchor-text" href={`${siteUrl}`} >Sign up</a> free now</p>
               </div>
             </section>
-           
             <Footer />
         </React.Fragment>
         );

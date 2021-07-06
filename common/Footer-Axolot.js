@@ -30,7 +30,6 @@ class Footer extends Component {
             <React.Fragment>
                 <footer className={`footer-area ptb-100 ${styles2.footerAreaPositioning}`} > 
                     <div className={styles2.footerSectionsContainer} >
-                      
                         <div className="row"  style={{display: 'flex', flexWrap: 'wrap'}}>
                             <div className={styles2.footerSection1} >
                                 <div className="single-footer" >
@@ -46,7 +45,7 @@ class Footer extends Component {
                             {/* This is First List of Resources */}
                             <div className={styles2.footerSection2}  >
                                 <div className="single-footer footer-navbar-nav">
-                                  <h3>{this.props.usefullLinksTitle1}</h3>
+                                  <h3>Useful Links</h3>
                                   <ul>
                                       <li>
                                           {footerLink(`${siteUrl}/resources/features`, "Features")}
@@ -70,8 +69,8 @@ class Footer extends Component {
                             {/* Second List of Resources */}
                             <div className={styles2.footerSection3} >
                               <div className="single-footer footer-navbar-nav">
-                                  <h3 style={{color: '#95A5A6'}}>{this.props.usefullLinksTitle2}</h3>
-                                  <ul>
+                                  <h3 style={{fontSize: '20px'}}>. . more links </h3> 
+                                  <ul style={{marginTop: '0rem'}}>
                                       <li>
                                           {footerLink(`${siteUrl}/resources/how-to-create-event`, "How to Create Event")}
                                       </li>
@@ -111,7 +110,7 @@ class Footer extends Component {
                     <div className="containerx" style={{display: 'flex', justifyContent: 'center'}}>
                         <div className={styles2.copyrightItemsContainer} >
                             <div className="col-lg-6 col-md-7">
-                                <p>{this.props.copyRightText}</p>
+                                <p>{`© ${new Date().getFullYear()}  All Rights Reserved.`}</p>
                             </div>
                             <div className="col-lg-5X col-md-5X" style={{display: 'flex', alignItems: 'center'}} >
                                 <ul>
@@ -178,8 +177,7 @@ Footer.defaultProps = {
     btnText: "Read More",
     btnLink: "/resources/about-us",
 
-    usefullLinksTitle1:  "Useful Links",
-    usefullLinksTitle2:  "________________",
+    usefullLinksTitle2:  "...links continued",
 
     
     supportTitle: "Support",   /*  Hide by changing color to white */
@@ -190,7 +188,7 @@ Footer.defaultProps = {
     address: " ",
     phone: " ",
     email: " ",
-    copyRightText: "Copyright \u00a9 2020 All Rights Reserved.",
+    // copyRightText: "Copyright \u00a9 2020 All Rights Reserved.",
     fbLink: "",
     twitterlLink: "",
     instagramlLink: "#",

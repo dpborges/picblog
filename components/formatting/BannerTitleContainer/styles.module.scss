@@ -1,0 +1,56 @@
+// Various BannnerTitleContainers for positioning over an image
+// It also has a container for the child component with position set to relative.
+// This allows you to move child component around the BannerContainer.
+
+/* container for top left quadrant */
+.top-left-container {
+  position: absolute;
+  top:    0;
+  left:   0;
+  bottom: 50%;
+  right:  50%; 
+}
+
+/* container for top right quadrant */
+.top-right-container {
+  top:     0;
+  right:   0;
+  position: absolute;
+  bottom: 50%;
+  left:   50%; 
+}
+
+/* container for bottom right quadrant */
+.bottom-right-container {
+  position: absolute;
+  bottom: 0;
+  right:  0;
+  left:   50%; 
+  top:    50%;
+}
+
+/* container for bottom left quadrant */
+.bottom-left-container {
+  position: absolute;
+  bottom: 0;
+  left:   0; 
+  right:  50%;
+  top:    50%;
+}
+
+
+/* container for bottom left quadrant */
+.center-container {
+  position: absolute;
+  bottom: 30%;
+  left:   20%; 
+  right:  20%;
+  top:    30%;
+}
+
+/* banner title set to relative so you can move/adjust the child component
+  (actual title component) around the selected quadrant */
+.banner-title {
+  position: relative;
+}
+

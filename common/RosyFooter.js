@@ -14,7 +14,7 @@ const RosyFooter = (props) => {
     
     return (
         <div className="rosy-footer-container" >
-            <div className="rosy-footer-text">{`${new Date().getFullYear()} © All Rights Reserved.`}</div>
+            <div className="rosy-footer-text">{`© ${new Date().getFullYear()} All Rights Reserved.`}</div>
             <div className="rosy-footer-content-container">
                 <div className="rosy-footer-social-icons bottom">
                     <ul className="rosy-footer-icon-list">
