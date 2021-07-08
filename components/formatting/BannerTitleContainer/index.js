@@ -33,7 +33,7 @@ export default function index(props) {
   }
   
   return (
-    <div className={styles['center-container']}>
+    <div className={styles[position]} >
       <div className={styles['banner-title']}>
         {children}
       </div>

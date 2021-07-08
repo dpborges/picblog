@@ -246,22 +246,22 @@
 //     padding-left: 7rem; 
 //  }
 
-.typeevents-list-style {
-  list-style-type: square;
-}
+// .typeevents-list-style {
+//   list-style-type: square;
+// }
 
-.typeevents-li-text-style {
-    margin-left: 7rem; 
-    color: $greyshade5;
-    font-size: $font-size-small;
-    line-height: 2rem;
+// .typeevents-li-text-style {
+//     margin-left: 7rem; 
+//     color: $greyshade5;
+//     font-size: $font-size-small;
+//     line-height: 2rem;
 
-    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
-        font-size: $font-size-xxsmall;
-        margin-left: 3rem;
-        padding: 0 .7rem 0 .7rem;
-    }
- }
+//     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         font-size: $font-size-xxsmall;
+//         margin-left: 3rem;
+//         padding: 0 .7rem 0 .7rem;
+//     }
+//  }
 
 // ***************************************************************************
 // Styles used for text at bottom of the page

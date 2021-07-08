@@ -52,5 +52,8 @@
   (actual title component) around the selected quadrant */
 .banner-title {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 

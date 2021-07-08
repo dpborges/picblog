@@ -1,0 +1,31 @@
+@import './settings.scss'; 
+
+// ***********************************************
+// General List styles
+// ***********************************************
+
+.square-list-style {
+  list-style-type: square;
+}
+
+// ***********************************************
+// List item styles used on resource pages
+// ***********************************************
+
+.resource-list-item-text {
+  margin-left: 7rem; 
+  color: $greyshade5;
+  font-size: $font-size-small;
+  line-height: 2rem;
+
+  @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      font-size: $font-size-xxsmall;
+      margin-left: 3rem;
+      padding: 0 .7rem 0 .7rem;
+  }
+ }
+
+
+// ***********************************************
+// Place other list item styles below
+// ***********************************************

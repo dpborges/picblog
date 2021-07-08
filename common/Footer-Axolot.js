@@ -106,9 +106,9 @@ class Footer extends Component {
                     </div>
                 </footer>
 
-                <div className="copyright-area" style={{height: '10rem'}}>
+                <div className="copyright-area" style={{height: '7.5rem'}}>
                     <div className="containerx" style={{display: 'flex', justifyContent: 'center'}}>
-                        <div className={styles2.copyrightItemsContainer} >
+                        <div className={styles2.copyrightItemsContainer} style={{solid: '1px solid red'}}>
                             <div className="col-lg-6 col-md-7">
                                 <p>{`© ${new Date().getFullYear()}  All Rights Reserved.`}</p>
                             </div>

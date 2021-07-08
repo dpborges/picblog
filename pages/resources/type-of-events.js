@@ -9,6 +9,7 @@ import BannerSection from '../../components/formatting/BannerSection';
 
 import styles from "../../styles/typeevents.module.scss";
 import styles2 from "../../styles/features.module.scss";
+import styles3 from "../../styles/list-styles.module.scss";
 
 /* This is title section. It contains the main title for this page and a background image */
 const titleSection = () => (
@@ -141,20 +142,20 @@ const textSection3 = () => (
           and easily using the Pitch In Club!
       </p>
       <p className={styles["typeevents-para"]}>Some events include: </p>
-      <ul className={styles["typeevents-list-style"]}>
-          <li className={styles["typeevents-li-text-style"]}>BBQ</li>
-          <li className={styles["typeevents-li-text-style"]}>Family Reunion</li>
-          <li className={styles["typeevents-li-text-style"]}>Volunteer Efforts</li>
-          <li className={styles["typeevents-li-text-style"]}>Birthday Party</li>
-          <li className={styles["typeevents-li-text-style"]}>Work Lunch</li>
-          <li className={styles["typeevents-li-text-style"]}>Sports Watch Party</li>
-          <li className={styles["typeevents-li-text-style"]}>Dinner Party</li>
-          <li className={styles["typeevents-li-text-style"]}>Potluck Style Event</li>
-          <li className={styles["typeevents-li-text-style"]}>Outdoor Sports Event</li>
-          <li className={styles["typeevents-li-text-style"]}>Camping Trip</li>
-          <li className={styles["typeevents-li-text-style"]}>Office Events</li>
-          <li className={styles["typeevents-li-text-style"]}>Cocktail Parties</li>
-          <li className={styles["typeevents-li-text-style"]}>Church Events</li>
+      <ul className={styles3["square-list-style"]}>
+          <li className={styles3["resource-list-item-text"]}>BBQ</li>
+          <li className={styles3["resource-list-item-text"]}>Family Reunion</li>
+          <li className={styles3["resource-list-item-text"]}>Volunteer Efforts</li>
+          <li className={styles3["resource-list-item-text"]}>Birthday Party</li>
+          <li className={styles3["resource-list-item-text"]}>Work Lunch</li>
+          <li className={styles3["resource-list-item-text"]}>Sports Watch Party</li>
+          <li className={styles3["resource-list-item-text"]}>Dinner Party</li>
+          <li className={styles3["resource-list-item-text"]}>Potluck Style Event</li>
+          <li className={styles3["resource-list-item-text"]}>Outdoor Sports Event</li>
+          <li className={styles3["resource-list-item-text"]}>Camping Trip</li>
+          <li className={styles3["resource-list-item-text"]}>Office Events</li>
+          <li className={styles3["resource-list-item-text"]}>Cocktail Parties</li>
+          <li className={styles3["resource-list-item-text"]}>Church Events</li>
       </ul>
       
       <p className={styles["typeevents-para"]}>

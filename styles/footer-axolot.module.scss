@@ -44,7 +44,11 @@
 .footerSection4 {      /*  Contact Info  section */
   width: 18rem;
 
-  @media only screen and (min-width: $mobile-min) and (max-width: $ipad-max) {
+  @media only screen  and (max-width: $ipad-max) {
+    margin-top:  2rem;
+  } 
+
+  @media only screen and (max-width: 1363px) {
     margin-top:  2rem;
   } 
 }
@@ -63,7 +67,8 @@
 
   @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
     justify-content: center;
-    width: 75%;  
+    width: 70%;  
+    margin-top: -1rem;
   } 
 }
 

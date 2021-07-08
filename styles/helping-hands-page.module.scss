@@ -1,0 +1,413 @@
+@import './settings.scss';
+
+// ***************************************************************************
+// The following styles are used for the top section of the hhlp page (title Section)
+// ***************************************************************************
+/* This serves as background for the top section of the hhlp page */
+// .webp .hhlp-title-container {
+//   background-image: url(../../public/images/help-decorate.webp);
+// }
+// .no-webp .hhlp-title-container {
+//   background-image: url(../../public/images/help-decorate.jpg);
+// }
+
+// .hhlp-text-block-container {
+//     display: flex;      /* these 4 elements are used together */
+//     flex-direction: column;
+//     justify-content: flex-start;    
+//     width: 20%;
+
+//     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         margin-left: 1rem;
+//         margin-top: -1rem;
+//         width: 90%;
+//         flex-direction: row;
+//     }
+// }
+
+// .hhlp-text-block-container {
+//     display: flex;      /* these 4 elements are used together */
+//     flex-direction: column;
+//     justify-content: flex-start;    
+//     width: 20%;
+
+//     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         margin-left: 1rem;
+//         margin-top: -1rem;
+//         width: 90%;
+//         flex-direction: row;
+//     }
+// }
+
+
+/* This container for the text block in top section of the helpings hands page */
+// .hhlp-text-block {
+//     text-align: center;
+//     color: $white;
+//     padding: .5rem;
+//     font-family: inherit;
+//     height: 17rem;
+// }
+
+/* This is main title within the text block container */
+.hhlp-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Lato', 'Roboto', 'Arial', 'sans-serif';
+    line-height: 3.5rem;
+    padding: 0 2%;
+
+  @media screen and  (max-width: 1011.98px) {
+    font-size: 2.8rem;
+  }
+
+  @media screen and  (max-width: 885.98px) {
+    font-size: 2.3rem;
+    line-height: 2.3rem;
+  }
+
+  @media screen and  (max-width: 727.98px) {
+    font-size: 1.9rem;
+    line-height: 2rem;
+  }
+
+  @media screen and  (max-width: 600.98px) {
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+  }
+
+  @media screen and  (max-width: 400.98px) {
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+  }
+}  
+
+.hhlp-subtitle {
+  color: $greyshade6;
+  font-size: $font-size-medium;
+  text-align: center;
+  font-family: $font-family;
+      
+  @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      font-size: $font-size-xsmall;
+      padding: 0 .7rem 0 .7rem;
+  }
+}
+
+
+.hhlp-text-background {
+  background-color: $orange;
+  opacity: 0.6;
+  position: relative;
+  height: 8%;
+  width: 85%;
+  vertical-align: middle;
+  text-align: center;
+
+  
+
+  // @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+  //     height: 5rem;
+  //     margin-top: -13.5rem;
+  //     width: 20rem;
+  // }
+}
+
+
+/* This is subtext (paragraph) within the text block container */
+// .hhlp-subtext {
+//     color: $greyshade5;
+//     font-size: $font-size-xsmall;
+//     margin-top: .5rem;
+//     text-align: left;
+//     width: 28rem;
+
+//     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         color: $greyshade6;
+//         font-size: $font-size-xxsmall - .1rem;
+//         width: 60rem;
+//         margin-top: 1.5rem;
+//         margin-left: 1rem;
+//         padding: 0;
+//     }
+// }
+
+
+
+/* This is subtitle within the text block container */
+.hhlp-subtitle-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5rem;
+}
+
+
+// ***************************************************************************
+// Styles for the various text sections
+// ***************************************************************************
+
+/* The container for the various h2 sections  */
+.hhlp-h2-sections-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* This is the container that holds the <h2> element and <p> elements for that particular section */
+.hhlp-h2-section {
+    padding-left: 0;
+    width: 55%;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        width: 90%;
+        padding-left: 0;
+    }
+}
+
+.hhlp-para {
+    color: $greyshade5;
+    font-size: $font-size-small;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+    padding: 0 0;
+    text-align: justify;
+    // width: 60%;
+    z-index: 1;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        flex-direction: column;
+        font-size: $font-size-xsmall;
+        text-align: left;
+    }
+}
+
+/* Use to center last few lines after the Helping Hands Screen snapshot */
+.hhlp-para-alt {
+   text-align: center;
+}
+
+.hhlp-h2-style {
+    font-size: $font-size-large;  /* primary uses the default color */
+    color: $greyshade6;
+    font-weight: 700;
+    font-family: $font-family;
+    margin-bottom: 3rem;
+    text-align: center;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-small;
+        text-align: center;
+    }
+}
+
+
+// ***************************************************************************
+// The following styles are used for the second section of the hhlp page
+// (Helping Hands List Screen shot section )
+// ***************************************************************************
+/* This container for the text block in top section of the hhlp pages */
+.hhlp-screenshot-container {
+    background-color: $greyshade0;
+    color: $greyshade4;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+// .hhlp-screenshot-title {
+//     color: $greyshade6;
+//     font-size: $font-size-xlarge - .1rem;
+//     font-family: inherit;
+//     font-weight: 700;
+//     line-height: 2;
+//     text-align: center;
+//     padding: 0 .5rem 0 .5rem;
+
+//     @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         font-size: $font-size-small;
+//         padding: 0 1rem 0 1rem;
+//     }
+// }
+
+// .hhlp-screenshot-subtitle {
+//     color: $greyshade4;
+//     font-family: inherit;
+//     // font-weight: 900;
+//     // margin-top: -2rem;
+//     text-align: center;
+
+//     @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         padding: 0 .25rem 0 .25rem
+//     }
+// }
+
+.hhlp-screenshot-image {
+    height: 48rem;
+    width: 48rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        height: 24rem;
+        width: 22rem;
+    }
+
+}
+
+// ***************************************************************************
+// The following styles are used for the third section , which is the usage section.
+// Here it displays different ways to use a helping hands list.
+// ***************************************************************************
+
+/* This is blue rectangle surrounding text */
+.hhlp-usage-section-heading {
+    color: $greyshade5;
+    background-color: $lightblue1;
+    height: 3.8rem;
+    border-radius: 5px;
+    width: 80rem;
+    text-align: center;
+    padding: 14px 0;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        width: 21rem;
+        height: 3rem;
+        padding: 7px 0;
+    }
+}
+
+.hhlp-usage-section-heading-text {
+    font-size: $font-size-large;
+    font-weight: 700;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-xsmall - .1rem;
+    }
+}
+
+
+
+/* These are the image styles */
+.hhlp-image-style {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 35rem;
+    height:  30rem;
+    object-fit: cover;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        width: 19rem;
+        height:19rem;
+        margin-top: -1rem;
+    }
+}
+
+
+/* annot style container */
+// .hhlp-annot-style-container {
+//     display: flex;
+//     justify-content: center;
+// }
+
+// .hhlp-annot-style {
+//     font-size: $font-size-small - .2rem;
+//     text-align: center;
+//     padding: 8px 5px 0;
+//     border-left:  1px solid $greyshade3;
+//     border-right: 1px solid $greyshade3;
+//     border-bottom: 1px solid $greyshade3;
+//     width: 35rem;
+
+//     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         font-size: $font-size-xxsmall - .1rem;
+//         width: 19rem;
+//     }
+// }
+
+.hhlp-ul-indent {
+    padding-left: 7rem; 
+ }
+
+.hhlp-li-text-style {
+    color: $greyshade5;
+    font-size: $font-size-small;
+    line-height: 2rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-xxsmall;
+        margin-left: 3rem;
+        padding: 0 .7rem 0 .7rem;
+    }
+
+ }
+
+// ***************************************************************************
+// Styles used for process section
+// ***************************************************************************
+
+// .hhlp-process-container {
+//     @extend .hhlp-screenshot-container;
+
+// }
+
+// .hhlp-process-title {
+//     @extend .hhlp-screenshot-title;
+// }
+
+
+// ***************************************************************************
+// Cta Block Section
+// ***************************************************************************
+
+/* NOTE USED AT ALL */  
+// .cta-section-title {
+//     color: $greyshade4;
+//     font-size: $font-size-medium;
+//     font-family: inherit;
+//     font-weight: 400;
+//     // margin-top: 7rem;
+//     text-align: center;
+//     padding: 0 .5rem 0 .5rem;
+//     margin: 1rem 4rem 1rem 4rem;
+
+//     @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         font-size: $font-size-medium;
+//     }
+// }
+
+/* NOTE USED AT ALL */
+// .cta-section-subtitle {    
+//     @extend .cta-section-title;
+//     font-size: $font-size-medium - .3rem;
+
+//     @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         font-size: $font-size-xsmall;
+//     }
+// }
+
+
+.hhlp-ctablock-container {
+    background-color: $lightblue0;
+    color: $greyshade4;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+}
+
+
+/* NOTE USED AT ALL */
+// .hhlp-cta-text-link {
+//     text-decoration: none;
+//     color: $blue;
+
+//     &:hover {
+//         color: $lightblue;
+//         text-decoration: none;
+//     }
+
+//     @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         font-size: $font-size-xsmall;
+//     }
+// }
