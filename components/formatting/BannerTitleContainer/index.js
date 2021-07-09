@@ -28,6 +28,8 @@ export default function index(props) {
       position = 'bottom-left-container';  break; 
     case 'c':
       position = 'center-container';                 break; 
+    case 'fc':
+      position = 'full-container';                 break; 
     default:
       position = 'top-left-container';   /* in case something other supported values is passed */
   }

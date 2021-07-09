@@ -25,11 +25,15 @@ import styles1 from "../../styles/features.module.scss";
 
 const BannerSection = (props) => {
 
-  const { bannerTitleJsx, imgSrc, imgHeight, imgWidth, imgAlt, imgQuality, bannerTitlePosition } = props;
+  let { bannerTitleJsx, imgSrc, imgHeight, imgWidth, imgAlt, 
+          imgQuality, imgBgColor, bannerTitlePosition, opacity } = props;
+
+  opacity = !opacity ? 1.0 : opacity;
 
   return (
-    <div style={{position: 'relative', }}>
-      <div>
+    <div >
+      <div style={{ opacity: opacity }}>
+      {/* <div > */}
         <ResponsiveImage 
           src={imgSrc}
           width={imgWidth} height={imgHeight} alt={imgAlt} quality={imgQuality}

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 // import { HashLink as Link } from 'react-router-hash-link';
 import Head from 'next/head';
+import Image from 'next/image';
 // import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
 import SSPageHeader from '../../common/SSPageHeader.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -133,10 +134,13 @@ const textSection4 = () => {
 
 /* This section that contains screenshot of helping hands list */
 const appScreenShotSection = () => (
-  <div className={styles["hhlp-screenshot-container"]}>
+  <div className={styles["hhlp-screenshot-container"]} >
     <div className="rc-mt-1">&nbsp;</div>
     <div className="rc-flex-container-center">
-        <img className={styles["hhlp-screenshot-image"]} src="/images/helping-hands-list-ui.png" alt="Helping Hands List image" />
+        <Image src="/images/helping-hands-list-ui.png" alt="Helping Hands List image" 
+          height={672}
+          width={725}
+        /> 
     </div>
       <div className="rc-horiz-spacer-medium">&nbsp;</div>
   </div>
@@ -308,6 +312,7 @@ class HelpingHandsPage extends Component  {
                 <div className={styles["hhlp-h2-sections-container"]}>
                   {textSection4()}
                 </div>
+                
                 
                 {/*
                 {usageSection()}

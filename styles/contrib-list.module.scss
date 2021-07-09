@@ -1,0 +1,354 @@
+@import './settings.scss';
+
+// ***************************************************************************
+// The following styles are used for the top section of the hhlp page
+// ***************************************************************************
+/* This serves as background for the top section of the clp page */
+// .clp-bg-container {
+//     background-image: linear-gradient(rgba(0, 0, 0, 0.30),rgba(0, 0, 0, 0.60)), url("../../public/images/people-around-food-table.jpg"); /* The image used */
+//     background-color: #cccccc; /* Used if the image is unavailable */
+//     height: 70vh;; /* You must set a specified height */
+//     background-position: center; /* Center the image */
+//     background-repeat: no-repeat; /* Do not repeat the image */
+//     background-size: cover; /* Resize the background image to cover the entire container */
+    
+//     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//         margin-top: -.1rem; /* You must set a specified height */
+//     }
+// }
+
+
+.clp-white-border {
+    color: white;
+    border: 11px solid white;
+    margin-top: 15%;
+    // margin-left:35%;
+    // height: 80%;
+    width: 80%;
+    height: 27rem;
+
+    @media screen  and (max-width: 800px) { 
+      height: 17rem; margin-top: 22%; border: 7px solid white;
+    }
+
+    @media screen  and (max-width: 525px) { 
+      height: 14rem; margin-top: 22%; border: 7px solid white;
+    }
+
+    @media screen  and (max-width: 412px) {
+      height: 10rem; margin-top: 34%; border: 5px solid white;
+    }
+
+    // @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    //     border: 8px solid white;
+    //     height: 22rem;
+    //     margin: 4rem;
+    // }
+}
+
+.clp-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.clp-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+/* This is main title within the text block container */
+.clp-title {
+    color: white;
+    font-size: $font-size-xxlarge + .5rem;
+    font-family: $font-family;
+    font-family: inherit;
+    font-weight: 700;
+    margin: 0;
+    width: 70%;
+    line-height: 3rem;
+    text-align: center;
+    
+
+    @media screen  and (max-width: 800px) {
+      font-size: $font-size-xlarge + .3rem;
+      line-height: 2.5rem;
+     }
+
+     @media screen  and (max-width: 570px) {
+      font-size: $font-size-xlarge + .3rem;
+      line-height: 2.5rem;
+     }
+
+     @media screen  and (max-width: 525px) {
+      font-size: $font-size-large + .3rem;
+      line-height: 1.5rem;
+      width: 90%
+     }
+     @media screen  and (max-width: 412px) {
+      font-size: $font-size-medium;
+      font-weight: 600;
+      line-height: 1.5rem;
+      
+     }
+
+    // @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+    //     font-size: $font-size-large;
+    //     padding: 0 .25rem 0 .25rem;
+    //     // text-align: center;
+    // }
+}
+
+/* This is subtext (paragraph) within the text block container */
+.clp-subtitle {
+    color: white;
+    font-size: $font-size-large;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: 0;
+    text-align: center;
+    word-spacing: 5px;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-xsmall;
+        width: 70%;
+        margin-top: 0;
+    }
+}
+
+// .clp-signup-button {
+//     @extend .button;
+//     height: 5rem;
+//     // margin: auto;
+// }
+   
+// .clp-signup-button-text-align {
+//     @extend .rc-link-nodecoration-white;
+//     padding: 1.5rem;
+// }
+
+// ***************************************************************************
+// The following styles are used for the second section of the contribution list page ,
+// which is the content section.
+// ***************************************************************************
+
+/* The container for the various h2 sections  */
+.clp-h2-sections-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clp-para {
+    color: $greyshade5;
+    font-size: $font-size-small;
+    line-height: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-left: 3rem;
+    // text-align: center;
+    z-index: 1;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        flex-direction: column;
+        font-size: $font-size-xsmall;
+        padding: 0;
+        text-align: left;
+    }
+}
+
+/* This container for the text block in top section of the features pages */
+.clp-text-block-container {
+    display: flex;      /* these 4 elements are used together */ 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.clp-h2-style {
+    font-size: $font-size-large;  /* primary uses the default color */
+    color: $greyshade6;
+    font-weight: 700;
+    text-align: center;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-small;
+        // text-align: center;
+    }
+}
+
+/* This is the container that holds the <h2> element and <p> elements for that particular section */
+.clp-h2-section {
+    padding-left: 2rem;
+    width: 55%;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        width: 90%;
+        padding-left: 0;
+    }
+}
+
+// ***************************************************************************
+// The following styles are used for the second section of the contribution list page 
+// - the application screen shot
+// ***************************************************************************
+.clp-screenshot-container {
+    background-color: $greyshade0;
+    color: $greyshade4;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.clp-screenshot-title {
+    color: $greyshade6;
+    font-size: $font-size-xlarge;
+    font-family: inherit;
+    font-weight: 700;
+    text-align: center;
+    padding: 0 .5rem 0 .5rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-medium;
+        padding: 0 1rem 0 1rem;
+    }   
+}
+
+.clp-screenshot-subtitle {
+    color: $greyshade4;
+    font-family: inherit;
+    // font-weight: 900;
+    // margin-top: -2rem;
+    text-align: center;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        padding: 0 .25rem 0 .25rem
+    }
+}
+
+.clp-screenshot-image {
+    height: 48rem;
+    width: 48rem;
+    margin-bottom: 6rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        height: 24rem;
+        width: 22rem;
+    }
+}
+
+
+// ***************************************************************************
+// This is used by process section
+// ***************************************************************************
+
+.clp-process-container {
+    background-color: $greyshade0;
+    color: $greyshade4;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.clp-process-title {
+    color: $greyshade6;
+    font-size: $font-size-xlarge - .1rem;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 2;
+    text-align: center;
+    padding: 0 .5rem 0 .5rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-small;
+        padding: 0 1rem 0 1rem;
+    }
+}
+
+.clp-process-box-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    align-items: center;
+    justify-content: center;
+    margin: $m-size auto;
+    background-color: $greyshade0;
+    padding: 4rem;
+    margin-bottom: 6rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-bottom: -5rem;
+    }
+}
+
+// ***************************************************************************
+// Cta Block Section
+// ***************************************************************************
+
+.clp-cta-section-title {
+    color: $greyshade6;
+    font-size: $font-size-medium;
+    font-family: inherit;
+    font-weight: 400;
+    // margin-top: 7rem;
+    text-align: center;
+    padding: 0 .5rem 0 .5rem;
+    margin: 1rem 4rem 1rem 4rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-small;
+        padding-top: 2rem;
+        padding-bottom: 0;
+    }
+}
+
+
+.clp-cta-section-subtitle {
+    color: $greyshade4;
+    font-size: $font-size-small;
+    font-family: inherit;
+    font-weight: 400;
+    // margin-top: 7rem;
+    text-align: center;
+    padding: 0 .5rem 0 .5rem;
+    margin: 1rem 4rem 1rem 4rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-xsmall;
+    }
+}
+
+
+.clp-ctablock-container {
+    background-color: $lightblue0;
+    color: $greyshade4;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+}
+
+.clp-cta-text-link {
+    text-decoration: none;
+    color: $blue;
+
+    &:hover {
+        color: $lightblue;
+        text-decoration: none;
+    }
+
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-xsmall;
+    }
+}

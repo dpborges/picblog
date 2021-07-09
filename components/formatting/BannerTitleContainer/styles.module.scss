@@ -48,6 +48,19 @@
   top:    30%;
 }
 
+/* no container;  */
+.full-container {
+  position: absolute;
+  left: 0;
+  top:  0;
+}
+
+
+// ********************************************************
+// Title element
+// ********************************************************
+
+
 /* banner title set to relative so you can move/adjust the child component
   (actual title component) around the selected quadrant */
 .banner-title {

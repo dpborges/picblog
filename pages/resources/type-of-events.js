@@ -10,6 +10,7 @@ import BannerSection from '../../components/formatting/BannerSection';
 import styles from "../../styles/typeevents.module.scss";
 import styles2 from "../../styles/features.module.scss";
 import styles3 from "../../styles/list-styles.module.scss";
+import styles4 from "../../styles/cta-button.module.scss";
 
 /* This is title section. It contains the main title for this page and a background image */
 const titleSection = () => (
@@ -183,9 +184,9 @@ const textSection4 = () => (
 const ctaBlock = () => (
   <div className={`${styles2.featuresCtablockContainer}` }  style={{marginTop: '3rem'}}>
     <div style={{display: 'flex', justifyContent: 'center'}}>
-      <a href={getAppConfigParm("siteUrl")} className={`${styles2.ssrButton} ${styles2.featuresSignupButton}`} >
-          <p className={styles["typeevents-signup-button-text"]}>Start Planning Now</p>
-      </a>
+    <a href={getAppConfigParm("siteUrl")} className={styles4["cta-button"]}>
+          <p className={styles4["cta-button-text"]}>Start Planning Now</p>
+        </a>
     </div>
   </div>
 )

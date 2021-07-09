@@ -17,6 +17,7 @@ import BannerSection from '../../components/formatting/BannerSection';
 
 import styles1 from "../../styles/features.module.scss";
 import styles2 from "../../styles/homepage-sections.module.scss";
+import styles3 from "../../styles/cta-button.module.scss";
 
 const renderBannerTitle = () => (
   <div className={`${styles1['featuresTextBlock']} ${styles1['responsive-banner-title']} `}>
@@ -228,8 +229,11 @@ const ctaBlock = () => (
         <h3 className={styles1.featuresSectionCtaTitle}>Got an Event in Mind? </h3>
         
         <div style={{display: 'flex', justifyContent: 'center', marginTop: '4rem'}}>
-        <a href={getAppConfigParm("siteUrl")} className={`${styles1.ssrButton} ${styles1.featuresSignupButton}  ${styles1.featuresSignupButtonMod}`}>
+        {/* <a href={getAppConfigParm("siteUrl")} className={`${styles1.ssrButton} ${styles1.featuresSignupButton}  ${styles1.featuresSignupButtonMod}`}>
           <div style={{marginTop: '-.5rem'}}> <p className={styles1.featuresSignupButtonText}>Get Started Now</p></div>
+        </a> */}
+        <a href={getAppConfigParm("siteUrl")} className={styles3["cta-button"]}>
+          <p className={styles3["cta-button-text"]}>Get Started Now</p>
         </a>
         </div>
     {/*     

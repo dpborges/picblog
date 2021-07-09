@@ -501,45 +501,45 @@
     }
 }
 
-.ssrButton {
-    background: $orange;
-    border: none;
-    border-radius: .75rem;
-    color: $white;
-    font-size: $font-size-large;
-    font-weight: 400;
-    line-height: 1;
-    outline: none;
-    text-align: center;
-    text-decoration: none;
-    width: 15rem;
-    transition: background-color .4s ease;
+// .ssrButton {
+//     background: $orange;
+//     border: none;
+//     border-radius: .75rem;
+//     color: $white;
+//     font-size: $font-size-large;
+//     font-weight: 400;
+//     line-height: 1;
+//     outline: none;
+//     text-align: center;
+//     text-decoration: none;
+//     width: 15rem;
+//     transition: background-color .4s ease;
     
-    &:hover {
-        background-color:  $orange2;
-        border: none;
-        text-decoration: none;
-    }
-}
+//     &:hover {
+//         background-color:  $orange2;
+//         border: none;
+//         text-decoration: none;
+//     }
+// }
 
-.featuresSignupButton {
-    color: white;
-    height: 4rem;
-    vertical-align: middle;
+// .featuresSignupButton {
+//     color: white;
+//     height: 4rem;
+//     vertical-align: middle;
     
-}
+// }
 
-.featuresSignupButtonText {
-    color: white; 
-    font-size: $font-size-xsmall + .1rem;
-    text-decoration: none;
-    text-align: center;
-}
+// .featuresSignupButtonText {
+//     color: white; 
+//     font-size: $font-size-xsmall + .1rem;
+//     text-decoration: none;
+//     text-align: center;
+// }
 
 
-.featuresSignupButtonMod {
-    vertical-align: middle;
-}
+// .featuresSignupButtonMod {
+//     vertical-align: middle;
+// }
 
 
 // ***************************************************************************
