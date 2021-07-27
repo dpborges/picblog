@@ -39,7 +39,7 @@ class Footer extends Component {
                                     </a>
                                   </h4>
                                   <p style={{marginBottom: '1rem'}}>{this.props.siteDescription}</p>
-                                  <LinkButton1 link="#" linkText="read more" />
+                                  <LinkButton1 link={`${siteUrl}/resources/about-us`} linkText="read more" />
                                 </div>
                             </div>
                             {/* This is First List of Resources */}

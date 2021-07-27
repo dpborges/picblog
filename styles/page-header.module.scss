@@ -140,8 +140,10 @@
   }
 
   .logoTextContainer {
-    margin-top: -.2rem;
-    vertical-align: middle;
+    // margin-top: -.2rem;
+    // vertical-align: middle;
+    display: flex;
+    align-items: center;
 
     @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
       margin-top: .3rem;
@@ -162,7 +164,7 @@
   font-weight: 900;
   font-family: "Lato", "Roboto", sans-serif;
   font-size: $font-size-small;
-  height: 55px;
+  height: 40px;
 
   @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
     font-size: $font-size-xsmall;

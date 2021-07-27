@@ -62,8 +62,8 @@
     // NOTE: the two variables mobile-min and max are using pixels instead of rem's as it was only way
     //       I could get media queries to work with iphone. Also with pixels syntax "media only screen"
     //       was used
-    $mobile-min:      280px;      // 18.75rem = 300px
-    $mobile-max:      600px;         // 46rem    = 736px
+    $mobile-min:    280px;         // 18.75rem = 300px
+    $mobile-max:    600px;         // 46rem    = 736px
 
     // Reponsive behavior should be tested with ipad the smaller of the 2 ipad types
     $ipad-min:      601px;      //  ipad min was set to 1px more than mobile-max

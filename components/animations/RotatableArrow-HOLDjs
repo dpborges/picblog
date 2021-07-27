@@ -1,0 +1,29 @@
+
+import React from 'react';
+import styled, {keyframes} from 'styled-components';
+import { IoIosArrowDown } from "react-icons/io";
+
+const rotate = keyframes`
+  0%{
+    transform:rotate(0deg)
+  }
+  50%{
+    transform:rotate(180deg)
+  }
+  50%{
+    transform:rotate(-360deg)
+  }
+`;
+
+
+// Define base component
+const ArrowDown = ({className}) => <IoIosArrowDown className={className} />
+
+const  RotatableArrow  = styled(ArrowDown)`
+    color: black;
+    font-size: 3.2rem;
+    font-weight: 900;
+    animation:${rotate} 3s ease-in-out infinite;
+`;
+
+export default RotatableArrow;

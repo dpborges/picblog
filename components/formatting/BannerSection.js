@@ -31,8 +31,8 @@ const BannerSection = (props) => {
   opacity = !opacity ? 1.0 : opacity;
 
   return (
-    <div >
-      <div style={{ opacity: opacity }}>
+    <div s>
+      <div style={{ opacity: opacity}}>
       {/* <div > */}
         <ResponsiveImage 
           src={imgSrc}

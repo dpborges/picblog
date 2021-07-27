@@ -1,4 +1,9 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+
+//***************************************************************************** */
+// link in head tag loads icons for "Simple Stepwise Process" section in features
+// page.
+//***************************************************************************** */
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -10,7 +15,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-        <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css"></link>
+          <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css"></link>
         </Head>
         <body>
           <Main />

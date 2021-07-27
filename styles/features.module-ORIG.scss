@@ -1,0 +1,504 @@
+@import   './settings.scss';
+
+// ***************************************************************************
+// The following styles are used for the top section of the Features page
+// ***************************************************************************
+
+/* This serves as background for the top section of the Features page */
+// .webp .features-title-container {
+//   background-image: url(../../public/images/event-planning.webp);
+// }
+// .no-webp .features-title-container {
+//   background-image: url(../../public/images/event-planning.jpg);
+// }
+
+.features-title-container {
+    background-image: url('/public/images/event-planning.jpg');
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 75vh;; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    display: flex;      /* these 4 elements are used together */ 
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    margin-top: 0rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: -.1rem; /* You must set a specified height */
+    }
+}
+
+/* This container for the text block in top section of the features pages */
+.features-text-block {
+    color: $white;
+    font-family: inherit;
+    padding-left: 0 0 0 25rem;
+    // margin-bottom: 0;
+    margin-left: 8rem;
+    margin-top: 4rem;
+    // margin-top: 0;
+    text-align: left;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-left: 1.5rem;
+        margin-top: 1rem;
+    
+    }
+}
+
+
+/* This is main title within the text block container */
+.features-title {
+    color: white;
+    font-size: $font-size-xxlarge + 2rem;
+    font-weight: 700; 
+    margin-bottom: 0rem;
+    margin-top:    0rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-xxlarge;
+        margin-bottom: .3rem;
+        width: 30%;
+    }
+}
+/* This is subtitle within the text block container */
+.features-subtitle {
+    color: white;
+    font-size: $font-size-xxlarge;
+    margin-top: 3rem;
+
+    
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-xlarge;
+        margin-top: 2.5rem;
+        width: 40%;
+    }
+}
+
+/* This is subtext (paragraph) within the text block container */
+.features-subtext {
+    color: white;
+    font-size: $font-size-small;
+    // margin-top: 1rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-small ;
+        line-height: 1.5rem;
+        width: 32%;
+        margin-top: .5rem;
+    }
+}
+
+// horizontal rule (line separator)
+.hr-medium {
+    width:  150px;
+    height: 3px;
+    background: $orange;
+    border: $orange;
+    margin: $m-size;
+}
+
+/* This is the horizontal rule used under the main title ( also contained in text-block container) */
+.hr-medium-features {
+    @extend .hr-medium;
+    width:  19rem;
+    margin: 0;
+    margin-left: .5em;
+    margin-bottom: -2rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        width:  10.5rem;
+        margin-left: 0;
+    }
+}
+   
+// ***************************************************************************
+// The following styles are used for the second section of the Features page 
+// (Simple Stepwise Process )
+// ***************************************************************************
+/* This container for the text block in top section of the features pages */
+.features-stepwise-container {
+    background-color: $greyshade0;
+    color: $greyshade4;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.features-section-title {
+    color: $greyshade4;
+    font-family: inherit;
+    font-size: $font-size-xlarge + .2rem; 
+    font-weight: 700;
+    // margin-top: 3rem;
+    // margin-bottom: 3rem;
+    text-align: center;
+    padding: 0 .5rem 0 .5rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-medium;
+    }
+}
+
+.features-section-cta-title {
+    @extend .features-section-title;
+    color: $greyshade5;
+    font-size: $font-size-xlarge;
+    margin-top: 0;
+    margin-bottom: 1.50rem;
+}
+
+.features-stepwise-subtitle {
+    color: $greyshade4;
+    font-family: inherit;
+    font-size: $font-size-small;
+    // font-weight: 900;
+    margin-top: -1rem;
+    text-align: center;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        padding: 0 .25rem 0 .25rem;
+        font-size: $font-size-xsmall;
+    }   
+}
+
+.features-modifier-mb1 {
+    margin-bottom: 7rem;
+}
+
+// ***************************************************************************
+// The following styles are used for the third section (non function features) 
+// of the Features page 
+// ***************************************************************************
+
+/* This container user for non-functional features section  */
+.features-nonfunc-container {
+    background-color: white;
+    color: $greyshade4;
+    font-family: inherit;
+    display: flex;
+    justify-content: center;
+    height: auto;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        justify-content: center;
+        flex-direction: column;
+        // height: 60rem;
+    }
+}
+
+/* Used to display the block of text and the accompanying image in a row */
+.features-nonfunc-row-block {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        // flex-direction: column;
+        // justify-content: left;
+    }
+}
+
+/* Used to display block of text as a column */
+.features-nonfunc-col-block {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: left;
+    padding-left: 5rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-left: 0rem;
+        padding-left: 0rem;
+    }
+ }
+
+
+/* This is the left side of the section with non-functional features */
+.features-nonfunc-left-side {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        // flex-direction: column;
+        // align-items: left
+        justify-content: space-between;
+        padding: 0 1rem 0 1rem;
+    }
+ }
+
+
+/* Used to display block as a column */
+.features-nonfunc-right-side {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: left;
+    // padding-left: 5rem;
+    padding-right: 1rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        justify-content: center;
+        padding: 0 1rem 0 1rem;
+    }
+ }
+
+
+ /* Used for feature labels */
+.features-nonfunc-label {
+    // color: $greyshade5;
+    color: $green2;
+    font-size: $font-size-xlarge;
+    font-weight: 600;
+    margin-left: 1rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-medium;
+    }
+}
+
+/* Used to display block as a column */
+.features-nonfunc-text {
+    color: $greyshade4;
+    font-size: $font-size-small - .2rem;
+    margin: 0;
+    margin-left: 1rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        width: 70%;
+        font-size: $font-size-xsmall;
+    }
+}
+
+.features-ccard-image {
+    height: 8rem;
+    width: 8.25rem;
+    margin-left: 1rem;
+    margin-top: 2rem;
+
+    /* reduce size of logo and margin to right so it is closer to app name */ 
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        height: 5.5rem;
+        width: 5.5rem;
+        margin-right: 1rem;
+        margin-left: 0rem;
+        margin-top: .25rem;
+        margin-bottom: .26rem;
+    }
+}
+
+
+.features-https-image {
+    height: 3rem;
+    width: 9rem;
+   
+    margin-right: 1.4rem;
+    margin-top: 2rem;
+
+    /* reduce size of logo and margin to right so it is closer to app name */ 
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        height: 3rem;
+        width: 8rem;
+        margin-right: 0rem;
+        margin-left: -1rem;
+        margin-top: .25rem;
+        margin-bottom: .26rem;
+    }
+}
+
+.features-device-image {
+    height: 4rem;
+    width: 12rem;
+    
+    margin-left: 12.5rem;
+    margin-top: 3rem;
+
+    /* reduce size of logo and margin to right so it is closer to app name */ 
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        height: 4rem;
+        width: 10rem;
+        margin-right: 0rem;
+        margin-left: -1rem;
+        margin-top: .25rem;
+        margin-bottom: .26rem;
+    }
+}
+
+
+// ***************************************************************************
+// This is Features list section.
+// ***************************************************************************
+.features-list-container {
+    background-color: $greyshade0;
+    color: $greyshade4;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.features-items-container {
+    margin: 0 auto 0 27%;
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin: 0 auto 0 6%;
+    }
+}
+
+// .features-stepwise-container {
+//     background-color: $greyshade0;
+//     color: $greyshade4;
+//     font-family: inherit;
+//     display: flex;
+//     flex-direction: column;
+// }
+
+
+.features-list-item {
+    display: flex;
+    justify-content: left;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        padding: 0 2rem 0 2rem;
+    }
+
+}
+
+.features-li-text {
+    color: $greyshade5;
+    display: inline-block;
+    font-size: $font-size-large - .2rem;
+    // padding-bottom: 5rem;
+    // margin-top: .70rem;
+    margin: .4rem 0;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-small;
+        margin: .60rem 0;
+    }
+
+}
+
+
+// .features-li {
+//     font-size: $font-size-large;
+//     display: flex;
+// }
+
+
+
+.triangle-container {
+    display: inline-block;
+    margin-right: 1.5rem;
+    padding-top: .8rem;
+}
+
+.triangle_right {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-left: 14px solid $green1;
+    border-bottom: 7px solid transparent;
+}
+
+
+// ***************************************************************************
+// CtaBlock Section
+// ***************************************************************************
+.features-ctablock-container {
+    // background-color: #d1e0ed;
+    // background-color: #d8e2eb;
+    background-color: $lightblue0;
+    color: $greyshade4;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 0;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        justify-content: center;
+        flex-direction: column;
+        // height: 60rem;
+    }
+}
+
+.ssr-button {
+    background: $orange;
+    border: none;
+    border-radius: .75rem;
+    color: $white;
+    // display: inline-block;
+    font-size: $font-size-large;
+    font-weight: 400;
+    line-height: 1;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    width: 15rem;
+    transition: background-color .4s ease;
+    
+    &:hover {
+        background-color:  $orange2;
+        border: none;
+        text-decoration: none;
+    }
+}
+
+.features-signup-button {
+    color: white;
+    // display: block;
+    // margin: auto auto ;
+    // margin-top: 2.5rem;
+    height: 4rem;
+    // width: 8rem;
+    vertical-align: middle;
+    
+}
+
+.features-signup-button-text {
+    color: white; 
+    font-size: $font-size-small;
+    padding: .6rem 0;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+.features-signup-button-mod {
+    margin-top: -2.6rem;
+}
+
+
+// ***************************************************************************
+// Modifiers
+// ***************************************************************************
+
+.features-horiz-spacer1 {
+    margin-top: 1rem;
+}
+
+
+.features-horiz-spacer5 {
+    margin-top: 5rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: 3rem;
+    }
+}
+
+
+.features-horiz-spacer4 {
+    margin-top: 4rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: 2rem;
+    }
+}

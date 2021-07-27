@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+// import Script from 'next/script'
 // import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
 import SSPageHeader from '../../common/SSPageHeader.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,37 +14,26 @@ import { faSmile } from '@fortawesome/pro-light-svg-icons';
 import getAppConfigParm  from '../../config/AppConfig';
 import Footer from '../../common/Footer-Axolot.js'
 import VictoryIcon  from '../../components/icons/VictoryIcon.js';
-import BannerSection from '../../components/formatting/BannerSection';
+// import BannerSection from '../../components/formatting/BannerSection';
 
 import styles1 from "../../styles/features.module.scss";
 import styles2 from "../../styles/homepage-sections.module.scss";
 import styles3 from "../../styles/cta-button.module.scss";
 
-const renderBannerTitle = () => (
-  <div className={`${styles1['featuresTextBlock']} ${styles1['responsive-banner-title']} `}>
-    <h1 className={styles1.featuresTitle} styles={{color: 'red'}}>Features</h1>
-    <hr className={styles1.hrMediumFeatures} />
-    <h2 className={styles1.featuresSubtitle}>Pitch In Club</h2>
-    <p className={styles1.featuresSubtext}>The Simple Event Planning Tool</p>
+
+const titleSection = () => (
+  <div className={`${styles1["features-title-container"]}`}>
+    <div>
+      <div className={styles1["features-text-block"]}>
+        <h1 className={styles1["features-title"]}>Features</h1>
+        <hr className={styles1["hr-medium-features"]} />
+        <h2 className={styles1["features-subtitle"]}>Pitch In Club</h2>
+        <p className={styles1["features-subtext"]}>The Simple Event Planning Tool</p>
+      </div>
+    </div>
   </div>
 );
 
-/* Banner section contains the main title for this page and a background image */
-const greyShade2 = "#BDC3C7";
-const bannerSection = () => {
-    return (
-      <BannerSection
-        bannerTitleJsx={renderBannerTitle()}
-        bannerTitlePosition="tl"
-        imgSrc="/images/event-planning.jpg"
-        imgHeight={150}
-        imgWidth={280}
-        imgAlt="stacked hands for unity"
-        imgBgColor={greyShade2}
-        imgQuality={90}
-      />
-    )
-}
 
 /* This is process section. It explains the simple stepwise process */
 const processSection = () => (
@@ -218,28 +208,15 @@ const featuresListSection = () => (
     </div>
 )
 
-
 /* This section provides list of application features */
 const ctaBlock = () => (
-    <div className={styles1.featuresCtablockContainer}>
-    {/*
-        <div className={styles1.features-horiz-spacer4"></div>
-    */} 
-    
-        <h3 className={styles1.featuresSectionCtaTitle}>Got an Event in Mind? </h3>
-        
-        <div style={{display: 'flex', justifyContent: 'center', marginTop: '4rem'}}>
-        {/* <a href={getAppConfigParm("siteUrl")} className={`${styles1.ssrButton} ${styles1.featuresSignupButton}  ${styles1.featuresSignupButtonMod}`}>
-          <div style={{marginTop: '-.5rem'}}> <p className={styles1.featuresSignupButtonText}>Get Started Now</p></div>
-        </a> */}
+    <div className={styles1["features-ctablock-container"]}>
+      <h3 className={styles1.featuresSectionCtaTitle}>Got an Event in Mind? </h3>
+      <div style={{display: 'flex', justifyContent: 'center', marginTop: '2rem'}}>
         <a href={getAppConfigParm("siteUrl")} className={styles3["cta-button"]}>
           <p className={styles3["cta-button-text"]}>Get Started Now</p>
         </a>
-        </div>
-    {/*     
-        <div className={styles1.features-horiz-spacer1">&nbsp;</div>    
-        <div style={{display: "flex", justifyContent: "center"}}><HashLink smooth to="/#cta" className={styles1.small-text-link" >Home</HashLink></div> 
-        <div className={styles1.features-horiz-spacer4">&nbsp;</div>    */}
+      </div>
     </div>
 );
 
@@ -261,22 +238,24 @@ class FeaturesPage extends Component {  // use destructing to obtain function pr
 
     render() {
         return (
-            <div>
-                <Head>
-                    <title>Features - Pitch In Club</title>
-                    <meta property="og:title" content="Features - Pitch In Club" />
-                    <meta name="description" content="Features of Pitch In Club" />
-                    <meta name="keywords"    content="free,secure,contribution list,helping hands list,event search,  
-                            automatic reminders,dashboard,event status,attendee status,rsvp status"   />
-                </Head>
-                <SSPageHeader />
-                {bannerSection()}
-                {processSection()}
-                {nonfuncFeatureSection()}
-                {featuresListSection()}
-                {ctaBlock()}
-                <Footer style={{backgroundColor: 'grey'}} />
-            </div>
+          <div>
+                
+            <Head>
+                <title>Features - Pitch In Club</title>
+                <meta property="og:title" content="Features - Pitch In Club" />
+                <meta name="description" content="Features of Pitch In Club" />
+                <meta name="keywords"    content="free,secure,contribution list,helping hands list,event search,  
+                        automatic reminders,dashboard,event status,attendee status,rsvp status"   />
+                {/* <script type="text/javascript" src="/static/modernizr.js"></script> */}
+            </Head>
+            <SSPageHeader />
+            {titleSection()}
+            {processSection()}
+            {nonfuncFeatureSection()}
+            {featuresListSection()}
+            {ctaBlock()}
+            <Footer style={{backgroundColor: 'grey'}} />
+          </div>
         )
     }
 };

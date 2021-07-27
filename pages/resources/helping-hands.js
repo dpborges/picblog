@@ -17,60 +17,44 @@ import Footer from '../../common/Footer-Axolot.js'
 import  { VictoryIcon }      from '../../components/icons/VictoryIcon';
 import { HorizRule } from '../../components/decorators/HorizRule';
 import getAppConfigParm  from '../../config/AppConfig';
-import BannerSection from '../../components/formatting/BannerSection.js';
+// import BannerSection from '../../components/formatting/BannerSection.js';
 
 import styles  from "../../styles/helping-hands-page.module.scss";
 import styles2 from "../../styles/list-styles.module.scss";
 import styles3 from "../../styles/cta-button.module.scss";
 
-/* This is title section. It contains the main title for this page and a background image */
-const renderBannerTitle = () => (
-  <div className={styles["hhlp-text-background"]}>
-    <h1 className={styles["hhlp-title"]} style={{textAlign: 'center !important'}} >
-        Event Help Made Easy With A Helping Hands List
-    </h1>
+const titleSection = () =>  (
+  <div className={styles["hhlp-title-container"]}>
+    <div className={styles["hhlp-text-backdrop"]}>
+      <div className={styles["hhlp-text-block"]}>
+        <h1 className={styles["hhlp-title"]}>Event Help Made Easy With A Helping Hands List</h1>
+      </div>
+    </div>
   </div>
 )
 
-
-/* Banner section contains the main title for this page and a background image */
-const greyShade2 = "#BDC3C7";
-const bannerSection = () => {
-    return (
-      <BannerSection
-        bannerTitleJsx={renderBannerTitle()}
-        bannerTitlePosition="c"
-        imgSrc="/images/help-decorate.jpg"
-        imgHeight={150}
-        imgWidth={280}
-        imgAlt="putting up party decorations"
-        imgBgColor={greyShade2}
-        imgQuality={90}
-      />
-    )
-}
 const textSection1 = () => (
     <div className={styles["hhlp-h2-section"]}>
-        <h2 className={styles["hhlp-h2-style"]}>Need Party Help? Make a Helping Hands List!</h2>
-        <p className={styles["hhlp-para"]}>Between setting up an event, running it while it’s happening, 
-            and then cleaning up afterward, it can be hard to have fun at the events you host.
-        </p>
-        <p className={styles["hhlp-para"]}>
-            Hiring professionals can be tempting, but that can quickly add up. 
-        </p>
-        <p className={styles["hhlp-para"]}>
-            The best way to get party help is to make a Helping Hands List. 
-        </p>
-        <p className={styles["hhlp-para"]}>
-            Make it fun, make it a group effort, and minimize stress by using the Pitch In Club’s Helping Hands 
-            List feature. They provide a helpful list of tasks/duties for event participants to take part in. 
-      
-        </p>
-        <p className={styles["hhlp-para"]}>
-            <a className="blue-anchor-text" href={getAppConfigParm("siteUrl")}> Sign up for free </a> for 
-            the Pitch In Club app, one of the best event apps on the market, and make 
-            your Helping Hands List today! 
-        </p>
+      <h2 className={styles["hhlp-h2-style"]}>Need Party Help? Make a Helping Hands List!</h2>
+      <p className={styles["hhlp-para"]}>Between setting up an event, running it while it’s happening, 
+          and then cleaning up afterward, it can be hard to have fun at the events you host.
+      </p>
+      <p className={styles["hhlp-para"]}>
+          Hiring professionals can be tempting, but that can quickly add up. 
+      </p>
+      <p className={styles["hhlp-para"]}>
+          The best way to get party help is to make a Helping Hands List. 
+      </p>
+      <p className={styles["hhlp-para"]}>
+          Make it fun, make it a group effort, and minimize stress by using the Pitch In Club’s Helping Hands 
+          List feature. They provide a helpful list of tasks/duties for event participants to take part in. 
+    
+      </p>
+      <p className={styles["hhlp-para"]}>
+          <a className="blue-anchor-text" href={getAppConfigParm("siteUrl")}> Sign up for free </a> for 
+          the Pitch In Club app, one of the best event apps on the market, and make 
+          your Helping Hands List today! 
+      </p>
     </div>
 )
 
@@ -93,7 +77,7 @@ const textSection2 = () => (
 const textSection3 = () => (
     <div className={styles["hhlp-h2-section"]}>
         <h2 className={styles["hhlp-h2-style"]}>Use Helping Hands List for All Kinds of Tasks </h2>
-        <p className={styles["hhlp-para"]}>You can use the Helping Hands List feature to complete all kinds of tasks.</p>
+        <p className={`${styles["hhlp-para"]} rc-mt-2`}> You can use the Helping Hands List feature to complete all kinds of tasks.</p>
         <p className={styles["hhlp-para"]}>Some examples include…</p>
         <ul className={styles2["square-list-style"]}>
             <li className={styles2["resource-list-item-text"]}>Decorating</li>
@@ -114,7 +98,7 @@ const textSection4 = () => {
     <div className={styles["hhlp-h2-section"]} style={{marginBottom: '3rem'}}>
       <h2 className={styles["hhlp-h2-style"]}>Make a Helping Hands List Today!</h2>
       {appScreenShotSection()}
-      <p className={styles["hhlp-para"]} style={{textAlign: 'center', marginBottom: '3.5rem'}}>
+      <p className={styles["hhlp-para"]} style={{textAlign: 'center', margin: '2.5rem 0 3rem 0'}}>
         You can use the Helping Hands List feature to complete all kinds of tasks.
       </p>
       <p className={styles["hhlp-para"]}>
@@ -134,7 +118,7 @@ const textSection4 = () => {
 
 /* This section that contains screenshot of helping hands list */
 const appScreenShotSection = () => (
-  <div className={styles["hhlp-screenshot-container"]} >
+  <div className={styles["hhlp-screenshot-container"]}  >
     <div className="rc-mt-1">&nbsp;</div>
     <div className="rc-flex-container-center">
         <Image src="/images/helping-hands-list-ui.png" alt="Helping Hands List image" 
@@ -142,7 +126,7 @@ const appScreenShotSection = () => (
           width={725}
         /> 
     </div>
-      <div className="rc-horiz-spacer-medium">&nbsp;</div>
+    <div className="rc-horiz-spacer-small">&nbsp;</div>
   </div>
 );
 
@@ -293,7 +277,7 @@ class HelpingHandsPage extends Component  {
                     <meta name="keywords"  content="helping hands,get help,organize,volunteer sign up,sign ups,todo list,decorate" />
                 </Head>
                 <SSPageHeader />
-                {bannerSection()}
+                {titleSection()}
                 
                 <div className={styles["hhlp-subtitle-container"]}>
                   <h3 className={styles["hhlp-subtitle"]}>Make Organizing Group Events a Group Effort With a Helping Hands List</h3>

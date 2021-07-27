@@ -12,41 +12,22 @@ import styles2 from "../../styles/features.module.scss";
 import styles3 from "../../styles/list-styles.module.scss";
 import styles4 from "../../styles/cta-button.module.scss";
 
-/* This is title section. It contains the main title for this page and a background image */
 const titleSection = () => (
-  
-  <div className={styles["typeevents-title-container"]}>
-    {/* <div className={styles["typeevents-text-block-container"]}>
-      <div className={styles["typeevents-text-backdrop"]}> */}
-          <div className={styles["typeevents-text-block"]}>
-              <h1 className={styles["typeevents-title"]}>The Best Group Planning App for All Types of Events</h1>
+  <div>
+      <div className={styles["typeevents-title-container"]}>
+          <div className={styles["typeevents-text-block-container"]}>
+              <div className={styles["typeevents-text-backdrop"]}>
+                  <div className={styles["typeevents-text-block"]}>
+                      <h1 className={styles["typeevents-title"]}>The Best Group Planning App for All Types of Events</h1>
+                  </div>
+              </div>
           </div>
-      {/* </div>
-    </div> */}
+      </div>
+      <div className={styles["typeevents-subtitle-container"]}>
+          <h3 className={styles["typeevents-subtitle"]}>Whatever Your Event May Be, The Pitch In Club Makes Planning Easy </h3>
+      </div>
   </div>
 );
-
-const catchPhrase = () => (
-  <div className={styles["typeevents-subtitle-container"]}>
-    <h3 className={styles["typeevents-subtitle"]}>Whatever Your Event May Be, The Pitch In Club Makes Planning Easy </h3>
-  </div>
-)
-
-const greyShade2 = "#BDC3C7";
-const bannerSection = () => {
-  return (
-    <BannerSection
-      bannerTitleJsx={titleSection()}
-      bannerTitlePosition="c"
-      imgSrc="/images/potluck-event.jpg"
-      imgHeight={108}
-      imgWidth={280}
-      imgAlt="potlock event"
-      imgBgColor={greyShade2}
-      imgQuality={85}
-    />
-  )
-}
 
 /* Resuable code fragment used to render an image with an annotated section below. 
    Note: If the text parameter is not passed, the annotated section is not rendered */
@@ -105,17 +86,17 @@ const bannerSection = () => {
 
 const textSection1 = () => (
   <div className={styles["typeevents-h2-section"]}>
-      <h2 className={styles["typeevents-h2-style"]}>Organize Any Event With The Premiere Party Planning App</h2>
-      <p className={styles["typeevents-para"]}>BBQ? Church fundraiser? Business lunch? </p>
-      <p className={styles["typeevents-para"]}>
-          No matter what the event is, the Pitch in Club makes party planning easy. Our event planner 
-          allows you to create events, schedule them, make sign up lists, send out reminders, and more! 
-          Everything you could need for every event is right at your fingertips in our easy-to-use dashboard. 
-      </p>
-      <p className={styles["typeevents-para"]}>
-          <a className={styles["blue-anchor-text"]} href={getAppConfigParm("siteUrl")}> Plan Your Next Party Now </a>
-          using our event app! It will be so simple you will want to throw another party to celebrate. 
-      </p>
+    <h2 className={styles["typeevents-h2-style"]}>Organize Any Event With The Premiere Party Planning App</h2>
+    <p className={styles["typeevents-para"]}>BBQ? Church fundraiser? Business lunch? </p>
+    <p className={styles["typeevents-para"]}>
+        No matter what the event is, the Pitch in Club makes party planning easy. Our event planner 
+        allows you to create events, schedule them, make sign up lists, send out reminders, and more! 
+        Everything you could need for every event is right at your fingertips in our easy-to-use dashboard. 
+    </p>
+    <p className={styles["typeevents-para"]}>
+        <a className={styles["blue-anchor-text"]} href={getAppConfigParm("siteUrl")}> Plan Your Next Party Now </a>
+        using our event app! It will be so simple you will want to throw another party to celebrate. 
+    </p>
   </div>
 )
 
@@ -144,19 +125,19 @@ const textSection3 = () => (
       </p>
       <p className={styles["typeevents-para"]}>Some events include: </p>
       <ul className={styles3["square-list-style"]}>
-          <li className={styles3["resource-list-item-text"]}>BBQ</li>
-          <li className={styles3["resource-list-item-text"]}>Family Reunion</li>
-          <li className={styles3["resource-list-item-text"]}>Volunteer Efforts</li>
-          <li className={styles3["resource-list-item-text"]}>Birthday Party</li>
-          <li className={styles3["resource-list-item-text"]}>Work Lunch</li>
-          <li className={styles3["resource-list-item-text"]}>Sports Watch Party</li>
-          <li className={styles3["resource-list-item-text"]}>Dinner Party</li>
-          <li className={styles3["resource-list-item-text"]}>Potluck Style Event</li>
-          <li className={styles3["resource-list-item-text"]}>Outdoor Sports Event</li>
-          <li className={styles3["resource-list-item-text"]}>Camping Trip</li>
-          <li className={styles3["resource-list-item-text"]}>Office Events</li>
-          <li className={styles3["resource-list-item-text"]}>Cocktail Parties</li>
-          <li className={styles3["resource-list-item-text"]}>Church Events</li>
+        <li className={styles3["resource-list-item-text"]}>BBQ</li>
+        <li className={styles3["resource-list-item-text"]}>Family Reunion</li>
+        <li className={styles3["resource-list-item-text"]}>Volunteer Efforts</li>
+        <li className={styles3["resource-list-item-text"]}>Birthday Party</li>
+        <li className={styles3["resource-list-item-text"]}>Work Lunch</li>
+        <li className={styles3["resource-list-item-text"]}>Sports Watch Party</li>
+        <li className={styles3["resource-list-item-text"]}>Dinner Party</li>
+        <li className={styles3["resource-list-item-text"]}>Potluck Style Event</li>
+        <li className={styles3["resource-list-item-text"]}>Outdoor Sports Event</li>
+        <li className={styles3["resource-list-item-text"]}>Camping Trip</li>
+        <li className={styles3["resource-list-item-text"]}>Office Events</li>
+        <li className={styles3["resource-list-item-text"]}>Cocktail Parties</li>
+        <li className={styles3["resource-list-item-text"]}>Church Events</li>
       </ul>
       
       <p className={styles["typeevents-para"]}>
@@ -182,7 +163,7 @@ const textSection4 = () => (
 
 /* CTA block at bottom of page  */
 const ctaBlock = () => (
-  <div className={`${styles2.featuresCtablockContainer}` }  style={{marginTop: '3rem'}}>
+  <div className={styles2["features-ctablock-container"]}  style={{marginTop: '3rem'}}>
     <div style={{display: 'flex', justifyContent: 'center'}}>
     <a href={getAppConfigParm("siteUrl")} className={styles4["cta-button"]}>
           <p className={styles4["cta-button-text"]}>Start Planning Now</p>
@@ -217,8 +198,8 @@ class TypeEventsPage extends Component {  // use destructing to obtain function 
                 planning a dinner party for 10" />
             </Head>
             <SSPageHeader />
-                {bannerSection()}
-                {catchPhrase()}
+
+                {titleSection()}
                 
                 <HorizRule pctWidth="65%" color="#CC6600" thickness=".5rem" mt="2rem" mb="3rem" />
 

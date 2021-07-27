@@ -9,109 +9,130 @@
 // Page Banner with Image and Text
 //*************************************************************************
 
+/* This serves as background for the top section of the Features page */
+// .webp .features-title-container {
+//   background-image: url(../public/images/event-planning.webp);
+// }
+// .no-webp .features-title-container {
+//   background-image: url(../public/images/event-planning.jpg);
+// }
+// /* No JS No Modernizr - load the png/jpg image */
+// .no-js .features-title-container {
+//   background-image: url(../public/images/event-planning.jpg);
+// }
+
+.features-title-container {
+    background-image: url(../public/images/event-planning.jpg);
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 75vh;; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    display: flex;      /* these 4 elements are used together */ 
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    margin-top: 0rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: -.1rem; /* You must set a specified height */
+    }
+}
+
+// .features-title-container {
+//   background-image: url(../public/images/event-planning.jpg);
+//   background-color: #cccccc; /* Used if the image is unavailable */
+//   height: 75vh; /* You must set a specified height */
+//   background-position: center; /* Center the image */
+//   background-repeat: no-repeat; /* Do not repeat the image */
+//   background-size: cover; /* Resize the background image to cover the entire container */
+//   display: flex;      /* these 4 elements are used together */ 
+//   flex-direction: column;
+//   justify-content: left;
+//   align-items: left;
+//   margin-top: 0rem;
+
+//   @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//       margin-top: -.1rem; /* You must set a specified height */
+//   }
+// }
+
 /* This container for the text block in top section of the features pages */
-.featuresTextBlock {
-    font-family: Lato;
-    padding-top: 0%;
-    padding-left: 10%;
-    text-align: left;
+// .features-text-block {
+//   border: 2px color red;
+//   font-family: $font-family;
+//   margin-top: 15%;
+//   margin-left: 10%;
+//   text-align: left;
+// }
+.features-text-block {
+  color: $white;
+  font-family: $font-family;
+  padding-left: 0 0 0 25rem;
+  // margin-bottom: 0;
+  margin-left: 8rem;
+  margin-top: 4rem;
+  // margin-top: 0;
+  text-align: left;
+
+  @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      margin-left: 1.5rem;
+      margin-top: 1rem;
+  
+  }
+}
+
+/* This is main title within the text block container */
+.features-title {
+  color: white;
+  font-size: $font-size-xxlarge + 2rem;
+  font-weight: 700; 
+  margin-bottom: 0rem;
+  margin-top:    0rem;
+
+  @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      font-size: $font-size-xxlarge;
+      margin-bottom: .3rem;
+      width: 30%;
+  }
 }
 
 /* Takes care of adjusting the banner title based on size. 
    This style is used along with the BannerImageWithText component */
-.responsive-banner-title {
-
-  @media screen and (max-width: 760px) {
-    padding-left: 7%;
-  }
-
-  @media screen and (max-width: 600px) {
-    margin-top: -1rem;
-  }
-
-  @media screen and (max-width: 414px) {
-    margin-top: -1.3rem;
-  }
-
-  @media screen and (max-width: 319.98px) {
-    margin-top: -1.8rem;
-  }
-
-
-
-  /* used in event screen is wider than large desktops */
-//   @media screen and (min-width: 1600px) and (max-width: 2600px) {
-//     margin-left: 4.5rem;
-//     margin-top: 12rem;
-//   }
-
-//   /* desktop and tablet landscape displays */  
-//   @media screen and (min-width: 960px) and (max-width: 1599px) {
-//     margin-left: 2.5rem;
-//     margin-top: 12rem;
-//   }
-
-//   /* tablet portrait */  
-//   @media screen and (min-width: 768px) and (max-width: 959px) {
-//     margin-left: 1.75rem;
-//     margin-top: 7rem;
-//   }
-
-//   /* tablet portrait */  
-//   @media screen and (min-width: 512px) and (max-width: 767px) {
-//     margin-left: 1rem;
-//     margin-top: 3rem;
-//   }
-
-//   /* mobile */
-//   @media screen and (min-width: $mobile-min) and (max-width: 511px) {
-//     margin-left: .5rem;
-//     margin-top: -.5rem;
-//   }
+// .responsive-banner-title {
+//   @media screen and (max-width: 319px) { margin-top: 13rem; margin-left: .5rem; }
+//   @media screen and (min-width: 320px) and (max-width: 374px) { margin-top: 15rem;  margin-left: .5rem;}
+//   @media screen and (min-width: 375px) and (max-width: 479px) { margin-top: 17rem;  margin-left: .5rem;}
+//   @media screen and (min-width: 480px) and (max-width: 599px) { margin-top: 18rem;  margin-left: -.5rem;}
+//   @media screen and (min-width: 600px) and (max-width: 727px) { margin-top: 6rem;  margin-left: -2rem;}
+//   @media screen and (min-width: 728px) and (max-width: 1023px) { margin-top: 8rem;  }
+//   @media screen and (min-width: 1024px) and (max-width: 2399px) { margin-top: 11rem;  }
+//   @media screen and (min-width: 2400px) { margin-top: 16rem; margin-left: -7rem; }
 // }
-
-// .responsive-banner-image {
-//     margin-top: -6rem;
-
-//     @media screen and (min-width: 959px) and (max-width: 2024px) {
-//       margin-top: -8rem;
-//     }
-
-//     @media screen and (min-width: 767px) and (max-width: 958px) {
-//       margin-top: -4rem;
-//     }
-
-//     @media screen and (min-width: 512px) and (max-width: 763px) {
-//       margin-top: -2rem;
-//     }
-
-//     @media screen and (min-width: $mobile-min) and (max-width: 511px) {
-//       margin-top: -1rem;
-//     }
-}
 
 
 /* This is main title within the text block container */
-.featuresTitle {
-    color: $white;
-    font-size: $font-size-xxlarge + 2rem;
-    font-weight: 700; 
+// .featuresTitle {
+//     color: $white;
+//     font-size: $font-size-xxlarge + 2rem;
+//     font-family: $font-family;
+//     font-weight: 700; 
 
-    @media screen and (min-width: 600px) and (max-width: 1024px) {
-      font-size: $font-size-large + 1rem;
-      margin-top: 1.8rem;
-      width: 30%;
-    }
-    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
-      font-size: $font-size-large;
-      margin-bottom: .3rem;
-      margin-top: 2rem;
-      width: 30%;
-    }
-}
+//     @media screen and (min-width: 600px) and (max-width: 1024px) {
+//       font-size: $font-size-large + 1rem;
+//       margin-top: 1.8rem;
+//       width: 30%;
+//     }
+//     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+//       font-size: $font-size-large;
+//       margin-bottom: .3rem;
+//       margin-top: -65%;
+//       width: 30%;
+//     }
+// }
 
 /* This is subtitle within the text block container */
-.featuresSubtitle {
+.features-subtitle {
     color: $white;
     font-size: $font-size-xxlarge;
     font-weight: 400;
@@ -131,7 +152,7 @@
 }
 
 /* This is subtext (paragraph) within the text block container */
-.featuresSubtext {
+.features-subtext {
     color: $white;
     font-size: $font-size-small;
     // margin-top: -1rem;
@@ -139,7 +160,7 @@
 
     @media screen and (min-width: 600px) and (max-width: 1024px) {
       font-size: $font-size-xsmall ;
-      line-height: 1rem;
+      line-height: 1.5rem;
       width: 80%;
       margin-top: -.5rem;
     }
@@ -153,7 +174,7 @@
 }
 
 // horizontal rule (line separator)
-.hrMedium {
+.hr-medium {
     height: 4px;
     background: $orange;
     border: $orange;
@@ -162,22 +183,22 @@
 }
 
 /* This is the horizontal rule used under the main title ( also contained in text-block container) */
-.hrMediumFeatures {
-    @extend .hrMedium;
+.hr-medium-features {
+    @extend .hr-medium;
     width:  18.5rem;
     margin: 0;
-    margin-top: -1.3rem;
+    margin-top: 1rem;
 
     @media screen and (min-width: 600px) and (max-width: 1024px) {
       height: 3px;
-      margin-top: -.9rem;
-      width:  12rem;     
+      margin-top: .9rem;
+      width:  11rem;     
     }
 
     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
       height: 3px;
       width:  7rem;
-      margin-top: 0rem;
+      margin-top: .3rem;
     }
 }
    
@@ -482,7 +503,7 @@
 // ***************************************************************************
 // CtaBlock Section
 // ***************************************************************************
-.featuresCtablockContainer {
+.features-ctablock-container {
     // background-color: #d1e0ed;
     // background-color: #d8e2eb;
     background-color: $lightblue0;

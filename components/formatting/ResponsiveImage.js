@@ -10,7 +10,7 @@ const ResponsiveImage = ({width, height, src, alt, quality}) => {
 
   return (
     <Image src={src} style={{zIndex: '-1', position: 'relative'}}
-      alt={"stacked hands for unity"}
+      alt={alt}
       width={width}
       height={height}
       layout="responsive"
