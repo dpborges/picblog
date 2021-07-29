@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import memoize from 'lodash/memoize';
-// import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
-import * as R from 'ramda';
+import { GAinit, GAlogPageView } from '../../../common/ad/GoogleAnalytics';
+// import * as R from 'ramda';
 import getAppConfigParm  from '../../../config/AppConfig';
 import PropTypes from "prop-types";
 import { chunk } from 'lodash';
@@ -13,7 +13,8 @@ import PageBanner from '../../../components/blog/PageBanner';
 import Footer from "../../../common/RosyFooter";
 import Paginator from "../../../components/pagination/Paginator";
 // import { faBalanceScale } from '@fortawesome/pro-light-svg-icons';
-import { getMetadataList, sortByStringProp, getItemsForPage, buildHrefsForPages} from '../../../utils/pagination';
+import { getMetadataList, sortByStringProp, 
+         getItemsForPage, buildHrefsForPages} from '../../../utils/pagination';
 import { dayOfMonth, shortMonthName } from '../../../utils/date';
 import { logger, appTrace, fileTrace } from '../../../utils/logging';
 
@@ -28,7 +29,6 @@ const trace = appTrace;  /* asign fileTrace instead, for file level trace */
 
 /* memoize (cache results) of getMetadataList */
 const m_getMetadataList = memoize(getMetadataList);
-
 
 // const active = {
 //     color: '#2980B7',
@@ -48,14 +48,14 @@ const BlogListPage =  (props) =>  {
     // const { isSticky, elementRef } = useSticky();
 
     useEffect ( () => {
-        // let env = getAppConfigParm("env");
-        // if (env === 'prod' ) {
-        //     if (!window.GA_INITIALIZED) {
-        //         GAinit();
-        //         window.GA_INITIALIZED = true;
-        //     }   
-        //     GAlogPageView()
-        // }
+        let env = getAppConfigParm("env");
+        if (env === 'development' ) {
+            if (!window.GA_INITIALIZED) {
+                GAinit();
+                window.GA_INITIALIZED = true;
+            }   
+            GAlogPageView()
+        }
     }, []);
 
 
@@ -64,7 +64,7 @@ const BlogListPage =  (props) =>  {
 
      let theDay = dayOfMonth(new Date(blog.createDate + "T10:30:00Z"));
      let theMonth = shortMonthName(new Date(blog.createDate + "T10:30:00Z"));
-    
+
      return (
           // <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>
           // {/* <div className="col-md-6 col-lg-6" key={index}> */}
@@ -83,7 +83,7 @@ const BlogListPage =  (props) =>  {
                     <div className="date-box">
                       { theDay } <span className="month">{ theMonth }</span>
                     </div>
-                    <div className="title-meta">
+                    <div className="title-meta" style={{marginBottom: '1.5rem'}}>
                       <h2><Link style={{textDecoration: 'none'}} href={blog.path}><div className={styles.blogListTitle}>{ blog.title }</div></Link></h2>
                     </div>
                 </div>
@@ -145,8 +145,6 @@ export async function getStaticProps(context) {
   let metadataList  = await m_getMetadataList();
   let totalItems = metadataList.length;
   trace(`    totalItems in metadataList, ${totalItems} `);
-
-  
 
   /* sort metadata array by given property and specified order */
   sortByStringProp(metadataList, 'createDate', 'desc'); /* modifies original array */

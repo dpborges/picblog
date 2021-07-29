@@ -1,5 +1,4 @@
 import React from 'react'
-import { v4 as uuidv4 } from 'uuid';
 import { displayAd } from './displayAd';
 
 // import "../../../styles/reusable-classes.scss";
@@ -12,41 +11,40 @@ let containerStyle = { marginTop: '2.2rem', marginLeft: '2.5rem' }; // Style for
 let advertStyle    = { marginBottom: '3rem' }                       // Style for each advert in the container
 
 let smallAdvert = (
-    <div style={containerStyle}>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-    </div>
+  <div style={containerStyle}>
+      <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+      <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+  </div>
 )
 let mediumAdvert = (
-    <div style={containerStyle}>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
-    </div>
+  <div style={containerStyle}>
+      <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+      <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+      <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+      <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+  </div>
 )
 let largeAdvert = (
-    <div style={containerStyle}>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-    </div>
+  <div style={containerStyle}>
+      <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+      <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+      <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+      <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+      <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+  </div>
 )
 
 let xlargeAdvert = (
-    <div style={containerStyle}>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
-        <div >{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
-    </div>
+  <div style={containerStyle}>
+      <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+      <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+      <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+      <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+      <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+      <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+      <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+  </div>
 )
-
 
 const displayAdsOnRight = (contentHeight) => {
     

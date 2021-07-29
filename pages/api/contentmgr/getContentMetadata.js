@@ -16,8 +16,11 @@ export default async function getContentMetaData(slug) {
             reject(err)
             return;
           }
+          
           // console.log("This is data from file ", fileContents)       
           let metadataArray = JSON.parse(fileContents); /* convert to javascript object */
+
+          /* if no slug, filter on return all posts; other get the content meta data for the single slug */
           let blogMetadata = !slug 
                   ? metadataArray.filter((mdObject) => mdObject.type === "post") 
                   : metadataArray.find((contentmetada) => contentmetada.slug === slug);

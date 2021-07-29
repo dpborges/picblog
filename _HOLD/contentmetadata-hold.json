@@ -272,7 +272,7 @@
     "createDate": "2020-02-12",
     "updateDate": "2020-02-12",
     "excerpt":  "Everyone loves a party, but not everyone likes to help make one happen ― or break it down afterward. Unfortunately, someone has to put in the effort at both ends",
-    "images": [{"src": "/images/diy-party-planning.jpg", "alt": "after party mess"}],
+    "images": [{"src": "/images/after-party-mess.jpg", "alt": "after party mess"}],
     "wordCount": 750
   },
   {
@@ -297,6 +297,18 @@
     "updateDate": "2020-01-15",
     "excerpt":  "Let's face it: Hosting a party is a blast, but getting to that point can be a real pain! It's easy to get excited thinking about all the fun you will have..",
     "images": [{"src": "/images/easy-party-planning.jpg", "alt": "man planning surprise party"}],
+    "wordCount": 500
+  },
+  {
+    "id": "0026",
+    "title": "The Only Seating Plan Guide You'll Ever Need for Your Next Event",
+    "slug": "seating-plan-guide",
+    "path": "/blog/seating-plan-guide",
+    "cid": "post0026",
+    "createDate": "2021-08-21",
+    "updateDate": "2021-08-21",
+    "excerpt":  "Do you want to create a reception layout that is as appealing as it is comfortable? Use this detailed seating plan guide for your upcoming event.",
+    "images": [{"src": "/images/event-seating-arrangement.jpg", "alt": "event seating arrangement"}],
     "wordCount": 500
   }
 ]

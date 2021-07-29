@@ -14,19 +14,19 @@ import styles from '../styles/page-header.module.scss';
 const textNavElements = (siteUrl, resources, blogUrl, toggleSelected  ) => {
     return (
     <ul className={`${styles.topNavLinks} ${styles.ddFlexContainer}`}>
-      <li className={styles.topNavLink}>
+      <li className={styles.topNavLink} key="u11">
           <a href={`${siteUrl}`} className={styles.pageHeaderNavlink}>
               <div className={styles.linktextSize}>Home</div>
           </a>
       </li>
-      <li className={styles.topNavLinkAlt}>
+      <li className={styles.topNavLinkAlt} key="u12">
           <div className={styles.dropdownContainer}>
               <DropDownMenu title="Resources" list={resources} 
                   altHeaderClass="dropDownHeaderNb"  config={{displayHeader: false, upDownArrow: false}} 
               />
           </div>
       </li>
-      <li className={styles.topNavLink}>
+      <li className={styles.topNavLink} key="u13">
           <a href={`${blogUrl}`} className={styles.pageHeaderNavlink}>
               <div className={styles.linktextSize}>Blog</div>
           </a>
@@ -95,14 +95,14 @@ class SSPageHeader extends Component {
         let resources =  [
             {key: 0, title: "Resources",            selected: false, listname: "resources", path: ""},
             {key: 1, title: "Faq",                  selected: false, listname: "resources", path: `${siteUrl}/resources/faq`},
-            {key: 1, title: "Features",             selected: false, listname: "resources", path: `${siteUrl}/resources/features`},
-            {key: 2, title: "Type of Events",       selected: false, listname: "resources", path: `${siteUrl}/resources/type-of-events`},
-            {key: 3, title: "Helping Hands List",   selected: false, listname: "resources", path: `${siteUrl}/resources/helping-hands`},
-            {key: 4, title: "Contribution List",    selected: false, listname: "resources", path: `${siteUrl}/resources/contribution-list`},
-            {key: 5, title: "How to Create Event",  selected: false, listname: "resources", path: `${siteUrl}/resources/how-to-create-event`},
-            {key: 6, title: "How to Pitch In",      selected: false, listname: "resources", path: `${siteUrl}/resources/how-to-pitch-in`},
-            {key: 7, title: "Event Planning Tools", selected: false, listname: "resources", path: `${siteUrl}/resources/event-planning-tools`},
-            {key: 8, title: "About Us",             selected: false, listname: "resources", path: `${siteUrl}/resources/about-us`}
+            {key: 2, title: "Features",             selected: false, listname: "resources", path: `${siteUrl}/resources/features`},
+            {key: 3, title: "Type of Events",       selected: false, listname: "resources", path: `${siteUrl}/resources/type-of-events`},
+            {key: 4, title: "Helping Hands List",   selected: false, listname: "resources", path: `${siteUrl}/resources/helping-hands`},
+            {key: 5, title: "Contribution List",    selected: false, listname: "resources", path: `${siteUrl}/resources/contribution-list`},
+            {key: 6, title: "How to Create Event",  selected: false, listname: "resources", path: `${siteUrl}/resources/how-to-create-event`},
+            {key: 7, title: "How to Pitch In",      selected: false, listname: "resources", path: `${siteUrl}/resources/how-to-pitch-in`},
+            {key: 8, title: "Event Planning Tools", selected: false, listname: "resources", path: `${siteUrl}/resources/event-planning-tools`},
+            {key: 9, title: "About Us",             selected: false, listname: "resources", path: `${siteUrl}/resources/about-us`}
         ]
         
         // Construct NavLinks component using the textNavElements function

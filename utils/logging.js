@@ -2,7 +2,6 @@ import * as R from 'ramda';
 const { createLogger, format, transports } = require('winston');
 const { combine, timestamp, label, printf } = format;
 
-
 // *******************************************************************************
 // winston logging configuration
 // IMPORTANT NOTE: file transports cannot be turned on as fs libary is not available

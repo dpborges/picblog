@@ -146,7 +146,6 @@ class Faq extends React.Component {
                                     </p>
                                 </AccordionItemPanel>
                             </AccordionItem>
-
                         </Accordion>
                     </div>
                 </section>

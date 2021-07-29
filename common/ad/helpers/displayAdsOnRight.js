@@ -13,7 +13,7 @@ let advertStyle    = { marginBottom: '3rem' }                       // Style for
 
 let smallAdvert = (
     <div style={containerStyle}>
-        <div >{displayAd("skyscraper", "desktop", advertStyle)}</div>
+        <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
         <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
     </div>
 )

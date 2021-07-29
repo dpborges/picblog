@@ -186,7 +186,7 @@
 <url>
   <loc>https://pitchinclub.com/blog/party-set-up-and-after-party-clean-up</loc>
   <image:image>
-    <image:loc>https://pitchinclub.com/images/diy-party-planning.jpg</image:loc>
+    <image:loc>https://pitchinclub.com/images/after-party-mess.jpg</image:loc>
     <image:title>after party mess</image:title>
   </image:image>
 </url>
@@ -202,6 +202,13 @@
   <image:image>
     <image:loc>https://pitchinclub.com/images/easy-party-planning.jpg</image:loc>
     <image:title>man planning surprise party</image:title>
+  </image:image>
+</url>
+<url>
+  <loc>https://pitchinclub.com/blog/seating-plan-guide</loc>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/event-seating-arrangement.jpg</image:loc>
+    <image:title>event seating arrangement</image:title>
   </image:image>
 </url>
 </urlset>

@@ -117,21 +117,21 @@ class Footer extends Component {
                                     <li>
                                       <div className={styles1.iconContainer}>
                                         <a className="icofont-facebook" href="https://www.facebook.com/pitchinclub">
-                                          <FontAwesomeIcon icon={["fab", "facebook-f"]}  />
+                                          {/* <FontAwesomeIcon icon={["fab", "facebook-f"]}  /> */}
                                         </a>
                                       </div>
                                     </li>
                                     <li>
                                       <div className={styles1.iconContainer}>
                                         <a className="icofont-linkedin" href="https://www.linkedin.com/company/pitch-in-club/"  >
-                                          <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
+                                          {/* <FontAwesomeIcon icon={["fab", "linkedin-in"]} /> */}
                                         </a>
                                       </div>
                                     </li>
                                     <li>
                                       <div className={styles1.iconContainer}>
                                         <a className="icofont-twitter" href="https://twitter.com/pitchinclub"  >
-                                          <FontAwesomeIcon icon={["fab", "twitter"]}  />
+                                          {/* <FontAwesomeIcon icon={["fab", "twitter"]}  /> */}
                                         </a>
                                       </div>
                                     </li>
@@ -198,7 +198,7 @@ Footer.defaultProps = {
 
 /* Small functional componennt used to render Useful links in the footer  */
 const footerLink = (linkAddr, linkText) => {
-  console.log("This is linkText, ", linkText);
+  
   return (
     <a href={linkAddr} >
       <div style={{display: 'flex'}}>

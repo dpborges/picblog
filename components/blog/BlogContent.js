@@ -7,9 +7,7 @@ import BlogImage from './BlogImage';
 import BlogInfo  from './BlogInfo';
 // import getContentMetadata from '../../pages/api/contentmgr/getContentMetadata';
 import { shortMonthName, dayOfMonth } from '../../utils/date';
-
 import styles from '../../styles/blogdetail.module.scss';
-
 
 const Paragraph = props => <p className={styles.content} {...props} />
 const H1Header = props => <h1 style={{color: 'red'}} {...props} />
