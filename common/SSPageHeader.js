@@ -14,7 +14,6 @@ import styles from '../styles/page-header.module.scss';
 const textNavElements = (siteUrl, resources, blogUrl, toggleSelected  ) => {
     return (
     <ul className={`${styles.topNavLinks} ${styles.ddFlexContainer}`}>
-
       <li className={styles.topNavLink}>
           <a href={`${siteUrl}`} className={styles.pageHeaderNavlink}>
               <div className={styles.linktextSize}>Home</div>
@@ -32,7 +31,6 @@ const textNavElements = (siteUrl, resources, blogUrl, toggleSelected  ) => {
               <div className={styles.linktextSize}>Blog</div>
           </a>
       </li>
-
     </ul>
   )
 }
@@ -93,7 +91,7 @@ class SSPageHeader extends Component {
         let siteUrl = getAppConfigParm("siteUrl");
         let blogUrl = getAppConfigParm("blogUrl");
 
-        // Resources used for DropDown Menu
+        // Define resources used for DropDown Menu
         let resources =  [
             {key: 0, title: "Resources",            selected: false, listname: "resources", path: ""},
             {key: 1, title: "Faq",                  selected: false, listname: "resources", path: `${siteUrl}/resources/faq`},

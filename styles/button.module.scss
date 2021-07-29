@@ -1,0 +1,231 @@
+@import   './settings.scss';
+
+// ===========================================
+// Generic reusable buttons
+// ===========================================
+
+/* This button button provides transtion of from one color to next on hover */
+.button {
+    background: $orange;
+    border: none;
+    border-radius: .75rem;
+    color: $white;
+    // display: inline-block;
+    font-size: $font-size-large;
+    font-weight: 400;
+    line-height: 1;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    width: 20rem;
+    transition: background-color .4s ease;
+    
+    &:hover {
+        background-color:  $orange2;
+        border: none;
+        text-decoration: none;
+    }
+}
+
+/* Using this modifier, you can convert a button to link */
+.button--link {
+    background: none;
+    font-weight: 400;
+}
+
+.button--secondary {
+    background: #888888;
+}
+
+.button-shadow {
+    background: $white; 
+    border: 1.4px solid $orange;
+    color: $orange;
+  /*  display: inline-block; */
+    font-size: $font-size-small;
+    font-weight: 600;
+  /*  line-height: 1;  */
+     text-align: center;
+    text-decoration: none;
+    outline: none;
+    transition: background-color .4s ease;
+    &:hover {
+        background-color:  $orange;
+        border: 1.4px solid $orange;
+        color: $white;
+    }
+
+    &:focus { outline: none; }
+}
+
+.button--oval {
+    border-radius: 1.90rem;
+    font-size: $font-size-small;
+    font-weight: 600;
+    height: 3.2rem;
+    width: 10rem;
+
+    &:focus { outline: none; }
+}
+
+// ===========================================
+// Specific custom buttons
+// ===========================================
+/* This button is found on the end of the HomePage / which has the feedback form */
+.feedback-form-button {
+    @extend .button;
+    height: 3rem;
+    margin-top: $s-size;
+    margin-bottom: $xl-size;
+    width: 15rem;
+
+   &:focus { outline: none; }
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        margin-top: -.5rem;
+        margin-left: -2.2rem;
+        margin-bottom: 0;
+        width: 15rem;
+        height: 3.5rem;
+    }
+}
+
+/* This is the button found on the login page */
+.login-button {
+    @extend .button;
+    width: 30rem;
+    height: 3.5rem;
+
+    &:focus { outline: none; };
+
+    @media (max-width: $mobilephone-breakpoint) {
+        width: 26rem;
+    }
+}
+
+/* This is the button found on the signup page */
+.signup-button {
+    @extend .button;
+    width: 30rem;
+    height: 3.5rem;
+    margin-bottom: $s-size;
+   
+    &:focus { outline: none; }
+
+    @media (max-width: $mobilephone-breakpoint) {
+        width: 26rem;
+        margin-bottom: 0;
+    }
+}
+
+
+/* This is the button Used in the "How It Works" section */
+.signup-button-s3 {
+    @extend .button;
+    margin-bottom: $xl-size;
+    // padding-bottom: $l-size;
+
+    @media (max-width: $mobilephone-breakpoint) {
+        width: 18rem;
+        margin-bottom: $l-size;
+    }
+}
+/* modifier */
+.signup-button-mb {
+    margin-bottom: $s-size;
+}
+
+/* buttons used for input bar */
+.tiny-plus-icon {
+    background-color: $lightblue1;
+    color: $blue;
+    font-size: $font-size-xlarge;
+    font-family: inherit;
+    font-weight: 900;
+    line-height: .90;
+    // margin-top: .5rem;
+    margin-bottom: .75rem;
+    outline: none;
+    padding-top: .2rem;
+    transition: background-color .4s ease;
+  
+    &:hover {
+      color:  $orange;
+    }
+  }
+
+  .tiny-plus-icon-for-piclist {
+      @extend .tiny-plus-icon;
+      padding-top: -.1rem;
+
+      @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        padding-top: -.5rem;
+      }
+
+  }
+
+  
+  /* This button  provides transtion from one color to next on hover */
+  .tiny-plus-button {
+    background-color: $lightblue1;
+    border: none;
+    border-radius: 50%;
+    color: $lightblue1;
+    font-size: $font-size-xlarge;
+    font-weight: 900;
+    margin-left: 2.5rem;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+  
+    &:focus, &:visited, &:active,   {
+      color:  $greyshade4;
+      border: none;
+      outline: none;
+    }
+  
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      margin-left: .80rem;
+    }
+  }
+
+  
+  .pencil-icon-button {
+    width: 3.5rem;
+    padding-right: 1rem;
+    // margin-right: 2rem;
+  
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      width: 2.5rem;
+    }
+  }
+  
+  .trash-icon-button {
+    padding-right: 1rem;
+    width: 4rem;
+
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      width: 2rem;
+      padding-right: 0;
+      margin-right: 0;
+    }
+  }
+
+/* This button is found on the end event page  */
+.attending-form-button {
+    @extend .button;
+    margin-top: $s-size;
+    margin-bottom: $l-size;
+    height: 3.5rem;
+    // margin-bottom
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        font-size: $font-size-medium;
+        margin-top: -.5rem;
+        margin-bottom: 0;
+        // width: 15rem;
+        height: 3.5rem;
+    }
+}
+
+

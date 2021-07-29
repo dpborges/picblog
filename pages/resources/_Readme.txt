@@ -1,35 +1,25 @@
-DEPENDENCIES
+DEPENDENCIES FOR RESOURCE PAGES
 > For the How-To pages I needed to install bootstrap 4.1.3
 > For EventPlanningTools dependencies, see eventplanningtools folder
-> Upgraded to next/js 11 to be able to use the next/script <Script> tag
-  so I can load the modernizr script for the resources pages. I had problems 
-  trying to make text responsive over the banner image using nextjs Image 
-  component in the banner section. I decided that for resource pages I'd use
-  the manual webp approach.
-
-RECOMMENDATIONS
-When creating Text overlay over the BannerSection of the resources pages,'
-I found that using full container (fc), as with contribution list, centering text 
-for various devices was easier. Using center (c), as I did with contribution-list,
-I found centering the text for various sizes was more difficult.
-
-As far as media queries, I recommend structuring media queries as I've done 
-in typeevents.module.scss. First create media queries for positioning text block, 
-then copy same media queries for font-sizing using same breakpoints.
+> Upgraded to next/js 11 to be able to use the next/script <Script> tag.
+  After installing I was not able to get the modernizr script to work with the webp classes.
+  I left the banner images "as is" (no optimization) on the resource pages.
+  see doc below
+  https://docs.google.com/document/d/1r6T85AZ5d-WzYOMNXZ6XJCKUTmJ8eHaK3ggqY8uRobQ/edit
+> For contact-form I needed to install axios and validator
 
 Work Status
 ==========================================
-features            (done)
-type-of-events      (done)  /* had trouble centering */
-event-planning-tools(done)  
-helping-hands       (done) converted to Image component
-contribution-list   (done) converted to Image componenthas image
-how-to-create-event (done) converted to Image component   
-how-to-pitch-in     (done)  
-do banner related cleanup (not started)
+> (DONE) Convert screen snapshot images to use next Image component 
+> (DONE) Migrate contact page
+> (DONE) Migrate picservices to windows and test on the windows enviroment
+>
 
-> Convert screen snapshot images to use next Image component
+> Fix issue where resources dropdown shows up when I 
+  hover over Blog Navlink
+
 > Test each page functionality / links
+> Do banner related cleanup (not started) and delete any files with DELETE suffix
 > enable google ads
 
 

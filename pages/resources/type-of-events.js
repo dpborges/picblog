@@ -15,16 +15,16 @@ import styles4 from "../../styles/cta-button.module.scss";
 const titleSection = () => (
   <div>
       <div className={styles["typeevents-title-container"]}>
-          <div className={styles["typeevents-text-block-container"]}>
-              <div className={styles["typeevents-text-backdrop"]}>
-                  <div className={styles["typeevents-text-block"]}>
-                      <h1 className={styles["typeevents-title"]}>The Best Group Planning App for All Types of Events</h1>
-                  </div>
+        <div className={styles["typeevents-text-block-container"]}>
+          <div className={styles["typeevents-text-backdrop"]}>
+              <div className={styles["typeevents-text-block"]}>
+                  <h1 className={styles["typeevents-title"]}>The Best Group Planning App for All Types of Events</h1>
               </div>
           </div>
+        </div>
       </div>
       <div className={styles["typeevents-subtitle-container"]}>
-          <h3 className={styles["typeevents-subtitle"]}>Whatever Your Event May Be, The Pitch In Club Makes Planning Easy </h3>
+        <h3 className={styles["typeevents-subtitle"]}>Whatever Your Event May Be, The Pitch In Club Makes Planning Easy </h3>
       </div>
   </div>
 );

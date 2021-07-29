@@ -19,7 +19,7 @@ class Footer extends Component {
         const supportLinks = this.props.supportsLinks.map((support, index) => (
             <li key={index}>
                 <a href={support.Link}>
-                    <i className="icofont-double-right" />
+                    {/* <i className="icofont-double-right" /> */}
                     {support.Name}
                 </a>
             </li>

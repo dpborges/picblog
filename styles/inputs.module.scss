@@ -1,0 +1,241 @@
+@import './settings.scss';
+
+// ==============================================================================
+// These are generic input elememnts
+// ==============================================================================
+
+// Used for text-input
+.form__field {
+    border-radius: 5px;
+    color: $black;
+    font-family: inherit;
+    height: 3.5rem;
+    padding-left: .50rem; /* this is padding for placeholder */
+    width: 30rem;
+    vertical-align: center;
+    &:focus {
+        box-shadow: inset 1px 1px 2px rgba(116, 101, 101, 0.75);      
+        border-radius: 5px;
+        outline-color: $greyshade2; 
+    }
+    @media (max-width: $mobilephone-breakpoint) {
+        width: 26rem;
+    }
+ 
+}
+
+// Same as form__field, but removed hover effect. Removing hover
+// effect allows me extend this form style and apply different 
+// hover effect, or no hover effect. 
+.form__field2 {
+    border-radius: 5px;
+    border: 1px solid $greyshade5;
+    font-family: inherit;
+    height: 3rem;
+    padding-left: .50rem; /* this is padding for placeholder */
+    width: 30rem;
+    vertical-align: center;
+}
+
+// This is wider version of the default form__field above with rounded corners
+.form__field--large {
+    @extend .form__field2;
+    width: 35rem;
+    // width: 32rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      font-size: $font-size-xxsmall;
+      width: 96vw;
+      margin-left: 0;
+    }
+}
+
+
+// ******************************************
+// This a label and field combination
+// ******************************************
+// Used with label and field combination. This allows you to have label and text input 
+// side by side. This class should be used on a div that wraps both label and text input. 
+// It also provides media query to resize for mobile phone.
+.form__label-field-combo {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  margin: 0; 
+
+  @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      align-items: center;
+      // width: 18rem;
+      // width: 96vw;
+      height: 6rem;
+      margin-left: 2.7rem;
+  }
+}
+
+// ******************************************
+// These are generic label elements
+// ******************************************
+
+// This is used for labels that are long or have 3 to 5 words
+.form__multi-word-label {
+  color: $greyshade5;
+  font-size: $font-size-small;
+  font-weight: 600;
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  // text-align: left;
+  width: 20rem;
+}
+
+// ******************************************
+// Custom labels
+// ******************************************
+.form__feedback-form-label {
+  @extend .form__multi-word-label;
+
+  @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      font-size: $font-size-medium;
+      margin-left: -7rem;
+      margin-bottom: .5rem;
+  }
+}
+// This is wider version of the default form field above
+// .form__field--large-OLD {
+//     @extend .form__field;
+//     width: 40rem;
+
+//     @media (max-width: $mobilephone-breakpoint) {
+//         font-size: $font-size-small;
+//     }
+// }
+
+
+// This has a nice width (medium) for modal style window
+.modalstyle__field {
+    @extend .form__field;
+    width: 32rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+        width: 28rem;
+    }
+}  
+
+
+// This is wider version of the default form__field above with rounded corners
+.form__field--large {
+  @extend .form__field2;
+  width: 35rem;
+  outline: none;
+  // width: 32rem;
+
+  @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      font-size: $font-size-small;
+      width: 24rem;
+      margin-left: -3.5rem;
+  }
+
+  &:focus {
+      box-shadow: inset 1px 1px 2px rgba(116, 101, 101, 0.75) !important;      
+      border-radius: 5px;
+      outline-color: $greyshade2 !important; 
+  }
+}
+
+
+// This is wider version of the default form field for full page forms
+// .form__field--large-OLD {
+//     @extend .form__field;
+
+//     @media (max-width: $mobilephone-breakpoint) {
+//         width: 28rem;
+//         margin-left: -5rem;
+//     }
+// }
+
+// Used with form textarea's
+.textarea-large {
+    @extend .form__field; 
+    height: 8rem;
+    width: 35rem;
+
+    @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      width: 90vw;
+      margin-left: -3rem;
+    }
+}
+
+// NEXT TWO CLASSES HAVE NOT BEEN USED YET
+// .text-input {
+//     border: 1px solid #cacccd;
+//     height: 50px;
+//     padding: $s-size;
+//     font-weight: 300;
+//     font-size: $font-size-large;
+// }
+
+// .select {
+//     @extend .text-input;
+// }
+
+// ******************************************
+// This is a generic form
+// ******************************************
+
+// This provides the white box, with rounded corners, the form appears in. Assuming
+// the children of are form elements (eg. inputs, textareas, select item, button ), 
+// this will also add a medium size margin beneath all the children of this component. 
+// If you have any element wrap with this class that is not a form element, you
+// may need to change style rule below.
+.form {
+  background: $white;
+  border-radius: 5px;
+  // margin-top: 0rem;
+
+  /* flex properties */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  /* style to apply to all children of this class */
+  > * {
+      color: $greyshade6;       /* color of text */
+      margin-bottom: $m-size;   /* space under each input field */
+  }
+}
+
+// ******************************************
+// This is the Feedback Form
+// ******************************************
+.form-feedback {
+  @extend .form; 
+  width: 80rem;
+  margin-top: 1rem;
+  /* create separation between last input element and button below */
+  // .form__label-field-combo:first-of-type {
+  //     margin-top: $l-size;
+  // }
+  // input:last-of-type {
+  //     margin-bottom: $l-size;
+  // }
+  @media (max-width: $mobilephone-breakpoint) {
+      margin-top: 3rem;
+      width: 96vw;
+  }
+}
+
+// ******************************************
+// Style for error message
+// ******************************************
+.error {
+  color: #c0392b;
+  font-size: 1.4rem;
+  padding: 0;
+  margin: 2.5rem 0 2.5rem 0;
+  line-height: 1rem;
+  text-align: center;
+}

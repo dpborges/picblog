@@ -62,26 +62,26 @@ class HowToCreateEvent extends React.Component {
                                     <ul>
                                         {about.listItemOne && (
                                             <li>
-                                                <i className="icofont-ui-check" />
-                                                {about.listItemOne}
+                                              {/* <i className="icofont-ui-check" /> */}
+                                              > {about.listItemOne}
                                             </li>
                                         )}
                                         {about.listItemTwo && (
                                             <li>
-                                                <i className="icofont-ui-check" />
-                                                {about.listItemTwo}
+                                              {/* <i className="icofont-ui-check" /> */}
+                                              > {about.listItemTwo}
                                             </li>
                                         )}
                                         {about.listItemThree && (
                                             <li>
-                                                <i className="icofont-ui-check" />
-                                                 {about.listItemThree}
+                                              {/* <i className="icofont-ui-check" /> */}
+                                              > {about.listItemThree}
                                             </li>
                                         )}
                                         {about.listItemFour && (
                                             <li>
-                                                <i className="icofont-ui-check" />
-                                                {about.listItemFour}
+                                              {/* <i className="icofont-ui-check" /> */}
+                                              > {about.listItemFour}
                                             </li>
                                         )}
                                     </ul>
@@ -110,25 +110,25 @@ class HowToCreateEvent extends React.Component {
                                     <ul>
                                         {about.listItemOne && (
                                             <li>
-                                                <i className="icofont-ui-check" />
+                                                {/* <i className="icofont-ui-check" /> */}
                                                > {about.listItemOne}
                                             </li>
                                         )}
                                         {about.listItemTwo && (
                                             <li>
-                                                <i className="icofont-ui-check" />
+                                                {/* <i className="icofont-ui-check" /> */}
                                                 > {about.listItemTwo}
                                             </li>
                                         )}
                                         {about.listItemThree && (
                                             <li>
-                                                <i className="icofont-ui-check" />
+                                                {/* <i className="icofont-ui-check" /> */}
                                                 > {about.listItemThree}
                                             </li>
                                         )}
                                         {about.listItemFour && (
                                             <li>
-                                                <i className="icofont-ui-check" />
+                                                {/* <i className="icofont-ui-check" /> */}
                                                 {about.listItemFour}
                                             </li>
                                         )}
