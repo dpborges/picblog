@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "gensitemap": "node utils/sitemap.mjs",
-    "dev": "next dev -p 8080",
+    "dev": "next dev -p 3000",
     "build": "next build && npm run gensitemap",
     "start": "next start",
     "test": "NODE_ENV=test jest"
