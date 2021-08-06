@@ -3,7 +3,7 @@ const env = 'test';
 
 // URL's for test should start with test- prefix.
 const authUrl = "http://localhost:3000";
-const picUrl  = "http://localhost:4000";
+const picUrl  = "http://localhost:4000"; 
 
 // Used for internal links for CTA and Blog pages, hence reason for using Absolute URL's vs relative urls.
 // In addition to defining internal links with absolute url's, its also used  to define a canonical url's

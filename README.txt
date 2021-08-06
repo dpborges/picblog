@@ -17,32 +17,29 @@ TODOS
   Solution: changed Dev PORT to 3000 to match port used with prod
     build and top match port set in AppConfig.js
 
-> (TBD) See if I can rename picblog-new to picblog. I would like picblog
+> (DONE) See if I can rename picblog-new to picblog. I would like picblog
   to become the new app name for the blog portion of the application
-  Solution: - (done) Copy picblog-new directory to picblog directory
-   - (done) delete the git repository inside the newly created picblog directory
-   - (done) run git init 
-   - (done) create a new repository called picblog on github
-   - (done) push local github to remote
-   - (done) delete picblog-new from github
-   - rename picblog-new to picblog-new-DELETE      
-> Once I know the new picblog evironment is operational and able to 
+  
+> (DONE) Once I know the new picblog evironment is operational and able to 
    push to remote, I can delete  picblog-new-DELETE       
 
-> Look at previous razzle implemention to see how I set 
+> (DONE) See why Blog Post "How to Plan a Watch Party" on page 2 is returning 404
+
+> (DONE) Look at previous razzle implemention to see how I set 
   up the k8s and docker folder structure and follow same structure in nextjs.
 
 INGRESS implemenation
 
-> Dockerize my nextjs picblog server; decide how I will 
+> (DONE) Dockerize my nextjs picblog server; decide how I will 
   distinguish between a picblog test and prod docker container.
   Document recommended approach for building and retrieving 
   docker images associated to test and prod environment. If you can have
-  labels in docker images, then use an env label for test and prod
+  labels in docker images, then use an env label for test and prod.
+  Solution: The only image you need in docker hub is your production image
 
-> Stand up a basic kubernetes cluster with a single picblog container 
-  where I can access it from the browser. May need ingress set up. If so,
-  document this (if not already documented).
+>  (DONE) Stand up a basic kubernetes cluster with a single picblog container 
+  where I can access it from the browser. This will require setting up
+  a ingress nginx controller. 
 
 > Check in code after successfully deployment
 
@@ -50,7 +47,7 @@ INGRESS implemenation
 
   STORAGE IMPLEMENTATION
 
-> Allocated some storage I can attach to either the cluster or pod itself 
+> Allocate some storage I can attach to either the cluster or pod itself 
   (not sure which one), and document it  (if not documented already).
   Follow  ** Research approach ** noted above.
 
