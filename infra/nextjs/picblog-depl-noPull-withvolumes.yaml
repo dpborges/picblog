@@ -14,14 +14,20 @@ spec:
         type: nextjs
         tier: frontend
     spec:
+      volumes: 
+        - name: picblog-storage
+          persistentVolumeClaim:
+            claimName: pic-pvc
       containers:
-        - name: picblog
-          image: dpbsw/picblog:latest
-          env: 
-            - name: NODE_ENV
-              value: "development"
-      imagePullSecrets:
-        - name: regcred
+      - name: picblog
+        image: dpbsw/picblog:latest
+        env: 
+        - name: NODE_ENV
+          value: "development"
+        volumeMounts:
+          - name: picblog-storage
+            mountPath: /data
+        imagePullPolicy: Never
 ---
 apiVersion: v1
 kind: Service

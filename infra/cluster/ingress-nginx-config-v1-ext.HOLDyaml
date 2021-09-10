@@ -1,0 +1,42 @@
+apiVersion:  networking.k8s.io/v1
+kind: Ingress
+metadata:
+  # name: ingress-svc /* used ingress-resource as this is name used on GKE */
+  name: ingress-resource
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: 'true'
+spec:
+  rules:
+    - host: dev.pitchinclub.com
+      http:
+        paths: 
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: picspa-ext-svc
+              port:
+                number: 80      
+    # - host: dev.pitchinclub.com
+    #   http:
+    #     paths: 
+    #     - path: /resources/?(.*)
+    #       pathType: Prefix
+    #       backend:
+    #         service:
+    #           name: picblog-clusterip-svc
+    #           port:
+    #             number: 3000
+    # - host: dev.pitchinclub.com
+    #   http:
+    #     paths: 
+    #     - path: /blog/?(.*)
+    #       pathType: Prefix
+    #       backend:
+    #         service:
+    #           name: picblog-clusterip-svc
+    #           port:
+    #             number: 3000        
+   
+    

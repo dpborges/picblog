@@ -41,11 +41,9 @@ INGRESS implemenation
   where I can access it from the browser. This will require setting up
   a ingress nginx controller. 
 
-> Check in code after successfully deployment
+> (DONE) Check in code after successfully deployment
 
-> Go thru the process for deploying to Google Cloud; Document steps
-
-  STORAGE IMPLEMENTATION
+STORAGE IMPLEMENTATION
 
 > Allocate some storage I can attach to either the cluster or pod itself 
   (not sure which one), and document it  (if not documented already).
@@ -57,7 +55,7 @@ INGRESS implemenation
 > Copy markdown content and content metadata to storage device
 
 > Spin up the single picblog container using markdown content and content meta data 
-  on the storage device. Test by renaming folders in project folder
+  on the storage device. Test by renaming folders in the project folder
 
 > Check in code after validating its working.
 

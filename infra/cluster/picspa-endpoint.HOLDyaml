@@ -1,0 +1,22 @@
+# Variation 1
+# apiVersion: v1
+# kind: Endpoints
+# metadata:
+#   name: picspa-ext-service
+# subsets:
+#   - addresses: 
+#       - ip: 184.73.115.207
+#       - ip: 52.0.56.34
+#   - ports:
+#       - name: picspa-ext-service
+#         port: 80
+      # protocol: TCP
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: picspa-ext-service
+subsets:
+  - addresses:
+      - ip: 184.73.115.207
+    ports:
+      - port: 80

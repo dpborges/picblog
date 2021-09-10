@@ -2,16 +2,15 @@
 const env = 'test';
 
 // URL's for test should start with test- prefix.
-const authUrl = "http://localhost:3000";
-const picUrl  = "http://localhost:4000"; 
+const authUrl = "http://localhost:3000";  // This is url used for authentication services
+const picUrl  = "http://localhost:4000";  // This is url used for PitchInClub (pic) services
 
 // Used for internal links for CTA and Blog pages, hence reason for using Absolute URL's vs relative urls.
 // In addition to defining internal links with absolute url's, its also used  to define a canonical url's
 // when there are multiple links pointing to same page (eg. Read more on Home Page)
-const siteUrl = "http://dev.pitchinclub.com"; 
-
+const siteUrl = "http://localhost:3000";
 // url for blog landing page 
-const blogUrl = "http://dev.picblog.com/blog/page/1"
+const blogUrl = "http://localhost:3000/blog/page/1"
 
 // Function to get parm values
 const getAppConfigParm = (parmName, token) => {

@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: picblog-depl 
+spec:
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: picblog
+  template: 
+    metadata: 
+      labels:
+        app:  picblog
+        type: nextjs
+        tier: frontend
+    spec:
+      containers:
+        - name: picblog
+          image: dpbsw/picblog-{{ .Values.env }}:latest
+          env: 
+            - name: NODE_ENV
+              value: "development"
+      imagePullSecrets:
+        - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: picblog-clusterip-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: picblog
+  ports:
+    - name: picblog
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
