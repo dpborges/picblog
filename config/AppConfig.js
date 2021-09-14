@@ -1,5 +1,5 @@
 // Environment
-const env = 'test';
+const env = 'dev';
 
 // URL's for test should start with test- prefix.
 const authUrl = "http://localhost:3000";
@@ -11,7 +11,7 @@ const picUrl  = "http://localhost:4000";
 const siteUrl = "http://dev.pitchinclub.com"; 
 
 // url for blog landing page 
-const blogUrl = "http://dev.picblog.com/blog/page/1"
+const blogUrl = "http://dev.pitchinclub.com/blog/page/1"
 
 // Function to get parm values
 const getAppConfigParm = (parmName, token) => {

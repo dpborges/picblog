@@ -1,5 +1,5 @@
 // Environment
-const env = 'test';
+const env = 'int';
 
 // URL's for test should start with test- prefix.
 const authUrl = "http://localhost:3000";

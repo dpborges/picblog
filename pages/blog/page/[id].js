@@ -49,7 +49,7 @@ const BlogListPage =  (props) =>  {
 
     useEffect ( () => {
         let env = getAppConfigParm("env");
-        if (env === 'development' ) {
+        if (env === 'test'  || env === "prod") {
             if (!window.GA_INITIALIZED) {
                 GAinit();
                 window.GA_INITIALIZED = true;

@@ -180,7 +180,7 @@ class ContributionListPage extends Component {
 
     componentDidMount = () => {
         let env = getAppConfigParm("env");
-        if (env === 'prod' ) {
+        if (env === 'test' || env === 'prod') {
             if (!window.GA_INITIALIZED) {
                 GAinit();
                 window.GA_INITIALIZED = true;
