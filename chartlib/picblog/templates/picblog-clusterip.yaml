@@ -1,0 +1,21 @@
+# This chart creates POD and cluster ip service in the name space for the specific environment
+# (e.g. dev namespace, test namespace, or  prod namespace). 
+# The service in picblog-infra chart, creates an externalName service, which functions as
+# a proxy service with the same name as the cluster ip service within the default namespace. 
+# When ingress looks up cluster ip name, it will find the
+# proxy service in the default namespace. The proxy service within in the default namespace 
+# will route (or map) the traffic to cluster-ip-service within the "env" namespace (dev, test, or prod).
+apiVersion: v1
+kind: Service
+metadata:
+  name: picblog-clusterip-svc
+  namespace: pic-{{ .Values.env }}
+spec:
+  type: ClusterIP
+  selector:
+    app: picblog
+  ports:
+    - name: picblog
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

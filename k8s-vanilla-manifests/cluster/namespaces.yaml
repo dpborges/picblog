@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pic-dev
+  labels:
+    name: pic-dev
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pic-test
+  labels:
+    name: pic-test 
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pic-prod
+  labels:
+    name: pic-prod 

@@ -1,15 +1,15 @@
-# Default values for pic-chart.
+# Default values for picblog-infra.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# Environment dev | test | prod
+# Possible environments:  dev | test | prod
 env: dev
 
 # replicaCount: 1
 
-image:
+# image:
 #   repository: nginx
-  pullPolicy: Never
+#   pullPolicy: IfNotPresent
 #   # Overrides the image tag whose default is the chart appVersion.
 #   tag: ""
 
