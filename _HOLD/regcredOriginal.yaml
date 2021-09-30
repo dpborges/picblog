@@ -1,3 +1,5 @@
+# Created separate chart as was not able to upgrade this as part of the cluster-infra
+# bundle. Since 
 apiVersion: v1
 kind: Secret
 metadata:
