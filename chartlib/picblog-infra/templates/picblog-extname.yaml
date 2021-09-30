@@ -8,9 +8,20 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: picblog-clusterip-svc
+  name: picblog-{{ .Values.env }}-clusterip-svc
 spec:
   type: ExternalName
-  externalName: picblog-clusterip-svc.pic-{{ .Values.env }}.svc.cluster.local
+  externalName: picblog-{{ .Values.env }}-clusterip-svc.pic-{{ .Values.env }}.svc.cluster.local
 
-# Note: externalName is: cluster ip name | namespace | svc.cluster.local
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: picblog-{{ .Values.env }}-clusterip-svc
+# spec:
+#   type: ExternalName
+#   externalName: picblog-{{ .Values.env }}-clusterip-svc.pic-{{ .Values.env }}.svc.cluster.local
+
+
+# Note: externalName uses the following format
+#  cluster ip name             | namespace | svc.cluster.local
+#  picblog-<env>-clusterip-svc | pic-dev   | svc.cluster.local

@@ -1,0 +1,9 @@
+# Note that namespaces are application" specific. Thereby pic has its
+# own dev, test, and prod and pivitycloud with have its own namespaced enviroments
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pic-test
+  labels:
+    name: pic-test 
+    

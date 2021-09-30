@@ -9,7 +9,7 @@ metadata:
     # nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: dev.pitchinclub.com
+    - host: {{ .Values.host1 }}
       http:
         paths: 
         - path: /resources/?(.*)
@@ -34,12 +34,14 @@ spec:
               name: picblog-clusterip-svc
               port:
                 number: 3000
-        # This should be last as this accepts all paths; 
-        # This path is same one used in production
+    # This should be last as this accepts all paths
+    - host: {{ .Values.host1 }}
+      http:
+        paths: 
         - path: /
           pathType: Prefix
           backend:
             service:
               name: pic-clusterip-svc
               port:
-                number: 80    
+                number: 8080

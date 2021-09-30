@@ -1,0 +1,136 @@
+# The ingress file accepts n hosts for each application. For pithcinclub there are 2 host:
+# www.pitchinclub.com and invite.pitchinclub.com. The hosts can be set in helm values.yaml
+# or via the helm install/upgrade --set flag. For GKE purposes, we can support 2 environments:
+# test and prod only. 
+apiVersion:  networking.k8s.io/v1
+kind: Ingress
+metadata:
+  # name: ingress-svc /* used ingress-resource as this is name used on GKE */
+  name: ingress-resource
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: 'true'
+    # nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    # ****************************************************************
+    # Hostnames and routes for pitchinclub env1 found in values.yaml
+    # Note that all ClusterIPs will scoped to env1
+    # ****************************************************************
+      {{- if eq .Values.env1 "dev" }}
+    - host: {{ cat "dev" "." .Values.picDomainName  | nospace }}
+      {{- else if eq .Values.env1 "test" }}
+    - host: {{ cat "test" "." .Values.picDomainName  | nospace }}
+      {{- else if eq .Values.env1 "prod" }}
+    - host: {{ cat "www." .Values.picDomainName  | nospace }}
+      {{- end }}
+      http: 
+        paths: 
+        - path: /resources/?(.*)
+          pathType: Prefix
+          backend:
+            service:
+              name: picblog-{{ .Values.env1 }}-clusterip-svc
+              port:
+                number: 3000
+        - path: /blog/page/?(.*)
+          pathType: Prefix
+          backend:
+            service:
+              name: picblog-{{ .Values.env1 }}-clusterip-svc
+              port:
+                number: 3000
+        # This path is called by nextjs; the /resources and /blog picblog paths will not work without this           
+        - path: /_next/?(.*) 
+          pathType: Prefix
+          backend:
+            service:
+              name: picblog-{{ .Values.env1 }}-clusterip-svc
+              port:
+                number: 3000
+        # This should be last as this accepts all paths for pic spa
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: pic-{{ .Values.env1 }}-clusterip-svc
+              port:
+                number: 80
+    # This is the pitcinclub invitation host name (eg. invite.pitchinclub.com)
+      {{- if eq .Values.env1 "dev" }}
+    - host: {{ cat "dev-invite" "." .Values.picDomainName  | nospace }}
+      {{- else if eq .Values.env1 "test" }}
+    - host: {{ cat "test-invite" "." .Values.picDomainName  | nospace }}
+      {{- else if eq .Values.env1 "prod" }}
+    - host: {{ cat "invite" "." .Values.picDomainName  | nospace }}
+      {{- end }}
+      http:
+        paths: 
+        - path: /invitation/?(.*)
+          pathType: Prefix
+          backend:
+            service:
+              name: pic-{{ .Values.env1 }}-clusterip-svc
+              port:
+                number: 3000
+    # ******************************************************************
+    # Hostnames and routes for pitchinclub env2 found in values.yaml
+    # Note that all ClusterIPs will scoped to env2
+    # ******************************************************************
+      {{- if eq .Values.env2 "dev" }}
+    - host: {{ cat "dev" "." .Values.picDomainName  | nospace }}
+      {{- else if eq .Values.env2 "test" }}
+    - host: {{ cat "test" "." .Values.picDomainName  | nospace }}
+      {{- else if eq .Values.env2 "prod" }}
+    - host: {{ cat "www." .Values.picDomainName  | nospace }}
+      {{- end }}
+      http: 
+        paths: 
+        - path: /resources/?(.*)
+          pathType: Prefix
+          backend:
+            service:
+              name: picblog-{{ .Values.env2 }}-clusterip-svc
+              port:
+                number: 3000
+        - path: /blog/page/?(.*)
+          pathType: Prefix
+          backend:
+            service:
+              name: picblog-{{ .Values.env2 }}-clusterip-svc
+              port:
+                number: 3000
+        # This path is called by nextjs; the /resources and /blog picblog paths will not work without this           
+        - path: /_next/?(.*) 
+          pathType: Prefix
+          backend:
+            service:
+              name: picblog-{{ .Values.env2 }}-clusterip-svc
+              port:
+                number: 3000
+        # This should be last as this accepts all paths for pic spa
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: pic-{{ .Values.env2 }}-clusterip-svc
+              port:
+                number: 80
+    # This is the pitcinclub invitation host name (eg. invite.pitchinclub.com)
+      {{- if eq .Values.env2 "dev" }}
+    - host: {{ cat "dev-invite" "." .Values.picDomainName  | nospace }}
+      {{- else if eq .Values.env2 "test" }}
+    - host: {{ cat "test-invite" "." .Values.picDomainName  | nospace }}
+      {{- else if eq .Values.env2 "prod" }}
+    - host: {{ cat "invite" "." .Values.picDomainName  | nospace }}
+      {{- end }}
+      http:
+        paths: 
+        - path: /invitation/?(.*)
+          pathType: Prefix
+          backend:
+            service:
+              name: pic-{{ .Values.env2 }}-clusterip-svc
+              port:
+                number: 80
+   

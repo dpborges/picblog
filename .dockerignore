@@ -1,0 +1,11 @@
+_DELETE
+_HOLD
+_tests_
+chartdependencies
+chartlib
+k8s-vanilla-manifests
+.git
+buildPic*.sh
+Dockerfile*
+.vscode
+install-notes.txt

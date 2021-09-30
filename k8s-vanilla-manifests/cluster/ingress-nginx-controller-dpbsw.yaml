@@ -1,4 +1,4 @@
-
+# Added support for brotli compression by dpbsw
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -22,6 +22,7 @@ metadata:
   namespace: ingress-nginx
 ---
 # Source: ingress-nginx/templates/controller-configmap.yaml
+# dpbsw: Enabled brotli compression 
 apiVersion: v1
 kind: ConfigMap
 metadata:

@@ -1,18 +1,37 @@
-# Default values for pic-chart.
-# This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-
-# Environment(env):  dev | test | prod
-# env -    this property is used by my kubernetes objects to create virtual clusters
-# nodeEnv  this property is used to conform to fully expanded env names used by react build processes
-env: dev
-nodeEnv: development
 
 # replicaCount: 1
 
-image:
+# Virtual Enviroments created via namespaces (eg pic-dev, pic-test, pic-prod).
+# The env name (dev, test, prod) is used to qualify the externalName service residing in default
+# namespace, that routes traffic to the respective ClusterIP services running in the  given namespace
+# (pic-dev, pic-test, pic-prod).
+# Ingress routes traffic to externalName service, which in turn routes to the correposning ClusterIP
+# services.
+# I recommend maintaining separate externalNames for 2 modes:  prod and test or dev in test
+# This Ingress supports 2 parallel enviroments for the aforementioned modes.
+# Numeric values (eg env1) are used as opposed to named values (devenv, testenv) to be able
+# change either one to dev, test, prod, or some other value in the future like qa
+# or staging. 
+
+# *************************************************************************************
+# The following environment names are used to qualify the cluster ip services by env 
+# name that are used by this Ingress resource 
+# *************************************************************************************
+env1: dev
+env2: test
+
+# *************************************************************************************
+# The following domain names are used to generate environment specific host names 
+# in the Ingress resource 
+# *************************************************************************************
+# Supported Domain Names
+picDomainName: pitchinclub.com
+# pivityDomainName: pivitycloud.com   FUTURE INSTALL
+
+# image:
 #   repository: nginx
-  pullPolicy: Never
+#   pullPolicy: IfNotPresent
 #   # Overrides the image tag whose default is the chart appVersion.
 #   tag: ""
 

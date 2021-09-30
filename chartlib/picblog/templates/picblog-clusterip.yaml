@@ -8,7 +8,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: picblog-clusterip-svc
+  name: picblog-{{ .Values.env }}-clusterip-svc
   namespace: pic-{{ .Values.env }}
 spec:
   type: ClusterIP

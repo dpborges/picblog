@@ -27,7 +27,34 @@ spec:
           image: dpbsw/picblog-{{ .Values.env }}:latest
           env: 
             - name: NODE_ENV
-              value: "development"
+              value: {{ .Values.nodeEnv | quote }}
           imagePullPolicy: {{ .Values.image.pullPolicy}}
       imagePullSecrets:
         - name: regcred       
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: picblog-{{ .Values.env }}-depl 
+#   namespace: pic-{{ .Values.env }}
+# spec:
+#   replicas: 1
+#   selector: 
+#     matchLabels: 
+#       app: picblog
+#   template: 
+#     metadata: 
+#       labels:
+#         app:  picblog
+#         type: nextjs
+#         tier: frontend
+#     spec:
+#       containers:
+#         - name: picblog
+#           image: dpbsw/picblog-{{ .Values.env }}:latest
+#           env: 
+#             - name: NODE_ENV
+#               value: {{ .Values.nodeEnv | quote }}
+#           imagePullPolicy: {{ .Values.image.pullPolicy}}
+#       imagePullSecrets:
+#         - name: regcred       
+
