@@ -8,7 +8,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: picblog-depl 
+  name: picblog-{{ .Values.env }}-depl 
   namespace: pic-{{ .Values.env }}
 spec:
   replicas: 1

@@ -66,13 +66,13 @@ spec:
       {{- end }}
       http:
         paths: 
-        - path: /invitation/?(.*)
+        - path: /invitation/
           pathType: Prefix
           backend:
             service:
               name: pic-{{ .Values.env1 }}-clusterip-svc
               port:
-                number: 3000
+                number: 80
     # ******************************************************************
     # Hostnames and routes for pitchinclub env2 found in values.yaml
     # Note that all ClusterIPs will scoped to env2
@@ -126,7 +126,7 @@ spec:
       {{- end }}
       http:
         paths: 
-        - path: /invitation/?(.*)
+        - path: /invitation/
           pathType: Prefix
           backend:
             service:
