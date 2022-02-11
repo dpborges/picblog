@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 // import {Helmet} from 'react-helmet';
 import Head  from 'next/head';
 import Image from 'next/image';
-// import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
+import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
 // import NavBarMultiPage from "../components/common/NavBarMultiPage";
 import SSPageHeader from '../../common/SSPageHeader.js';
 import Footer from '../../common/Footer-Axolot.js'
@@ -15,13 +15,13 @@ class HowToPitchIn extends React.Component {
 
     componentDidMount = () => {
         let env = getAppConfigParm("env");
-        // if (env === 'prod') {
-        //     if (!window.GA_INITIALIZED) {
-        //         GAinit();
-        //         window.GA_INITIALIZED = true;
-        //     }
-        //     GAlogPageView()
-        // }
+        if (env === 'test' || env === 'prod') {
+            if (!window.GA_INITIALIZED) {
+                GAinit();
+                window.GA_INITIALIZED = true;
+            }
+            GAlogPageView()
+        }
     }
 
     render() {

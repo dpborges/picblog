@@ -381,5 +381,164 @@
     "images": [{"src": "/images/event-seating-arrangement.jpg", "alt": "event seating arrangement"}],
     "type": "post",
     "wordCount": 500
+  },
+  {
+    "id": "0028",
+    "title": "Church Events: Check Out These Activities for Church",
+    "slug": "activities-for-church",
+    "path": "/blog/activities-for-church",
+    "cid": "post0028",
+    "createDate": "2022-01-11",
+    "updateDate": "2022-01-11",
+    "excerpt":  "Fellowship starts with you. Love your Christian brothers and sisters even more by spending time with them at these activities for church.",
+    "images": [{"src": "/images/people-stack-hands-in-huddle.jpg", "alt": "people stack hands in huddle"}],
+    "type": "post",
+    "wordCount": 1000
+  },
+  {
+    "id": "0029",
+    "title": "Party Planning Made Easy: The Top Event Planning Tools for 2022",
+    "slug": "top-event-planning-tools",
+    "path": "/blog/top-event-planning-tools",
+    "cid": "post0029",
+    "createDate": "2022-02-16",
+    "updateDate": "2022-02-16",
+    "excerpt":  "Planning a large event or party can be overwhelming. Event planning tools help make it easy! Read on to learn about the best event planning tools for 2022.",
+    "images": [{"src": "/images/buffet-dinner-dining-food-celebration.jpg", "alt": "buffet dinner dining food celebration"}],
+    "type": "post",
+    "wordCount": 1000
+  },
+  {
+    "id": "1001",
+    "title": "frequenty asked questions",
+    "slug": "faq",
+    "path": "/resources/faq",
+    "cid": "",
+    "createDate": "2021-02-16",
+    "updateDate": "2021-02-16",
+    "excerpt":  "",
+    "images": [],
+    "type": "sme",
+    "wordCount": 0
+  },
+  {
+    "id": "1002",
+    "title": "features",
+    "slug": "features",
+    "path": "/resources/features",
+    "cid": "",
+    "createDate": "2021-02-16",
+    "updateDate": "2021-02-16",
+    "excerpt":  "",
+    "images": [{"src": "/images/event-planning.jpg", "alt": "event planning using app"}],
+    "type": "sme",
+    "wordCount": 0
+  },
+  {
+    "id": "1003",
+    "title": "type of events",
+    "slug": "type-of-events",
+    "path": "/resources/type-of-events",
+    "cid": "",
+    "createDate": "2021-02-16",
+    "updateDate": "2021-02-16",
+    "excerpt":  "",
+    "images": [{"src": "/images/potluck-event.jpg", "alt": "potluck event table setting"}],
+    "type": "sme",
+    "wordCount": 0
+  },
+  {
+    "id": "1004",
+    "title": "helping hands",
+    "slug": "helping-hands",
+    "path": "/resources/helping-hands",
+    "cid": "",
+    "createDate": "2021-02-16",
+    "updateDate": "2021-02-16",
+    "excerpt":  "",
+    "images": [
+      {"src": "/images/help-decorate.jpg", "alt": "people decorating"},
+      {"src": "/images/helping-hands-list-ui.png", "alt": "helping hands list image"}
+    ],
+    "type": "sme",
+    "wordCount": 0
+  },
+  {
+    "id": "1005",
+    "title": "contribution list",
+    "slug": "contribution-list",
+    "path": "/resources/contribution-list",
+    "cid": "",
+    "createDate": "2021-02-16",
+    "updateDate": "2021-02-16",
+    "excerpt":  "",
+    "images": [
+      {"src": "/images/people-around-food-table.jpg", "alt": "people-around-food-table"},
+      {"src": "/images/contribution-list.jpg", "alt": "contribution list UI image"}
+    ],
+    "type": "sme",
+    "wordCount": 0
+  },
+  {
+    "id": "1006",
+    "title": "how-to-create-event",
+    "slug": "how-to-create-event",
+    "path": "/resources/chow-to-create-event",
+    "cid": "",
+    "createDate": "2021-02-16",
+    "updateDate": "2021-02-16",
+    "excerpt":  "",
+    "images": [
+      {"src": "/images/create-event-step01.png", "alt": "ui image to create event"},
+      {"src": "/images/create-event-step02.png", "alt": "ui image to create list of people"},
+      {"src": "/images/create-event-step03.png", "alt": "ui image to create contribution list"},
+      {"src": "/images/create-event-step04.png", "alt": "ui image to send out invites"}
+    ],
+    "type": "sme",
+    "wordCount": 0
+  },
+  {
+    "id": "1007",
+    "title": "how-to-pitch-in",
+    "slug": "how-to-pitch-in",
+    "path": "/resources/how-to-pitch-in",
+    "cid": "",
+    "createDate": "2021-02-16",
+    "updateDate": "2021-02-16",
+    "excerpt":  "",
+    "images": [
+      {"src": "/images/pitch-in-step01.png", "alt": "ui image to contribute to event"},
+      {"src": "/images/pitch-in-step02.png", "alt": "ui image to provide a helping hand"},
+      {"src": "/images/pitch-in-step03.png", "alt": "ui image to make a change"}
+    ],
+    "type": "sme",
+    "wordCount": 0
+  },
+  {
+    "id": "1008",
+    "title": "event planning tools",
+    "slug": "event-planning-tools",
+    "path": "/resources/event-planning-tools",
+    "cid": "",
+    "createDate": "2021-02-16",
+    "updateDate": "2021-02-16",
+    "excerpt":  "",
+    "images": [{"src": "/images/woman-serving-appetizer.jpg", "alt": "image woman serving apetizer"}],
+    
+    "type": "sme",
+    "wordCount": 0
+  },
+  {
+    "id": "1009",
+    "title": "about us",
+    "slug": "about-us",
+    "path": "/resources/about-us",
+    "cid": "",
+    "createDate": "2021-02-16",
+    "updateDate": "2021-02-16",
+    "excerpt":  "",
+    "images": [],
+    "type": "sme",
+    "wordCount": 0
   }
 ]

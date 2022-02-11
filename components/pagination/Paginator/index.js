@@ -22,10 +22,10 @@ const trace = appTrace;
 //           (See renderPgntnItems() function below).        
 // ****************************************************************************************
 export default function Paginator({hrefList, displaySize, curPage}) {
-  trace("> Paginator function");
-  trace(`    Paginator hrefList:  ${hrefList}`);
-  trace(`    Paginator displaySize: ${displaySize}`);
-  trace(`    Paginator curPage: ${curPage}`);
+  // trace("> Paginator function");
+  // trace(`    Paginator hrefList:  ${hrefList}`);
+  // trace(`    Paginator displaySize: ${displaySize}`);
+  // trace(`    Paginator curPage: ${curPage}`);
 
   /* convert curPage String to number */
   curPage = parseInt(curPage, 10);

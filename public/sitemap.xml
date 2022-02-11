@@ -27,6 +27,92 @@
   </image:image>
 </url>
 <!--  ****************************************************************************  -->
+<!--  RESOURCE PAGES  -->
+<!--  ****************************************************************************  -->
+<url>
+  <loc>https://pitchinclub.com/resources/faq</loc>
+</url>
+<url>
+  <loc>https://pitchinclub.com/resources/features</loc>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/event-planning.jpg</image:loc>
+    <image:title>event planning using app</image:title>
+  </image:image>
+</url>
+<url>
+  <loc>https://pitchinclub.com/resources/type-of-events</loc>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/potluck-event.jpg</image:loc>
+    <image:title>potluck event table setting</image:title>
+  </image:image>
+</url>
+<url>
+  <loc>https://pitchinclub.com/resources/helping-hands</loc>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/help-decorate.jpg</image:loc>
+    <image:title>people decorating</image:title>
+  </image:image>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/helping-hands-list-ui.png</image:loc>
+    <image:title>helping hands list image</image:title>
+  </image:image>
+</url>
+<url>
+  <loc>https://pitchinclub.com/resources/contribution-list</loc>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/people-around-food-table.jpg</image:loc>
+    <image:title>people-around-food-table</image:title>
+  </image:image>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/contribution-list.jpg</image:loc>
+    <image:title>contribution list UI image</image:title>
+  </image:image>
+</url>
+<url>
+  <loc>https://pitchinclub.com/resources/how-to-create-event</loc>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/create-event-step01.png</image:loc>
+    <image:title>ui image to create event</image:title>
+  </image:image>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/create-event-step02.png</image:loc>
+    <image:title>ui image to create list of people</image:title>
+  </image:image>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/create-event-step03.png</image:loc>
+    <image:title>ui image to create contribution list</image:title>
+  </image:image>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/create-event-step04.png</image:loc>
+    <image:title>ui image to send out invites</image:title>
+  </image:image>
+</url>
+<url>
+  <loc>https://pitchinclub.com/resources/how-to-pitch-in</loc>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/pitch-in-step01.png</image:loc>
+    <image:title>ui image to contribute to event</image:title>
+  </image:image>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/pitch-in-step02.png</image:loc>
+    <image:title>ui image to provide a helping hand</image:title>
+  </image:image>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/pitch-in-step03.png</image:loc>
+    <image:title>ui image to make a change</image:title>
+  </image:image>
+</url>
+<url>
+  <loc>https://pitchinclub.com/resources/event-planning-tools</loc>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/woman-serving-appetizer.jpg</image:loc>
+    <image:title>image woman serving apetizer</image:title>
+  </image:image>
+</url>
+<url>
+  <loc>https://pitchinclub.com/resources/about-us</loc>
+</url>
+<!--  ****************************************************************************  -->
 <!--  INDIVIDUAL BLOG POSTS  -->
 <!--  ****************************************************************************  -->
 <url>
@@ -209,6 +295,20 @@
   <image:image>
     <image:loc>https://pitchinclub.com/images/event-seating-arrangement.jpg</image:loc>
     <image:title>event seating arrangement</image:title>
+  </image:image>
+</url>
+<url>
+  <loc>https://pitchinclub.com/blog/activities-for-church</loc>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/people-stack-hands-in-huddle.jpg</image:loc>
+    <image:title>people stack hands in huddle</image:title>
+  </image:image>
+</url>
+<url>
+  <loc>https://pitchinclub.com/blog/top-event-planning-tools</loc>
+  <image:image>
+    <image:loc>https://pitchinclub.com/images/buffet-dinner-dining-food-celebration.jpg</image:loc>
+    <image:title>buffet dinner dining food celebration</image:title>
   </image:image>
 </url>
 </urlset>

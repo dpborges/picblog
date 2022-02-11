@@ -67,8 +67,8 @@ export default function EventPlanningToolsPage(props) {
     const [numGuests, setNumGuests] = useState(0);
 
     const guestInputFormCb = (numGuests) => {
-      console.log("Inside EventPlanningToolsPage / Callback ");
-      console.log("   numGuests ", numGuests);
+      // console.log("Inside EventPlanningToolsPage / Callback ");
+      // console.log("   numGuests ", numGuests);
       setNumGuests(numGuests);
     }
 

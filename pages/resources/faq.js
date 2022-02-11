@@ -9,7 +9,7 @@ import {
       AccordionItemButton
 } from 'react-accessible-accordion';
 import 'react-accessible-accordion/dist/fancy-example.css';
-// import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
+import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
 // import NavBarMultiPage from "../components/common/NavBarMultiPage";
 import SSPageHeader from '../../common/SSPageHeader.js'
 import Footer from '../../common/Footer-Axolot.js'
@@ -22,14 +22,14 @@ import styles from '../../styles/faq.module.scss';
 class Faq extends React.Component {
 
     componentDidMount = () => {
-        let env = getAppConfigParm("env");
-        // if (env === 'prod') {
-        //     if (!window.GA_INITIALIZED) {
-        //         GAinit();
-        //         window.GA_INITIALIZED = true;
-        //     }
-        //     GAlogPageView()
-        // }
+      let env = getAppConfigParm("env");
+      if (env === 'test' || env === 'prod') {
+        if (!window.GA_INITIALIZED) {
+            GAinit();
+            window.GA_INITIALIZED = true;
+        }
+        GAlogPageView()
+      }
     }
 
     render(){
@@ -62,9 +62,9 @@ class Faq extends React.Component {
                                         <li className={styles.breadCrumbPosition}>
                                           <Link href="/">Home</Link>
                                         </li>
-                                        <li>
+                                        {/* <li>
                                           <i className="icofont-thin-right" />
-                                        </li>
+                                        </li> */}
                                         <li>&nbsp; > Faq</li>
                                     </ul>
                                 </div>

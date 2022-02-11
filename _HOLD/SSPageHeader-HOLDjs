@@ -53,7 +53,7 @@ class SSPageHeader extends Component {
     }
 
     logout = (e) => {
-        console.log("INSIDE LOGOUT HANDLER")
+        // console.log("INSIDE LOGOUT HANDLER")
         // e.preventDefault();
         this.props.startLogout();  // dispatch logout action
     }

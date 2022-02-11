@@ -169,6 +169,7 @@ ul > li.squareBullet {
 /* Used to completely remove the right side ads, as they were still taking up padding 
    space to right side of content when scaling down to mobile devices */
 .rightSideAds {
+  margin-top: -2rem;
   // @media only screen and (max-width: 1200px) {
   @media only screen and (min-width: $mobile-min) and (max-width: 1024px) {
     display: none;

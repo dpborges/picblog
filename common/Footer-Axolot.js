@@ -116,22 +116,25 @@ class Footer extends Component {
                                 <ul>
                                     <li>
                                       <div className={styles1.iconContainer}>
-                                        <a className="icofont-facebook" href="https://www.facebook.com/pitchinclub">
-                                          {/* <FontAwesomeIcon icon={["fab", "facebook-f"]}  /> */}
+                                        {/* <a className="icofont-facebook" href="https://www.facebook.com/pitchinclub"> */}
+                                        <a href="https://www.facebook.com/pitchinclub">
+                                          <FontAwesomeIcon icon={["fab", "facebook-f"]}  />
                                         </a>
                                       </div>
                                     </li>
                                     <li>
                                       <div className={styles1.iconContainer}>
-                                        <a className="icofont-linkedin" href="https://www.linkedin.com/company/pitch-in-club/"  >
-                                          {/* <FontAwesomeIcon icon={["fab", "linkedin-in"]} /> */}
+                                        {/* <a className="icofont-linkedin" href="https://www.linkedin.com/company/pitch-in-club/"  > */}
+                                        <a href="https://www.linkedin.com/company/pitch-in-club/"  >
+                                          <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
                                         </a>
                                       </div>
                                     </li>
                                     <li>
                                       <div className={styles1.iconContainer}>
-                                        <a className="icofont-twitter" href="https://twitter.com/pitchinclub"  >
-                                          {/* <FontAwesomeIcon icon={["fab", "twitter"]}  /> */}
+                                        {/* <a className="icofont-twitter" href="https://twitter.com/pitchinclub"  > */}
+                                        <a href="https://twitter.com/pitchinclub"  >
+                                           <FontAwesomeIcon icon={["fab", "twitter"]}  /> 
                                         </a>
                                       </div>
                                     </li>

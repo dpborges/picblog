@@ -1,7 +1,8 @@
 import React from 'react';
 import VisibilityWrapper from '../../common/VisibilityWrapper';
-import { displayAd } from '../../common/ad/helpers/displayAd';
-import displayAdsOnRight from '../../common/ad/helpers/displayAdsOnRight';
+import { displayAd } from '../../components/advertisements/helpers/displayAd';
+import displayAdsOnRight from '../../components/advertisements/helpers/displayAdsOnRight';
+// import displayAdsOnRight from '../../common/ad/helpers/displayAdsOnRight';
 
 import styles from '../../styles/blogdetail.module.scss';
 

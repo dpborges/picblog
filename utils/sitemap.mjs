@@ -32,9 +32,11 @@ async function genSiteMap(filePath) {
   let mdObjectArray      = await fs.readJson(filePath); /* read JSON md file and convert to object array */
   let blogPostsArray     = filterObjArrayBy(mdObjectArray, { type: "post" });
   let landingPageArray   = filterObjArrayBy(mdObjectArray, { type: "landingPage" });
+  let resourcePagesArray = filterObjArrayBy(mdObjectArray, { type: "sme" }); /* sme (sitemap entry)*/
   let sitemap  = new SiteMap("picblog-sitemap");     /* instantiate a sitemap */
   sitemap.addUrlsetOpenTag();  /* add <urlset ...> tag */
   addLandingPageToSiteMap(landingPageArray, sitemap);
+  addResourcePagesToSiteMap(resourcePagesArray, sitemap);
   addBlogPostsToSiteMap(blogPostsArray, sitemap);
   sitemap.addUrlsetCloseTag(); /* close </urlset>  tag */
   // sitemap.print();
@@ -139,7 +141,7 @@ const addBlogPostsToSiteMap = (postsObjArray, sitemap) => {
   }) 
 }
 
- /* Add landing page to sitemap */
+/* Add landing page to sitemap */
 const addLandingPageToSiteMap = (postsObjArray, sitemap) => {
 
   let baseUrl  = "https://pitchinclub.com";
@@ -156,4 +158,24 @@ const addLandingPageToSiteMap = (postsObjArray, sitemap) => {
     sitemap.addUrlCloseTag();
   }) 
 }
+/* Add resource pages to sitemap */
+const addResourcePagesToSiteMap = (postsObjArray, sitemap) => {
+
+  let baseUrl      = "https://pitchinclub.com";
+  let resourcesUrl = "https://pitchinclub.com/resources";
+
+  sitemap.addCommentBLock("RESOURCE PAGES");
+  /* add array of blogposts to sitemap */
+  postsObjArray.map( (post) => {
+    sitemap.addUrlOpenTag();
+      sitemap.addLocTag(`${resourcesUrl}/${post.slug}`);
+      if (post.images.length > 0 ) {
+        post.images.map( (imageObj) => {
+          sitemap.addImageTag({loc: `${baseUrl}${imageObj.src}`, title:`${imageObj.alt}`});
+        })
+      }
+    sitemap.addUrlCloseTag();
+  }) 
+}
+
 

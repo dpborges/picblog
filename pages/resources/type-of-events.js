@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
-// import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
+import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
 import SSPageHeader from '../../common/SSPageHeader.js'
 import getAppConfigParm  from '../../config/AppConfig';
 import Footer from '../../common/Footer-Axolot.js'
@@ -177,13 +177,13 @@ class TypeEventsPage extends Component {  // use destructing to obtain function 
 
     componentDidMount = () => {
         let env = getAppConfigParm("env");
-        // if (env === 'prod') {
-        //     if (!window.GA_INITIALIZED) {
-        //         GAinit();
-        //         window.GA_INITIALIZED = true;
-        //     }
-        //     GAlogPageView()
-        // }
+        if (env === 'test' ||env === 'prod') {
+            if (!window.GA_INITIALIZED) {
+                GAinit();
+                window.GA_INITIALIZED = true;
+            }
+            GAlogPageView()
+        }
     }
 
     render() {

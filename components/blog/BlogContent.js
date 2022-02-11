@@ -2,7 +2,8 @@ import react from 'react';
 import React from 'react';
 import {MDXProvider} from '@mdx-js/react';
 import MDX from '@mdx-js/runtime';
-import MobileAd  from './MobileAd';
+import MobileAd     from './MobileAd';
+// import MobileAdSquare from './MobileAdSquare';
 import BlogImage from './BlogImage';
 import BlogInfo  from './BlogInfo';
 // import getContentMetadata from '../../pages/api/contentmgr/getContentMetadata';
@@ -27,18 +28,26 @@ const components = {
 }
 
 export function BlogContent (props) {
+
   // console.log(`>> Inside BlogContent.js`);
   // console.log(`props.metadata ${JSON.stringify(props.metadata)}`)
   let { title, createDate, images, excerpt  } =  props.metadata;
-  let { mdxSource, showAd  } = props;
+  let { mdxSource, showAd } = props;
 
   let month = shortMonthName(new Date(createDate + "T09:00:00Z"));
   let day   = dayOfMonth(new Date(createDate + "T09:00:00Z"));
 
   const adStyle = {forTablet: {marginTop: '3rem'}, forMobile: {marginTop: '3rem'}};
+  const adTypeDefault = {forTablet: "in-feed-horizontal", forMobile: "mobile-leader-board" };
+  const adTypeSquare  = {forTablet: "medium-rectangle",   forMobile: "medium-rectangle" };
 
   let otherComponents = {
-    MobileAd:  () => <MobileAd showAd={showAd} adStyle={adStyle} />,
+    MobileAd:  () => <MobileAd 
+      showAd={showAd} adStyle={adStyle} adType={adTypeDefault}
+    />,
+    MobileAdSquare: () => <MobileAd 
+      showAd={showAd} adStyle={adStyle} adType={adTypeSquare}
+    />,
     BlogImage: () => <BlogImage src={images[0].src} alt={images[0].alt} />,
     BlogInfo: () => <BlogInfo title={title} month={month} day={day}  />
   }

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import GoogleAd from '../GoogleAd';
 
 // import "../../../styles/reusable-classes.scss";
@@ -25,20 +26,15 @@ import GoogleAd from '../GoogleAd';
 export function displayAd (type, device, style) {
 
     // Set testMode
-    let testMode  = false;
+    let testMode  = true;
 
     // Initialize the style used for testing and the one used for production mode
     let showBorder = {border: '1px solid red'};
     let hideBorder = {border: 'none'}
 
-    // Set the baseStyle for all Ads 
+    // Set the borderStyle for all Ads 
     /* When test mode is on, show border. When testmode is off (prod mode), remove border */
-    let baseStyle = {};
-    if (testMode) {
-        baseStyle  = showBorder;
-    } else {
-        baseStyle  = hideBorder;
-    }
+    let borderStyle = testMode ? showBorder : hideBorder;
  
     /* Set defaults if adType and device parameters are not provided  */
     let adType     = type   ? type   : "medium-rectangle";   /* default to mobile-leader-board */
@@ -53,29 +49,29 @@ export function displayAd (type, device, style) {
 
     if (device === "mobile" && type === "mobile-leader-board") {
         defaultStyle = {marginTop: '2rem', marginBottom: '2rem'};
-        adStyle = Object.assign(baseStyle, defaultStyle, style) ;
+        adStyle = Object.assign(borderStyle, defaultStyle, style) ;
     } else 
     if (device === "mobile" && type === "medium-rectangle") {
         defaultStyle = {marginTop: '1rem', marginBottom: '3rem'};
-        adStyle = Object.assign(baseStyle, defaultStyle, style ) ;
+        adStyle = Object.assign(borderStyle, defaultStyle, style ) ;
     } else  
     if (device === "tablet" && type === "medium-rectangle") {
         defaultStyle = {marginTop: '1rem', marginBottom: '3rem'};
-        adStyle = Object.assign(baseStyle, defaultStyle, style) ;
+        adStyle = Object.assign(borderStyle, defaultStyle, style) ;
     } else
     if (device === "tablet" && type === "in-feed-horizontal") {
         defaultStyle = {marginTop: '1rem', marginBottom: '3rem'};
-        adStyle = Object.assign(baseStyle, defaultStyle, style) ;
+        adStyle = Object.assign(borderStyle, defaultStyle, style) ;
     } else
     if (device === "desktop") {
-        defaultStyle = baseStyle;
-        adStyle = Object.assign(baseStyle, defaultStyle, style) ;
+        defaultStyle = borderStyle;
+        adStyle = Object.assign(borderStyle, defaultStyle, style) ;
     }
 
     // console.log(`This adStyle used for device ${device} and adtype ${adType} is ${JSON.stringify(adStyle,null,2)}`)
     return (
-        <div className={`display-on-${deviceType}`}>
-            <GoogleAd type={adType} adStyle={adStyle} />
+        <div className={`display-on-${deviceType}`} key={uuidv4()}>
+          <GoogleAd type={adType} adStyle={adStyle} /> 
         </div>
     )
 }

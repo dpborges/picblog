@@ -20,6 +20,7 @@ const BlogPost = (props) => {
     const blogUrl = getAppConfigParm("blogUrl");
 
     const wordCount = metadata.wordCount;
+
     let adListSize  = getRightSizeAdSize(wordCount);
 
     return (
@@ -37,13 +38,19 @@ const BlogPost = (props) => {
             subtitle="Great ideas for making it easier, more enjoyable, and less stressful to organize that special event or function you have in mind." 
           />
 
-          <MobileAd showAd={showAd} />
+          <MobileAd showAd={showAd} 
+            adStyle={{
+              forMobile: {marginTop: '0rem', marginBottom: '3rem'}, 
+              forTablet: {marginTop: '0rem', marginBottom: '5rem'}
+            }} 
+            adType={{forTablet: "in-feed-horizontal", forMobile: "mobile-leader-board" }}
+          />
           
           <div className={styles.topLevelContainer} >
             <div className={styles.blogContainer} >
                 <div style={{display: 'flex', flexDirection: 'column', width: '100%'}}>
                   <BlogContent metadata={metadata} mdxSource={mdxSource} 
-                      showAd={showAd} siteUrl={siteUrl} blogUrl={blogUrl}  
+                      showAd={showAd} siteUrl={siteUrl} blogUrl={blogUrl} 
                   />
                 </div>
                 <RightSideAds showAd={showAd} 

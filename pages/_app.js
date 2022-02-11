@@ -22,6 +22,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon-16.ico" sizes="16x16" type="images/x-icon" />
         <link rel="icon" href="/favicon-32.ico" sizes="32x32" type="images/x-icon" />
         <link rel="icon" href="/favicon-192.ico" sizes="192x192" type="images/x-icon" />
+        {/* <link rel="shortcut icon" href="/favicon-32.ico"  /> */}
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|PT+Sans:400,700|Roboto:300,400,500" rel="stylesheet" />
       </Head>

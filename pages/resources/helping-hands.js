@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 // import { HashLink as Link } from 'react-router-hash-link';
 import Head from 'next/head';
 import Image from 'next/image';
-// import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
+import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
 import SSPageHeader from '../../common/SSPageHeader.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/pro-light-svg-icons';
@@ -255,7 +255,7 @@ class HelpingHandsPage extends Component  {
 
     componentDidMount = () => {
         let env = getAppConfigParm("env");
-        if (env === 'prod') {
+        if (env === 'test' || env === 'prod') {
             if (!window.GA_INITIALIZED) {
                 GAinit();
                 window.GA_INITIALIZED = true;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link  from 'next/link';
 import Head from 'next/head';
-// import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
+import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
 // import SSRPageHeader from '../../components/common/SSRPageHeader.js'
 import SSPageHeader from '../../common/SSPageHeader';
 import LinkButton1 from '../../components/buttons/LinkButton1.js';
@@ -13,14 +13,14 @@ import styles  from '../../styles/about-us-page.module.scss';
 class Faq extends React.Component {
 
     componentDidMount = () => {
-        // let env = getAppConfigParm("env");
-        // if (env === 'prod' ) {
-        //     if (!window.GA_INITIALIZED) {
-        //         GAinit();
-        //         window.GA_INITIALIZED = true;
-        //     }
-        //     GAlogPageView()
-        // }
+      let env = getAppConfigParm("env");
+      if (env === 'test' || env === 'prod') {
+          if (!window.GA_INITIALIZED) {
+              GAinit();
+              window.GA_INITIALIZED = true;
+          }
+          GAlogPageView()
+      }
     }
 
     render() {

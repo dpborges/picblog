@@ -10,6 +10,7 @@ const withMDX = require('@next/mdx')({
 
 module.exports = (
   withMDX({
+    compress: false,
     webpack5: false,
     webpack: (config, { isServer }) => {
       if (!isServer) {

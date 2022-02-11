@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import memoize from 'lodash/memoize';
-import { GAinit, GAlogPageView } from '../../../common/ad/GoogleAnalytics';
+import { GAinit, GAlogPageView } from '../../../common/GoogleAnalytics';
 // import * as R from 'ramda';
 import getAppConfigParm  from '../../../config/AppConfig';
 import PropTypes from "prop-types";

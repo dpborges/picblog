@@ -49,9 +49,9 @@ const GuestInputForm = (props) => {
           let oosg = data.outOfStateGuests === "" ? 0 : data.outOfStateGuests;
 
           // Set form error if at least one value was not entered. 
-          console.log("values array ", [lg,  ootg, oosg])
+          // console.log("values array ", [lg,  ootg, oosg])
           let hasOneInput = hasAtLeastOneNonEmptyValue([lg,  ootg, oosg], 0);
-          console.log("hastOneInput ", hasOneInput);
+          // console.log("hastOneInput ", hasOneInput);
           hasOneInput ? setFormStatus("") : setFormStatus("At least one value required");
 
           // Calculate the guest estimates

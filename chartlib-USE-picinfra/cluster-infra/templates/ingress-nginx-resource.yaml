@@ -2,6 +2,11 @@
 # www.pitchinclub.com and invite.pitchinclub.com. The hosts can be set in helm values.yaml
 # or via the helm install/upgrade --set flag. For GKE purposes, we can support 2 environments:
 # test and prod only. 
+# FUTURE ENHANCEMENTS: 
+# Enhancement#1
+# Create a Helm "named" template that I can pull in for each enviroment instead of 
+# having repeat the routes in one single template for dev and test and test and prod
+# see helm documentation here https://helm.sh/docs/chart_template_guide/named_templates/
 apiVersion:  networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -48,7 +53,14 @@ spec:
               name: picblog-{{ .Values.env1 }}-clusterip-svc
               port:
                 number: 3000
-        # This should be last as this accepts all paths for pic spa
+        - path: /sitemap.xml
+          pathType: Prefix
+          backend:
+            service:
+              name: picblog-{{ .Values.env1 }}-clusterip-svc
+              port:
+                number: 3000
+        # This should be last paht url as this accepts all paths for pic spa
         - path: /
           pathType: Prefix
           backend:
@@ -106,6 +118,13 @@ spec:
           backend:
             service:
               name: picblog-{{ .Values.env2 }}-clusterip-svc
+              port:
+                number: 3000
+        - path: /sitemap.xml
+          pathType: Prefix
+          backend:
+            service:
+              name: picblog-{{ .Values.env1 }}-clusterip-svc
               port:
                 number: 3000
         # This should be last as this accepts all paths for pic spa

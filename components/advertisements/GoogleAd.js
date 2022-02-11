@@ -7,7 +7,7 @@ const TRACE = true;
 /**
  * Dependency.
  *    1) Before using this component, it requires placing the google script tag below at the bottom of your index.html header tag:
- *         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+ *       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
  *    Note, that I use an index.html template. Be sure to update the template when making permanent changes
  *    2) In order for Google to Show Ads behind registration you must provide GoogleAdsense login credentials.
  *    You also must provide a Disallow Path in your robots.txt file that is also reflected in your GoogleAdsense account.
@@ -25,7 +25,7 @@ const TRACE = true;
  *                 or
  *        (window.adsbygoogle = window.adsbygoogle || []).push({});
  * 
- * To use the GooglAd component, call the displayAd Helper. The helper has a testMode flag. When looking to test ad postioning,
+ * To use the GoogleAd component, call the displayAd Helper. The helper has a testMode flag. When looking to test ad postioning,
  * set this flag to true. Note the BaseStyles defined below is used for defining the specific AdUnit container.
  * The adStyle prop allows you to augment BaseStyles with additional properties like border, padding, margin, etc, if so desired.
  */
@@ -49,7 +49,7 @@ export const GoogleAd = (props) =>  {
 
     let googleAdBaseStyle = {};
     let googleAdStyle   = adStyle || {};
-    
+
     switch (type) {
 
      case 'skyscraper':    /* aka vertical display ad */

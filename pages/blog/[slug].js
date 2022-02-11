@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
+import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
 import getAppConfigParm  from '../../config/AppConfig';
 import SSPageHeader from '../../common/SSPageHeader';
 import BlogPost from "../../components/blog/BlogPost";                            
@@ -20,14 +20,16 @@ class BlogPage extends Component {
     }
 
     componentDidMount = () => {
-        // Google Analytics
-        // if (this.state.env  === 'prod') {
-        //     if (!window.GA_INITIALIZED) {
-        //         GAinit();
-        //         window.GA_INITIALIZED = true;
-        //     }
-        //     GAlogPageView()
-        // }
+      // Google Analytics
+      let { env } =  this.state;
+      console.log()     
+      if (env  === 'test' || env  === 'prod') {
+          if (!window.GA_INITIALIZED) {
+              GAinit();
+              window.GA_INITIALIZED = true;
+          }
+          GAlogPageView()
+      }
     }
 
   
@@ -66,7 +68,7 @@ export async function getStaticProps(context) {
 
   const metadata  = await getContentMetadata(slug);
   // filterObjArrayBy(mdObjectArray, { type: "post" })
-  console.log("metadata: ", JSON.stringify(metadata));
+  // console.log("metadata: ", JSON.stringify(metadata));
   
   /* return 404 if  no metadata found for slug */
   if (!metadata) {
@@ -76,9 +78,9 @@ export async function getStaticProps(context) {
   const mdxSource = await getContent(metadata.cid);
   let textArray = mdxSource.split(' ');
   let wordCount = textArray.length;
-  console.log("== w == w == w == w == w == w == w == w")
-  console.log(`Wordcount: "${slug}" =>  ${wordCount}`)
-  console.log("=======================================")
+  // console.log("== w == w == w == w == w == w == w == w")
+  // console.log(`Wordcount: "${slug}" =>  ${wordCount}`)
+  // console.log("=======================================")
 
   /* boilerplate used to redirect */
   // if (haveProblem) {

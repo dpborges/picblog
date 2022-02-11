@@ -5,7 +5,7 @@ import React, { Fragment, Component } from 'react';
 // import { HashLink } from 'react-router-hash-link';
 // import {Helmet} from 'react-helmet';
 import Head from 'next/head';
-// import { GAinit, GAlogPageView } from '../../components/common/GoogleAnalytics';
+import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
 // import  { FooterSection }   from './FooterSection';
 import getAppConfigParm  from '../../config/AppConfig';
 import Footer from '../../common/Footer-Axolot.js'
@@ -64,13 +64,14 @@ class EventPlanningCalculatorsPage extends Component {  // use destructing to ob
     }
 
     componentDidMount = () => {
-        // if (this.state.env === 'prod') {
-        //     if (!window.GA_INITIALIZED) {
-        //         GAinit();
-        //         window.GA_INITIALIZED = true;
-        //     }
-        //     GAlogPageView()
-        // }
+      let { env } = this.state;
+      if (env === 'test' || env === 'prod') {
+          if (!window.GA_INITIALIZED) {
+              GAinit();
+              window.GA_INITIALIZED = true;
+          }
+          GAlogPageView()
+      }
     }
 
     render() {

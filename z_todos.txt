@@ -1,0 +1,17 @@
+- (DONE) see if I can implement both a rectangle and medium-rectangle (square)
+   with MobileAd component
+
+- (DONE) Fix margin on top of Ad under Banner for mobile
+- (DONE) Fix margin on top of Ad under Banner for tablet
+
+- (DONE) RightHandSideAds are not aligned with top of image on blog post
+
+- (DONE) Clean up files/folders marked as DELETES.
+  Make backup copy of Project folder, delete all files marked as DELETE,
+  then test application again.
+
+- (DONE) Determine why Ads are not showing on tablet
+
+- Review deployment process; 
+- Run thru process of containerizing app changes and testing container in Dev
+- Run thru deployment process in Test and validate

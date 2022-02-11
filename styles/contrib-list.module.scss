@@ -5,16 +5,16 @@
 // ***************************************************************************
 /* This serves as background for the top section of the clp page */
 .clp-bg-container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.30),rgba(0, 0, 0, 0.60)), url("../public/images/people-around-food-table.jpg"); /* The image used */
-    background-color: #cccccc; /* Used if the image is unavailable */
-    height: 70vh;; /* You must set a specified height */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-    
-    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
-        margin-top: -.1rem; /* You must set a specified height */
-    }
+  background-image: linear-gradient(rgba(0, 0, 0, 0.30),rgba(0, 0, 0, 0.60)), url("../public/images/people-around-food-table.jpg"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 70vh;; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  
+  @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      margin-top: -.1rem; /* You must set a specified height */
+  }
 }
 
 .clp-white-border {
@@ -38,6 +38,7 @@
 }
 
 .clp-content-container {
+    height: 70vh;; /* You must set a specified height */
     display: flex;
     justify-content: center;
     align-items: center;

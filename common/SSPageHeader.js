@@ -80,7 +80,7 @@ class SSPageHeader extends Component {
     }
 
     handleBurgerMenuClick() {
-      console.log("Inside onClickhandler with SSHeader")
+      // console.log("Inside onClickhandler with SSHeader")
       this.setState({ showBurgerMenu: !this.state.showBurgerMenu })
     }
 

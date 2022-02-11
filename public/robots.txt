@@ -1,0 +1,3 @@
+Sitemap: https://pitchinclub.com/sitemap.xml
+User-agent: *
+Disallow:   
