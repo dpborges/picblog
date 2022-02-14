@@ -26,7 +26,7 @@ import GoogleAd from '../GoogleAd';
 export function displayAd (type, device, style) {
 
     // Set testMode
-    let testMode  = true;
+    let testMode  = false;
 
     // Initialize the style used for testing and the one used for production mode
     let showBorder = {border: '1px solid red'};

@@ -34,80 +34,24 @@
 </url>
 <url>
   <loc>https://pitchinclub.com/resources/features</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/event-planning.jpg</image:loc>
-    <image:title>event planning using app</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/resources/type-of-events</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/potluck-event.jpg</image:loc>
-    <image:title>potluck event table setting</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/resources/helping-hands</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/help-decorate.jpg</image:loc>
-    <image:title>people decorating</image:title>
-  </image:image>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/helping-hands-list-ui.png</image:loc>
-    <image:title>helping hands list image</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/resources/contribution-list</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/people-around-food-table.jpg</image:loc>
-    <image:title>people-around-food-table</image:title>
-  </image:image>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/contribution-list.jpg</image:loc>
-    <image:title>contribution list UI image</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/resources/how-to-create-event</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/create-event-step01.png</image:loc>
-    <image:title>ui image to create event</image:title>
-  </image:image>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/create-event-step02.png</image:loc>
-    <image:title>ui image to create list of people</image:title>
-  </image:image>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/create-event-step03.png</image:loc>
-    <image:title>ui image to create contribution list</image:title>
-  </image:image>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/create-event-step04.png</image:loc>
-    <image:title>ui image to send out invites</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/resources/how-to-pitch-in</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/pitch-in-step01.png</image:loc>
-    <image:title>ui image to contribute to event</image:title>
-  </image:image>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/pitch-in-step02.png</image:loc>
-    <image:title>ui image to provide a helping hand</image:title>
-  </image:image>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/pitch-in-step03.png</image:loc>
-    <image:title>ui image to make a change</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/resources/event-planning-tools</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/woman-serving-appetizer.jpg</image:loc>
-    <image:title>image woman serving apetizer</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/resources/about-us</loc>
@@ -117,198 +61,86 @@
 <!--  ****************************************************************************  -->
 <url>
   <loc>https://pitchinclub.com/blog/calculating-food-serving-sizes-for-your-guests</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/portioned-food-on-table.jpg</image:loc>
-    <image:title>portioned food on table</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/how-to-make-post-party-cleanup-a-snip</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/people-toasting-at-table-with-food.jpg</image:loc>
-    <image:title>people toasting at table with food</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/5-expert-tips-for-delegating-tasks</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/event-meeting-around-calender.jpg</image:loc>
-    <image:title>event meeting around calender</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/outdoor-events-everything-you-need-to-consider</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/table-setting-for-outdoor-event.jpg</image:loc>
-    <image:title>table setting for outdoor event</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/how-to-throw-a-housewarming-party</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/excited-woman-with-wine-bottle.jpg</image:loc>
-    <image:title>excited woman with wine bottle</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/group-event-planning-for-beginners</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/three-woman-planning-trip.jpg</image:loc>
-    <image:title>three woman planning trip</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/the-basics-of-volunteer-event-planning</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/four-volunteers-standing-together.jpg</image:loc>
-    <image:title>four volunteers standing together</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/how-to-plan-a-watch-party</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/adults-watching-television.jpg</image:loc>
-    <image:title>adults watching television</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/how-to-plan-the-perfect-church-events</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/man-daughter-fashioning-kilt.jpg</image:loc>
-    <image:title>man and daughter fashioning kilt</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/party-planning-101-everything-you-need-to-know</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/dance-party.jpg</image:loc>
-    <image:title>group of friends dancing</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/getting-help-with-your-farewell-party-preparation</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/group-of-friends-toasting.jpg</image:loc>
-    <image:title>group of friends toasting</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/8-tips-for-planning-music-event-for-beginners</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/band-instruments-on-stage.jpg</image:loc>
-    <image:title>band-instruments-on-stage</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/7-tips-for-saving-money-when-throwing-a-sports-party</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/beer-and-snacks-on-wooden-table.jpg</image:loc>
-    <image:title>beer and snacks on wooden table</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/8-great-tips-for-planning-the-perfect-potluck</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/potluck-food-spread.jpg</image:loc>
-    <image:title>potluck food spread</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/how-to-get-people-to-pitch-in-for-neighborhood-block-party</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/block-party.jpg</image:loc>
-    <image:title>people around table at block party</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/volunteer-tracking-tips-to-pull-off-your-best-nonprofit-event</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/volunteer-tracking.jpg</image:loc>
-    <image:title>volunteers bagging food</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/organize-football-watch-party-the-easy-way</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/football-watch-party.jpg</image:loc>
-    <image:title>fans yelling at home football watch party</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/six-tips-for-completing-event-planning-checklist</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/event-planning-checklist.jpg</image:loc>
-    <image:title>event planning notebook with a pen laying on top</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/how-to-manage-online-themed-event-planning</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/themed-event.jpg</image:loc>
-    <image:title>people at table holding up glasses to toast</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/need-a-shared-task-list</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/woman-using-mobile-phone-with-diary.jpg</image:loc>
-    <image:title>woman using mobile phone with diary</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/lend-a-hand-to-a-friend</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/diverse-people-with-teamwork-concept.jpg</image:loc>
-    <image:title>diverse-people-with-teamwork-concept</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/diy-party-planning-like-a-pro</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/diy-party-planning.jpg</image:loc>
-    <image:title>woman hanging party decorations</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/party-set-up-and-after-party-clean-up</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/after-party-mess.jpg</image:loc>
-    <image:title>after party mess</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/overcoming-party-hosting-anxiety</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/party-hosting-anxiety.jpg</image:loc>
-    <image:title>preparing decorations for party</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/easy-party-planning-app</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/easy-party-planning.jpg</image:loc>
-    <image:title>man planning surprise party</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/seating-plan-guide</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/event-seating-arrangement.jpg</image:loc>
-    <image:title>event seating arrangement</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/activities-for-church</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/people-stack-hands-in-huddle.jpg</image:loc>
-    <image:title>people stack hands in huddle</image:title>
-  </image:image>
 </url>
 <url>
   <loc>https://pitchinclub.com/blog/top-event-planning-tools</loc>
-  <image:image>
-    <image:loc>https://pitchinclub.com/images/buffet-dinner-dining-food-celebration.jpg</image:loc>
-    <image:title>buffet dinner dining food celebration</image:title>
-  </image:image>
 </url>
 </urlset>

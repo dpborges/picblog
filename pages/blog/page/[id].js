@@ -74,7 +74,7 @@ const BlogListPage =  (props) =>  {
                   <a>
                     <div style={{perspective: '555px', overflow: 'hidden'}}  >
                     <div className={styles.blogListImageStyle}>
-                      <BlogImage src={blog.images[0].src} alt={blog.images[0].alt} />,
+                      <BlogImage src={blog.images[0].src} alt={blog.images[0].alt} />
                     </div>
                     </div>
                   </a>

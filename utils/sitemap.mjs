@@ -136,7 +136,13 @@ const addBlogPostsToSiteMap = (postsObjArray, sitemap) => {
   postsObjArray.map( (post) => {
     sitemap.addUrlOpenTag();
       sitemap.addLocTag(`${blogUrl}/${post.slug}`);
-      sitemap.addImageTag({loc: `${baseUrl}${post.images[0].src}`, title: `${post.images[0].alt}`});
+      // sitemap.addImageTag({loc: `${baseUrl}${post.images[0].src}`, title: `${post.images[0].alt}`});
+      // Uncomment below to render images in sitemap; after moving to new folder 
+      // if (post.images.length > 0 ) {
+      //   post.images.map( (imageObj) => {
+      //     sitemap.addImageTag({loc: `${baseUrl}${imageObj.src}`, title:`${imageObj.alt}`});
+      //   })
+      // }
     sitemap.addUrlCloseTag();
   }) 
 }
@@ -150,11 +156,13 @@ const addLandingPageToSiteMap = (postsObjArray, sitemap) => {
   postsObjArray.map( (post) => {
     sitemap.addUrlOpenTag();
       sitemap.addLocTag(`${baseUrl}`);
-      sitemap.addImageTag({loc: `${baseUrl}${post.images[0].src}`, title: `${post.images[0].alt}`});
-      sitemap.addImageTag({loc: `${baseUrl}${post.images[1].src}`, title: `${post.images[1].alt}`});
-      sitemap.addImageTag({loc: `${baseUrl}${post.images[2].src}`, title: `${post.images[2].alt}`});
-      sitemap.addImageTag({loc: `${baseUrl}${post.images[3].src}`, title: `${post.images[3].alt}`});
-      sitemap.addImageTag({loc: `${baseUrl}${post.images[4].src}`, title: `${post.images[4].alt}`});
+      if (post.images.length > 0 ) {
+        sitemap.addImageTag({loc: `${baseUrl}${post.images[0].src}`, title: `${post.images[0].alt}`});
+        sitemap.addImageTag({loc: `${baseUrl}${post.images[1].src}`, title: `${post.images[1].alt}`});
+        sitemap.addImageTag({loc: `${baseUrl}${post.images[2].src}`, title: `${post.images[2].alt}`});
+        sitemap.addImageTag({loc: `${baseUrl}${post.images[3].src}`, title: `${post.images[3].alt}`});
+        sitemap.addImageTag({loc: `${baseUrl}${post.images[4].src}`, title: `${post.images[4].alt}`});
+      }
     sitemap.addUrlCloseTag();
   }) 
 }
@@ -169,11 +177,12 @@ const addResourcePagesToSiteMap = (postsObjArray, sitemap) => {
   postsObjArray.map( (post) => {
     sitemap.addUrlOpenTag();
       sitemap.addLocTag(`${resourcesUrl}/${post.slug}`);
-      if (post.images.length > 0 ) {
-        post.images.map( (imageObj) => {
-          sitemap.addImageTag({loc: `${baseUrl}${imageObj.src}`, title:`${imageObj.alt}`});
-        })
-      }
+      // Uncomment below to render images in sitemap; after moving to new folder 
+      // if (post.images.length > 0 ) {
+      //   post.images.map( (imageObj) => {
+      //     sitemap.addImageTag({loc: `${baseUrl}${imageObj.src}`, title:`${imageObj.alt}`});
+      //   })
+      // }
     sitemap.addUrlCloseTag();
   }) 
 }
