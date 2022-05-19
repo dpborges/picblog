@@ -117,7 +117,7 @@ const BlogListPage =  (props) =>  {
         </div>
 
         <div style={{marginBottom: '6rem'}} >
-          <Paginator displaySize={5} hrefList={hrefList} curPage={curPage}  />
+          <Paginator displaySize={6} hrefList={hrefList} curPage={curPage}  />
         </div>
 
         <Footer />
