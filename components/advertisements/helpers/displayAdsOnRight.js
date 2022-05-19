@@ -46,6 +46,18 @@ let xlargeAdvert = (
   </div>
 )
 
+let singleSkyScraper = (
+  <div style={containerStyle}>
+      <div>{displayAd("skyscraper", "desktop", advertStyle)}</div>
+  </div>
+)
+
+let singleMedRectangle = (
+  <div style={containerStyle}>
+      <div>{displayAd("medium-rectangle", "desktop", advertStyle)}</div>
+  </div>
+)
+
 const displayAdsOnRight = (contentHeight) => {
     
    // console.log(`>> Inside displayAdsOnRight`)
@@ -53,15 +65,18 @@ const displayAdsOnRight = (contentHeight) => {
    let advertJsx = smallAdvert;         // set default
 
    if (contentHeight === "small") {
-        advertJsx = smallAdvert
+       advertJsx = smallAdvert
    } else if (contentHeight === "medium") {
        advertJsx = mediumAdvert
    } else if (contentHeight === "large") {
        advertJsx = largeAdvert
    } else if (contentHeight === "xlarge") {
        advertJsx = xlargeAdvert
+   } else if (contentHeight === "single-med-rect") { // use on bottom of page as filler as has not top margin
+      advertJsx = singleMedRectangle
+   } else if (contentHeight === "single-skyscraper") { // use on bottom of page as filler as has not top margin
+      advertJsx = singleSkyScraper
    }
-
    return advertJsx
 }
 

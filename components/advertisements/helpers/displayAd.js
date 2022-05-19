@@ -26,7 +26,7 @@ import GoogleAd from '../GoogleAd';
 export function displayAd (type, device, style) {
 
     // Set testMode
-    let testMode  = false;
+    let testMode  = true;
 
     // Initialize the style used for testing and the one used for production mode
     let showBorder = {border: '1px solid red'};
@@ -37,7 +37,7 @@ export function displayAd (type, device, style) {
     let borderStyle = testMode ? showBorder : hideBorder;
  
     /* Set defaults if adType and device parameters are not provided  */
-    let adType     = type   ? type   : "medium-rectangle";   /* default to mobile-leader-board */
+    let adType     = type   ? type   : "medium-rectangle";   
     let deviceType = device ? device : "desktop";
 
     // console.log(`This is adType      ${adType}`)

@@ -33,9 +33,12 @@ export default function RightSideAds({showAd, adList}) {
                   case "xlarge":
                     return displayAdsOnRight("xlarge");  
                     break;
-                  case "single-medium-rectangle":
-                    return displayAd("medium-rectangle", "desktop", {marginLeft: '2.4rem', marginBottom: '3rem'});
+                  case "single-med-rect":
+                    return displayAdsOnRight("single-med-rect");
                     break;
+                  case "single-skyscraper":
+                      return displayAd("skyscraper", "desktop", {marginLeft: '2.4rem', marginBottom: '3rem'});
+                      break;
                   default:
                     return displayAdsOnRight("small"); 
                   }

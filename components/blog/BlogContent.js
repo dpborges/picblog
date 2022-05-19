@@ -3,6 +3,7 @@ import React from 'react';
 import {MDXProvider} from '@mdx-js/react';
 import MDX from '@mdx-js/runtime';
 import MobileAd     from './MobileAd';
+import DesktopAd    from './DesktopAd';
 // import MobileAdSquare from './MobileAdSquare';
 import BlogImage from './BlogImage';
 import BlogInfo  from './BlogInfo';
@@ -37,16 +38,24 @@ export function BlogContent (props) {
   let month = shortMonthName(new Date(createDate + "T09:00:00Z"));
   let day   = dayOfMonth(new Date(createDate + "T09:00:00Z"));
 
-  const adStyle = {forTablet: {marginTop: '3rem'}, forMobile: {marginTop: '3rem'}};
-  const adTypeDefault = {forTablet: "in-feed-horizontal", forMobile: "mobile-leader-board" };
-  const adTypeSquare  = {forTablet: "medium-rectangle",   forMobile: "medium-rectangle" };
+  const adStyle = {forTablet: {marginTop: '3rem'}, forMobile: {marginTop: '3rem'}, forDesktop: {marginTop: '3rem', marginBottom: '1rem'}};
+  const adTypeDefault = {forTablet: "in-feed-horizontal", forMobile: "mobile-leader-board", forDesktop:"in-feed-horizontal" };
+  const adTypeSquare  = {forTablet: "medium-rectangle",   forMobile: "medium-rectangle", forDesktop:"medium-rectangle"  };
+  const adTypeInFeedHoriz  = { forDesktop:"in-feed-horizontal"  };
 
   let otherComponents = {
-    MobileAd:  () => <MobileAd 
+
+    MobileAd:  () => <MobileAd  
       showAd={showAd} adStyle={adStyle} adType={adTypeDefault}
     />,
     MobileAdSquare: () => <MobileAd 
       showAd={showAd} adStyle={adStyle} adType={adTypeSquare}
+    />,
+    DesktopAdSquare: () => <DesktopAd 
+      showAd={showAd} adStyle={adStyle} adType={adTypeSquare}
+    />,
+    DesktopAdHoriz: () => <DesktopAd 
+      showAd={showAd} adStyle={adStyle} adType={adTypeInFeedHoriz}
     />,
     BlogImage: () => <BlogImage src={images[0].src} alt={images[0].alt} />,
     BlogInfo: () => <BlogInfo title={title} month={month} day={day}  />

@@ -2,44 +2,63 @@
 // Function to estimate right side ad sizes based on wordcount.
 export default function getRightSideAdSize(wordCount) {
 
-// Initial adlist sizing 
-let adjustedWordCount = wordCount + 175; /* add 170 wowrds for space taken by image and title */
+  // Initial adlist sizing 
+  // let adjustedWordCount = wordCount + 175; /* add 170 wowrds for space taken by image and title */
+  let adjustedWordCount = wordCount; /* add 170 wowrds for space taken by image and title */
+  // Estimate size 
+  let adListSize = ["small", "small"];  
 
-// Estimate size 
-let adListSize = ["small", "small"];  
+  if (adjustedWordCount >= 400 && adjustedWordCount <= 500) {
+    adListSize = ["medium"];
+  }
 
-if (adjustedWordCount < 375) adListSize = 
-    ["small", "single-medium-rectangle", "single-medium-rectangle"];
+  if (adjustedWordCount >= 501 && adjustedWordCount <= 550) {
+    adListSize = ["medium", "single-skyscraper"];
+  }
 
-if (adjustedWordCount >= 501 && adjustedWordCount <= 650) adListSize = 
-    ["small", "small"];
+  if (adjustedWordCount >= 551 && adjustedWordCount <= 650) {
+    adListSize = ["medium", "small", "single-skyscraper"];
+  }
 
-if (adjustedWordCount >= 651 && adjustedWordCount <= 750) adListSize = 
-    ["small", "small", "single-medium-rectangle", "single-medium-rectangle"];
+  if (adjustedWordCount >= 651 && adjustedWordCount <= 750) {
+    adListSize =  ["medium", "small", "medium" ];
+  }
 
-if (adjustedWordCount >= 751 && adjustedWordCount <= 950) adListSize = 
-    ["large", "single-medium-rectangle"];
+  if (adjustedWordCount >= 751 && adjustedWordCount <= 850) { 
+    adListSize =  ["large", "medium", "small"];
+  }
 
-if (adjustedWordCount >= 951 && adjustedWordCount <= 1150) adListSize = 
-    ["large", "small"];
+  if (adjustedWordCount >= 851 && adjustedWordCount <= 950) { 
+    adListSize =  ["large", "medium", "medium", "single-skyscraper", "single-med-rect"];
+  }
 
-if (adjustedWordCount >= 1151 && adjustedWordCount <= 1250) adListSize = 
-    ["large", "small", "single-medium-rectangle"];
+  if (adjustedWordCount >= 951 && adjustedWordCount <= 1150) { 
+    adListSize =  ["large", "large", "medium"];
+  }
 
-if (adjustedWordCount >= 1251 && adjustedWordCount <= 1350) adListSize = 
-    ["small", "large", "small"];
+  // TUNED THE ABOVE THIS POINT
 
-if (adjustedWordCount >= 1351 && adjustedWordCount <= 1450) adListSize = 
-    ["small", "large", "small", "single-medium-rectangle"];
+  if (adjustedWordCount >= 1151 && adjustedWordCount <= 1250) {
+    adListSize =  ["large", "medium", "small"];
+  }
 
-if (adjustedWordCount >= 1451 && adjustedWordCount <= 1550) adListSize = 
-    ["small", "large", "small", "single-medium-rectangle", "single-medium-rectangle"];
+  if (adjustedWordCount >= 1251 && adjustedWordCount <= 1350) {
+    adListSize = ["small", "large", "small"];
+  }
 
-if (adjustedWordCount > 1550 ) adListSize = 
-    ["large", "large",  "single-medium-rectangle"];
+  if (adjustedWordCount >= 1351 && adjustedWordCount <= 1450) { 
+    adListSize =  ["small", "large", "small", "small"];
+  }
 
+  if (adjustedWordCount >= 1451 && adjustedWordCount <= 1550) { 
+    adListSize = ["small", "large", "small", "medium"];
+  }
 
-return adListSize;
+  if (adjustedWordCount >= 1551 && adjustedWordCount <= 1650) { 
+    adListSize = ["small", "large", "small", "medium", "small"];
+  }
+
+  return adListSize;
 
 }
 
