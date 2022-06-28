@@ -7,7 +7,7 @@ import MobileAd from './MobileAd';
 import { BlogContent } from './BlogContent';
 import RightSideAds from './RightSideAds';
 // import getContentMetaData from '../../pages/api/contentmgr/getContentMetadata';
-import getRightSizeAdSize from './helpers/getRightSideAdSize';
+import getRightSideAdSize from './helpers/getRightSideAdSize';
 
 import styles from '../../styles/blogdetail.module.scss';
 
@@ -21,7 +21,7 @@ const BlogPost = (props) => {
 
     const wordCount = metadata.wordCount;
 
-    let adListSize  = getRightSizeAdSize(wordCount);
+    let adListSize  = getRightSideAdSize(wordCount);
 
     return (
     <div>

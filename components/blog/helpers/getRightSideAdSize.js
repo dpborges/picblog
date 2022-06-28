@@ -33,30 +33,34 @@ export default function getRightSideAdSize(wordCount) {
   }
 
   if (adjustedWordCount >= 951 && adjustedWordCount <= 1150) { 
-    adListSize =  ["large", "large", "medium"];
+    adListSize =  ["large", "large", "medium", "small"];
   }
 
-  // TUNED THE ABOVE THIS POINT
-
-  if (adjustedWordCount >= 1151 && adjustedWordCount <= 1250) {
-    adListSize =  ["large", "medium", "small"];
+  if (adjustedWordCount >= 1151 && adjustedWordCount <= 1250) { 
+    adListSize =  ["large", "large", "large", "small"  ];
   }
 
-  if (adjustedWordCount >= 1251 && adjustedWordCount <= 1350) {
-    adListSize = ["small", "large", "small"];
-  }
+  // TUNED SIZES  ABOVE THIS POINT
 
-  if (adjustedWordCount >= 1351 && adjustedWordCount <= 1450) { 
-    adListSize =  ["small", "large", "small", "small"];
-  }
+  // if (adjustedWordCount >= 1151 && adjustedWordCount <= 1250) {
+  //   adListSize =  ["large", "medium", "small"];
+  // }
 
-  if (adjustedWordCount >= 1451 && adjustedWordCount <= 1550) { 
-    adListSize = ["small", "large", "small", "medium"];
-  }
+  // if (adjustedWordCount >= 1251 && adjustedWordCount <= 1350) {
+  //   adListSize = ["small", "large", "small"];
+  // }
 
-  if (adjustedWordCount >= 1551 && adjustedWordCount <= 1650) { 
-    adListSize = ["small", "large", "small", "medium", "small"];
-  }
+  // if (adjustedWordCount >= 1351 && adjustedWordCount <= 1450) { 
+  //   adListSize =  ["small", "large", "small", "small"];
+  // }
+
+  // if (adjustedWordCount >= 1451 && adjustedWordCount <= 1550) { 
+  //   adListSize = ["small", "large", "small", "medium"];
+  // }
+
+  // if (adjustedWordCount >= 1551 && adjustedWordCount <= 1650) { 
+  //   adListSize = ["small", "large", "small", "medium", "small"];
+  // }
 
   return adListSize;
 

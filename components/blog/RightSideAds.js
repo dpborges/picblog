@@ -37,8 +37,8 @@ export default function RightSideAds({showAd, adList}) {
                     return displayAdsOnRight("single-med-rect");
                     break;
                   case "single-skyscraper":
-                      return displayAd("skyscraper", "desktop", {marginLeft: '2.4rem', marginBottom: '3rem'});
-                      break;
+                    return displayAd("skyscraper", "desktop", {marginLeft: '2.4rem', marginBottom: '3rem'});
+                    break;
                   default:
                     return displayAdsOnRight("small"); 
                   }

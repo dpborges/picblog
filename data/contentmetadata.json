@@ -605,6 +605,33 @@
     "images": [{"src": "/images/party-catered-food.jpg", "alt": "party catered food"}],
     "type": "post",
     "wordCount": 770
+  },
+  {
+    "id": "0035",
+    "title": "How to Throw a Fabulous Party on a Budget",
+    "slug": "how-to-throw-a-fabulous-party-on-a-budget",
+    "path": "/blog/how-to-throw-a-fabulous-party-on-a-budget",
+    "cid": "post0035",
+    "createDate": "2022-06-10",
+    "updateDate": "2022-06-10",
+    "excerpt":  "Are you trying to throw a fabulous party, but don't have a very big budget? Fret not, this guide has the best tips for throwing the ultimate party on a budget.",
+    "images": [{"src": "/images/party-baloon-decorations.jpg", "alt": "party baloon decorations"}],
+    "type": "post",
+    "wordCount": 875
+  }
+  ,
+  {
+    "id": "0036",
+    "title": "Your Guide to Creating the Perfect Volunteer Sign Up Sheet",
+    "slug": "guide-to-creating-the-perfect-volunteer-sign-up-sheet",
+    "path": "/blog/guide-to-creating-the-perfect-volunteer-sign-up-sheet",
+    "cid": "post0036",
+    "createDate": "2022-06-29",
+    "updateDate": "2022-06-29",
+    "excerpt":  "Are you planning an event that will be largely run by volunteers. Then you need this guide on how to create the perfect volunteer sign up sheet.",
+    "images": [{"src": "/images/volunteers-overlapping-hands-in-show-of-unity.jpg", "alt": "volunteers-overlapping-hands-in-show-of-unity"}],
+    "type": "post",
+    "wordCount": 1200
   }
   
 ]
