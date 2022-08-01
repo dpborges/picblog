@@ -31,12 +31,6 @@
   // } 
 // }
 
-// Indent unorder list 
-.indentList {
-  margin-left: 4rem; 
-}
-
-
 /* used to specifiy viewport width for blog-details on mobile devices */ 
 .blogDetailViewportWidth {
   @media only screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
@@ -44,14 +38,29 @@
   } 
 }
 
+// *****************************************************
+// list styles 
+// *****************************************************
+// Indent unorder list 
+.indentList {
+  margin-left: 4rem; 
+}
+
 .ulSpacing {
   margin: 2rem 4rem 0 4rem;
 }
 
-// list item bullet style
+// unordered list item bullet style
 ul > li.squareBullet {
     list-style-type: square;
 }
+
+// ordered list item 
+ol > li.numbered {
+  list-style-type: decimal;
+  padding-left: .50rem;
+}
+// end-of list styles ********************************
 
 .blue-anchor-text {
     text-decoration: none;
@@ -84,11 +93,12 @@ ul > li.squareBullet {
 
 .h3tag {
     color: $greyshade5;
-    display: inline-block;
-    font-size: 1.2rem;
+    // display: inline-block;
+    font-size: 1.1rem;
     font-weight: 600;
-    padding-bottom: 0;
-    margin-bottom: 0;
+    // padding-bottom: 0;
+    padding: 0 4% 0; 
+    margin-bottom: -1rem;
 }
 
 .content {

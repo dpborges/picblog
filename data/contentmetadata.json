@@ -618,8 +618,7 @@
     "images": [{"src": "/images/party-baloon-decorations.jpg", "alt": "party baloon decorations"}],
     "type": "post",
     "wordCount": 875
-  }
-  ,
+  },
   {
     "id": "0036",
     "title": "Your Guide to Creating the Perfect Volunteer Sign Up Sheet",
@@ -632,6 +631,19 @@
     "images": [{"src": "/images/volunteers-overlapping-hands-in-show-of-unity.jpg", "alt": "volunteers-overlapping-hands-in-show-of-unity"}],
     "type": "post",
     "wordCount": 1200
+  },
+  {
+    "id": "0037",
+    "title": "How to Plan a Group Camping Trip for Your Churches Youth Group",
+    "slug": "how-to-plan-a-group-camping-trip-for-your-churches-youth-group",
+    "path": "/blog/how-to-plan-a-group-camping-trip-for-your-churches-youth-group",
+    "cid": "post0037",
+    "createDate": "2022-07-31",
+    "updateDate": "2022-07-31",
+    "excerpt":  "A summer group camping trip can be a great way for your church youth group to bond. Read this guide to learn how to plan a successful one..",
+    "images": [{"src": "/images/young-people-on-camping-trip.jpg", "alt": "young people on camping trip"}],
+    "type": "post",
+    "wordCount": 900
   }
   
 ]

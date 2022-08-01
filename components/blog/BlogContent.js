@@ -14,17 +14,21 @@ import styles from '../../styles/blogdetail.module.scss';
 const Paragraph = props => <p className={styles.content} {...props} />
 const H1Header = props => <h1 style={{color: 'red'}} {...props} />
 const H2Header =  props => <h2 className={styles.h2tag} {...props} />
+const H3Header =  props => <h2 className={styles.h3tag} {...props} />
 const BlueAnchorTag = props  => <a className={styles.blueAnchor} {...props} />
 const UnorderedList = props  => <ul className={`${styles.indentList} ${styles.ulSpacing} ${styles.content}`} {...props} />
-const ListItem =    props  => <li className={styles.squareBullet} {...props} />
+const OrderedList = props  => <ol className={`${styles.indentList} ${styles.ulSpacing} ${styles.content}`} {...props} />
+const ListItem =    props  => <li className={`${styles.squareBullet} ${styles.numbered}`} {...props} />
 
 
 const components = {
     p:  Paragraph,
     h1: H1Header,
     h2: H2Header,
+    h3: H3Header,
     a:  BlueAnchorTag,
     ul: UnorderedList,
+    ol: OrderedList,
     li: ListItem
 }
 
