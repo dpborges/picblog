@@ -644,6 +644,19 @@
     "images": [{"src": "/images/young-people-on-camping-trip.jpg", "alt": "young people on camping trip"}],
     "type": "post",
     "wordCount": 900
+  },
+  {
+    "id": "0038",
+    "title": "7 Tips for Throwing This Year’s Super Bowl Party",
+    "slug": "7-tips-for-throwing-this-years-super-bowl-party",
+    "path": "/blog/7-tips-for-throwing-this-years-super-bowl-party",
+    "cid": "post0038",
+    "createDate": "2022-10-05",
+    "updateDate": "2022-10-05",
+    "excerpt":  "It's never too early to start planning your super bowl party whether your team is playing or not. Read here to find out seven tips to make it 'super' successful!",
+    "images": [{"src": "/images/super-bowl-party.jpg", "alt": "super bowl table decorations"}],
+    "type": "post",
+    "wordCount": 900
   }
   
 ]

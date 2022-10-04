@@ -35,7 +35,14 @@ const m_getMetadataList = memoize(getMetadataList);
 //     fontSize: '1.1rem'
 // }
 
-// const  Blog = > {
+// Note: if changing PAGE_LIMIT, number of items on this BlogList page, 
+// at bottom , under getStaticPaths, the displaySize (number of pagination links 
+// between prev & next buttons), should be updated to accomodate the recalculated number
+// of BlogListPages/Pagination Links needed. For example, if I ahve total of 24 blog posts
+// and I've been display 4 on each blog list page, I would need 6 pagination links, or 
+// displaySize=6 to page thru the set of posts per listing.
+// If i inrease PAGE_LIMIT from 4 to 8, the pagination displaySize will need to be reduced
+// to 3 (as 24 divided by 8 = 3).
 const BlogListPage =  (props) =>  {
     trace("> Inside BlogListPage");
     
@@ -117,7 +124,7 @@ const BlogListPage =  (props) =>  {
         </div>
 
         <div style={{marginBottom: '6rem'}} >
-          <Paginator displaySize={6} hrefList={hrefList} curPage={curPage}  />
+          <Paginator displaySize={5} hrefList={hrefList} curPage={curPage}  />
         </div>
 
         <Footer />
@@ -192,7 +199,7 @@ export default BlogListPage;
 // *********************************************************************************
 
 /* set number of items per page */
-let PAGE_LIMIT = 6;
+let PAGE_LIMIT = 8;
 
 async function getPageIdPaths() {
   let metadataList     = await m_getMetadataList();
