@@ -657,6 +657,19 @@
     "images": [{"src": "/images/super-bowl-party.jpg", "alt": "super bowl table decorations"}],
     "type": "post",
     "wordCount": 900
+  },
+  {
+    "id": "0039",
+    "title": "How to Plan Nursing Home Events and Activity Ideas",
+    "slug": "how-to-plan-nursing-home-events-and-activity-ideas",
+    "path": "/blog/how-to-plan-nursing-home-events-and-activity-ideas",
+    "cid": "post0039",
+    "createDate": "2022-11-09",
+    "updateDate": "2022-11-09",
+    "excerpt":  "Nursing home events and activity ideas are essential to the health of residents. Learn how to plan these events with this guide.",
+    "images": [{"src": "/images/nursing-home-activities.jpg", "alt": "nursing home activities"}],
+    "type": "post",
+    "wordCount": 1200
   }
   
 ]
