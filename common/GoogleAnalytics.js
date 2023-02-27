@@ -1,6 +1,6 @@
 import ReactGA from "react-ga"
 
-// Initializes your GA tracking id
+// Initializes your GA tracking id with google account settings
 export const GAinit = () => {
   ReactGA.initialize("UA-151608223-1")
 }
