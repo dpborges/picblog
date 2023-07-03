@@ -80,18 +80,18 @@ export async function sortByStringProp(objectArray, propertyname, order = 'asc' 
   trace(`   order: ${order}`);
   
   function compareStrings(s1, s2) {  /* declare compare function */
-      let s1Lower = s1.[propertyname].toLowerCase();
-      let s2Lower = s2.[propertyname].toLowerCase();
+      let s1Lower = s1[propertyname].toLowerCase();
+      let s2Lower = s2[propertyname].toLowerCase();
       switch (order) {
         case 'desc':
-          if (s1.[propertyname] < s2.[propertyname]) { return  1 }
-          if (s1.[propertyname] > s2.[propertyname]) { return -1 }
+          if (s1[propertyname] < s2[propertyname]) { return  1 }
+          if (s1[propertyname] > s2[propertyname]) { return -1 }
           return 0;
           break;
 
         case 'asc':
-          if (s1.[propertyname] > s2.[propertyname]) { return  1 }
-          if (s1.[propertyname] < s2.[propertyname]) { return -1 }
+          if (s1[propertyname] > s2[propertyname]) { return  1 }
+          if (s1[propertyname] < s2[propertyname]) { return -1 }
           return 0;
           break;
         default: 

@@ -1,5 +1,6 @@
 import styles1 from '../../styles/features.module.scss';
 import Image   from 'next/image';
+// import Image from '../../common/Image'
 
 // Responsive Image typically used instead of background image in a banner 
 // with image and text overlay.

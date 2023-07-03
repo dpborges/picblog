@@ -13,37 +13,42 @@ const myFormat = printf(({ level, message, label, timestamp }) => {
   return `${timestamp} [${label}] ${level}: ${message}`;
 });
 
-const logger = createLogger({
-  level: 'info',
-  format: combine(
-    label({ label: 'Picblog' }),
-    timestamp(),
-    myFormat
-  ),
-  defaultMeta: { service: 'user-service' },
-  transports: [
-    //
-    // - Write all logs with level `error` and below to `error.log`
-    // - Write all logs with level `info` and below to `combined.log`
-    //
-    // new transports.File({ filename: 'error.log', level: 'error' }),
-    // new transports.File({ filename: 'combined.log' }),
-    new transports.Console()
-  ],
-});
+// IMPORTANT: had to repace winston logger with console.log when I upgraded 
+// from nextjs 11 to 12. I can live without out while running in S3, but when I 
+// move back to server environment, need to uncomment section below  after
+// line below
+const logger = console.log;
+// const logger = createLogger({
+//   level: 'info',
+//   format: combine(
+//     label({ label: 'Picblog' }),
+//     timestamp(),
+//     myFormat
+//   ),
+//   defaultMeta: { service: 'user-service' },
+//   transports: [
+//     //
+//     // - Write all logs with level `error` and below to `error.log`
+//     // - Write all logs with level `info` and below to `combined.log`
+//     //
+//     // new transports.File({ filename: 'error.log', level: 'error' }),
+//     // new transports.File({ filename: 'combined.log' }),
+//     new transports.Console()
+//   ],
+// });
 
-if (process.env.NODE_ENV === "test") {
-  logger
-   .clear()
-   .add(new transports.File({ filename: 'error.log', level: 'error' }))
-   .add(new transports.File({ filename: 'combined.log' }))
-}
+// if (process.env.NODE_ENV === "test") {
+//   logger
+//    .clear()
+//    .add(new transports.File({ filename: 'error.log', level: 'error' }))
+//    .add(new transports.File({ filename: 'combined.log' }))
+// }
 
-if (process.env.NODE_ENV === "development") {
-  logger
-    .clear()
-    .add(new transports.Console() )
-};
+// if (process.env.NODE_ENV === "development") {
+//   logger
+//     .clear()
+//     .add(new transports.Console() )
+// };
 
 
 // *******************************************************************************

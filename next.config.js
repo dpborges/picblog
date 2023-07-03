@@ -1,4 +1,9 @@
-// const withNextOptimizedImages = require('next-optimized-images');
+// Used Url below to set up the optimizedImages plugin 
+// https://maxrohde.com/2021/07/25/next-js-11-images-with-static-export
+// ... to get around error below
+// Error: Image Optimization using Next.js' default loader is not compatible with `next export`.
+// 
+const optimizedImages = require('next-optimized-images');
 
 const withMDX = require('@next/mdx')({
   extension: /\.mdx$/
@@ -11,16 +16,25 @@ const withMDX = require('@next/mdx')({
 module.exports = (
   withMDX({
     compress: false,
-    webpack5: false,
-    webpack: (config, { isServer }) => {
-      if (!isServer) {
-        config.node = {
-        fs: 'empty'
-      }
-    }
-    return config
+    // webpack5: true,
+    webpack: (config) => {
+      config.resolve.fallback = { fs: false };
+      return config;
     },
-    pageExtensions: ['js', 'jsx', 'md', 'mdx']
+    // webpack: (config, { isServer }) => {
+    //   if (!isServer) {
+    //     config.node = {
+    //     fs: 'empty'
+    //   }
+    // }
+    // return config
+    // },
+    pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+    // images: { loader: 'akamai' },
+    images: { unoptimized: true },
+    // images: {
+    //   disableStaticImages: true,
+    // },
   })
 )
 

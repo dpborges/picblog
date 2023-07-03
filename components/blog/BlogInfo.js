@@ -1,5 +1,6 @@
 import React from 'react'; 
 import Image from 'next/image';
+// import Image from '../../common/Image'
 
 import styles from '../../styles/blogdetail.module.scss';
 

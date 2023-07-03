@@ -5,7 +5,7 @@ import React, { Fragment, Component } from 'react';
 // import { HashLink } from 'react-router-hash-link';
 // import {Helmet} from 'react-helmet';
 import Head from 'next/head';
-import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
+// import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
 // import  { FooterSection }   from './FooterSection';
 import getAppConfigParm  from '../../config/AppConfig';
 import Footer from '../../common/Footer-Axolot.js'
@@ -63,15 +63,16 @@ class EventPlanningCalculatorsPage extends Component {  // use destructing to ob
         this.state = {env: getAppConfigParm("env")}
     }
 
+    /* I can remove this. Google analytics was set up in _app.js */
     componentDidMount = () => {
-      let { env } = this.state;
-      if (env === 'test' || env === 'prod') {
-          if (!window.GA_INITIALIZED) {
-              GAinit();
-              window.GA_INITIALIZED = true;
-          }
-          GAlogPageView()
-      }
+      // let env = getAppConfigParm("env");
+      // if (env === 'test' || env === 'prod') {
+      //     if (!window.GA_INITIALIZED) {
+      //         GAinit();
+      //         window.GA_INITIALIZED = true;
+      //     }
+      //     GAlogPageView()
+      // }
     }
 
     render() {

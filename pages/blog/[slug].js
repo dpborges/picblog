@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
+// import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
 import getAppConfigParm  from '../../config/AppConfig';
 import SSPageHeader from '../../common/SSPageHeader';
 import BlogPost from "../../components/blog/BlogPost";                            
@@ -19,18 +19,18 @@ class BlogPage extends Component {
         this.state = {env: getAppConfigParm("env")}
     }
 
-    componentDidMount = () => {
+    // componentDidMount = () => {
       // Google Analytics
-      let { env } =  this.state;
-      console.log()     
-      if (env  === 'test' || env  === 'prod') {
-          if (!window.GA_INITIALIZED) {
-              GAinit();
-              window.GA_INITIALIZED = true;
-          }
-          GAlogPageView()
-      }
-    }
+      // let { env } =  this.state;
+      // console.log()     
+      // if (env  === 'test' || env  === 'prod') {
+      //     if (!window.GA_INITIALIZED) {
+      //         GAinit();
+      //         window.GA_INITIALIZED = true;
+      //     }
+      //     GAlogPageView()
+      // }
+    // }
 
   
     render() {
@@ -61,10 +61,10 @@ class BlogPage extends Component {
 // If set to 900 secs, NextJs will revalidate (or regenerate the page) after 15 minutes.
 //************************************************************************************ 
 export async function getStaticProps(context) {
-  logger.debug(">>> getStaticProps")
+  // logger.debug(">>> getStaticProps")
 
   const { slug } = context.params;
-  logger.debug(`    slug: ${slug}`)
+  // logger.debug(`    slug: ${slug}`)
 
   const metadata  = await getContentMetadata(slug);
   // filterObjArrayBy(mdObjectArray, { type: "post" })
@@ -126,7 +126,7 @@ export async function getStaticPaths() {
 
   return {
     paths: generatedPaths,
-    fallback: true
+    fallback: false
   }
 
 }

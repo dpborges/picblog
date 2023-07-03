@@ -7,13 +7,19 @@
   width: 20px;
   color:$blue;
   margin: 7px 9px 6px 7px;
+  &:hover {
+    color: white;
+  }
 }
 
 .linkedinIcon {
   height: 23px;
   width: 23px;
   color:$blue;
-  margin: 5px 0 0 2px;
+  margin: 1px 0 0 2px;
+  &:hover {
+    color: white;
+  }
 }
 
 .twitterIcon {
@@ -21,14 +27,39 @@
   width: 22px;
   color:$blue;
   margin: 5px;
-}
-
-
-// Container used postion and apply hover effect */
-
-.iconContainer {
-
   &:hover {
     color: white;
   }
+}
+
+// Container used postion and apply hover effect on social media icons 
+.iconContainer {
+  &:hover {
+    color: white;
+  }
+}
+
+.calendarIcon {
+  // height: 28px;
+  width: 35px;
+  color: $orange;
+  margin: 14px auto 8px;
+}
+.usersIcon {
+  // height: 55px;
+  width: 46px;
+  color: $orange;
+  margin: 14px auto 8px;
+}
+.listIcon {
+  // height: 55px;
+  width: 36px;
+  color: $orange;
+  margin: 14px auto 8px;
+}
+.holdingHeartIcon {
+  // height: 55px;
+  width: 46px;
+  color: $orange;
+  margin: 14px auto 8px;
 }

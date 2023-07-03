@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 // import { HashLink as Link } from 'react-router-hash-link';
 import Head from 'next/head';
 import Image from 'next/image';
-import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
+// import Image from '../../common/CustomImage'; // use custom image load to be able to use export
+// import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
 import SSPageHeader from '../../common/SSPageHeader.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/pro-light-svg-icons';
@@ -121,9 +122,13 @@ const appScreenShotSection = () => (
   <div className={styles["hhlp-screenshot-container"]}  >
     <div className="rc-mt-1">&nbsp;</div>
     <div className="rc-flex-container-center">
-        <Image src="/images/helping-hands-list-ui.png" alt="Helping Hands List image" 
+       {/*<Image src="/images/helping-hands-list-ui.png" alt="Helping Hands List image" 
           height={672}
           width={725}
+/> */}
+         <img src="/images/helping-hands-list-ui.png" alt="Helping Hands List image" 
+         height={'100%'}
+         width={'auto'}
         /> 
     </div>
     <div className="rc-horiz-spacer-small">&nbsp;</div>
@@ -253,15 +258,16 @@ const ctaBlock = (siteUrl) => (
 // Helping Hands Page
 class HelpingHandsPage extends Component  {
 
+    /* I can remove this. Google analytics was set up in _app.js */
     componentDidMount = () => {
-        let env = getAppConfigParm("env");
-        if (env === 'test' || env === 'prod') {
-            if (!window.GA_INITIALIZED) {
-                GAinit();
-                window.GA_INITIALIZED = true;
-            }
-            GAlogPageView()
-        }
+      // let env = getAppConfigParm("env");
+      // if (env === 'test' || env === 'prod') {
+      //     if (!window.GA_INITIALIZED) {
+      //         GAinit();
+      //         window.GA_INITIALIZED = true;
+      //     }
+      //     GAlogPageView()
+      // }
     }
 
     render() {

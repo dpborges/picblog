@@ -53,7 +53,7 @@ This files contents are outlined below>>>>>
        color: #848484;
        line-height: 25px;
        letter-spacing: .5;
-       overflow-x: hidden;
+      //  overflow-x: hidden;  /* DB disabled 6/19/2023 as caused Resources Dropdown to show scroll bar */
        -webkit-font-smoothing: antialiased;
    }
    .navbar{

@@ -6,6 +6,7 @@ import MobileAd     from './MobileAd';
 import DesktopAd    from './DesktopAd';
 // import MobileAdSquare from './MobileAdSquare';
 import BlogImage from './BlogImage';
+import BlogImage2 from './BlogImage';
 import BlogInfo  from './BlogInfo';
 // import getContentMetadata from '../../pages/api/contentmgr/getContentMetadata';
 import { shortMonthName, dayOfMonth } from '../../utils/date';

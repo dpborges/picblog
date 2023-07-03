@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 // import {Helmet} from 'react-helmet';
 import Head  from 'next/head';
 import Image from 'next/image';
-import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
+// import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
 // import NavBarMultiPage from "../components/common/NavBarMultiPage";
 import SSPageHeader from '../../common/SSPageHeader.js';
 import Footer from '../../common/Footer-Axolot.js'
@@ -12,15 +12,16 @@ import  getAppConfigParm  from '../../config/AppConfig';
 
 class HowToCreateEvent extends React.Component {
 
+    /* I can remove this. Google analytics was set up in _app.js */
     componentDidMount = () => {
-        let env = getAppConfigParm("env");
-        if (env === 'test' || env === 'prod') {
-            if (!window.GA_INITIALIZED) {
-                GAinit();
-                window.GA_INITIALIZED = true;
-            }
-            GAlogPageView()
-        }
+      // let env = getAppConfigParm("env");
+      // if (env === 'test' || env === 'prod') {
+      //     if (!window.GA_INITIALIZED) {
+      //         GAinit();
+      //         window.GA_INITIALIZED = true;
+      //     }
+      //     GAlogPageView()
+      // }
     }
 
     render() {

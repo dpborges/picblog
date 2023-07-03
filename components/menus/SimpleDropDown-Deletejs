@@ -1,0 +1,53 @@
+import React, { Component, useEffect, useRef } from "react";
+// import Select from 'react-select';
+import { useRouter } from 'next/router';
+import  Link from 'next/link';
+
+const selectStyle = { width: '15rem', opacity: 0, position: 'absolute', padding: '.2rem'};
+const selectButtonStyle = { backgroundColor: 'transparent', border: '0px' };
+const selectOptionStyle = { lineHeight: '1rem', fontSize: '1.5rem', padding: '100px' };
+
+const options = [
+  {label: "one", value: 1, className: 'custom-class'},
+  {label: "two", value: 2, className: 'awesome-class'}
+  // more options...
+];
+
+const colourStyles = {
+  control: styles => ({ ...styles, backgroundColor: 'white'}),
+  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+    return {
+      ...styles,
+      backgroundColor: 'white',
+      color: 'black',
+      width: '20px',
+      
+      // cursor: isDisabled ? 'not-allowed' : 'default',
+    };
+  },
+};
+
+export function SimpleDropDown () {
+  const router = useRouter();
+  const selectElem = useRef()
+
+  const selectHandler = (e) => {
+    console.log(">>>> Inside select handler")
+    console.log(e.target.value);
+    router.push({ pathname: 'resources/about-us' })
+    // return <Link href="resources/about-us">About Us</Link>
+  }
+
+  return (
+    <div style={{width: '21rem'}}>
+      <button onClick={()=>selectElem} style={selectButtonStyle}>Resources</button>
+       <div>&nbsp;  </div>
+       
+      <Select ref={selectElem}
+        styles={colourStyles}
+        options={options}
+     />
+      
+    </div>
+  )
+}

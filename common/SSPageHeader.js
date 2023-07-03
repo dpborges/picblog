@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Image from 'next/image';
+// import Image from './Image'; // use custom image load to be able to use export
 import DropDownMenu from '../components/menus/DropDownMenu'
 import { Navbar, Container, NavDropdown, Nav, Dropdown } from "react-bootstrap";
 import getAppConfigParm from '../config/AppConfig';
@@ -8,7 +9,9 @@ import { BurgerMenuIcon } from '../components/icons/BurgerMenuIcon';
 import NavToggle from '../components/formatting/NavToggle';
 import ImgWithFallback from '../components/formatting/ImgWithFallback';
 
+// import styles from './styles/page-header.module.scss';
 import styles from '../styles/page-header.module.scss';
+// import axolotStyle from '../styles/axolotstyle.scss';
 
 // Function used to build the Navigation Links
 const textNavElements = (siteUrl, resources, blogUrl, toggleSelected  ) => {
@@ -85,7 +88,6 @@ class SSPageHeader extends Component {
     }
 
     render() {
-
         // let { isAuthenticated } = this.props.auth;
         // let isAuthenticated  = true;
         let siteUrl = getAppConfigParm("siteUrl");

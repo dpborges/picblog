@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+// import Image from '../../../common/Image'
 
 import styles from './pagebanner.module.scss'
 
@@ -10,7 +11,7 @@ export default function index(props) {
       <Image src={"/images/stacked-hands-for-unity.jpg"} 
           alt={"stacked hands for unity"}
           layout="fill"
-          style ={{ objectFit: 'cover'}}
+          // style={{ objectFit: 'cover'}}
           priority='true'
           quality='90'
       />

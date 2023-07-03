@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import memoize from 'lodash/memoize';
-import { GAinit, GAlogPageView } from '../../../common/GoogleAnalytics';
+// import { GAinit, GAlogPageView } from '../../../common/GoogleAnalytics';
 // import * as R from 'ramda';
 import getAppConfigParm  from '../../../config/AppConfig';
 import PropTypes from "prop-types";
@@ -54,17 +54,17 @@ const BlogListPage =  (props) =>  {
 
     // const { isSticky, elementRef } = useSticky();
 
-    useEffect ( () => {
-        let env = getAppConfigParm("env");
-        if (env === 'test'  || env === "prod") {
-            if (!window.GA_INITIALIZED) {
-                GAinit();
-                window.GA_INITIALIZED = true;
-            }   
-            GAlogPageView()
-        }
-    }, []);
-
+    /* I can remove this. Google analytics was set up in _app.js */
+    // componentDidMount = () => {
+      // let env = getAppConfigParm("env");
+      // if (env === 'test' || env === 'prod') {
+      //     if (!window.GA_INITIALIZED) {
+      //         GAinit();
+      //         window.GA_INITIALIZED = true;
+      //     }
+      //     GAlogPageView()
+      // }
+    // }
 
     /* Map over blogItems and create array for each blog item and its associated data */
     const blogdata = blogItems.map(( blog, index ) => {

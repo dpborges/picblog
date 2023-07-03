@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
-import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
+// import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
 import SSPageHeader from '../../common/SSPageHeader.js'
 import getAppConfigParm  from '../../config/AppConfig';
 import Footer from '../../common/Footer-Axolot.js'
@@ -175,77 +175,78 @@ const ctaBlock = () => (
 // Type Event Types Page component
 class TypeEventsPage extends Component {  // use destructing to obtain function prop
 
+    /* I can remove this. Google analytics was set up in _app.js */
     componentDidMount = () => {
-        let env = getAppConfigParm("env");
-        if (env === 'test' ||env === 'prod') {
-            if (!window.GA_INITIALIZED) {
-                GAinit();
-                window.GA_INITIALIZED = true;
-            }
-            GAlogPageView()
-        }
+      // let env = getAppConfigParm("env");
+      // if (env === 'test' || env === 'prod') {
+      //     if (!window.GA_INITIALIZED) {
+      //         GAinit();
+      //         window.GA_INITIALIZED = true;
+      //     }
+      //     GAlogPageView()
+      // }
     }
 
     render() {
-        return (
-        <div>
-            <Head>
-                <title>Group Planning App for All Types of Events | Pitch In Club</title>
-                <meta property="og:title" content="Group Planning App for All Types of Events | Pitch In Club" />
-                <meta name="description" content="The Pitch In Club group planning app makes party planning simple and fun! You can use it for every type of event - from a potluck to a dance party!" />
-                <meta name="keywords"  content="family reunion,volunteer effort,birthday party,BBQ,Barbeque,Housewarming,Cocktail Party
-                tailgate,potluck,retirement party,house party,dance party,bbq for 25 guests,planning a barbeque for 50,tailgating 101, 
-                planning a dinner party for 10" />
-            </Head>
-            <SSPageHeader />
+      return (
+      <div>
+          <Head>
+              <title>Group Planning App for All Types of Events | Pitch In Club</title>
+              <meta property="og:title" content="Group Planning App for All Types of Events | Pitch In Club" />
+              <meta name="description" content="The Pitch In Club group planning app makes party planning simple and fun! You can use it for every type of event - from a potluck to a dance party!" />
+              <meta name="keywords"  content="family reunion,volunteer effort,birthday party,BBQ,Barbeque,Housewarming,Cocktail Party
+              tailgate,potluck,retirement party,house party,dance party,bbq for 25 guests,planning a barbeque for 50,tailgating 101, 
+              planning a dinner party for 10" />
+          </Head>
+          <SSPageHeader />
 
-                {titleSection()}
-                
-                <HorizRule pctWidth="65%" color="#CC6600" thickness=".5rem" mt="2rem" mb="3rem" />
+              {titleSection()}
+              
+              <HorizRule pctWidth="65%" color="#CC6600" thickness=".5rem" mt="2rem" mb="3rem" />
 
-                <div className={styles["typeevents-h2-sections-container"]}>
-                    {textSection1()}
-                    {textSection2()}
-                    {textSection3()}
-                    {textSection4()}
-                </div>
+              <div className={styles["typeevents-h2-sections-container"]}>
+                  {textSection1()}
+                  {textSection2()}
+                  {textSection3()}
+                  {textSection4()}
+              </div>
 
-            {/*
-                <div style={{display: "flex", justifyContent: "center"}}>
-                    <h2 className="typeevents-image-title">Organize family events...</h2>
-                </div>
-                <div className="rc-horiz-spacer-tiny">&nbsp;</div>
-                {imageSection1()}
-                <div className="features-horiz-spacer4">&nbsp;</div>  
+          {/*
+              <div style={{display: "flex", justifyContent: "center"}}>
+                  <h2 className="typeevents-image-title">Organize family events...</h2>
+              </div>
+              <div className="rc-horiz-spacer-tiny">&nbsp;</div>
+              {imageSection1()}
+              <div className="features-horiz-spacer4">&nbsp;</div>  
 
-                <div style={{display: "flex", justifyContent: "center"}}>
-                    <h2 className="typeevents-image-title">Create a Volunteer Sign Up</h2>
-                </div>
-                <div className="features-horiz-spacer4">&nbsp;</div>    
-                {imageSection2()}
-                <div className="features-horiz-spacer4">&nbsp;</div>    
+              <div style={{display: "flex", justifyContent: "center"}}>
+                  <h2 className="typeevents-image-title">Create a Volunteer Sign Up</h2>
+              </div>
+              <div className="features-horiz-spacer4">&nbsp;</div>    
+              {imageSection2()}
+              <div className="features-horiz-spacer4">&nbsp;</div>    
 
 
-                <div style={{display: "flex", justifyContent: "center"}}>
-                    <h2 className="typeevents-image-title">Friendly Gatherings</h2>
-                </div>
-                <div className="features-horiz-spacer4">&nbsp;</div>    
-                {imageSection3()}
-                <div className="features-horiz-spacer4">&nbsp;</div>  
+              <div style={{display: "flex", justifyContent: "center"}}>
+                  <h2 className="typeevents-image-title">Friendly Gatherings</h2>
+              </div>
+              <div className="features-horiz-spacer4">&nbsp;</div>    
+              {imageSection3()}
+              <div className="features-horiz-spacer4">&nbsp;</div>  
 
-                <div className="typeevents-final-text-container">
-                    <h2 className="typeevents-final-text">Organize Theme parties, Office Parties, Family Reunions, Cocktail Parties, HouseWarming, and more... </h2>
-                </div>  
-                <div className="typeevents-final-text-container">
-                    <h2 className="typeevents-final-text">The "Pitch In Club" makes Group Planning Easy</h2>
-                </div>  
-                <div className="features-horiz-spacer4">&nbsp;</div>  
-            */}
-                {ctaBlock()}
+              <div className="typeevents-final-text-container">
+                  <h2 className="typeevents-final-text">Organize Theme parties, Office Parties, Family Reunions, Cocktail Parties, HouseWarming, and more... </h2>
+              </div>  
+              <div className="typeevents-final-text-container">
+                  <h2 className="typeevents-final-text">The "Pitch In Club" makes Group Planning Easy</h2>
+              </div>  
+              <div className="features-horiz-spacer4">&nbsp;</div>  
+          */}
+              {ctaBlock()}
 
-            <Footer />
-        </div>
-        )
+          <Footer />
+      </div>
+      )
     }  /* end of render() */
 }; /* end of class defintion */
    

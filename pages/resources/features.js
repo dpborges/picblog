@@ -2,19 +2,20 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+// import Image from '../../common/Image'
 // import Script from 'next/script'
-import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
+// import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
 import SSPageHeader from '../../common/SSPageHeader.js'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarAlt } from '@fortawesome/pro-light-svg-icons';
-import { faHandHoldingHeart} from '@fortawesome/pro-light-svg-icons';
-import { faUsers } from '@fortawesome/pro-light-svg-icons';
-import { faList } from '@fortawesome/pro-light-svg-icons';
-import { faSmile } from '@fortawesome/pro-light-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCalendarAlt } from '@fortawesome/pro-light-svg-icons';
 import getAppConfigParm  from '../../config/AppConfig';
 import Footer from '../../common/Footer-Axolot.js'
 import VictoryIcon  from '../../components/icons/VictoryIcon.js';
 // import BannerSection from '../../components/formatting/BannerSection';
+import { CalendarIcon } from '../../components/icons/CalenderIcon.js'
+import { UsersIcon } from '../../components/icons/UsersIcon.js'
+import { ListIcon } from '../../components/icons/ListIcon.js'
+import { HoldingHeartIcon } from '../../components/icons/HoldingHeartIcon.js'
 
 import styles1 from "../../styles/features.module.scss";
 import styles2 from "../../styles/homepage-sections.module.scss";
@@ -52,22 +53,22 @@ const processSection = () => (
         </div>
         <div className={styles2['process-box-container']}>
            <div className={styles2['process-box']}>
-               <FontAwesomeIcon className={styles2['process-box__icon']} icon={faCalendarAlt} />
+               <CalendarIcon />
                <p className={styles2['process-box__heading']}>Schedule Event</p>
                <p className={styles2['process-box__text']}>Quickly Schedule an Event</p>
            </div>
            <div className={styles2['process-box']}>
-               <FontAwesomeIcon className={styles2['process-box__icon']} icon={faUsers} />
+               <UsersIcon />
                <p className={styles2['process-box__heading']}>Add People</p>
                <p className={styles2['process-box__text']}>Add People To Your Event or Function</p>
            </div>
            <div className={styles2['process-box']}>
-               <FontAwesomeIcon className={styles2['process-box__icon']} icon={faList} />
+               <ListIcon />
                <p className={styles2['process-box__heading']}>List Items</p>
                <p className={styles2['process-box__text']}>Create List of Contributions and/or Help Needed</p>
            </div>
            <div className={styles2['process-box']}>
-               <FontAwesomeIcon className={styles2['process-box__icon']} icon={faHandHoldingHeart} />
+               <HoldingHeartIcon />
                <p className={styles2['process-box__heading']}>Pitch In</p>
                <p className={styles2['process-box__text']}>Invite People to Pitch In</p>
            </div>
@@ -100,7 +101,7 @@ const nonfuncFeatureSection = () => (
                     </div>
                     <div>
                         <Image className={styles1.featuresCcardImage} width={112} height={112}
-                             src="/images/no-credit-card-required-image.jpg" alt="no credit card required image" />
+                         src={"/images/no-credit-card-required-image.jpg"} alt="no credit card required image" />
                     </div>
                 </div>
             </div>
@@ -116,7 +117,7 @@ const nonfuncFeatureSection = () => (
                     <div>
                       <Image className={styles1.featuresHttpsImage}
                           src="/images/https-image.jpg" alt="Https characters"
-                          width={128} height={40} />
+                          width={128} height={40} /> 
                     </div>
                 </div>
 
@@ -225,15 +226,16 @@ const ctaBlock = () => (
 //***********************************************************************************
 class FeaturesPage extends Component {  // use destructing to obtain function prop
 
+    /* I can remove this. Google analytics was set up in _app.js */
     componentDidMount = () => {
-        let env = getAppConfigParm("env");
-        if (env === 'test' || env === 'prod') {
-            if (!window.GA_INITIALIZED) {
-                GAinit();
-                window.GA_INITIALIZED = true;
-            }
-            GAlogPageView()
-        }
+      // let env = getAppConfigParm("env");
+      // if (env === 'test' || env === 'prod') {
+      //     if (!window.GA_INITIALIZED) {
+      //         GAinit();
+      //         window.GA_INITIALIZED = true;
+      //     }
+      //     GAlogPageView()
+      // }
     }
 
     render() {

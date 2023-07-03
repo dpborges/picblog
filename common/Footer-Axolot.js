@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import Link from 'next/link';
 import PropTypes from "prop-types";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import LinkButton1 from '../components/buttons/LinkButton1.js';
 import CaretRightIcon from "../components/icons/CaretRightIcon.js";
 import EnvelopeSquareIcon from "../components/icons/EnvelopeSquareIcon.js";
 import getAppConfig from '../config/AppConfig';
+import { TwitterIcon, FacebookIcon, LinkedinIcon } from "../components/icons/SocialMediaIcons.js";
 
 import styles1 from '../styles/faicon.module.scss';
 import styles2 from '../styles/footer-axolot.module.scss';
@@ -116,25 +117,22 @@ class Footer extends Component {
                                 <ul>
                                     <li>
                                       <div className={styles1.iconContainer}>
-                                        {/* <a className="icofont-facebook" href="https://www.facebook.com/pitchinclub"> */}
                                         <a href="https://www.facebook.com/pitchinclub">
-                                          <FontAwesomeIcon icon={["fab", "facebook-f"]}  />
+                                          <FacebookIcon />
                                         </a>
                                       </div>
                                     </li>
                                     <li>
                                       <div className={styles1.iconContainer}>
-                                        {/* <a className="icofont-linkedin" href="https://www.linkedin.com/company/pitch-in-club/"  > */}
                                         <a href="https://www.linkedin.com/company/pitch-in-club/"  >
-                                          <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
+                                          <LinkedinIcon />
                                         </a>
                                       </div>
                                     </li>
                                     <li>
                                       <div className={styles1.iconContainer}>
-                                        {/* <a className="icofont-twitter" href="https://twitter.com/pitchinclub"  > */}
                                         <a href="https://twitter.com/pitchinclub"  >
-                                           <FontAwesomeIcon icon={["fab", "twitter"]}  /> 
+                                           <TwitterIcon />
                                         </a>
                                       </div>
                                     </li>

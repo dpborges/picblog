@@ -21,7 +21,7 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     position: relative;
-    // z-index: 9999;
+    z-index: 999;
 }
 
 /* This is standard header with single border bottom */
@@ -38,7 +38,8 @@
     padding: .5rem 0 .5rem .8rem;
     margin: 0;
     width: 12rem;
-
+    z-index: 999;
+   
     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
         font-size: $font-size-xxsmall;  
         width: 10.5rem;
@@ -52,7 +53,6 @@
     margin: 0;
     padding: 0; 
     
-
     @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
         font-size: $font-size-medium;  
     }

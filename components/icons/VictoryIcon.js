@@ -19,7 +19,7 @@ export const VictoryIcon = ({
     <svg 
       height='50px' 
       width='50px'  
-      fill="#e67e22" 
+      fill="#cc6600" 
       xmlns="http://www.w3.org/2000/svg" 
       viewBox="0 0 95 95" 
       x="0px" y="0px">

@@ -4,14 +4,18 @@ import React, { Component } from 'react';
 // import { HashLink as Link } from 'react-router-hash-link';
 import   Head from 'next/head';
 import Image from 'next/image';
-import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
+// import { GAinit, GAlogPageView } from '../../common/GoogleAnalytics';
 import SSPageHeader from '../../common/SSPageHeader.js'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarAlt } from '@fortawesome/pro-light-svg-icons';
-import { faHandHoldingHeart} from '@fortawesome/pro-light-svg-icons';
-import { faUsers } from '@fortawesome/pro-light-svg-icons';
-import { faList } from '@fortawesome/pro-light-svg-icons';
-import { faSmile } from '@fortawesome/pro-light-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCalendarAlt } from '@fortawesome/pro-light-svg-icons';
+// import { faHandHoldingHeart} from '@fortawesome/pro-light-svg-icons';
+// import { faUsers } from '@fortawesome/pro-light-svg-icons';
+// import { faList } from '@fortawesome/pro-light-svg-icons';
+// import { faSmile } from '@fortawesome/pro-light-svg-icons';
+import { CalendarIcon } from '../../components/icons/CalenderIcon.js'
+import { UsersIcon } from '../../components/icons/UsersIcon.js'
+import { ListIcon } from '../../components/icons/ListIcon.js'
+import { HoldingHeartIcon } from '../../components/icons/HoldingHeartIcon.js'
 // import  { Footer }      from './FooterSection';
 import Footer from '../../common/Footer-Axolot.js'
 import BannerSection from '../../components/formatting/BannerSection';
@@ -45,27 +49,27 @@ const textSection1 = () => {
     let helpingHandsUrl = getAppConfigParm("siteUrl") + "/resources/helping-hands";
 
     return (
-        <div className={`${styles1["clp-h2-section"]} rc-mt-4`} >
-            <h2 className={styles1["clp-h2-style"]}>Make a Contribution List to Make Your Life Easier</h2>
-            <p className={`${styles1["clp-para"]} rc-mt-2`}>Make Party Planning Simple With a Contribution List</p>
-            <p className={`${styles1["clp-para"]} rc-mt-2`}>
-                Scared of getting suckered into spending too much on a party? 
-            </p>
-            <p className={`${styles1["clp-para"]} rc-mt-2`}>
-                Hesitant to host because of all the time it will take you to prepare for your guests? 
-            </p>
-            <p className={`${styles1["clp-para"]} rc-mt-2`}>
-                Use the contribution list feature in the Pitch In Club app.
-            </p>
-            <p className={`${styles1["clp-para"]} rc-mt-2`}>
-                This easy to use event management software provides a helpful event list that guests 
-                can contribute too. They can add what they are bringing, or sign up for an item that is listed. 
-            </p>
-            <p className={`${styles1["clp-para"]} rc-mt-2`}>
-                If guests would rather commit their time, instead of their stuff, than they can sign up on the 
-                <a className={styles1["blue-anchor-text"]} href={helpingHandsUrl}> Helping Hands List </a>
-            </p>
-        </div>  
+      <div className={`${styles1["clp-h2-section"]} rc-mt-4`} >
+        <h2 className={styles1["clp-h2-style"]}>Make a Contribution List to Make Your Life Easier</h2>
+        <p className={`${styles1["clp-para"]} rc-mt-2`}>Make Party Planning Simple With a Contribution List</p>
+        <p className={`${styles1["clp-para"]} rc-mt-2`}>
+            Scared of getting suckered into spending too much on a party? 
+        </p>
+        <p className={`${styles1["clp-para"]} rc-mt-2`}>
+            Hesitant to host because of all the time it will take you to prepare for your guests? 
+        </p>
+        <p className={`${styles1["clp-para"]} rc-mt-2`}>
+            Use the contribution list feature in the Pitch In Club app.
+        </p>
+        <p className={`${styles1["clp-para"]} rc-mt-2`}>
+            This easy to use event management software provides a helpful event list that guests 
+            can contribute too. They can add what they are bringing, or sign up for an item that is listed. 
+        </p>
+        <p className={`${styles1["clp-para"]} rc-mt-2`}>
+            If guests would rather commit their time, instead of their stuff, than they can sign up on the 
+            <a className={styles1["blue-anchor-text"]} href={helpingHandsUrl}> Helping Hands List </a>
+        </p>
+      </div>  
     )
 }
 
@@ -74,24 +78,24 @@ const textSection2 = () => {
     let helpingHandsUrl = getAppConfigParm("siteUrl") + "/resources/helping-hands";
 
     return (
-        <div className={`${styles1["clp-h2-section"]} rc-mt-4`}>
-            <h2 className={styles1["clp-h2-style"]}>How It Works</h2>
-            <p className={`${styles1["clp-para"]} rc-mt-2`}>The Contribution List feature is an excellent event planning tool. </p>
-            <p className={`${styles1["clp-para"]} rc-mt-2`}>It takes almost no time to set one up.</p>
-            <p className={`${styles1["clp-para"]} rc-mt-2`}>First, make your event within the Pitch In Club event dashboard.</p>
-            <p className={`${styles1["clp-para"]} rc-mt-2`}>
-                Then, click on the List tab. The Contribution List will be the first feature listed. 
-            </p>
-            <p className={`${styles1["clp-para"]} rc-mt-2`}> Click on it, and fill out what you need to throw your event.</p>
-            <p className={`${styles1["clp-para"]} rc-mt-2`}>
-                You can reorder Contribution items using drag and drop feature and Fix typos quickly using 
-                the 'edit' or 'delete' icon.
-            </p>
-            <p className={`${styles1["clp-para"]} rc-mt-2`}>That’s it! </p>
-            <p className={`${styles1["clp-para"]} rc-mt-2`}>It’s simple, it’s easy, it will revolutionize the way you throw parties.</p>
-            <div className="rc-mb-3">&nbsp;</div>
-        </div>  
-        )
+      <div className={`${styles1["clp-h2-section"]} rc-mt-4`}>
+          <h2 className={styles1["clp-h2-style"]}>How It Works</h2>
+          <p className={`${styles1["clp-para"]} rc-mt-2`}>The Contribution List feature is an excellent event planning tool. </p>
+          <p className={`${styles1["clp-para"]} rc-mt-2`}>It takes almost no time to set one up.</p>
+          <p className={`${styles1["clp-para"]} rc-mt-2`}>First, make your event within the Pitch In Club event dashboard.</p>
+          <p className={`${styles1["clp-para"]} rc-mt-2`}>
+              Then, click on the List tab. The Contribution List will be the first feature listed. 
+          </p>
+          <p className={`${styles1["clp-para"]} rc-mt-2`}> Click on it, and fill out what you need to throw your event.</p>
+          <p className={`${styles1["clp-para"]} rc-mt-2`}>
+              You can reorder Contribution items using drag and drop feature and Fix typos quickly using 
+              the 'edit' or 'delete' icon.
+          </p>
+          <p className={`${styles1["clp-para"]} rc-mt-2`}>That’s it! </p>
+          <p className={`${styles1["clp-para"]} rc-mt-2`}>It’s simple, it’s easy, it will revolutionize the way you throw parties.</p>
+          <div className="rc-mb-3">&nbsp;</div>
+      </div>  
+    )
 }
 
 const appScreenShotSection = () => (
@@ -122,22 +126,26 @@ const processSection = () => (
         <h2 className={styles1["clp-process-title"]}>Simple Step Wise Process</h2>
         <div className={styles1["clp-process-box-container"]}>
            <div className={styles2["process-box"]}>
-               <FontAwesomeIcon className={styles2["process-box__icon"]} icon={faCalendarAlt} />
+               {/* <FontAwesomeIcon className={styles2["process-box__icon"]} icon={faCalendarAlt} /> */}
+               <CalendarIcon />
                <p className={styles2["process-box__heading"]}>Schedule Event</p>
                <p className={styles2["process-box__text"]}>Quickly Schedule an Event</p>
            </div>
            <div className={styles2["process-box"]}>
-               <FontAwesomeIcon className={styles2["process-box__icon"]} icon={faUsers} />
+               {/* <FontAwesomeIcon className={styles2["process-box__icon"]} icon={faUsers} /> */}
+               <UsersIcon />
                <p className={styles2["process-box__heading"]}>Add People</p>
                <p className={styles2["process-box__text"]}>Add People To Your Event or Function</p>
            </div>
            <div className={styles2["process-box"]}>
-               <FontAwesomeIcon className={styles2["process-box__icon"]} icon={faList} />
+               {/* <FontAwesomeIcon className={styles2["process-box__icon"]} icon={faList} /> */}
+               <ListIcon />
                <p className={styles2["process-box__heading"]}>List Items</p>
                <p className={styles2["process-box__text"]}>Create List of Contributions and/or Help Needed</p>
            </div>
            <div className={styles2["process-box"]}>
-               <FontAwesomeIcon className={styles2['process-box__icon']} icon={faHandHoldingHeart} />
+               {/* <FontAwesomeIcon className={styles2['process-box__icon']} icon={faHandHoldingHeart} /> */}
+               <HoldingHeartIcon />
                <p className={styles2["process-box__heading"]}>Pitch In</p>
                <p className={styles2["process-box__text"]}>Invite People to Pitch In</p>
            </div>
@@ -176,15 +184,17 @@ const ctaBlock = (siteUrl) => {
 
 // Contribution List Page
 class ContributionListPage extends Component {
+
+    /* I can remove this. Google analytics was set up in _app.js */
     componentDidMount = () => {
-      let env = getAppConfigParm("env");
-      if (env === 'test' || env === 'prod') {
-          if (!window.GA_INITIALIZED) {
-              GAinit();
-              window.GA_INITIALIZED = true;
-          }
-          GAlogPageView()
-      }
+      // let env = getAppConfigParm("env");
+      // if (env === 'test' || env === 'prod') {
+      //     if (!window.GA_INITIALIZED) {
+      //         GAinit();
+      //         window.GA_INITIALIZED = true;
+      //     }
+      //     GAlogPageView()
+      // }
     }
 
     render() {
